@@ -15,23 +15,22 @@
  * limitations under the License.
  */
 
-import { Component, DoCheck, Input } from '@angular/core';
-import {
-    CardViewTextItemModel,
-    CardViewDateItemModel,
-    CardViewItem
-} from '@alfresco/adf-core';
+import { Component, Input, OnChanges } from '@angular/core';
+import { CardViewTextItemModel, CardViewDateItemModel, CardViewItem } from '@alfresco/adf-core';
 
 @Component({
-    templateUrl: './mycardview.component.html',
-    styleUrls: ['./mycardview.component.scss']
+  selector: 'app-whatever',
+  templateUrl: './mycardview.component.html',
+  styleUrls: ['./mycardview.component.scss']
 })
-export class MycardviewTestComponent implements DoCheck{
+export class MycardviewTestComponent implements OnChanges {
+  @Input()
+  editable: boolean;
 
-    @Input()
-    editable: boolean = true;
+  public properties: CardViewItem[] = [];
 
-    properties: CardViewItem[] = [
+  ngOnChanges() {
+    this.properties = [
       new CardViewTextItemModel({
         label: 'CardView Text Item - Multivalue (chips)',
         value: [1, 2, 3, 4],
@@ -41,8 +40,8 @@ export class MycardviewTestComponent implements DoCheck{
         multivalued: true,
         icon: 'icon',
         editable: this.editable
-    }),
-    new CardViewDateItemModel({
+      }),
+      new CardViewDateItemModel({
         label: 'CardView Date Item - Multivalue (chips)',
         value: [new Date(1983, 11, 24, 10, 0, 30)],
         key: 'date',
@@ -50,13 +49,9 @@ export class MycardviewTestComponent implements DoCheck{
         format: 'shortDate',
         editable: this.editable,
         multivalued: true
-    }),
+      })
     ];
+  }
 
-    ngDoCheck() {
-      console.log(`Current value of editable is ${this.editable}`);
-    }
-
-
-    constructor() {}
+  constructor() {}
 }
