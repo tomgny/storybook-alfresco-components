@@ -37,8 +37,18 @@ import { FavoritesComponent } from './components/favorites/favorites.component';
 import { RecentFilesComponent } from './components/recent-files/recent-files.component';
 import { SharedFilesComponent } from './components/shared-files/shared-files.component';
 import { DetailsComponent } from './components/details/details.component';
+import { MydatatableComponent } from './mydatatable/mydatatable.component';
+import { MycardviewComponent } from './mycardview/mycardview.component';
 
 export const APP_ROUTES: Routes = [
+  {
+    path: 'mydatatable',
+      component: MydatatableComponent
+  },
+  {
+    path: 'mycardview',
+      component: MycardviewComponent
+  },
   {
     path: 'blank',
     component: BlankPageComponent
