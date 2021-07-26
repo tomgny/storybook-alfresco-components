@@ -87,6 +87,7 @@ import { MydatatableComponent } from './mydatatable/mydatatable.component';
 import { MycardviewComponent } from './mycardview/mycardview.component';
 import { MycardviewTestComponent } from './mycardview copy/mycardview.component';
 import { MytestComponent } from './mytest/mytest.component';
+import { MyButtonsMenuComponent } from './components/my-buttons-menu/my-buttons-menu.component';
 
 registerLocaleData(localeFr);
 registerLocaleData(localeDe);
@@ -153,7 +154,8 @@ registerLocaleData(localeSv);
     MydatatableComponent,
     MycardviewComponent,
     MycardviewTestComponent,
-    MytestComponent
+    MytestComponent,
+    MyButtonsMenuComponent
   ],
   providers: [
     { provide: AppConfigService, useClass: DebugAppConfigService },
