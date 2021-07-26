@@ -1,23 +1,20 @@
 <div class="app-main-content">
-  <h1>CardView Component</h1>
-
   <mat-card class="app-card-view">
-      <adf-card-view
-          [copyToClipboardAction]="inputCopyToClipboardAction"
-          [displayClearAction]="inputDisplayClearAction"
-          [displayEmpty]="inputDisplayEmpty"
-          [displayNoneOption]="inputDisplayNoneOption"
-          [editable]="inputEditable"
-          [multiValueSeparator]="inputMultiValueSeparator"
-          [properties]="inputProperties"
-          [useChipsForMultiValueProperty]="inputUseChipsForMultiValueProperty"
-          >
-      </adf-card-view>
+    <adf-card-view
+      [copyToClipboardAction]="copyToClipboardAction"
+      [displayClearAction]="displayClearAction"
+      [displayEmpty]="displayEmpty"
+      [displayNoneOption]="displayNoneOption"
+      [editable]="editable"
+      [multiValueSeparator]="multiValueSeparator"
+      [properties]="properties"
+      [useChipsForMultiValueProperty]="useChipsForMultiValueProperty"
+    >
+    </adf-card-view>
   </mat-card>
 
   <div class="app-console" #console>
-      <h3>Changes log:</h3>
-      <p *ngFor="let log of logs">{{ log }}</p>
+    <h3>Changes log:</h3>
+    <p *ngFor="let log of logs">{{ log }}</p>
   </div>
-
 </div>

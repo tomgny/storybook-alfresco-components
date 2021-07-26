@@ -16,79 +16,96 @@
  */
 
 import { Component, OnInit, ElementRef, ViewChild, OnDestroy, Input } from '@angular/core';
-import {
-    CardViewUpdateService,
-    UpdateNotification,
-    CardViewItem
-} from '@alfresco/adf-core';
+import { CardViewUpdateService, UpdateNotification, CardViewItem} from '@alfresco/adf-core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 @Component({
-    selector: 'app-mycardview',
-    templateUrl: './mycardview.component.html',
-    styleUrls: ['./mycardview.component.scss']
+  selector: 'app-mycardview',
+  templateUrl: './mycardview.component.html',
+  styleUrls: ['./mycardview.component.scss']
 })
 export class MycardviewComponent implements OnInit, OnDestroy {
+  @ViewChild('console', { static: true }) console: ElementRef;
+  logs: string[];
+  defaultDataSource: CardViewItem[];
 
-    @ViewChild('console', { static: true }) console: ElementRef;
+  /**
+   * Toggles whether or not to enable copy to clipboard action.
+   */
+  @Input()
+  copyToClipboardAction: boolean = true;
 
-    @Input()
-    inputCopyToClipboardAction: boolean = true;
+  /**
+   * Toggles whether or not to display clear action.
+   */
+  @Input()
+  displayClearAction: boolean = true;
 
-    @Input()
-    inputDisplayClearAction: boolean = true;
+  /**
+   * Toggles whether or not to show empty items in non-editable mode.
+   */
+  @Input()
+  displayEmpty: boolean = true;
 
-    @Input()
-    inputDisplayEmpty: boolean = true;
+  /**
+   * Toggles whether or not to display none option.
+   */
+  @Input()
+  displayNoneOption: boolean = true;
 
-    @Input()
-    inputDisplayNoneOption: boolean = true;
+  /**
+   * Toggles whether or not the items can be edited.
+   */
+  @Input()
+  editable: boolean = false;
 
-    @Input()
-    inputEditable: boolean = false;
+  /**
+   * String separator between multi-value property items.
+   */
+  @Input()
+  multiValueSeparator: string = ',';
 
-    @Input()
-    inputMultiValueSeparator: string = ',';
+  /**
+   * Items to show in the card view.
+   * @required
+   */
+  @Input()
+  properties: CardViewItem[] = [];
 
-    @Input()
-    inputProperties: CardViewItem[] = [];
+  /**
+   * Toggles whether or not to enable chips for multivalued properties.
+   */
+  @Input()
+  useChipsForMultiValueProperty: boolean = true;
 
-    @Input()
-    inputUseChipsForMultiValueProperty: boolean = true;
+  private onDestroy$ = new Subject<boolean>();
 
-    logs: string[];
+  constructor(private cardViewUpdateService: CardViewUpdateService) {
+    this.logs = [];
+  }
 
-    private onDestroy$ = new Subject<boolean>();
+  respondToCardClick() {
+    this.logs.push(`clickable field`);
+  }
 
-    constructor(private cardViewUpdateService: CardViewUpdateService,
-                ) {
-        this.logs = [];
+  ngOnInit() {
+    this.cardViewUpdateService.itemUpdated$.pipe(takeUntil(this.onDestroy$)).subscribe(this.onItemChange.bind(this));
+  }
+
+  ngOnDestroy() {
+    this.onDestroy$.next(true);
+    this.onDestroy$.complete();
+  }
+
+  onItemChange(notification: UpdateNotification) {
+    let value = notification.changed[notification.target.key];
+
+    if (notification.target.type === 'keyvaluepairs') {
+      value = JSON.stringify(value);
     }
 
-    respondToCardClick() {
-        this.logs.push(`clickable field`);
-    }
-
-    ngOnInit() {
-        this.cardViewUpdateService.itemUpdated$
-            .pipe(takeUntil(this.onDestroy$))
-            .subscribe(this.onItemChange.bind(this));
-    }
-
-    ngOnDestroy() {
-        this.onDestroy$.next(true);
-        this.onDestroy$.complete();
-    }
-
-    onItemChange(notification: UpdateNotification) {
-        let value = notification.changed[notification.target.key];
-
-        if (notification.target.type === 'keyvaluepairs') {
-            value = JSON.stringify(value);
-        }
-
-        this.logs.push(`[${notification.target.label}] - ${value}`);
-        this.console.nativeElement.scrollTop = this.console.nativeElement.scrollHeight;
-    }
+    this.logs.push(`[${notification.target.label}] - ${value}`);
+    this.console.nativeElement.scrollTop = this.console.nativeElement.scrollHeight;
+  }
 }
