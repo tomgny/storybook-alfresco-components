@@ -1,5 +1,5 @@
-import { CoreModule } from '@alfresco/adf-core';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { CoreModule,  } from '@alfresco/adf-core';
+import { BrowserAnimationsModule, /* NoopAnimationsModule */ } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { APP_ROUTES } from '../../app.routes';
@@ -20,7 +20,7 @@ export default {
                 }),
                 CoreModule.forRoot(),
                 AppCommonModule,
-                NoopAnimationsModule
+                BrowserAnimationsModule,   
               ],
         }),
     ]
@@ -28,46 +28,55 @@ export default {
 
 const Template: Story<MyButtonsMenuComponent> = (args) => ({
     props: args
-})
-
-export const DesktopNotEmpty = Template.bind({})
-
-// const createButton = (event, icon, label) => `<button mat-menu-item (click)="${event}">
-//     <mat-icon>${icon}</mat-icon>
-//     <span>${label}</span>
-// </button>`;
+});
 
 const buttons: Button[] = [new Button(`displaySettings()`, `settings`, `Settings`),
 new Button(`delete()`, `delete`, `Delete`),
 new Button(`turnOffNotifications()`, `notifications_off`, `Disable alerts`),
 new Button(`checkVoiceMail()`, `voicemail`, `Check voice mail`),
-]
+new Button(`displayInfo()`, `info`, `Display information`),
+new Button(`build()`, `build`, `Build`),
+];
 
-DesktopNotEmpty.args = {
+export const sixButtons = Template.bind({})
+
+sixButtons.args = {
     primary: true,
     buttonsToRender: buttons
 }
 
-export const MobileNotEmpty = Template.bind({});
+export const fiveButtons = Template.bind({})
 
-MobileNotEmpty.args = {
-    buttonsToRender: buttons,
-    viewport: {
-        defaultViewport: 'iphonex'
-      },
+fiveButtons.args = {
+    buttonsToRender: buttons.slice(0, 5),
 }
 
-export const DesktopEmpty = Template.bind({})
+export const fourButtons = Template.bind({})
 
-DesktopEmpty.args = {
-    buttonsToRender: [],
+fourButtons.args = {
+    buttonsToRender: buttons.slice(0, 4),
 }
 
-export const MobileEmpty = Template.bind({});
+export const threeButtons = Template.bind({})
 
-MobileEmpty.args = {
+threeButtons.args = {
+    buttonsToRender: buttons.slice(0, 3),
+}
+
+export const twoButtons = Template.bind({})
+
+twoButtons.args = {
+    buttonsToRender: buttons.slice(0, 2),
+}
+
+export const oneButton = Template.bind({})
+
+oneButton.args = {
+    buttonsToRender: buttons.slice(0, 1),
+}
+
+export const emptyMenu = Template.bind({})
+
+emptyMenu.args = {
     buttonsToRender: [],
-    viewport: {
-        defaultViewport: 'iphonex'
-      },
 }
