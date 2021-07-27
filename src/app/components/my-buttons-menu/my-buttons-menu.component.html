@@ -1,9 +1,7 @@
 <adf-buttons-action-menu>
-    <button mat-menu-item *ngFor="let button of buttonsToRender" (click)="alertFunctionName(button.functionName)">
-        <mat-icon>{{button.icon}}</mat-icon>
-        <span>{{button.span}}</span>
+    <button mat-menu-item (click)="alertFunctionName(button.functionName)" *ngFor="let button of buttonsToRender">
+        <mat-icon>{{button.icon}}</mat-icon><span>{{button.span}}</span>
     </button>
-
     <!-- <button mat-menu-item (click)="alertFunctionName('settings()')">
         <mat-icon>settings</mat-icon>
         <span>Settings</span>
