@@ -1,10 +1,11 @@
-import { CoreModule } from '@alfresco/adf-core';
+import { AuthenticationService, CoreModule, EcmUserService } from '@alfresco/adf-core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { APP_ROUTES } from '../../app.routes';
 import { AppCommonModule } from '../../components/common/common.module';
 import { UserInfoComponent } from './user-info.component';
+import { AuthenticationServiceStub, EcmUserServiceStub } from './stub-services';
 
 export default {
     component: UserInfoComponent,
@@ -19,11 +20,28 @@ export default {
                 }),
                 CoreModule.forRoot(),
                 AppCommonModule,
-                BrowserAnimationsModule
-
-            ]
+                BrowserAnimationsModule,
+            ],
+            providers: [
+                {provide: AuthenticationService, useClass: AuthenticationServiceStub},
+                {provide: EcmUserService, useClass: EcmUserServiceStub},
+            ],
         })
-    ]
+    ],
+    argTypes: {
+        menuPositionX: {
+            options: ['after', 'before'],
+            control: {type: 'select'},
+        },
+        menuPositionY: {
+            options: ['above', 'below'],
+            control: {type: 'select'},
+        },
+        namePosition: {
+            options: ['left', 'right'],
+            control: {type: 'select'},
+        },
+    },
 } as Meta;
 
 const Template: Story<UserInfoComponent> = (args) => ({
@@ -34,10 +52,10 @@ export const Default = Template.bind({});
 
 Default.args = {
     Primary: true,
-    bpmBackgroundImage: '',
-    ecmBackgroundImage: '',
+    bpmBackgroundImage: './assets/images/bpm-background.png',
+    ecmBackgroundImage: './assets/images/ecm-background.png',
     menuPositionX: 'after',
-    menuPositionY: 'before',
+    menuPositionY: 'below',
     namePosition: 'right',
     showName: true,
 }
@@ -56,4 +74,31 @@ NameOnLeft.args = {
     ...Default.args,
     Primary: false,
     namePosition: 'left',
+}
+
+export const MenuPostionAfterBelow = Template.bind({})
+
+// The layout is centered in order to showcase 
+// effects of changing values of MenuPostion X and Y
+MenuPostionAfterBelow.parameters = {
+    layout: 'centered',
+}
+
+MenuPostionAfterBelow.args = {
+    ...Default.args,
+    Primary: false,
+}
+
+export const MenuPostionBeforeAbove = Template.bind({})
+
+// The layout is centered in order to showcase 
+// effects of changing values of MenuPostion X and Y
+MenuPostionBeforeAbove.parameters = {
+    layout: 'centered',
+}
+
+MenuPostionBeforeAbove.args = {
+    ...MenuPostionAfterBelow.args,
+    menuPositionX: 'before',
+    menuPositionY: 'above',
 }

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 import { MenuPositionX, MenuPositionY } from '@angular/material/menu';
 
 @Component({
@@ -7,7 +7,7 @@ import { MenuPositionX, MenuPositionY } from '@angular/material/menu';
   styleUrls: ['./user-info.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class UserInfoComponent implements OnInit {
+export class UserInfoComponent {
 
   @Input()
   bpmBackgroundImage: string;
@@ -16,20 +16,17 @@ export class UserInfoComponent implements OnInit {
   ecmBackgroundImage: string;
 
   @Input()
-  menuPositionX: MenuPositionX = "after"
+  menuPositionX: MenuPositionX;
 
   @Input()
-  menuPositionY: MenuPositionY = "below"
+  menuPositionY: MenuPositionY;
 
   @Input()
-  namePosition: string = "right";
+  namePosition: string;
 
   @Input()
-  showName: boolean = true;
+  showName: boolean;
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }
