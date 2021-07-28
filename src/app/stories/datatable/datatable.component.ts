@@ -1,4 +1,4 @@
-import { ObjectDataTableAdapter, ShowHeaderMode } from '@alfresco/adf-core';
+import { DataRowEvent, ObjectDataTableAdapter, ShowHeaderMode } from '@alfresco/adf-core';
 import { Component, Input } from '@angular/core';
 
 @Component({
@@ -125,4 +125,12 @@ export class DatatableComponent {
    */
   @Input()
   stickyHeader: boolean = false;
+
+  onRowClick(event: DataRowEvent){
+    window.alert(`Row click event: ${event}`);
+  }
+
+  onRowDblClick(event: DataRowEvent){
+    window.alert(`Row double click event: ${event}`);
+  }
 }

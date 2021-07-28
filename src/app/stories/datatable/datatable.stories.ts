@@ -7,6 +7,7 @@ import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { APP_ROUTES } from '../../app.routes';
 import { AppCommonModule } from '../../components/common/common.module';
 import { DatatableComponent } from './datatable.component';
+import { action } from '@storybook/addon-actions';
 
 export default {
   component: DatatableComponent,
@@ -77,9 +78,16 @@ const dataSourceWithoutOneIcon = new ObjectDataTableAdapter([
   }
 ]);
 
+const actionsData = {
+  onRowClick: action('rowClick'),
+  onRowDblClick: action('rowDblClick'),
+}
+
 const Template: Story<DatatableComponent> = (args) => ({
   props: {
-    ...args
+    ...args,
+    onRowClick: actionsData.onRowClick,
+    onRowDblClick: actionsData.onRowDblClick,
   }
 });
 

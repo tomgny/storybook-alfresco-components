@@ -20,6 +20,8 @@
   [selectionMode]="selectionMode"
   [showHeader]="showHeader"
   [stickyHeader]="stickyHeader"
+  (rowClick)="onRowClick($event)"
+  (rowDblClick)="onRowDblClick($event)"
   >
   <adf-no-content-template>
     <!--Add your custom empty template here-->
