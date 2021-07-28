@@ -80,14 +80,14 @@ const dataSourceWithoutOneIcon = new ObjectDataTableAdapter([
 
 const actionsData = {
   onRowClick: action('rowClick'),
-  onRowDblClick: action('rowDblClick'),
-}
+  onRowDblClick: action('rowDblClick')
+};
 
 const Template: Story<DatatableComponent> = (args) => ({
   props: {
     ...args,
     onRowClick: actionsData.onRowClick,
-    onRowDblClick: actionsData.onRowDblClick,
+    onRowDblClick: actionsData.onRowDblClick
   }
 });
 
@@ -135,7 +135,7 @@ ShowActions.args = {
   actions: true,
   actionsPosition: 'right',
   data: dataSource
-}
+};
 
 export const ShowActionsOnHover = Template.bind({});
 ShowActionsOnHover.args = {
@@ -143,13 +143,13 @@ ShowActionsOnHover.args = {
   actionsVisibleOnHover: true,
   actionsPosition: 'left',
   data: dataSource
-}
+};
 
 export const MultiSelect = Template.bind({});
 MultiSelect.args = {
   multiselect: true,
   data: dataSource
-}
+};
 
 export const GaleryDisplay = Template.bind({});
 GaleryDisplay.args = {
@@ -169,7 +169,7 @@ StickyHeader.args = {
   showHeader: ShowHeaderMode.Always,
   stickyHeader: true,
   data: dataSource
-}
+};
 
 export const NoData = Template.bind({});
 NoData.args = {
@@ -180,7 +180,7 @@ export const NoPermission = Template.bind({});
 NoPermission.args = {
   noPermission: true,
   data: dataSource
-}
+};
 
 export const Loading = Template.bind({});
 Loading.args = {

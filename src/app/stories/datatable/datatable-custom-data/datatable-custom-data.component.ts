@@ -5,7 +5,7 @@ import { Component, Input } from '@angular/core';
   selector: 'aca-datatable-custom',
   templateUrl: './datatable-custom-data.component.html'
 })
-export class DatatableCustomComponent{
+export class DatatableCustomComponent {
   /**
    * The columns that the datatable will show.
    */
@@ -15,8 +15,8 @@ export class DatatableCustomComponent{
   /**
    * Data source for the table
    */
-   @Input()
-   data = new ObjectDataTableAdapter();
+  @Input()
+  data = new ObjectDataTableAdapter();
 
   /**
    * Custom resolver function which is used to parse dynamic column objects see the docs to learn how to configure a resolverFn.

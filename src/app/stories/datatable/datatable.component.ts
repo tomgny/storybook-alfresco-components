@@ -126,11 +126,11 @@ export class DatatableComponent {
   @Input()
   stickyHeader: boolean = false;
 
-  onRowClick(event: DataRowEvent){
+  onRowClick(event: DataRowEvent) {
     window.alert(`Row click event: ${event}`);
   }
 
-  onRowDblClick(event: DataRowEvent){
+  onRowDblClick(event: DataRowEvent) {
     window.alert(`Row double click event: ${event}`);
   }
 }
