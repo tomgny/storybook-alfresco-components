@@ -1,12 +1,11 @@
 import { ObjectDataTableAdapter, ShowHeaderMode } from '@alfresco/adf-core';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'aca-datatable',
-  templateUrl: './datatable.component.html',
-  styleUrls: ['./datatable.component.scss']
+  templateUrl: './datatable.component.html'
 })
-export class DatatableComponent implements OnInit {
+export class DatatableComponent {
   /**
    * Toggles the data actions column.
    */
@@ -35,7 +34,7 @@ export class DatatableComponent implements OnInit {
    * The columns that the datatable will show.
    */
   @Input()
-  columns: any[] = [];
+  columns: any[] = undefined;
 
   /**
    * Toggles custom context menu for the component.
@@ -82,8 +81,8 @@ export class DatatableComponent implements OnInit {
   /**
    * Custom resolver function which is used to parse dynamic column objects see the docs to learn how to configure a resolverFn.
    */
-  //@Input()
-  //resolverFn = this.resolverFunction;
+  @Input()
+  resolverFn = null;
 
   /**
    * Should the items for the row actions menu be cached for reuse after they are loaded the first time?
@@ -107,7 +106,7 @@ export class DatatableComponent implements OnInit {
    * The rows that the datatable will show.
    */
   @Input()
-  rows: any[] = [];
+  rows: any[] = undefined;
 
   /**
    * Row selection mode. Can be none, single or multiple. For multiple mode, you can use Cmd (macOS) or Ctrl (Win) modifier key to toggle selection for multiple rows.
@@ -122,18 +121,8 @@ export class DatatableComponent implements OnInit {
   showHeader: ShowHeaderMode.Always | ShowHeaderMode.Data | ShowHeaderMode.Never = ShowHeaderMode.Always;
 
   /**
-   * Define the sort order of the datatable. Possible values are : [created, desc], [created, asc], [due, desc], [due, asc]
-   */
-  @Input()
-  sorting: ['created', 'desc'] | ['created', 'asc'] | ['due', 'desc'] | ['due', 'asc'] = ['created', 'desc'];
-
-  /**
    * Toggles the sticky header mode.
    */
   @Input()
-  stickyHeader: boolean = true;
-
-  constructor() {}
-
-  ngOnInit(): void {}
+  stickyHeader: boolean = false;
 }

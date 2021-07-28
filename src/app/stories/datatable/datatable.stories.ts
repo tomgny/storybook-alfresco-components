@@ -89,7 +89,6 @@ DefaultStory.args = {
   actionsPosition: 'right',
   actionsVisibleOnHover: false,
   allowFiltering: false,
-  //columns: [1,2],
   contextMenu: false,
   data: dataSource,
   display: DisplayMode.List,
@@ -97,15 +96,12 @@ DefaultStory.args = {
   loading: false,
   multiselect: false,
   noPermission: false,
-  //resolverFn: null,
   rowMenuCacheEnabled: true,
   rowStyle: '',
   rowStyleClass: '',
-  //rows: [1,2],
   selectionMode: 'single',
   showHeader: ShowHeaderMode.Always,
-  sorting: ['created', 'desc'],
-  stickyHeader: true
+  stickyHeader: false
 };
 
 export const HiddenHeader = Template.bind({});
@@ -126,6 +122,27 @@ RowStyleClass.args = {
   data: dataSource
 };
 
+export const ShowActions = Template.bind({});
+ShowActions.args = {
+  actions: true,
+  actionsPosition: 'right',
+  data: dataSource
+}
+
+export const ShowActionsOnHover = Template.bind({});
+ShowActionsOnHover.args = {
+  actions: true,
+  actionsVisibleOnHover: true,
+  actionsPosition: 'left',
+  data: dataSource
+}
+
+export const MultiSelect = Template.bind({});
+MultiSelect.args = {
+  multiselect: true,
+  data: dataSource
+}
+
 export const GaleryDisplay = Template.bind({});
 GaleryDisplay.args = {
   display: 'gallery',
@@ -135,14 +152,27 @@ GaleryDisplay.args = {
 
 export const FallbackThumbnail = Template.bind({});
 FallbackThumbnail.args = {
-  fallbackThumbnail: '../../../alfresco-24x24.png',
+  fallbackThumbnail: '../../../assets/images/alfresco-24x24.png',
   data: dataSourceWithoutOneIcon
 };
+
+export const StickyHeader = Template.bind({});
+StickyHeader.args = {
+  showHeader: ShowHeaderMode.Always,
+  stickyHeader: true,
+  data: dataSource
+}
 
 export const NoData = Template.bind({});
 NoData.args = {
   data: undefined
 };
+
+export const NoPermission = Template.bind({});
+NoPermission.args = {
+  noPermission: true,
+  data: dataSource
+}
 
 export const Loading = Template.bind({});
 Loading.args = {

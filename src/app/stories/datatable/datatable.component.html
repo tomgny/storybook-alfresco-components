@@ -1,3 +1,4 @@
+<div style="height: 300px;">
 <adf-datatable
   [actions]="actions"
   [actionsPosition]="actionsPosition"
@@ -11,16 +12,15 @@
   [loading]="loading"
   [multiselect]="multiselect"
   [noPermission]="noPermission"
-  [resolverFn]="null"
+  [resolverFn]="resolverFn"
   [rowMenuCacheEnabled]="rowMenuCacheEnabled"
   [rowStyle]="rowStyle"
   [rowStyleClass]="rowStyleClass"
   [rows]="rows"
   [selectionMode]="selectionMode"
   [showHeader]="showHeader"
-  [sorting]="sorting"
   [stickyHeader]="stickyHeader"
->
+  >
   <adf-no-content-template>
     <!--Add your custom empty template here-->
     <ng-template>
@@ -39,3 +39,4 @@
     <data-column key="lastName" title="Last Name" class="full-width name-column"> </data-column>
   </data-columns>
 </adf-datatable>
+</div>
