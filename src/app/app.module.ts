@@ -84,6 +84,7 @@ import localeFi from '@angular/common/locales/fi';
 import localeDa from '@angular/common/locales/da';
 import localeSv from '@angular/common/locales/sv';
 import { CardviewComponent } from './stories/cardview/cardview.component';
+import { UserInfoComponent } from './stories/user-info/user-info.component';
 
 registerLocaleData(localeFr);
 registerLocaleData(localeDe);
@@ -148,6 +149,7 @@ registerLocaleData(localeSv);
     SharedFilesComponent,
     CreateFromTemplateDialogComponent,
     CardviewComponent,
+    UserInfoComponent,
   ],
   providers: [
     { provide: AppConfigService, useClass: DebugAppConfigService },
