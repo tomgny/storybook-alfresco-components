@@ -87,6 +87,7 @@ import { CardviewComponent } from './stories/cardview/cardview.component';
 import { DatatableComponent } from './stories/datatable/datatable.component';
 import { DatatableCustomComponent } from './stories/datatable/datatable-custom-data/datatable-custom-data.component';
 import { UserInfoComponent } from './stories/user-info/user-info.component';
+import { ToolbarComponent } from './stories/toolbar/toolbar.component';
 
 registerLocaleData(localeFr);
 registerLocaleData(localeDe);
@@ -154,6 +155,7 @@ registerLocaleData(localeSv);
     DatatableComponent,
     DatatableCustomComponent,
     UserInfoComponent,
+    ToolbarComponent,
   ],
   providers: [
     { provide: AppConfigService, useClass: DebugAppConfigService },
