@@ -1,1 +1,63 @@
-<p>viewer works!</p>
+<adf-viewer
+[overlayMode]="overlayMode"
+[urlFile]="urlFile"
+[allowThumbnails]="allowThumbnails"
+[allowDownload]="allowDownload"
+[allowFullScreen]="allowFullScreen"
+[allowPrint]="allowPrint"
+[showToolbar]="showToolbar"
+[showViewer]="showViewer"
+[allowRightSidebar]="allowRightSidebar"
+[showRightSidebar]="allowRightSidebar"
+[displayName]="displayName"
+[allowGoBack]="allowGoBack">
+    <adf-viewer-sidebar *ngIf="allowRightSidebar">
+        <h1>Right sidebar</h1>
+    </adf-viewer-sidebar>
+
+    <adf-viewer-toolbar *ngIf="displayCustomToolbar">
+        <h2>Custom toolbar</h2>
+    </adf-viewer-toolbar>
+
+    <adf-viewer-toolbar-actions *ngIf="displayMoreToolbarActions">
+        <button mat-icon-button id="adf-viewer-time">
+            <mat-icon>alarm</mat-icon>
+        </button>
+        <button mat-icon-button id="adf-viewer-upload">
+            <mat-icon>backup</mat-icon>
+        </button>
+        <button mat-icon-button id="adf-viewer-bug">
+            <mat-icon>bug_report</mat-icon>
+        </button>
+    </adf-viewer-toolbar-actions>
+
+    <adf-viewer-more-actions *ngIf="displayMoreActionsMenu">
+        <button mat-menu-item id="adf-viewer-more-menu-alarm">
+            <mat-icon>alarm</mat-icon>
+            <span>Alarm</span>
+        </button>
+        <button mat-menu-item id="adf-viewer-more-menu-backup">
+            <mat-icon>backup</mat-icon>
+            <span>Backup</span>
+        </button>
+        <button mat-menu-item id="adf-viewer-more-menu-bug">
+            <mat-icon>bug_report</mat-icon>
+            <span>Bug report</span>
+        </button>
+    </adf-viewer-more-actions>
+
+    <adf-viewer-open-with *ngIf="displayOpenWith">
+        <button mat-menu-item>
+            <mat-icon>dialpad</mat-icon>
+            <span>Option 1</span>
+        </button>
+        <button mat-menu-item disabled>
+            <mat-icon>voicemail</mat-icon>
+            <span>Option 2</span>
+        </button>
+        <button mat-menu-item>
+            <mat-icon>notifications_off</mat-icon>
+            <span>Option 3</span>
+        </button>
+    </adf-viewer-open-with>
+</adf-viewer>
