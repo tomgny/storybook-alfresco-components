@@ -4,7 +4,9 @@ import { RouterModule } from '@angular/router';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { APP_ROUTES } from '../../app.routes';
 import { AppCommonModule } from '../../components/common/common.module';
+import { CustomThumbnailsModule } from './custom-thumbnails/custom-thumbnails.module';
 import { ViewerComponent } from './viewer.component';
+import { action } from '@storybook/addon-actions';
 
 export default {
     component: ViewerComponent,
@@ -20,6 +22,7 @@ export default {
                 CoreModule.forRoot(),
                 AppCommonModule,
                 BrowserAnimationsModule,
+                CustomThumbnailsModule,
             ],
         })
     ],
@@ -32,8 +35,17 @@ export default {
     },
 } as Meta;
 
+const actionsData = {
+    onPrintClick: action('print'),
+    onNavigateBeforeClick: action('navigateBefore'),
+    onNavigateNextClick: action('navigateNext'),
+  };
+
 const Template: Story<ViewerComponent> = (args) => ({
     props: args,
+    onPrintClick: actionsData.onPrintClick,
+    onNavigateBeforeClick: actionsData.onNavigateBeforeClick,
+    onNavigateNextClick: actionsData.onNavigateNextClick,
 });
 
 export const Default = Template.bind({});
@@ -55,6 +67,12 @@ Default.args = {
     displayOpenWith: false,
     displayName: '',
     allowGoBack: true,
+    displayCustomThumbnails: false,
+    renderBlobFile: false,
+    mimeType: '',
+    allowNavigate: false,
+    canNavigateBefore: true,
+    canNavigateNext: true,
 }
 
 const DefaultNotPrimary = Template.bind({});
@@ -70,6 +88,14 @@ PdfWithoutThumbnails.args = {
     ...DefaultNotPrimary.args,
     urlFile: './assets/texts/lorem_ipsum.pdf',
     allowThumbnails: false,
+}
+
+export const PdfCustomThumbnails = Template.bind({})
+
+PdfCustomThumbnails.args = {
+    ...DefaultNotPrimary.args,
+    urlFile: './assets/texts/lorem_ipsum.pdf',
+    displayCustomThumbnails: true,
 }
 
 export const DonwloadAndFullscreenAndGoBackDisabled = Template.bind({});
@@ -137,9 +163,9 @@ MoreToolbarActionsMenu.args = {
     displayMoreActionsMenu: true,
 }
 
-export const OpenWith = Template.bind({})
+export const OpenWithMenu = Template.bind({})
 
-OpenWith.args = {
+OpenWithMenu.args = {
     ...DefaultNotPrimary.args,
     displayOpenWith: true,
 }
@@ -148,5 +174,43 @@ export const DisplayCustomFileName = Template.bind({})
 
 DisplayCustomFileName.args = {
     ...DefaultNotPrimary.args,
-    displayName: 'Custom File Name',
+    displayName: 'you_can_set_custom_display_names.exe',
+}
+
+export const BlobFile = Template.bind({})
+
+BlobFile.args = {
+    ...DefaultNotPrimary.args,
+    urlFile: '',
+    renderBlobFile: true,
+    displayName: 'blob_file.txt'
+}
+
+export const FileWithoutExtension = Template.bind({})
+
+FileWithoutExtension.args = {
+    ...DefaultNotPrimary.args,
+    urlFile: './assets/texts/no_extension',
+    mimeType: 'text/plain',
+}
+
+export const NavigationEnabled = Template.bind({})
+
+NavigationEnabled.args = {
+    ...DefaultNotPrimary.args,
+    allowNavigate: true,
+}
+
+export const NavigationBeforeDisabled = Template.bind({})
+
+NavigationBeforeDisabled.args = {
+    ...NavigationEnabled.args,
+    canNavigateBefore: false,
+}
+
+export const NavigationNextDisabled = Template.bind({})
+
+NavigationNextDisabled.args = {
+    ...NavigationEnabled.args,
+    canNavigateNext: false,
 }

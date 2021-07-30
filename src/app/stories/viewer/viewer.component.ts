@@ -1,4 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+// import { BaseEvent } from '@alfresco/adf-core';
+import { HttpClient } from '@angular/common/http';
+import { Component, Input, OnInit} from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'aca-viewer',
@@ -34,10 +37,6 @@ export class ViewerComponent implements OnInit {
   @Input()
   allowRightSidebar: boolean;
 
-  // Left sidebar is bugged
-  // @Input()
-  // allowLeftSidebar: boolean;
-
   @Input()
   displayCustomToolbar: boolean;
 
@@ -56,9 +55,39 @@ export class ViewerComponent implements OnInit {
   @Input()
   allowGoBack: boolean;
 
-  constructor() { }
+  @Input()
+  displayCustomThumbnails: boolean;
+
+  @Input()
+  renderBlobFile: boolean;
+
+  @Input()
+  blobFile: Observable<Blob>;
+
+  @Input()
+  mimeType: string;
+
+  @Input()
+  allowNavigate: boolean;
+
+  @Input()
+  canNavigateNext: boolean;
+
+  @Input()
+  canNavigateBefore: boolean;
+
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
+      this.blobFile = this.renderBlobFile ? this.http.get('./assets/texts/blob.txt', {responseType: 'blob'}) : null;
   }
 
+  onPrintClick = () => window.alert(`Printing.`);
+
+  onNavigateBeforeClick = () => window.alert(`Navigating backwards.`);
+  
+  onNavigateNextClick = () => window.alert(`Navigating forward.`);
+
+  customAction = () => window.alert(`Custom action.`);
+  
 }

@@ -1,3 +1,7 @@
+<ng-template #customThumbnailsTemplate let-pdfViewer="viewer">
+    <aca-custom-thumbnails [pdfViewer]="pdfViewer"></aca-custom-thumbnails>
+</ng-template>
+
 <adf-viewer
 [overlayMode]="overlayMode"
 [urlFile]="urlFile"
@@ -10,7 +14,16 @@
 [allowRightSidebar]="allowRightSidebar"
 [showRightSidebar]="allowRightSidebar"
 [displayName]="displayName"
-[allowGoBack]="allowGoBack">
+[allowGoBack]="allowGoBack"
+[thumbnailsTemplate]="displayCustomThumbnails ? customThumbnailsTemplate : null"
+[blobFile]="renderBlobFile ? (blobFile | async) : null"
+[mimeType]="mimeType"
+[allowNavigate]="allowNavigate"
+[canNavigateBefore]="canNavigateBefore"
+[canNavigateNext]="canNavigateNext"
+(print)="onPrintClick()"
+(navigateBefore)="onNavigateBeforeClick()"
+(navigateNext)="onNavigateNextClick()">
     <adf-viewer-sidebar *ngIf="allowRightSidebar">
         <h1>Right sidebar</h1>
     </adf-viewer-sidebar>
@@ -20,44 +33,44 @@
     </adf-viewer-toolbar>
 
     <adf-viewer-toolbar-actions *ngIf="displayMoreToolbarActions">
-        <button mat-icon-button id="adf-viewer-time">
+        <button mat-icon-button id="adf-viewer-time" (click)="customAction()">
             <mat-icon>alarm</mat-icon>
         </button>
-        <button mat-icon-button id="adf-viewer-upload">
+        <button mat-icon-button id="adf-viewer-upload" (click)="customAction()">
             <mat-icon>backup</mat-icon>
         </button>
-        <button mat-icon-button id="adf-viewer-bug">
+        <button mat-icon-button id="adf-viewer-bug" (click)="customAction()">
             <mat-icon>bug_report</mat-icon>
         </button>
     </adf-viewer-toolbar-actions>
 
     <adf-viewer-more-actions *ngIf="displayMoreActionsMenu">
-        <button mat-menu-item id="adf-viewer-more-menu-alarm">
+        <button mat-menu-item id="adf-viewer-more-menu-alarm" (click)="customAction()">
             <mat-icon>alarm</mat-icon>
             <span>Alarm</span>
         </button>
-        <button mat-menu-item id="adf-viewer-more-menu-backup">
+        <button mat-menu-item id="adf-viewer-more-menu-backup" (click)="customAction()">
             <mat-icon>backup</mat-icon>
             <span>Backup</span>
         </button>
-        <button mat-menu-item id="adf-viewer-more-menu-bug">
+        <button mat-menu-item id="adf-viewer-more-menu-bug" (click)="customAction()">
             <mat-icon>bug_report</mat-icon>
             <span>Bug report</span>
         </button>
     </adf-viewer-more-actions>
 
     <adf-viewer-open-with *ngIf="displayOpenWith">
-        <button mat-menu-item>
-            <mat-icon>dialpad</mat-icon>
-            <span>Option 1</span>
+        <button mat-menu-item (click)="customAction()">
+            <mat-icon>folder</mat-icon>
+            <span>File explorer</span>
         </button>
-        <button mat-menu-item disabled>
-            <mat-icon>voicemail</mat-icon>
-            <span>Option 2</span>
+        <button mat-menu-item disabled (click)="customAction()">
+            <mat-icon>color_lens</mat-icon>
+            <span>Paint</span>
         </button>
-        <button mat-menu-item>
-            <mat-icon>notifications_off</mat-icon>
-            <span>Option 3</span>
+        <button mat-menu-item (click)="customAction()">
+            <mat-icon>email</mat-icon>
+            <span>Email</span>
         </button>
     </adf-viewer-open-with>
 </adf-viewer>
