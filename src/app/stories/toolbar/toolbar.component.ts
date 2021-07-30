@@ -1,12 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 // import { ThemePalette } from '@angular/material/core';
 
 @Component({
   selector: 'aca-toolbar',
-  templateUrl: './toolbar.component.html',
-  styleUrls: ['./toolbar.component.scss']
+  templateUrl: './toolbar.component.html'
 })
-export class ToolbarComponent implements OnInit {
+export class ToolbarComponent {
   /** Toolbar title. */
   @Input()
   title = 'Toolbar';
@@ -14,8 +13,4 @@ export class ToolbarComponent implements OnInit {
   /** Toolbar color. Can be changed to empty value (default), `primary`, `accent` or `warn`. */
   @Input()
   color: 'primary' | 'accent' | 'warn' = 'primary';
-
-  constructor() {}
-
-  ngOnInit(): void {}
 }
