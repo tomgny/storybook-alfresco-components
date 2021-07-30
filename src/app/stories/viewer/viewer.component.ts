@@ -1,4 +1,3 @@
-// import { BaseEvent } from '@alfresco/adf-core';
 import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit} from '@angular/core';
 import { Observable } from 'rxjs';
