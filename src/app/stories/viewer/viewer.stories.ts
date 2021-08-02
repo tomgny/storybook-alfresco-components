@@ -29,7 +29,7 @@ export default {
     argTypes: {
         urlFile: {
             options: ['./assets/texts/lorem_ipsum.txt', './assets/texts/lorem_ipsum.pdf',
-            './assets/images/alfresco-logo-flower.svg'],
+            './assets/images/alfresco-logo-flower.svg', './assets/video/a_mp4_file.mp4'],
             control: {type: 'radio'},
         },
     },
@@ -73,6 +73,7 @@ Default.args = {
     allowNavigate: false,
     canNavigateBefore: true,
     canNavigateNext: true,
+    extendViewerWith3d: false,
 }
 
 const DefaultNotPrimary = Template.bind({});
@@ -82,9 +83,9 @@ DefaultNotPrimary.args = {
     Primary: false,
 }
 
-export const PdfWithoutThumbnails = Template.bind({});
+export const PdfThumbnailsDisabled = Template.bind({});
 
-PdfWithoutThumbnails.args = {
+PdfThumbnailsDisabled.args = {
     ...DefaultNotPrimary.args,
     urlFile: './assets/texts/lorem_ipsum.pdf',
     allowThumbnails: false,
@@ -214,3 +215,12 @@ NavigationNextDisabled.args = {
     ...NavigationEnabled.args,
     canNavigateNext: false,
 }
+
+// export const ViewerExtendedWith3d = Template.bind({})
+
+// ViewerExtendedWith3d.args = {
+//     ...DefaultNotPrimary.args,
+//     extendViewerWith3d: true,
+//     urlFile: './assets/models/pony-cartoon/source/Pony_cartoon.obj',
+
+// }

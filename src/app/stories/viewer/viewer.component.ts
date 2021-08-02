@@ -75,6 +75,9 @@ export class ViewerComponent implements OnInit {
   @Input()
   canNavigateBefore: boolean;
 
+  // @Input()
+  // extendViewerWith3d: boolean;
+
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
