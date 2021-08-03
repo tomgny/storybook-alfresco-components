@@ -7,37 +7,8 @@ import { AppCommonModule } from '../../components/common/common.module';
 import { CustomThumbnailsModule } from './custom-thumbnails/custom-thumbnails.module';
 import { ViewerComponent } from './viewer.component';
 import { action } from '@storybook/addon-actions';
-import { NodeEntry } from '@alfresco/js-api';
-import { ReplaySubject, Subject } from 'rxjs';
-
-class NodesApiStub {
-    getNode(nodeId: string, opts?: any): Promise<NodeEntry> {
-        console.log(nodeId, opts);
-        return Promise.resolve(new NodeEntry({ entry: { name: 'node1', content: {} } }))
-    }
-}
-
-class AlfrescoApiServiceStub {
-
-    nodesApi = new NodesApiStub();
-
-    nodeUpdated = new Subject<Node>();
-
-    alfrescoApiInitialized: ReplaySubject<boolean> = new ReplaySubject(1);
-
-    load() {};
-    
-    
-}
-
-// class AlfrescoApiServiceStub extends AlfrescoApiService {
-
-//     nodes: NodesApiStub;
-
-//     get nodesApi() {
-//         return new NodesApiStub();
-//     }
-// }
+import { ContentMetadataModule } from '@alfresco/adf-content-services';
+import { AlfrescoApiServiceStub } from './stub-services';
 
 export default {
     component: ViewerComponent,
@@ -54,7 +25,7 @@ export default {
                 AppCommonModule,
                 BrowserAnimationsModule,
                 CustomThumbnailsModule,
-                
+                ContentMetadataModule,
             ],
             providers: [
                 { provide: AlfrescoApiService, useClass: AlfrescoApiServiceStub },
@@ -96,6 +67,7 @@ Default.args = {
     showToolbar: true,
     showViewer: true,
     allowRightSidebar: false,
+    allowLeftSidebar: false,
     displayCustomToolbar: false,
     displayMoreToolbarActions: false,
     displayMoreActionsMenu: false,
@@ -170,6 +142,15 @@ export const RightSidebarEnabled = Template.bind({});
 RightSidebarEnabled.args = {
     ...DefaultNotPrimary.args,
     allowRightSidebar: true,
+}
+
+export const LeftSidebarEnabledWithMetadataTemplate = Template.bind({})
+
+LeftSidebarEnabledWithMetadataTemplate.args = {
+    ...DefaultNotPrimary.args,
+    urlFile: '',
+    nodeId: 'it-is-working',
+    allowLeftSidebar: true,
 }
 
 export const ViewerAsFullPage = Template.bind({});
@@ -260,11 +241,3 @@ NavigationNextDisabled.args = {
 //     urlFile: './assets/models/pony-cartoon/source/Pony_cartoon.obj',
 
 // }
-
-export const NodeShowcase = Template.bind({})
-
-NodeShowcase.args = {
-    ...DefaultNotPrimary.args,
-    urlFile: '',
-    nodeId: 'dfbsdfgbfdg'
-}

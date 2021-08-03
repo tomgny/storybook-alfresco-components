@@ -2,6 +2,10 @@
     <aca-custom-thumbnails [pdfViewer]="pdfViewer"></aca-custom-thumbnails>
 </ng-template>
 
+<ng-template let-node="node" #sidebarTemplate>
+    <adf-content-metadata-card [node]="node"></adf-content-metadata-card>
+</ng-template>
+
 <adf-viewer
 [overlayMode]="overlayMode"
 [urlFile]="urlFile"
@@ -13,6 +17,10 @@
 [showViewer]="showViewer"
 [allowRightSidebar]="allowRightSidebar"
 [showRightSidebar]="allowRightSidebar"
+[nodeId]="nodeId"
+[sidebarLeftTemplate]="sidebarTemplate"
+[allowLeftSidebar]="allowLeftSidebar"
+[showLeftSidebar]="allowLeftSidebar"
 [displayName]="displayName"
 [allowGoBack]="allowGoBack"
 [thumbnailsTemplate]="displayCustomThumbnails ? customThumbnailsTemplate : null"
@@ -21,7 +29,6 @@
 [allowNavigate]="allowNavigate"
 [canNavigateBefore]="canNavigateBefore"
 [canNavigateNext]="canNavigateNext"
-[nodeId]="nodeId"
 (print)="onPrintClick()"
 (navigateBefore)="onNavigateBeforeClick()"
 (navigateNext)="onNavigateNextClick()">
