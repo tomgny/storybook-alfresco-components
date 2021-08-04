@@ -83,11 +83,11 @@ import localePl from '@angular/common/locales/pl';
 import localeFi from '@angular/common/locales/fi';
 import localeDa from '@angular/common/locales/da';
 import localeSv from '@angular/common/locales/sv';
-import { MydatatableComponent } from './mydatatable/mydatatable.component';
-import { MycardviewComponent } from './mycardview/mycardview.component';
-import { MycardviewTestComponent } from './mycardview copy/mycardview.component';
-import { MytestComponent } from './mytest/mytest.component';
-import { MyButtonsMenuComponent } from './components/my-buttons-menu/my-buttons-menu.component';
+import { CardviewComponent } from './stories/cardview/cardview.component';
+import { DatatableComponent } from './stories/datatable/datatable.component';
+import { DatatableCustomComponent } from './stories/datatable/datatable-custom-data/datatable-custom-data.component';
+import { UserInfoComponent } from './stories/user-info/user-info.component';
+import { ToolbarComponent } from './stories/toolbar/toolbar.component';
 
 registerLocaleData(localeFr);
 registerLocaleData(localeDe);
@@ -151,11 +151,11 @@ registerLocaleData(localeSv);
     RecentFilesComponent,
     SharedFilesComponent,
     CreateFromTemplateDialogComponent,
-    MydatatableComponent,
-    MycardviewComponent,
-    MycardviewTestComponent,
-    MytestComponent,
-    MyButtonsMenuComponent
+    CardviewComponent,
+    DatatableComponent,
+    DatatableCustomComponent,
+    UserInfoComponent,
+    ToolbarComponent,
   ],
   providers: [
     { provide: AppConfigService, useClass: DebugAppConfigService },
