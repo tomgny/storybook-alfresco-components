@@ -1,6 +1,6 @@
 import { NodeChildAssociationPaging, NodeEntry } from '@alfresco/js-api';
 
-const nodeEntrySingleFile = new NodeEntry({ 
+const textNode = new NodeEntry({ 
     entry: { 
         isFile: true, 
         createdByUser: { id: 'admin', displayName: 'Administrator' },
@@ -12,7 +12,7 @@ const nodeEntrySingleFile = new NodeEntry({
                     'encoding': 'UTF-8'}, 
         contentUrl: './assets/texts/node_file.txt',
         id: 'node_file',
-        modifiedAt: '2017-05-24T15:08:55.640Z'
+        modifiedAt: '2021-05-24T15:08:32.640Z'
     } 
 });
 
@@ -28,7 +28,7 @@ const loremIpsumTextNode = new NodeEntry({
                     'encoding': 'UTF-8'}, 
         contentUrl: './assets/fake_folder/lorem_ipsum.txt',
         id: 'lorem_ipsum_text',
-        modifiedAt: '2017-05-24T15:08:55.640Z',
+        modifiedAt: '2018-03-21T15:11:55.640Z',
     } 
 });
 
@@ -44,7 +44,7 @@ const loremIpsumPdfNode = new NodeEntry({
                     'encoding': 'UTF-8'}, 
         contentUrl: './assets/fake_folder/lorem_ipsum.pdf',
         id: 'lorem_ipsum_pdf',
-        modifiedAt: '2017-05-24T15:08:55.640Z',
+        modifiedAt: '2020-12-24T15:05:59.640Z',
     } 
 });
 
@@ -63,7 +63,7 @@ const alfrescoLogoNode = new NodeEntry({
     } 
 });
 
-export const fakeNodeAnswerWithEntries = new NodeChildAssociationPaging ({
+export const fakeFolderNodeAnswer = new NodeChildAssociationPaging ({
     list: {
         pagination: {
             count: 4,
@@ -76,8 +76,8 @@ export const fakeNodeAnswerWithEntries = new NodeChildAssociationPaging ({
     }
 });
 
-export const nodes = {
-    node_file: nodeEntrySingleFile,
+export const nodesIds = {
+    node_file: textNode,
     lorem_ipsum_text: loremIpsumTextNode,
     lorem_ipsum_pdf: loremIpsumPdfNode,
     alfresco_logo: alfrescoLogoNode,

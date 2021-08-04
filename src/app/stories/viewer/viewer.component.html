@@ -11,6 +11,33 @@
     currentFolderId="nodeId"
     sortingMode="client"
     (preview)="showPreview($event)">
+
+    <data-columns>
+        <data-column 
+            key="$thumbnail" 
+            type="image">
+        </data-column>
+        <data-column 
+            title="Name" 
+            key="name" 
+            class="full-width ellipsis-cell"
+            focus="false">
+        </data-column>
+        <data-column
+            title="Size" 
+            key="content.sizeInBytes"
+            type="fileSize">
+        </data-column>
+        <data-column
+            title="Modified On" 
+            key="modifiedAt"
+            type="date">
+        </data-column>
+        <data-column
+            title="Modified By" 
+            key="modifiedByUser.displayName">
+        </data-column>
+    </data-columns>
 </adf-document-list>
 
 <adf-viewer

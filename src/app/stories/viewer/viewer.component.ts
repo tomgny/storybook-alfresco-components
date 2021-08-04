@@ -95,9 +95,13 @@ export class ViewerComponent implements OnInit {
 
   onPrintClick = () => window.alert(`Printing.`);
 
-  onNavigateBeforeClick = () => window.alert(`Navigating backwards.`);
+  onNavigateBeforeClick = () => {
+    if(this.canNavigateBefore) window.alert(`Navigating backwards.`);
+  }
   
-  onNavigateNextClick = () => window.alert(`Navigating forward.`);
+  onNavigateNextClick = () => {
+    if(this.canNavigateNext) window.alert(`Navigating forward.`);
+  } 
 
   customAction = () => window.alert(`Custom action.`);
 
