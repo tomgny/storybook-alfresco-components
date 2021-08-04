@@ -1,4 +1,4 @@
-import { AlfrescoApiService, CoreModule } from '@alfresco/adf-core';
+import { AlfrescoApiService, AuthenticationService, CoreModule } from '@alfresco/adf-core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
@@ -7,8 +7,8 @@ import { AppCommonModule } from '../../components/common/common.module';
 import { CustomThumbnailsModule } from './custom-thumbnails/custom-thumbnails.module';
 import { ViewerComponent } from './viewer.component';
 import { action } from '@storybook/addon-actions';
-import { ContentMetadataModule } from '@alfresco/adf-content-services';
-import { AlfrescoApiServiceStub } from './stub-services';
+import { ContentMetadataModule, DocumentListModule } from '@alfresco/adf-content-services';
+import { AlfrescoApiServiceStub, AuthenticationServiceStub } from './mock/stub-services';
 
 export default {
     component: ViewerComponent,
@@ -26,9 +26,13 @@ export default {
                 BrowserAnimationsModule,
                 CustomThumbnailsModule,
                 ContentMetadataModule,
+                DocumentListModule,
+                
+                
             ],
             providers: [
                 { provide: AlfrescoApiService, useClass: AlfrescoApiServiceStub },
+                { provide: AuthenticationService, useClass: AuthenticationServiceStub }
             ],
         })
     ],
@@ -82,6 +86,7 @@ Default.args = {
     canNavigateNext: true,
     extendViewerWith3d: false,
     nodeId: '',
+    showDocumentList: false,
 }
 
 const DefaultNotPrimary = Template.bind({});
@@ -149,7 +154,7 @@ export const LeftSidebarEnabledWithMetadataTemplate = Template.bind({})
 LeftSidebarEnabledWithMetadataTemplate.args = {
     ...DefaultNotPrimary.args,
     urlFile: '',
-    nodeId: 'it-is-working',
+    nodeId: 'node_file',
     allowLeftSidebar: true,
 }
 
@@ -231,6 +236,16 @@ export const NavigationNextDisabled = Template.bind({})
 NavigationNextDisabled.args = {
     ...NavigationEnabled.args,
     canNavigateNext: false,
+}
+
+export const IntegrationWithDocumentList = Template.bind({})
+
+IntegrationWithDocumentList.args = {
+    ...DefaultNotPrimary.args,
+    showDocumentList: true,
+    urlFile: '',
+    showViewer: false,
+    nodeId: 'fake_folder'
 }
 
 // export const ViewerExtendedWith3d = Template.bind({})

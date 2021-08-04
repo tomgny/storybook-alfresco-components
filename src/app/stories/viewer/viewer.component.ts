@@ -84,6 +84,9 @@ export class ViewerComponent implements OnInit {
   @Input()
   nodeId: string;
 
+  @Input()
+  showDocumentList: boolean;
+
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
@@ -97,5 +100,14 @@ export class ViewerComponent implements OnInit {
   onNavigateNextClick = () => window.alert(`Navigating forward.`);
 
   customAction = () => window.alert(`Custom action.`);
+
+  showViewerChange = () => this.showViewer = false;
+
+  showPreview(event) {        
+    if (event.value.entry.isFile) {
+        this.showViewer = true;
+        this.nodeId = event.value.entry.id;
+    }
+}
   
 }

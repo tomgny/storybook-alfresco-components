@@ -6,6 +6,13 @@
     <adf-content-metadata-card [node]="node"></adf-content-metadata-card>
 </ng-template>
 
+<adf-document-list
+    *ngIf="showDocumentList"
+    currentFolderId="nodeId"
+    sortingMode="client"
+    (preview)="showPreview($event)">
+</adf-document-list>
+
 <adf-viewer
 [overlayMode]="overlayMode"
 [urlFile]="urlFile"
@@ -31,7 +38,8 @@
 [canNavigateNext]="canNavigateNext"
 (print)="onPrintClick()"
 (navigateBefore)="onNavigateBeforeClick()"
-(navigateNext)="onNavigateNextClick()">
+(navigateNext)="onNavigateNextClick()"
+(showViewerChange)="showViewerChange()">
     <adf-viewer-sidebar *ngIf="allowRightSidebar">
         <h1>Right sidebar</h1>
     </adf-viewer-sidebar>
