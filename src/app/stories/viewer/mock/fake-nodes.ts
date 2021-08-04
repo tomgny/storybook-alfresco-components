@@ -1,21 +1,5 @@
 import { NodeChildAssociationPaging, NodeEntry } from '@alfresco/js-api';
 
-const textNode = new NodeEntry({ 
-    entry: { 
-        isFile: true, 
-        createdByUser: { id: 'admin', displayName: 'Administrator' },
-        modifiedByUser: { id: 'admin', displayName: 'Administrator' },
-        name: 'node_file.txt', 
-        content: {  'mimeType': 'text/plain',
-                    'mimeTypeName': 'Text',
-                    'sizeInBytes': 1230,
-                    'encoding': 'UTF-8'}, 
-        contentUrl: './assets/texts/node_file.txt',
-        id: 'node_file',
-        modifiedAt: '2021-05-24T15:08:32.640Z'
-    } 
-});
-
 const loremIpsumTextNode = new NodeEntry({ 
     entry: { 
         isFile: true, 
@@ -63,7 +47,7 @@ const alfrescoLogoNode = new NodeEntry({
     } 
 });
 
-export const fakeFolderNodeAnswer = new NodeChildAssociationPaging ({
+export const folderNodeChildrenWithPaginationInfo = new NodeChildAssociationPaging ({
     list: {
         pagination: {
             count: 4,
@@ -76,8 +60,7 @@ export const fakeFolderNodeAnswer = new NodeChildAssociationPaging ({
     }
 });
 
-export const nodesIds = {
-    node_file: textNode,
+export const nodeIdToObjectTranslating = {
     lorem_ipsum_text: loremIpsumTextNode,
     lorem_ipsum_pdf: loremIpsumPdfNode,
     alfresco_logo: alfrescoLogoNode,

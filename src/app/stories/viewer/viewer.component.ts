@@ -78,9 +78,6 @@ export class ViewerComponent implements OnInit {
   @Input()
   canNavigateBefore: boolean;
 
-  // @Input()
-  // extendViewerWith3d: boolean;
-
   @Input()
   nodeId: string;
 
@@ -105,6 +102,8 @@ export class ViewerComponent implements OnInit {
 
   customAction = () => window.alert(`Custom action.`);
 
+  //Set showViewer value to false on manual viewer clouser in order
+  //to allow displaying file preview with document list 
   showViewerChange = () => this.showViewer = false;
 
   showPreview(event) {        
@@ -112,6 +111,6 @@ export class ViewerComponent implements OnInit {
         this.showViewer = true;
         this.nodeId = event.value.entry.id;
     }
-}
+  }
   
 }

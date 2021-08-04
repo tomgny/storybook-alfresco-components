@@ -27,8 +27,6 @@ export default {
                 CustomThumbnailsModule,
                 ContentMetadataModule,
                 DocumentListModule,
-                
-                
             ],
             providers: [
                 { provide: AlfrescoApiService, useClass: AlfrescoApiServiceStub },
@@ -84,7 +82,6 @@ Default.args = {
     allowNavigate: false,
     canNavigateBefore: true,
     canNavigateNext: true,
-    extendViewerWith3d: false,
     nodeId: '',
     showDocumentList: false,
 }
@@ -135,13 +132,6 @@ ToolbarHidden.args = {
     showToolbar: false,
 }
 
-export const ViewerHidden = Template.bind({});
-
-ViewerHidden.args = {
-    ...DefaultNotPrimary.args,
-    showViewer: false,
-}
-
 export const RightSidebarEnabled = Template.bind({});
 
 RightSidebarEnabled.args = {
@@ -154,7 +144,7 @@ export const LeftSidebarEnabledWithMetadataTemplate = Template.bind({})
 LeftSidebarEnabledWithMetadataTemplate.args = {
     ...DefaultNotPrimary.args,
     urlFile: '',
-    nodeId: 'node_file',
+    nodeId: 'lorem_ipsum_text',
     allowLeftSidebar: true,
 }
 
@@ -247,12 +237,3 @@ IntegrationWithDocumentList.args = {
     showViewer: false,
     nodeId: 'fake_folder'
 }
-
-// export const ViewerExtendedWith3d = Template.bind({})
-
-// ViewerExtendedWith3d.args = {
-//     ...DefaultNotPrimary.args,
-//     extendViewerWith3d: true,
-//     urlFile: './assets/models/pony-cartoon/source/Pony_cartoon.obj',
-
-// }
