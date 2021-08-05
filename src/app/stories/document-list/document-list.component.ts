@@ -12,7 +12,7 @@ import { Component, Input } from '@angular/core';
 export class DocumentListComponent implements OnInit, AfterViewInit{
 
   @ViewChild('documentList')
-    documentList: DocumentListComponent;
+  documentList: DocumentListComponent;
 
   @Input()
   additionalSorting: DataSorting;
@@ -66,7 +66,7 @@ export class DocumentListComponent implements OnInit, AfterViewInit{
   navigate: boolean = true;
 
   @Input()
-  navigationMode: string;
+  navigationMode: 'click' | 'dblclick' = 'dblclick';
 
   @Input()
   node: NodePaging;
@@ -84,7 +84,7 @@ export class DocumentListComponent implements OnInit, AfterViewInit{
   rowStyleClass: string;
 
   @Input()
-  selectionMode: string = 'single';
+  selectionMode: 'single' | 'multiple' | 'none' = 'multiple';
 
   @Input()
   showHeader: ShowHeaderMode.Always | ShowHeaderMode.Data | ShowHeaderMode.Never = ShowHeaderMode.Always;

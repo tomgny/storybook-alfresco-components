@@ -42,35 +42,35 @@ const Template: Story<DocumentListComponent> = (args) => ({
 
 export const DefaultStory = Template.bind({});
 DefaultStory.args = {
-  additionalSorting: new DataSorting('name', 'desc'),
-  allowDropFiler: false,
+  additionalSorting: new DataSorting('size', 'desc'), //?
+  allowDropFiles: false, //?
   contentActions: false,
   contentActionsPosition: 'right',
   contextMenuActions: false, //?
   currentFolderId: 'mockNode1',
   display: 'list',
-  emptyFolderImageUrl: '',
-  filterValue: undefined,
-  headerFilters: false,
-  imageResolver: null,
-  includeFields: undefined,
+  emptyFolderImageUrl: '../../../assets/images/alfresco-24x24.png', //?
+  filterValue: undefined, //?
+  headerFilters: false, //?
+  imageResolver: null, //?
+  includeFields: ['isLink'], //?
   loading: false,
-  locationFormat: '/',
-  maxItems: 5,
+  locationFormat: '/files',
+  maxItems: 5, //?
   multiselect: false,
-  navigate: true,
-  navigationMode: 'dblclick',
-  node: fakeNodePaging,
+  navigate: true, //?
+  navigationMode: 'click', //?
+  node: fakeNodePaging, //????
   // permissionsStyle: new PermissionStyleModel('color: gold', AllowableOperationsEnum.DELETE, true, false),
   preselectNodes: mockPreselectedNodes,
-  rowStyle: '',
+  rowStyle: { 'font-style': 'italic'},
   rowStyleClass: '',
-  selectionMode: 'single',
+  selectionMode: 'multiple',
   showHeader: ShowHeaderMode.Always,
   sorting: ['name', 'desc'],
-  sortingMode: 'server',
+  sortingMode: 'client',
   stickyHeader: false,
-  thumbnails: false,
-  where: '',
-  rowFilter: null
+  thumbnails: false, //?
+  where: 'isFolder=true', //?
+  rowFilter: null //?
 };
