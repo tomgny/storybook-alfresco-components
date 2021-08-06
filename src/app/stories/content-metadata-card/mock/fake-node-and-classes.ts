@@ -34,8 +34,9 @@ export const mockNode1 = new Node({
     'cm:versionLabel': '1.0',
     'cm:versionType': 'MAJOR',
     'exif:pixelXDimension': '1500',
-    'exif:pixelYDimension': '1500',
-    'exif:fNumber': '1.4'
+    'exif:pixelYDimension': [1500, 2000, 3000],
+    'exif:fNumber': '1.4',
+    'exif:2': 'yes',
   },
   allowableOperations: ['delete', 'update']
 });
@@ -44,7 +45,7 @@ export const exifResponse: PropertyGroup = {
   name: 'exif:exif',
   title: 'Exif',
   properties: {
-    'exif:pixelYDimension': { title: 'exif:pixelYDimension:id', name: 'exif:pixelYDimension', dataType: '', mandatory: false, multiValued: false },
+    'exif:pixelYDimension': { title: 'exif:pixelYDimension:id', name: 'exif:pixelYDimension', dataType: 'number', mandatory: false, multiValued: true },
     'exif:2': { title: 'exif:2:id', name: 'exif:2', dataType: '', mandatory: false, multiValued: false }
   }
 };

@@ -49,6 +49,8 @@ Default.args = {
   multi: false,
   readOnly: false,
   allowCopyingToClipboardAction: false,
+  allowMultiValueChips: false,
+  customSeparatorForMultiValueProperties: ', '
 };
 
 const DefaultNotPrimary = Template.bind({});
@@ -92,6 +94,20 @@ export const DisplayingMultipleAccordionsSimultaneouslyEnabled = Template.bind({
 DisplayingMultipleAccordionsSimultaneouslyEnabled.args = {
   ...CustomPreset.args,
   multi: true,
+}
+
+export const MultiValueChipsEnabled = Template.bind({})
+
+MultiValueChipsEnabled.args = {
+  ...CustomPreset.args,
+  allowMultiValueChips: true,
+}
+
+export const CustomSeparatorForMultiValuePropertiesSet = Template.bind({})
+
+CustomSeparatorForMultiValuePropertiesSet.args = {
+  ...CustomPreset.args,
+  customSeparatorForMultiValueProperties: ' --- '
 }
 
 export const CopyingToClipboardEnabled = Template.bind({});
