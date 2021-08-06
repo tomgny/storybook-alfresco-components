@@ -217,6 +217,7 @@ NoData.args = {
 export const NoPermission = Template.bind({});
 NoPermission.args = {
   noPermission: true,
+  showHeader: ShowHeaderMode.Always,
   columns: schema,
   rows: rows
 };

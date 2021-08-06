@@ -22,6 +22,7 @@
     [stickyHeader]="stickyHeader"
     (rowClick)="onRowClick($event)"
     (rowDblClick)="onRowDblClick($event)"
+    *ngIf="!noPermission"
   >
     <adf-no-content-template>
       <!--Add your custom empty template here-->
@@ -36,4 +37,5 @@
       </ng-template>
     </adf-loading-content-template>
   </adf-datatable>
+  <h1 *ngIf="noPermission" style="text-align: center;">You don't have permissions</h1>
 </div>
