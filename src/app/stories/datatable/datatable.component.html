@@ -1,0 +1,44 @@
+<div style="height: 300px">
+  <adf-datatable
+    [actions]="actions"
+    [actionsPosition]="actionsPosition"
+    [actionsVisibleOnHover]="actionsVisibleOnHover"
+    [allowFiltering]="allowFiltering"
+    [columns]="columns"
+    [contextMenu]="contextMenu"
+    [data]="data"
+    [display]="display"
+    [fallbackThumbnail]="fallbackThumbnail"
+    [loading]="loading"
+    [multiselect]="multiselect"
+    [noPermission]="noPermission"
+    [resolverFn]="resolverFn"
+    [rowMenuCacheEnabled]="rowMenuCacheEnabled"
+    [rowStyle]="rowStyle"
+    [rowStyleClass]="rowStyleClass"
+    [rows]="rows"
+    [selectionMode]="selectionMode"
+    [showHeader]="showHeader"
+    [stickyHeader]="stickyHeader"
+    (rowClick)="onRowClick($event)"
+    (rowDblClick)="onRowDblClick($event)"
+  >
+    <adf-no-content-template>
+      <!--Add your custom empty template here-->
+      <ng-template>
+        <h1>Sorry, no content</h1>
+      </ng-template>
+    </adf-no-content-template>
+    <adf-loading-content-template>
+      <ng-template>
+        <!--Add your custom loading template here-->
+        <mat-progress-spinner class="adf-document-list-loading-margin" [color]="'primary'" [mode]="'indeterminate'"> </mat-progress-spinner>
+      </ng-template>
+    </adf-loading-content-template>
+    <data-columns>
+      <data-column key="icon" type="image" [sortable]="false"> </data-column>
+      <data-column key="firstName" title="First Name"> </data-column>
+      <data-column key="lastName" title="Last Name" class="full-width name-column"> </data-column>
+    </data-columns>
+  </adf-datatable>
+</div>
