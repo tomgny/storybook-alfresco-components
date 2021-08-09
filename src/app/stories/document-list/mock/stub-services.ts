@@ -12,6 +12,7 @@ export class AuthenticationServiceStub {
 }
 
 export class AlfrescoApiServiceStub {
+
   nodesApi = new NodesApiStub();
 
   nodes = this.nodesApi;
@@ -25,4 +26,5 @@ export class AlfrescoApiServiceStub {
   load() {}
 
   getInstance = () => this;
+
 }

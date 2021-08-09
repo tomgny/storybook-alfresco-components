@@ -39,7 +39,7 @@ export class DocumentListComponent implements OnInit, AfterViewInit{
   emptyFolderImageUrl: string;
 
   @Input()
-  filterValue: any;
+  filterValue: Map<any, any> = null;
 
   @Input()
   headerFilters: boolean = false;
@@ -109,6 +109,9 @@ export class DocumentListComponent implements OnInit, AfterViewInit{
 
     ngAfterViewInit() {
       console.log(this.documentList);
+      console.log(this.sorting);
+      console.log(this.additionalSorting);
+
   }
 
     ngOnInit() {
