@@ -78,7 +78,7 @@ export class ContentMetadataCardComponent implements OnInit {
           {
             title: 'Custom group',
             items: [
-              { "aspect": "cm:content", "properties": "*" },
+              { "aspect": "custom:custom", "properties": "*" },
               { "aspect": "exif:exif", "properties": [ "exif:pixelXDimension", "exif:pixelYDimension" ], "editable": this.areExifPropertiesEditable},
             ]
           }
@@ -87,7 +87,7 @@ export class ContentMetadataCardComponent implements OnInit {
           {
             title: 'Custom group 1',
             items: [
-              { "aspect": "cm:content", "properties": "*" },
+              { "aspect": "custom:custom", "properties": "*" },
               { "aspect": "exif:exif", "properties": [ "exif:pixelXDimension", "exif:pixelYDimension" ] },
             ]
           },

@@ -6,7 +6,7 @@ import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { APP_ROUTES } from '../../app.routes';
 import { AppCommonModule } from '../../components/common/common.module';
 import { ContentMetadataCardComponent } from './content-metadata-card.component';
-import { mockNode1, mockNode2 } from './mock/fake-node-and-classes';
+import { customMetadataClassDescription, exifMetadataClassDescription, mockNode1, mockNode2 } from './mock/fake-node-and-classes';
 import { AlfrescoApiServiceStub, NodesApiServiceStub } from './mock/stub-services-and-api';
 
 export default {
@@ -80,7 +80,7 @@ AllPropertiesDisplayed.args = {
   ...DefaultNotPrimary.args,
   node: mockNode2,
   preset: 'allProperties',
-  displayAspect: 'cm:content'
+  displayAspect: 'Custom metadata'
 }
 
 export const DefaultPropertiesHidden = Template.bind({});
@@ -102,7 +102,7 @@ export const SpecificAspectWhitelisted = Template.bind({})
 SpecificAspectWhitelisted.args = {
   ...AllPropertiesDisplayed.args,
   preset: 'exifAspectWhitelistedOnly',
-  displayAspect: 'Exif'
+  displayAspect: exifMetadataClassDescription.title
 }
 
 export const SpecificPropertiesWhitelisted = Template.bind({})
@@ -115,14 +115,14 @@ SpecificPropertiesWhitelisted.args = {
 export const MultiValueChipsEnabled = Template.bind({})
 
 MultiValueChipsEnabled.args = {
-  ...SpecificPropertiesWhitelisted.args,
+  ...AllPropertiesDisplayed.args,
   allowMultiValueChips: true,
 }
 
 export const CustomSeparatorForMultiValuePropertiesSet = Template.bind({})
 
 CustomSeparatorForMultiValuePropertiesSet.args = {
-  ...SpecificPropertiesWhitelisted.args,
+  ...AllPropertiesDisplayed.args,
   customSeparatorForMultiValueProperties: ' --- '
 }
 
@@ -163,7 +163,7 @@ ExcludeAspectWhileIncludingAll.args = {
   ...DefaultNotPrimary.args,
   node: mockNode2,
   preset: 'exifExcludedFromAllProperties',
-  displayAspect: 'cm:content'
+  displayAspect: customMetadataClassDescription.title
 }
 
 export const IncludeSomePropertiesFromExcludedAspect = Template.bind({})
@@ -178,7 +178,7 @@ export const ChosenAspectInReadOnlyMode = Template.bind({})
 ChosenAspectInReadOnlyMode.args = {
   ...ExcludeAspectWhileIncludingAll.args,
   preset: 'exifInReadOnlyMode',
-  displayAspect: 'Exif'
+  displayAspect: exifMetadataClassDescription.title
 }
 
 export const ChosenPropertiesInReadOnlyMode = Template.bind({})

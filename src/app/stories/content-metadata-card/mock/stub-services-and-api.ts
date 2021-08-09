@@ -1,6 +1,6 @@
 import { ClassDescription, MinimalNode } from '@alfresco/js-api';
 import { Observable, of, ReplaySubject, Subject } from 'rxjs';
-import { contentResponse, exifResponse, mockNode1 } from './fake-node-and-classes';
+import { customMetadataClassDescription, exifMetadataClassDescription, mockNode1 } from './fake-node-and-classes';
 
 export class NodesApiServiceStub {
   updateNode(_: string, nodeBody: any, _2: any = {}): Observable<MinimalNode> { 
@@ -36,6 +36,6 @@ export class AlfrescoApiServiceStub {
 
 class ClassesApiStub {
   getClass(className: string, _2?: any): Promise<ClassDescription> {
-    return className === 'exif_exif' ? Promise.resolve(exifResponse) : Promise.resolve(contentResponse);
+    return className === 'exif_exif' ? Promise.resolve(exifMetadataClassDescription) : Promise.resolve(customMetadataClassDescription);
   }
 }
