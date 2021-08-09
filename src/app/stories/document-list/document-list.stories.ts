@@ -1,5 +1,5 @@
-import { ContentModule, ShareDataRow, UploadModule } from '@alfresco/adf-content-services';
-import {  AlfrescoApiService, AuthenticationService, CoreModule, DataSorting, MaterialModule, ShowHeaderMode, UploadService } from '@alfresco/adf-core';
+import { ContentModule, ImageResolver, ShareDataRow, UploadModule } from '@alfresco/adf-content-services';
+import {  AlfrescoApiService, AuthenticationService, CoreModule, DataColumn, DataRow, DataSorting, MaterialModule, ShowHeaderMode, UploadService } from '@alfresco/adf-core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
@@ -56,6 +56,19 @@ const fileFilter = (row: ShareDataRow) => {
   return false;
 }
 
+const folderImageResolver: ImageResolver = (row: DataRow, _col: DataColumn) => {
+  let isFolder = <boolean> row.getValue('isFolder');
+  if (isFolder) {
+      // Format image url
+      return '../../../assets/images/adf-move-file-24px.svg';
+  }
+
+  // For the rest of the cases just fallback to default behaviour.
+  return null;
+};
+
+
+
 const Template: Story<DocumentListComponent> = (args) => ({
   props: {
     ...args
@@ -74,7 +87,7 @@ DefaultStory.args = {
   emptyFolderImageUrl: '../../../assets/images/empty_doc_lib.svg',
   filterValue: undefined, //?
   headerFilters: true, //?
-  imageResolver: null, //?
+  imageResolver: null,
   includeFields: ['isLink'], //?
   loading: false,
   locationFormat: '/files',
@@ -101,6 +114,12 @@ export const AllowDropFiles = Template.bind({});
 AllowDropFiles.args = {
   ...DefaultStory.args,
   allowDropFiles: true
+}
+
+export const FolderImageResolver = Template.bind({});
+FolderImageResolver.args = {
+  ...DefaultStory.args,
+  imageResolver: folderImageResolver
 }
 
 export const FolderFilter = Template.bind({});
