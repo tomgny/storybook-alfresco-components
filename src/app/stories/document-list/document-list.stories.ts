@@ -1,4 +1,4 @@
-import { ContentModule, UploadModule } from '@alfresco/adf-content-services';
+import { ContentModule, ShareDataRow, UploadModule } from '@alfresco/adf-content-services';
 import {  AlfrescoApiService, AuthenticationService, CoreModule, DataSorting, MaterialModule, ShowHeaderMode, UploadService } from '@alfresco/adf-core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
@@ -36,6 +36,26 @@ export default {
   ]
 } as Meta;
 
+const folderFilter = (row: ShareDataRow) => {
+  let node = row.node.entry;
+
+  if (node && node.isFolder) {
+      return true;
+  }
+
+  return false;
+}
+
+const fileFilter = (row: ShareDataRow) => {
+  let node = row.node.entry;
+
+  if (node && node.isFile) {
+      return true;
+  }
+
+  return false;
+}
+
 const Template: Story<DocumentListComponent> = (args) => ({
   props: {
     ...args
@@ -48,12 +68,12 @@ DefaultStory.args = {
   allowDropFiles: false,
   contentActions: false,
   contentActionsPosition: 'right',
-  contextMenuActions: false, //no effect
+  contextMenuActions: false, //no effect, probably deprecated?
   currentFolderId: 'mockNode1',
   display: 'list',
   emptyFolderImageUrl: '../../../assets/images/empty_doc_lib.svg',
   filterValue: undefined, //?
-  headerFilters: false, //?
+  headerFilters: true, //?
   imageResolver: null, //?
   includeFields: ['isLink'], //?
   loading: false,
@@ -74,13 +94,25 @@ DefaultStory.args = {
   stickyHeader: true,
   thumbnails: false,
   where: 'isFolder=true', //cannot work without rest api?
-  rowFilter: null //?
+  rowFilter: null
 };
 
 export const AllowDropFiles = Template.bind({});
 AllowDropFiles.args = {
   ...DefaultStory.args,
   allowDropFiles: true
+}
+
+export const FolderFilter = Template.bind({});
+FolderFilter.args = {
+  ...DefaultStory.args,
+  rowFilter: folderFilter
+}
+
+export const FilesFilter = Template.bind({});
+FilesFilter.args = {
+  ...DefaultStory.args,
+  rowFilter: fileFilter
 }
 
 export const FilterHeader = Template.bind({});
