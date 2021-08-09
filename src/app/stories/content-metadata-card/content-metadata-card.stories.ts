@@ -39,9 +39,6 @@ const Template: Story<ContentMetadataCardComponent> = (args) => ({
 
 export const Default = Template.bind({});
 
-console.log(mockNode1);
-
-
 Default.args = {
   Primary: true,
   node: mockNode1,
@@ -63,136 +60,130 @@ DefaultNotPrimary.args = {
   Primary: false
 };
 
-export const EditionDisabled = Template.bind({});
+export const MetadataReadOnly = Template.bind({});
 
-EditionDisabled.args = {
+MetadataReadOnly.args = {
   ...DefaultNotPrimary.args,
   readOnly: true
 };
 
-export const EmptyPropertiesShown = Template.bind({});
+export const EmptyPropertiesDisplayed = Template.bind({});
 
-EmptyPropertiesShown.args = {
+EmptyPropertiesDisplayed.args = {
   ...DefaultNotPrimary.args,
   displayEmpty: true
 };
 
-export const includeAllEnabled = Template.bind({})
+export const AllPropertiesDisplayed = Template.bind({})
 
-includeAllEnabled.args = {
+AllPropertiesDisplayed.args = {
   ...DefaultNotPrimary.args,
   node: mockNode2,
-  preset: 'includeAll',
+  preset: 'allProperties',
+  displayAspect: 'cm:content'
 }
 
 export const DefaultPropertiesHidden = Template.bind({});
 
 DefaultPropertiesHidden.args = {
-  ...includeAllEnabled.args,
+  ...AllPropertiesDisplayed.args,
   displayDefaultProperties: false
 };
 
-export const DisplayingMultipleAccordionsSimultaneouslyEnabled = Template.bind({})
+export const AllowingMultipleAccordionsSimultaneouslyToDisplayMetadataEnabled = Template.bind({})
 
-DisplayingMultipleAccordionsSimultaneouslyEnabled.args = {
-  ...includeAllEnabled.args,
+AllowingMultipleAccordionsSimultaneouslyToDisplayMetadataEnabled.args = {
+  ...AllPropertiesDisplayed.args,
   multi: true,
 }
 
-export const whitelistAspect = Template.bind({})
+export const SpecificAspectWhitelisted = Template.bind({})
 
-whitelistAspect.args = {
-  ...includeAllEnabled.args,
-  preset: 'exifAspectOnly',
-  displayAspect: 'exif:exif'
+SpecificAspectWhitelisted.args = {
+  ...AllPropertiesDisplayed.args,
+  preset: 'exifAspectWhitelistedOnly',
+  displayAspect: 'Exif'
 }
 
-export const whitelistProperties = Template.bind({})
+export const SpecificPropertiesWhitelisted = Template.bind({})
 
-whitelistProperties.args = {
-  ...includeAllEnabled.args,
-  preset: 'pixelDimensionsWhitelistedOnly',
+SpecificPropertiesWhitelisted.args = {
+  ...SpecificAspectWhitelisted.args,
+  preset: 'pixelDimensionsPropertiesFromExifWhitelistedOnly',
 }
 
 export const MultiValueChipsEnabled = Template.bind({})
 
 MultiValueChipsEnabled.args = {
-  ...whitelistProperties.args,
+  ...SpecificPropertiesWhitelisted.args,
   allowMultiValueChips: true,
 }
 
 export const CustomSeparatorForMultiValuePropertiesSet = Template.bind({})
 
 CustomSeparatorForMultiValuePropertiesSet.args = {
-  ...whitelistProperties.args,
+  ...SpecificPropertiesWhitelisted.args,
   customSeparatorForMultiValueProperties: ' --- '
 }
 
-export const layoutOrientedConfig = Template.bind({});
+export const CherryPickedPropertiesGroupedIntoAccordionDrawer = Template.bind({});
 
-layoutOrientedConfig.args = {
+CherryPickedPropertiesGroupedIntoAccordionDrawer.args = {
   ...DefaultNotPrimary.args,
   node: mockNode2,
-  preset: 'layoutOriented',
+  preset: 'customGroupOfCherryPickedProperties',
+  displayAspect: 'Custom group'
 };
 
-export const complexLayoutOriendtConfig = Template.bind({});
+export const CherryPickedPropertiesGroupedIntoMultipleAccordionDrawers = Template.bind({});
 
-complexLayoutOriendtConfig.args = {
-  ...layoutOrientedConfig.args,
-  preset: 'complexLayoutOriented'
+CherryPickedPropertiesGroupedIntoMultipleAccordionDrawers.args = {
+  ...CherryPickedPropertiesGroupedIntoAccordionDrawer.args,
+  preset: 'multipleCustomGroupsOfCherryPickedProperties',
+  displayAspect: 'Custom group 1'
 }
 
-export const customPropertyTitle = Template.bind({});
+export const PropertyCustomTitleSet = Template.bind({});
 
-customPropertyTitle.args = {
-  ...layoutOrientedConfig.args,
-  preset: 'setPropertyTitle',
+PropertyCustomTitleSet.args = {
+  ...CherryPickedPropertiesGroupedIntoAccordionDrawer.args,
+  preset: 'propertyCustomTitle',
 }
 
-export const exifPropertiesInLayoutOrientedConfigNotEditable = Template.bind({})
+export const EditionOfOneGroupPropertiesDisabled = Template.bind({})
 
-exifPropertiesInLayoutOrientedConfigNotEditable.args = {
-  ...layoutOrientedConfig.args,
+EditionOfOneGroupPropertiesDisabled.args = {
+  ...CherryPickedPropertiesGroupedIntoAccordionDrawer.args,
   areExifPropertiesEditable: false,
 }
 
+export const ExcludeAspectWhileIncludingAll = Template.bind({})
 
-
-export const ExifPropertiesNotEditable = Template.bind({})
-
-ExifPropertiesNotEditable.args = {
-  ...layoutOrientedConfig.args,
-  areExifPropertiesEditable: false,
-}
-
-export const excludeAspect = Template.bind({})
-
-excludeAspect.args = {
+ExcludeAspectWhileIncludingAll.args = {
   ...DefaultNotPrimary.args,
   node: mockNode2,
-  preset: 'excludeExif',
+  preset: 'exifExcludedFromAllProperties',
   displayAspect: 'cm:content'
 }
 
-export const includePropertiesFromExcludedAspect = Template.bind({})
+export const IncludeSomePropertiesFromExcludedAspect = Template.bind({})
 
-includePropertiesFromExcludedAspect.args = {
-  ...excludeAspect.args,
-  preset: 'excludeExifIncludeSomeProperties',
+IncludeSomePropertiesFromExcludedAspect.args = {
+  ...ExcludeAspectWhileIncludingAll.args,
+  preset: 'somePropertiesFromExifIncludedWhileExifIsExcluded',
 }
 
-export const readOnlyAspect = Template.bind({})
+export const ChosenAspectInReadOnlyMode = Template.bind({})
 
-readOnlyAspect.args = {
-  ...excludeAspect.args,
-  preset: 'exifReadOnly'
+ChosenAspectInReadOnlyMode.args = {
+  ...ExcludeAspectWhileIncludingAll.args,
+  preset: 'exifInReadOnlyMode',
+  displayAspect: 'Exif'
 }
 
-export const readOnlyProperties = Template.bind({})
+export const ChosenPropertiesInReadOnlyMode = Template.bind({})
 
-readOnlyProperties.args = {
-  ...excludeAspect.args,
-  preset: 'pixelDimensionsReadOnly'
+ChosenPropertiesInReadOnlyMode.args = {
+  ...ExcludeAspectWhileIncludingAll.args,
+  preset: 'pixelDimensionPropertiesInReadOnlyMode'
 }
-

@@ -48,33 +48,33 @@ export class ContentMetadataCardComponent implements OnInit {
     this.appConfig.config['content-metadata'] = {
       presets: {
         default: "*",
-        includeAll: {
+        allProperties: {
           includeAll: true,
         },
-        excludeExif: {
+        exifExcludedFromAllProperties: {
           includeAll: true,
           exclude: "exif:exif",
         },
-        excludeExifIncludeSomeProperties: {
+        somePropertiesFromExifIncludedWhileExifIsExcluded: {
           includeAll: true,
           exclude: "exif:exif",
           "exif:exif": [ "exif:pixelXDimension", "exif:pixelYDimension"]
         },
-        pixelDimensionsReadOnly: {
+        pixelDimensionPropertiesInReadOnlyMode: {
           includeAll: true,
           readOnlyProperties: ["exif:pixelXDimension", "exif:pixelYDimension"]
         },
-        exifReadOnly: {
+        exifInReadOnlyMode: {
           includeAll: true,
           readOnlyAspects: ["exif:exif"],
         },
-        exifAspectOnly: {
+        exifAspectWhitelistedOnly: {
           "exif:exif": "*",
         },
-        pixelDimensionsWhitelistedOnly: {
+        pixelDimensionsPropertiesFromExifWhitelistedOnly: {
           "exif:exif": [ "exif:pixelXDimension", "exif:pixelYDimension"]
         },
-        layoutOriented: [
+        customGroupOfCherryPickedProperties: [
           {
             title: 'Custom group',
             items: [
@@ -83,7 +83,7 @@ export class ContentMetadataCardComponent implements OnInit {
             ]
           }
         ],
-        complexLayoutOriented: [
+        multipleCustomGroupsOfCherryPickedProperties: [
           {
             title: 'Custom group 1',
             items: [
@@ -98,7 +98,7 @@ export class ContentMetadataCardComponent implements OnInit {
             ]
           }
         ],
-        setPropertyTitle: [{
+        propertyCustomTitle: [{
           title: "Custom group",
           items: [
             { "aspect": "exif:exif", "properties": [ "exif:pixelXDimension",
