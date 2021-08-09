@@ -6,7 +6,7 @@ import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { APP_ROUTES } from '../../app.routes';
 import { AppCommonModule } from '../../components/common/common.module';
 import { ContentMetadataCardComponent } from './content-metadata-card.component';
-import { mockNode1 } from './mock/fake-node-and-classes';
+import { mockNode1, mockNode2 } from './mock/fake-node-and-classes';
 import { AlfrescoApiServiceStub, NodesApiServiceStub } from './mock/stub-services-and-api';
 
 export default {
@@ -39,18 +39,21 @@ const Template: Story<ContentMetadataCardComponent> = (args) => ({
 
 export const Default = Template.bind({});
 
+console.log(mockNode1);
+
+
 Default.args = {
   Primary: true,
   node: mockNode1,
-  preset: '*',
+  preset: 'default',
   displayDefaultProperties: true,
-  displayAspect: '',
+  displayAspect: null,
   displayEmpty: false,
   multi: false,
   readOnly: false,
-  allowCopyingToClipboardAction: false,
   allowMultiValueChips: false,
-  customSeparatorForMultiValueProperties: ', '
+  customSeparatorForMultiValueProperties: ', ',
+  areExifPropertiesEditable: true,
 };
 
 const DefaultNotPrimary = Template.bind({});
@@ -74,45 +77,122 @@ EmptyPropertiesShown.args = {
   displayEmpty: true
 };
 
-export const CustomPreset = Template.bind({});
+export const includeAllEnabled = Template.bind({})
 
-CustomPreset.args = {
+includeAllEnabled.args = {
   ...DefaultNotPrimary.args,
-  preset: 'custom',
-  displayAspect: 'exif:exif'
-};
+  node: mockNode2,
+  preset: 'includeAll',
+}
 
 export const DefaultPropertiesHidden = Template.bind({});
 
 DefaultPropertiesHidden.args = {
-  ...CustomPreset.args,
+  ...includeAllEnabled.args,
   displayDefaultProperties: false
 };
 
 export const DisplayingMultipleAccordionsSimultaneouslyEnabled = Template.bind({})
 
 DisplayingMultipleAccordionsSimultaneouslyEnabled.args = {
-  ...CustomPreset.args,
+  ...includeAllEnabled.args,
   multi: true,
+}
+
+export const whitelistAspect = Template.bind({})
+
+whitelistAspect.args = {
+  ...includeAllEnabled.args,
+  preset: 'exifAspectOnly',
+  displayAspect: 'exif:exif'
+}
+
+export const whitelistProperties = Template.bind({})
+
+whitelistProperties.args = {
+  ...includeAllEnabled.args,
+  preset: 'pixelDimensionsWhitelistedOnly',
 }
 
 export const MultiValueChipsEnabled = Template.bind({})
 
 MultiValueChipsEnabled.args = {
-  ...CustomPreset.args,
+  ...whitelistProperties.args,
   allowMultiValueChips: true,
 }
 
 export const CustomSeparatorForMultiValuePropertiesSet = Template.bind({})
 
 CustomSeparatorForMultiValuePropertiesSet.args = {
-  ...CustomPreset.args,
+  ...whitelistProperties.args,
   customSeparatorForMultiValueProperties: ' --- '
 }
 
-export const CopyingToClipboardEnabled = Template.bind({});
+export const layoutOrientedConfig = Template.bind({});
 
-CopyingToClipboardEnabled.args = {
+layoutOrientedConfig.args = {
   ...DefaultNotPrimary.args,
-  allowCopyingToClipboardAction: true,
+  node: mockNode2,
+  preset: 'layoutOriented',
+};
+
+export const complexLayoutOriendtConfig = Template.bind({});
+
+complexLayoutOriendtConfig.args = {
+  ...layoutOrientedConfig.args,
+  preset: 'complexLayoutOriented'
 }
+
+export const customPropertyTitle = Template.bind({});
+
+customPropertyTitle.args = {
+  ...layoutOrientedConfig.args,
+  preset: 'setPropertyTitle',
+}
+
+export const exifPropertiesInLayoutOrientedConfigNotEditable = Template.bind({})
+
+exifPropertiesInLayoutOrientedConfigNotEditable.args = {
+  ...layoutOrientedConfig.args,
+  areExifPropertiesEditable: false,
+}
+
+
+
+export const ExifPropertiesNotEditable = Template.bind({})
+
+ExifPropertiesNotEditable.args = {
+  ...layoutOrientedConfig.args,
+  areExifPropertiesEditable: false,
+}
+
+export const excludeAspect = Template.bind({})
+
+excludeAspect.args = {
+  ...DefaultNotPrimary.args,
+  node: mockNode2,
+  preset: 'excludeExif',
+  displayAspect: 'cm:content'
+}
+
+export const includePropertiesFromExcludedAspect = Template.bind({})
+
+includePropertiesFromExcludedAspect.args = {
+  ...excludeAspect.args,
+  preset: 'excludeExifIncludeSomeProperties',
+}
+
+export const readOnlyAspect = Template.bind({})
+
+readOnlyAspect.args = {
+  ...excludeAspect.args,
+  preset: 'exifReadOnly'
+}
+
+export const readOnlyProperties = Template.bind({})
+
+readOnlyProperties.args = {
+  ...excludeAspect.args,
+  preset: 'pixelDimensionsReadOnly'
+}
+

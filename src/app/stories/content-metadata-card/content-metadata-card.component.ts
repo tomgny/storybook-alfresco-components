@@ -38,86 +38,79 @@ export class ContentMetadataCardComponent implements OnInit {
   @Input()
   customSeparatorForMultiValueProperties: string;
 
-  // copyToClipboardAction: boolean = true;
+  @Input()
+  areExifPropertiesEditable: boolean;
 
   constructor(private appConfig: AppConfigService) {
-    // console.log(this.appConfig.config['content-metadata']);
-    // this.copyToClipboardAction = this.appConfig.get<boolean>('content-metadata.copy-to-clipboard-action');
-    // console.log(this.copyToClipboardAction);
-    
-    
-    this.appConfig.config['content-metadata'] = {
-      presets: {
-        custom: [
-          {
-            includeAll: true,
-            exclude: [
-              'rn:renditioned',
-              'cm:versionable',
-              'cm:auditable',
-              'cm:thumbnailModification',
-              'cm:content',
-              'cm:author',
-              'cm:titled',
-              'cm:generalclassifiable',
-              'cm:taggable',
-              'dp:restrictable',
-              'fm:commentsRollup',
-              'qshare:shared',
-
-              'exif:exif',
-              'cm:effectivity',
-
-              'cm:likesRatingSchemeRollups',
-              'cm:lockable',
-              'cm:ownable'
-            ]
-          },
-          {
-            title: 'APP.CONTENT_METADATA.EXIF_GROUP_TITLE',
-            items: [
-              {
-                aspect: 'exif:exif',
-                properties: [
-                  'exif:pixelXDimension',
-                  'exif:pixelYDimension',
-                  'exif:dateTimeOriginal',
-                  'exif:exposureTime',
-                  'exif:fNumber',
-                  'exif:flash',
-                  'exif:focalLength',
-                  'exif:isoSpeedRatings',
-                  'exif:orientation',
-                  'exif:manufacturer',
-                  'exif:model',
-                  'exif:software'
-                ]
-              }
-            ]
-          },
-          {
-            title: 'APP.CONTENT_METADATA.EFFECTIVITY_GROUP_TITLE',
-            items: [
-              {
-                aspect: 'cm:effectivity',
-                properties: ['cm:from', 'cm:to']
-              }
-            ]
-          }
-        ]
-      },
-      'multi-value-pipe-separator': ', ',
-      'multi-value-chips': this.allowMultiValueChips,
-    };
-    
+    console.log(this.appConfig.config);
   }
   ngOnInit(): void {
     this.appConfig.config['content-metadata'] = {
-      ...this.appConfig.config['content-metadata'],
+      presets: {
+        default: "*",
+        includeAll: {
+          includeAll: true,
+        },
+        excludeExif: {
+          includeAll: true,
+          exclude: "exif:exif",
+        },
+        excludeExifIncludeSomeProperties: {
+          includeAll: true,
+          exclude: "exif:exif",
+          "exif:exif": [ "exif:pixelXDimension", "exif:pixelYDimension"]
+        },
+        pixelDimensionsReadOnly: {
+          includeAll: true,
+          readOnlyProperties: ["exif:pixelXDimension", "exif:pixelYDimension"]
+        },
+        exifReadOnly: {
+          includeAll: true,
+          readOnlyAspects: ["exif:exif"],
+        },
+        exifAspectOnly: {
+          "exif:exif": "*",
+        },
+        pixelDimensionsWhitelistedOnly: {
+          "exif:exif": [ "exif:pixelXDimension", "exif:pixelYDimension"]
+        },
+        layoutOriented: [
+          {
+            title: 'Custom group',
+            items: [
+              { "aspect": "cm:content", "properties": "*" },
+              { "aspect": "exif:exif", "properties": [ "exif:pixelXDimension", "exif:pixelYDimension" ], "editable": this.areExifPropertiesEditable},
+            ]
+          }
+        ],
+        complexLayoutOriented: [
+          {
+            title: 'Custom group 1',
+            items: [
+              { "aspect": "cm:content", "properties": "*" },
+              { "aspect": "exif:exif", "properties": [ "exif:pixelXDimension", "exif:pixelYDimension" ] },
+            ]
+          },
+          {
+            title: 'Custom group 2',
+            items: [
+              { "aspect": "exif:exif", "properties": "*" },
+            ]
+          }
+        ],
+        setPropertyTitle: [{
+          title: "Custom group",
+          items: [
+            { "aspect": "exif:exif", "properties": [ "exif:pixelXDimension",
+            { name: "exif:pixelYDimension", title: "Custom Pixel Y Dimension Title" }
+              ]
+            }
+          ]}
+        ],
+      },
       'multi-value-chips': this.allowMultiValueChips,
       'multi-value-pipe-separator': this.customSeparatorForMultiValueProperties,
-      'copy-to-clipboard-action': this.allowCopyingToClipboardAction,
-    }
-
+      'selectFilterLimit': 0,
+    };
   }
 }

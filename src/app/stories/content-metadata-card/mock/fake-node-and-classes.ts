@@ -4,49 +4,59 @@ import { Node } from '@alfresco/js-api';
 export const mockNode1 = new Node({
   isFile: true,
   createdByUser: { id: 'admin', displayName: 'Administrator' },
-  modifiedAt: '2017-05-24T15:08:55.640Z',
-  nodeType: 'cm:content',
-  aspectNames: ['exif:exif'],
+  modifiedAt: '2021-08-09T15:17:35.640Z',
+  nodeType: 'cm:image',
   content: {
-    mimeType: 'application/rtf',
-    mimeTypeName: 'Rich Text Format',
-    sizeInBytes: 14530,
-    encoding: 'UTF-8'
+    mimeType: 'image/jpeg',
+    mimeTypeName: 'JPEG images',
+    sizeInBytes: 8737654,
   },
-  parentId: 'd124de26-6ba0-4f40-8d98-4907da2d337a',
-  createdAt: '2017-05-24T15:08:55.640Z',
-  path: {
-    name: '/Company Home/Guest Home',
-    isComplete: true,
-    elements: [
-      {
-        id: '94acfc73-7014-4475-9bd9-93a2162f0f8c',
-        name: 'Company Home'
-      },
-      { id: 'd124de26-6ba0-4f40-8d98-4907da2d337a', name: 'Guest Home' }
-    ]
-  },
+  createdAt: '2021-08-08T15:17:35.640Z',
   isFolder: false,
   modifiedByUser: { id: 'admin', displayName: 'Administrator' },
-  name: 'b_txt_file.rtf',
+  name: '1000555.jpg',
   id: '70e1cc6a-6918-468a-b84a-1048093b06fd',
   properties: {
     'cm:versionLabel': '1.0',
     'cm:versionType': 'MAJOR',
     'exif:pixelXDimension': '1500',
     'exif:pixelYDimension': [1500, 2000, 3000],
-    'exif:fNumber': '1.4',
-    'exif:2': 'yes',
+    'exif:fNumber': 'f/1.4',
+    'exif:dateTimeOriginal': '2021-08-07T15:17:35.640Z',
+    'exif:exposureTime':  1/250,
+    'exif:flash':  true,
+    'exif:focalLength':  85,
+    'exif:isoSpeedRatings':  200,
+    'exif:orientation':  'Horizontal',
+    'exif:manufacturer':  'Sony',
+    'exif:model':  'A6100',
+    'cm:description': 'A picture of a building',
+    'cm:content': 'Yahalllooo'
   },
   allowableOperations: ['delete', 'update']
 });
+
+export const mockNode2 = {
+  ...mockNode1,
+  aspectNames: ['exif:exif', 'cm:content']
+}
 
 export const exifResponse: PropertyGroup = {
   name: 'exif:exif',
   title: 'Exif',
   properties: {
-    'exif:pixelYDimension': { title: 'exif:pixelYDimension:id', name: 'exif:pixelYDimension', dataType: 'number', mandatory: false, multiValued: true },
-    'exif:2': { title: 'exif:2:id', name: 'exif:2', dataType: '', mandatory: false, multiValued: false }
+    'exif:pixelYDimension': { title: 'Pixel Y Dimension', name: 'exif:pixelYDimension', dataType: 'number', mandatory: false, multiValued: true },
+    'exif:pixelXDimension': { title: 'Pixel X Dimension', name: 'exif:pixelXDimension', dataType: 'number', mandatory: false, multiValued: false },
+    'exif:dateTimeOriginal': { title: 'Date and time of data generation', name: 'exif:dateTimeOriginal', dataType: 'string', mandatory: false, multiValued: false },
+    'exif:exposureTime': { title: 'Exposure Time', name: 'exif:exposureTime', dataType: 'string', mandatory: false, multiValued: false },
+    'exif:fNumber': { title: 'F-Number', name: 'exif:fNumber', dataType: 'string', mandatory: false, multiValued: false },
+    'exif:flash': { title: 'Flash', name: 'exif:flash', dataType: 'boolean', mandatory: false, multiValued: false },
+    'exif:focalLength': { title: 'Lens focal length', name: 'exif:focalLength', dataType: 'string', mandatory: false, multiValued: false },
+    'exif:isoSpeedRatings': { title: 'ISO speed rating', name: 'exif:isoSpeedRatings', dataType: 'number', mandatory: false, multiValued: false },
+    'exif:orientation': { title: 'Orientation', name: 'exif:orientationl', dataType: 'string', mandatory: false, multiValued: false },
+    'exif:manufacturer': { title: 'Camera manufacturer', name: 'exif:manufacturer', dataType: 'string', mandatory: false, multiValued: false },
+    'exif:model': { title: 'Camera model', name: 'exif:model', dataType: 'string', mandatory: false, multiValued: false },
+    'exif:software': { title: 'Software', name: 'exif:software', dataType: 'string', mandatory: false, multiValued: false },
   }
 };
 
