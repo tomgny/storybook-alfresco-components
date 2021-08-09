@@ -1,6 +1,6 @@
 import { PermissionStyleModel, RowFilter } from '@alfresco/adf-content-services';
 import { DataSorting, ShowHeaderMode } from '@alfresco/adf-core';
-import { NodeEntry, NodePaging } from '@alfresco/js-api';
+import { NodeEntry, NodePaging, SearchEntry } from '@alfresco/js-api';
 import { AfterViewInit, OnInit, ViewChild } from '@angular/core';
 import { Component, Input } from '@angular/core';
 
@@ -107,6 +107,8 @@ export class DocumentListComponent implements OnInit, AfterViewInit{
   @Input()
   rowFilter: RowFilter;
 
+  searchTerm = 'name';
+
     ngAfterViewInit() {
       console.log(this.documentList);
       console.log(this.sorting);
@@ -116,4 +118,20 @@ export class DocumentListComponent implements OnInit, AfterViewInit{
 
     ngOnInit() {
     }
+
+    fakeDownload(){
+      window.alert('Download started!');
+    }
+
+    fakeUpload(){
+      this.allowDropFiles ? window.alert('Upload started!') : window.alert('Upload not allowed!');
+      return null;
+    }
+
+    searchResultsHighlight(search: SearchEntry): string {
+      if (search && search.highlight) {
+          return search.highlight.map((currentHighlight) => currentHighlight.snippets).join(', ');
+      }
+      return '';
+  }
 }

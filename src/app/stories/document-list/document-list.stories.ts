@@ -1,5 +1,5 @@
-import { ContentModule } from '@alfresco/adf-content-services';
-import {  AlfrescoApiService, AuthenticationService, CoreModule, DataSorting, MaterialModule, ShowHeaderMode, ThumbnailService } from '@alfresco/adf-core';
+import { ContentModule, UploadModule } from '@alfresco/adf-content-services';
+import {  AlfrescoApiService, AuthenticationService, CoreModule, DataSorting, MaterialModule, ShowHeaderMode, UploadService } from '@alfresco/adf-core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
@@ -7,7 +7,7 @@ import { APP_ROUTES } from '../../app.routes';
 import { AppCommonModule } from '../../components/common/common.module';
 import { DocumentListComponent } from './document-list.component';
 import { fakeNodePaging, mockPreselectedNodes } from './mock/fake-nodes';
-import {  AlfrescoApiServiceStub, AuthenticationServiceStub } from './mock/stub-services';
+import {  AlfrescoApiServiceStub, AuthenticationServiceStub, UploadServiceStub } from './mock/stub-services';
 
 export default {
   component: DocumentListComponent,
@@ -24,12 +24,13 @@ export default {
         AppCommonModule,
         ContentModule.forRoot(),
         MaterialModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        UploadModule
       ],
       providers: [
         { provide: AlfrescoApiService, useClass: AlfrescoApiServiceStub },
         { provide: AuthenticationService, useClass: AuthenticationServiceStub },
-        { provide: ThumbnailService }
+        { provide: UploadService, useClass: UploadServiceStub}
       ]
     })
   ]
@@ -44,11 +45,10 @@ const Template: Story<DocumentListComponent> = (args) => ({
 export const DefaultStory = Template.bind({});
 DefaultStory.args = {
   additionalSorting: new DataSorting('isFolder', 'desc'), //no effect
-
-  allowDropFiles: false, //?
+  allowDropFiles: false,
   contentActions: false,
   contentActionsPosition: 'right',
-  contextMenuActions: false, //?
+  contextMenuActions: false, //no effect
   currentFolderId: 'mockNode1',
   display: 'list',
   emptyFolderImageUrl: '../../../assets/images/empty_doc_lib.svg',
@@ -73,9 +73,22 @@ DefaultStory.args = {
   sortingMode: 'client',
   stickyHeader: true,
   thumbnails: false,
-  where: 'isFolder=true', //?
+  where: 'isFolder=true', //cannot work without rest api?
   rowFilter: null //?
 };
+
+export const AllowDropFiles = Template.bind({});
+AllowDropFiles.args = {
+  ...DefaultStory.args,
+  allowDropFiles: true
+}
+
+export const FilterHeader = Template.bind({});
+FilterHeader.args = {
+  ...DefaultStory.args,
+  filterValue: {name: 'a'},
+  headerFilters: true
+}
 
 export const Thumbnails = Template.bind({});
 Thumbnails.args = {
@@ -112,10 +125,16 @@ ContentActions.args = {
 }
 
 export const ContentActionsOnLeft = Template.bind({});
-ContentActions.args = {
+ContentActionsOnLeft.args = {
   ...DefaultStory.args,
   contentActions: true,
   contentActionsPosition: 'left',
+}
+
+export const GalleryDisplay = Template.bind({});
+GalleryDisplay.args = {
+  ...DefaultStory.args,
+  display: 'gallery'
 }
 
 export const EmptyItems = Template.bind({});
@@ -135,4 +154,46 @@ export const PreselectedNodes = Template.bind({});
 PreselectedNodes.args = {
   ...DefaultStory.args,
   preselectNodes: mockPreselectedNodes,
+}
+
+export const Loading = Template.bind({});
+Loading.args = {
+  ...DefaultStory.args,
+  loading: true
+}
+
+export const Multiselect = Template.bind({});
+Multiselect.args = {
+  ...DefaultStory.args,
+  multiselect: true
+}
+
+export const RowStyle = Template.bind({});
+RowStyle.args = {
+  ...DefaultStory.args,
+  rowStyle: { 'font-style': 'italic', 'background-color': 'gold' },
+}
+
+export const RowStyleClass = Template.bind({});
+RowStyleClass.args = {
+  ...DefaultStory.args,
+  rowStyleClass: 'adf-sticky-document-list',
+}
+
+export const NoHeader = Template.bind({});
+NoHeader.args = {
+  ...DefaultStory.args,
+  showHeader: ShowHeaderMode.Never
+}
+
+export const SortingAndSortingMode = Template.bind({});
+SortingAndSortingMode.args = {
+  ...DefaultStory.args,
+  sorting: ['name', 'desc']
+}
+
+export const StickyHeaderOff = Template.bind({});
+StickyHeaderOff.args = {
+  ...DefaultStory.args,
+  stickyHeader: false,
 }

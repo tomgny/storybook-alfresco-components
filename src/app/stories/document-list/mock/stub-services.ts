@@ -1,3 +1,4 @@
+import { FileUploadErrorEvent } from '@alfresco/adf-core';
 import { ReplaySubject, Subject } from 'rxjs';
 import { ContentApiStub, NodesApiStub } from './stub-apis';
 
@@ -26,5 +27,15 @@ export class AlfrescoApiServiceStub {
   load() {}
 
   getInstance = () => this;
+}
 
+export class UploadServiceStub{
+
+  fileUploadError: Subject<FileUploadErrorEvent> = new Subject<FileUploadErrorEvent>();
+
+  beginUpload = () => null;
+
+  addToQueue = () => null;
+
+  uploadFilesInTheQueue = () => null;
 }

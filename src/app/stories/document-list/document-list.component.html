@@ -1,4 +1,9 @@
-<div style="height: 300px">
+
+  <adf-upload-drag-area fxFlex="1 1 auto"
+                              [disabled]="allowDropFiles"
+                              [rootFolderId]="currentFolderId"
+                              [adf-check-allowable-operation]="'create'"
+                              (beginUpload)="fakeUpload()">
   <adf-document-list
     #documentList
     [additionalSorting]="additionalSorting"
@@ -32,5 +37,41 @@
     [where]="where"
     [rowFilter]="rowFilter"
   >
+
+  <!-- <data-columns>
+    <data-column
+      key="$thumbnail"
+      type="image"
+      [sortable]="false"
+      class="app-image-table-cell"
+      [class.adf-cell-thumbnail]="thumbnails">
+  </data-column>
+      <data-column
+          key="content.sizeInBytes"
+          title="{{'DOCUMENT_LIST.COLUMNS.SIZE' | translate}}"
+          type="fileSize"
+          sortingKey="sizeInBytes"
+          class="app-desktop-only adf-ellipsis-cell">
+      </data-column>
+      <data-column
+          *ngIf="searchTerm"
+          key="search"
+          title="Search"
+          class="app-desktop-only adf-expand-cell-3">
+          <ng-template let-entry="$implicit">
+              <div [innerHTML]="searchResultsHighlight(entry.row.node.entry.search) | highlight:searchTerm">
+              </div>
+          </ng-template>
+      </data-column>
+    </data-columns> -->
+    <content-actions >
+      <!-- Conditional actions demo -->
+      <content-action
+          icon="get_app"
+          title="Download this file now!"
+          (execute)="fakeDownload()"
+          [visible]="true">
+      </content-action>
+      </content-actions>
   </adf-document-list>
-</div>
+  </adf-upload-drag-area>
