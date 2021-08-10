@@ -1,32 +1,58 @@
-import { EcmUserModel } from '@alfresco/adf-core';
+import { BpmUserModel, EcmUserModel, RedirectionModel } from '@alfresco/adf-core';
 import { ReplaySubject, of } from 'rxjs';
 
+export let isEcmUserLoggedIn = false;
+
+export const setIsEcmUserLoggedIn = (user: boolean) => {
+  isEcmUserLoggedIn = user;
+};
+
 export class AuthenticationServiceStub {
+  onLogin: ReplaySubject<any> = new ReplaySubject<any>(1);
 
-    onLogin: ReplaySubject<any> = new ReplaySubject<any>(1);
+  isOauth = () => false;
 
-    isOauth = () => false;
+  isLoggedIn = () => true;
 
-    isLoggedIn = () => true;
+  isBpmLoggedIn = () => {
+    return isEcmUserLoggedIn ? false : true;
+  };
 
-    isBpmLoggedIn = () => false;
+  isEcmLoggedIn = () => {
+    return isEcmUserLoggedIn ? true : false;
+  };
 
-    isEcmLoggedIn = () => true;
-
+  setRedirect(_: RedirectionModel) {}
 }
 
 export class EcmUserServiceStub {
+  private fakeEcmUser = new EcmUserModel({
+    firstName: 'John',
+    lastName: 'Ecm',
+    avatarId: 'fake-avatar-id',
+    email: 'john.ecm@gmail.com',
+    jobTitle: 'Product Manager'
+  });
 
-    private fakeEcmUser = new EcmUserModel({
-        firstName: 'John',
-        lastName: 'Smith',
-        avatarId: 'fake-avatar-id',
-        email: 'john.smith@gmail.com',
-        jobTitle: 'Product Manager',
-    });
+  getCurrentUserInfo = () => {
+    return of(this.fakeEcmUser);
+  };
 
-    getCurrentUserInfo = () => of(this.fakeEcmUser);
+  getUserProfileImage = () => './assets/images/ecm-user-avatar.png';
+}
 
-    getUserProfileImage = () => './assets/images/user-avatar.png';
-    
+export class BpmUserServiceStub {
+  private fakeBpmUser = new BpmUserModel({
+    email: 'john.bpm@gmail.com',
+    firstName: 'John',
+    lastName: 'Bpm',
+    pictureId: 12,
+    tenantName: 'Name of Tenant'
+  });
+
+  getCurrentUserInfo = () => {
+    return of(this.fakeBpmUser);
+  };
+
+  getCurrentUserProfileImage = () => './assets/images/bpm-user-avatar.png';
 }
