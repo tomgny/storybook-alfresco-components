@@ -1,4 +1,8 @@
-.container {
-  overflow-y: scroll;
-  height: 600px;
+.adf-content-metadata-card-containter { 
+  position: absolute;
+  top: 15px;
+  bottom: 15px;
+  margin: 0 auto;
+  width: 100%;
+  overflow-y: auto;
 }

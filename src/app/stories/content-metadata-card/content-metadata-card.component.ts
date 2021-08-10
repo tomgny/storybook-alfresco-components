@@ -30,9 +30,6 @@ export class ContentMetadataCardComponent implements OnInit {
   displayDefaultProperties: boolean;
 
   @Input()
-  allowCopyingToClipboardAction: boolean;
-
-  @Input()
   allowMultiValueChips: boolean;
 
   @Input()
@@ -41,9 +38,8 @@ export class ContentMetadataCardComponent implements OnInit {
   @Input()
   areExifPropertiesEditable: boolean;
 
-  constructor(private appConfig: AppConfigService) {
-    console.log(this.appConfig.config);
-  }
+  constructor(private appConfig: AppConfigService) { }
+
   ngOnInit(): void {
     this.appConfig.config['content-metadata'] = {
       presets: {
@@ -110,7 +106,6 @@ export class ContentMetadataCardComponent implements OnInit {
       },
       'multi-value-chips': this.allowMultiValueChips,
       'multi-value-pipe-separator': this.customSeparatorForMultiValueProperties,
-      'selectFilterLimit': 0,
     };
   }
 }
