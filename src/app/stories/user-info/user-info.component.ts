@@ -4,7 +4,6 @@ import { MenuPositionX, MenuPositionY } from '@angular/material/menu';
 @Component({
   selector: 'aca-user-info',
   templateUrl: './user-info.component.html',
-  styleUrls: ['./user-info.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
 export class UserInfoComponent {
