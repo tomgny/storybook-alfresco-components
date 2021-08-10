@@ -33,11 +33,11 @@ export default {
   ],
   argTypes: {
     preset: {
-      // options: ['default', 'allProperties', 'exifAspectWhitelistedOnly', 'pixelDimensionsPropertiesFromExifWhitelistedOnly', 'customGroupOfCherryPickedProperties', 'multipleCustomGroupsOfCherryPickedProperties', 'propertyCustomTitle', 'exifExcludedFromAllProperties', 'somePropertiesFromExifIncludedWhileExifIsExcluded', 'pixelDimensionPropertiesInReadOnlyMode'], control: {type: 'select'},
-      control: {type: null}
+      control: { type: null }
     },
     displayAspect: {
-      options: [null, customMetadataClassDescription.title, exifMetadataClassDescription.title, 'Custom group', 'Custom group 1'],  control: {type: 'radio'},
+      options: [null, customMetadataClassDescription.title, exifMetadataClassDescription.title, 'Custom group', 'Custom group 1'],
+      control: { type: 'radio' }
     }
   }
 } as Meta;
@@ -59,7 +59,7 @@ Default.args = {
   readOnly: false,
   allowMultiValueChips: false,
   customSeparatorForMultiValueProperties: ', ',
-  areExifPropertiesEditable: true,
+  areExifPropertiesEditable: true
 };
 
 const DefaultNotPrimary = Template.bind({});
@@ -83,14 +83,14 @@ EmptyPropertiesDisplayed.args = {
   displayEmpty: true
 };
 
-export const AllPropertiesDisplayed = Template.bind({})
+export const AllPropertiesDisplayed = Template.bind({});
 
 AllPropertiesDisplayed.args = {
   ...DefaultNotPrimary.args,
   node: mockNode2,
   preset: 'allProperties',
   displayAspect: customMetadataClassDescription.title
-}
+};
 
 AllPropertiesDisplayed.parameters = {
   docs: {
@@ -108,7 +108,7 @@ AllPropertiesDisplayed.parameters = {
       `
     }
   }
-}
+};
 
 export const DefaultPropertiesHidden = Template.bind({});
 
@@ -117,20 +117,20 @@ DefaultPropertiesHidden.args = {
   displayDefaultProperties: false
 };
 
-export const AllowingMultipleAccordionsSimultaneouslyToDisplayMetadataEnabled = Template.bind({})
+export const AllowingMultipleAccordionsSimultaneouslyToDisplayMetadataEnabled = Template.bind({});
 
 AllowingMultipleAccordionsSimultaneouslyToDisplayMetadataEnabled.args = {
   ...AllPropertiesDisplayed.args,
-  multi: true,
-}
+  multi: true
+};
 
-export const SpecificAspectWhitelisted = Template.bind({})
+export const SpecificAspectWhitelisted = Template.bind({});
 
 SpecificAspectWhitelisted.args = {
   ...AllPropertiesDisplayed.args,
   preset: 'exifAspectWhitelistedOnly',
   displayAspect: exifMetadataClassDescription.title
-}
+};
 
 SpecificAspectWhitelisted.parameters = {
   docs: {
@@ -149,14 +149,14 @@ SpecificAspectWhitelisted.parameters = {
       `
     }
   }
-}
+};
 
-export const SpecificPropertiesWhitelisted = Template.bind({})
+export const SpecificPropertiesWhitelisted = Template.bind({});
 
 SpecificPropertiesWhitelisted.args = {
   ...SpecificAspectWhitelisted.args,
-  preset: 'pixelDimensionsPropertiesFromExifWhitelistedOnly',
-}
+  preset: 'pixelDimensionsPropertiesFromExifWhitelistedOnly'
+};
 
 SpecificPropertiesWhitelisted.parameters = {
   docs: {
@@ -175,21 +175,21 @@ SpecificPropertiesWhitelisted.parameters = {
       `
     }
   }
-}
+};
 
-export const MultiValueChipsEnabled = Template.bind({})
+export const MultiValueChipsEnabled = Template.bind({});
 
 MultiValueChipsEnabled.args = {
   ...AllPropertiesDisplayed.args,
-  allowMultiValueChips: true,
-}
+  allowMultiValueChips: true
+};
 
-export const CustomSeparatorForMultiValuePropertiesSet = Template.bind({})
+export const CustomSeparatorForMultiValuePropertiesSet = Template.bind({});
 
 CustomSeparatorForMultiValuePropertiesSet.args = {
   ...AllPropertiesDisplayed.args,
   customSeparatorForMultiValueProperties: ' --- '
-}
+};
 
 export const CherryPickedPropertiesGroupedIntoAccordionDrawer = Template.bind({});
 
@@ -223,7 +223,7 @@ CherryPickedPropertiesGroupedIntoAccordionDrawer.parameters = {
       `
     }
   }
-}
+};
 
 export const CherryPickedPropertiesGroupedIntoMultipleAccordionDrawers = Template.bind({});
 
@@ -231,7 +231,7 @@ CherryPickedPropertiesGroupedIntoMultipleAccordionDrawers.args = {
   ...CherryPickedPropertiesGroupedIntoAccordionDrawer.args,
   preset: 'multipleCustomGroupsOfCherryPickedProperties',
   displayAspect: 'Custom group 1'
-}
+};
 
 CherryPickedPropertiesGroupedIntoMultipleAccordionDrawers.parameters = {
   docs: {
@@ -262,14 +262,14 @@ CherryPickedPropertiesGroupedIntoMultipleAccordionDrawers.parameters = {
       `
     }
   }
-}
+};
 
 export const PropertyCustomTitleSet = Template.bind({});
 
 PropertyCustomTitleSet.args = {
   ...CherryPickedPropertiesGroupedIntoAccordionDrawer.args,
-  preset: 'propertyCustomTitle',
-}
+  preset: 'propertyCustomTitle'
+};
 
 PropertyCustomTitleSet.parameters = {
   docs: {
@@ -294,23 +294,23 @@ PropertyCustomTitleSet.parameters = {
       `
     }
   }
-}
+};
 
-export const EditionOfOneGroupPropertiesDisabled = Template.bind({})
+export const EditionOfOneGroupPropertiesDisabled = Template.bind({});
 
 EditionOfOneGroupPropertiesDisabled.args = {
   ...CherryPickedPropertiesGroupedIntoAccordionDrawer.args,
-  areExifPropertiesEditable: false,
-}
+  areExifPropertiesEditable: false
+};
 
-export const ExcludeAspectWhileIncludingAll = Template.bind({})
+export const ExcludeAspectWhileIncludingAll = Template.bind({});
 
 ExcludeAspectWhileIncludingAll.args = {
   ...DefaultNotPrimary.args,
   node: mockNode2,
   preset: 'exifExcludedFromAllProperties',
   displayAspect: customMetadataClassDescription.title
-}
+};
 
 ExcludeAspectWhileIncludingAll.parameters = {
   docs: {
@@ -330,14 +330,14 @@ ExcludeAspectWhileIncludingAll.parameters = {
       `
     }
   }
-}
+};
 
-export const IncludeSomePropertiesFromExcludedAspect = Template.bind({})
+export const IncludeSomePropertiesFromExcludedAspect = Template.bind({});
 
 IncludeSomePropertiesFromExcludedAspect.args = {
   ...ExcludeAspectWhileIncludingAll.args,
-  preset: 'somePropertiesFromExifIncludedWhileExifIsExcluded',
-}
+  preset: 'somePropertiesFromExifIncludedWhileExifIsExcluded'
+};
 
 IncludeSomePropertiesFromExcludedAspect.parameters = {
   docs: {
@@ -358,15 +358,15 @@ IncludeSomePropertiesFromExcludedAspect.parameters = {
       `
     }
   }
-}
+};
 
-export const ChosenAspectInReadOnlyMode = Template.bind({})
+export const ChosenAspectInReadOnlyMode = Template.bind({});
 
 ChosenAspectInReadOnlyMode.args = {
   ...ExcludeAspectWhileIncludingAll.args,
   preset: 'exifInReadOnlyMode',
   displayAspect: exifMetadataClassDescription.title
-}
+};
 
 ChosenAspectInReadOnlyMode.parameters = {
   docs: {
@@ -386,14 +386,14 @@ ChosenAspectInReadOnlyMode.parameters = {
       `
     }
   }
-}
+};
 
-export const ChosenPropertiesInReadOnlyMode = Template.bind({})
+export const ChosenPropertiesInReadOnlyMode = Template.bind({});
 
 ChosenPropertiesInReadOnlyMode.args = {
   ...ExcludeAspectWhileIncludingAll.args,
   preset: 'pixelDimensionPropertiesInReadOnlyMode'
-}
+};
 
 ChosenPropertiesInReadOnlyMode.parameters = {
   docs: {
@@ -413,4 +413,4 @@ ChosenPropertiesInReadOnlyMode.parameters = {
       `
     }
   }
-}
+};

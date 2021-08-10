@@ -7,7 +7,13 @@ export const exifMetadataClassDescription: PropertyGroup = {
   properties: {
     'exif:pixelYDimension': { title: 'Pixel Y Dimension', name: 'exif:pixelYDimension', dataType: 'number', mandatory: false, multiValued: false },
     'exif:pixelXDimension': { title: 'Pixel X Dimension', name: 'exif:pixelXDimension', dataType: 'number', mandatory: false, multiValued: false },
-    'exif:dateTimeOriginal': { title: 'Date and time of data generation', name: 'exif:dateTimeOriginal', dataType: 'string', mandatory: false, multiValued: false },
+    'exif:dateTimeOriginal': {
+      title: 'Date and time of data generation',
+      name: 'exif:dateTimeOriginal',
+      dataType: 'string',
+      mandatory: false,
+      multiValued: false
+    },
     'exif:exposureTime': { title: 'Exposure Time', name: 'exif:exposureTime', dataType: 'string', mandatory: false, multiValued: false },
     'exif:fNumber': { title: 'F-Number', name: 'exif:fNumber', dataType: 'string', mandatory: false, multiValued: false },
     'exif:flash': { title: 'Flash', name: 'exif:flash', dataType: 'boolean', mandatory: false, multiValued: false },
@@ -16,7 +22,7 @@ export const exifMetadataClassDescription: PropertyGroup = {
     'exif:orientation': { title: 'Orientation', name: 'exif:orientation', dataType: 'string', mandatory: false, multiValued: false },
     'exif:manufacturer': { title: 'Camera manufacturer', name: 'exif:manufacturer', dataType: 'string', mandatory: false, multiValued: false },
     'exif:model': { title: 'Camera model', name: 'exif:model', dataType: 'string', mandatory: false, multiValued: false },
-    'exif:software': { title: 'Software', name: 'exif:software', dataType: 'string', mandatory: false, multiValued: false },
+    'exif:software': { title: 'Software', name: 'exif:software', dataType: 'string', mandatory: false, multiValued: false }
   }
 };
 
@@ -25,8 +31,8 @@ export const customMetadataClassDescription: PropertyGroup = {
   title: 'Custom metadata',
   properties: {
     'custom:path': { title: 'Path (Paths)', name: 'custom:path', dataType: 'string', mandatory: false, multiValued: true },
-    'custom:source': {title: 'Source', name: 'custom:source', dataType: 'string', mandatory: false, multiValued: false},
-    'custom:purpose': {title: 'Purpose (purposes) of file', name: 'custom:purpose', dataType: 'string', mandatory: false, multiValued: true}
+    'custom:source': { title: 'Source', name: 'custom:source', dataType: 'string', mandatory: false, multiValued: false },
+    'custom:purpose': { title: 'Purpose (purposes) of file', name: 'custom:purpose', dataType: 'string', mandatory: false, multiValued: true }
   }
 };
 
@@ -43,7 +49,7 @@ export const mockNode1 = new Node({
   content: {
     mimeType: 'image/jpeg',
     mimeTypeName: 'JPEG images',
-    sizeInBytes: 8737654,
+    sizeInBytes: 8737654
   },
   allowableOperations: ['delete', 'update'],
   properties: {
@@ -53,20 +59,20 @@ export const mockNode1 = new Node({
     'exif:pixelYDimension': '1500',
     'exif:fNumber': 'f/1.4',
     'exif:dateTimeOriginal': '2021-08-07T15:17:35.640Z',
-    'exif:exposureTime':  1/250,
-    'exif:flash':  true,
-    'exif:focalLength':  85,
-    'exif:isoSpeedRatings':  200,
-    'exif:orientation':  'Horizontal',
-    'exif:manufacturer':  'Sony',
-    'exif:model':  'A6100',
+    'exif:exposureTime': 1 / 250,
+    'exif:flash': true,
+    'exif:focalLength': 85,
+    'exif:isoSpeedRatings': 200,
+    'exif:orientation': 'Horizontal',
+    'exif:manufacturer': 'Sony',
+    'exif:model': 'A6100',
     'cm:description': 'A picture of a building',
     'custom:source': 'External device',
     'custom:path': ['-my-', 'home/images/trip']
-  },
+  }
 });
 
 export const mockNode2 = {
   ...mockNode1,
   aspectNames: [exifMetadataClassDescription.name, customMetadataClassDescription.name]
-}
+};

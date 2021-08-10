@@ -54,28 +54,28 @@ export class ContentMetadataCardComponent implements OnInit {
         somePropertiesFromExifIncludedWhileExifIsExcluded: {
           includeAll: true,
           exclude: "exif:exif",
-          "exif:exif": [ "exif:pixelXDimension", "exif:pixelYDimension"]
+          "exif:exif": [ "exif:pixelXDimension", "exif:pixelYDimension" ]
         },
         pixelDimensionPropertiesInReadOnlyMode: {
           includeAll: true,
-          readOnlyProperties: ["exif:pixelXDimension", "exif:pixelYDimension"]
+          readOnlyProperties: [ "exif:pixelXDimension", "exif:pixelYDimension" ]
         },
         exifInReadOnlyMode: {
           includeAll: true,
-          readOnlyAspects: ["exif:exif"],
+          readOnlyAspects: [ "exif:exif" ],
         },
         exifAspectWhitelistedOnly: {
           "exif:exif": "*",
         },
         pixelDimensionsPropertiesFromExifWhitelistedOnly: {
-          "exif:exif": [ "exif:pixelXDimension", "exif:pixelYDimension"]
+          "exif:exif": [ "exif:pixelXDimension", "exif:pixelYDimension" ]
         },
         customGroupOfCherryPickedProperties: [
           {
             title: 'Custom group',
             items: [
               { "aspect": "custom:custom", "properties": "*" },
-              { "aspect": "exif:exif", "properties": [ "exif:pixelXDimension", "exif:pixelYDimension" ], "editable": this.areExifPropertiesEditable},
+              { "aspect": "exif:exif", "properties": [ "exif:pixelXDimension", "exif:pixelYDimension" ], "editable": this.areExifPropertiesEditable },
             ]
           }
         ],
@@ -94,14 +94,13 @@ export class ContentMetadataCardComponent implements OnInit {
             ]
           }
         ],
-        propertyCustomTitle: [{
+        propertyCustomTitle: [
+          {
           title: "Custom group",
           items: [
-            { "aspect": "exif:exif", "properties": [ "exif:pixelXDimension",
-            { name: "exif:pixelYDimension", title: "Custom Pixel Y Dimension Title" }
-              ]
-            }
-          ]}
+              { "aspect": "exif:exif", "properties": [ "exif:pixelXDimension", { name: "exif:pixelYDimension", title: "Custom Pixel Y Dimension Title" } ] }
+            ]
+          }
         ],
       },
       'multi-value-chips': this.allowMultiValueChips,
