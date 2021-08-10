@@ -30,7 +30,16 @@ export default {
         { provide: AlfrescoApiService, useClass: AlfrescoApiServiceStub }
       ]
     })
-  ]
+  ],
+  argTypes: {
+    preset: {
+      // options: ['default', 'allProperties', 'exifAspectWhitelistedOnly', 'pixelDimensionsPropertiesFromExifWhitelistedOnly', 'customGroupOfCherryPickedProperties', 'multipleCustomGroupsOfCherryPickedProperties', 'propertyCustomTitle', 'exifExcludedFromAllProperties', 'somePropertiesFromExifIncludedWhileExifIsExcluded', 'pixelDimensionPropertiesInReadOnlyMode'], control: {type: 'select'},
+      control: {type: null}
+    },
+    displayAspect: {
+      options: [null, customMetadataClassDescription.title, exifMetadataClassDescription.title, 'Custom group', 'Custom group 1'],  control: {type: 'radio'},
+    }
+  }
 } as Meta;
 
 const Template: Story<ContentMetadataCardComponent> = (args) => ({
@@ -80,7 +89,7 @@ AllPropertiesDisplayed.args = {
   ...DefaultNotPrimary.args,
   node: mockNode2,
   preset: 'allProperties',
-  displayAspect: 'Custom metadata'
+  displayAspect: customMetadataClassDescription.title
 }
 
 export const DefaultPropertiesHidden = Template.bind({});

@@ -5,7 +5,7 @@ export const exifMetadataClassDescription: PropertyGroup = {
   name: 'exif:exif',
   title: 'Exif',
   properties: {
-    'exif:pixelYDimension': { title: 'Pixel Y Dimension', name: 'exif:pixelYDimension', dataType: 'number', mandatory: false, multiValued: true },
+    'exif:pixelYDimension': { title: 'Pixel Y Dimension', name: 'exif:pixelYDimension', dataType: 'number', mandatory: false, multiValued: false },
     'exif:pixelXDimension': { title: 'Pixel X Dimension', name: 'exif:pixelXDimension', dataType: 'number', mandatory: false, multiValued: false },
     'exif:dateTimeOriginal': { title: 'Date and time of data generation', name: 'exif:dateTimeOriginal', dataType: 'string', mandatory: false, multiValued: false },
     'exif:exposureTime': { title: 'Exposure Time', name: 'exif:exposureTime', dataType: 'string', mandatory: false, multiValued: false },
@@ -50,7 +50,7 @@ export const mockNode1 = new Node({
     'cm:versionLabel': '1.0',
     'cm:versionType': 'MAJOR',
     'exif:pixelXDimension': '1500',
-    'exif:pixelYDimension': [1500, 2000, 3000],
+    'exif:pixelYDimension': '1500',
     'exif:fNumber': 'f/1.4',
     'exif:dateTimeOriginal': '2021-08-07T15:17:35.640Z',
     'exif:exposureTime':  1/250,
