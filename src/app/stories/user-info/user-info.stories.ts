@@ -45,7 +45,6 @@ export default {
       control: { type: 'radio' }
     },
     userLoggedInWith: {
-      //options: ['ecm', 'bpm'],
       control: { type: null }
     },
     bpmBackgroundImage: {
@@ -55,7 +54,7 @@ export default {
     ecmBackgroundImage: {
       options: ['./assets/images/ecm-background.png', './assets/images/custom2-background.png'],
       control: { type: 'radio' }
-    },
+    }
   }
 } as Meta;
 
@@ -66,7 +65,6 @@ const Template: Story<UserInfoComponent> = (args) => ({
 export const Default = Template.bind({});
 
 Default.args = {
-  Primary: true,
   bpmBackgroundImage: './assets/images/bpm-background.png',
   ecmBackgroundImage: './assets/images/ecm-background.png',
   menuPositionX: 'after',
@@ -80,7 +78,6 @@ export const UserLoggedInWithBpm = Template.bind({});
 
 UserLoggedInWithBpm.args = {
   ...Default.args,
-  Primary: false,
   userLoggedInWith: 'bpm'
 };
 
@@ -88,7 +85,6 @@ export const UserLoggedInWithBoth = Template.bind({});
 
 UserLoggedInWithBoth.args = {
   ...Default.args,
-  Primary: false,
   userLoggedInWith: 'both'
 };
 
@@ -96,7 +92,6 @@ export const UserLoggedInWithSso = Template.bind({});
 
 UserLoggedInWithSso.args = {
   ...Default.args,
-  Primary: false,
   userLoggedInWith: 'sso'
 };
 
@@ -104,7 +99,6 @@ export const UserLoggedInWithSsoAndEcm = Template.bind({});
 
 UserLoggedInWithSsoAndEcm.args = {
   ...Default.args,
-  Primary: false,
   userLoggedInWith: 'ssoAndEcm'
 };
 
@@ -112,7 +106,6 @@ export const WithNameHidden = Template.bind({});
 
 WithNameHidden.args = {
   ...Default.args,
-  Primary: false,
   showName: false
 };
 
@@ -120,29 +113,25 @@ export const NameOnLeft = Template.bind({});
 
 NameOnLeft.args = {
   ...Default.args,
-  Primary: false,
   namePosition: 'left'
 };
 
 export const MenuPostionAfterBelow = Template.bind({});
 
-// The layout is centered in order to showcase
-// effects of changing values of MenuPostion X and Y
 MenuPostionAfterBelow.parameters = {
-  layout: 'centered'
+  layout: 'centered',
+  docs: { description: { story: 'The layout is centered in order to showcase effects of changing values of MenuPostion X and Y.' } }
 };
 
 MenuPostionAfterBelow.args = {
-  ...Default.args,
-  Primary: false
+  ...Default.args
 };
 
 export const MenuPostionBeforeAbove = Template.bind({});
 
-// The layout is centered in order to showcase
-// effects of changing values of MenuPostion X and Y
 MenuPostionBeforeAbove.parameters = {
-  layout: 'centered'
+  layout: 'centered',
+  docs: { description: { story: 'The layout is centered in order to showcase effects of changing values of MenuPostion X and Y.' } }
 };
 
 MenuPostionBeforeAbove.args = {
@@ -155,15 +144,13 @@ export const CustomBackgroundImageForEcm = Template.bind({});
 
 CustomBackgroundImageForEcm.args = {
   ...Default.args,
-  Primary: false,
   ecmBackgroundImage: './assets/images/custom2-background.png'
-}
+};
 
 export const CustomBackgroundImageForBpm = Template.bind({});
 
 CustomBackgroundImageForBpm.args = {
   ...Default.args,
-  Primary: false,
   userLoggedInWith: 'bpm',
   bpmBackgroundImage: './assets/images/custom-background.png'
-}
+};
