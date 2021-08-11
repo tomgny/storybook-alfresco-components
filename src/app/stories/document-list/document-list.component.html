@@ -1,9 +1,10 @@
-
-  <adf-upload-drag-area fxFlex="1 1 auto"
-                              [disabled]="allowDropFiles"
-                              [rootFolderId]="currentFolderId"
-                              [adf-check-allowable-operation]="'create'"
-                              (beginUpload)="fakeUpload()">
+<adf-upload-drag-area
+  fxFlex="1 1 auto"
+  [disabled]="allowDropFiles"
+  [rootFolderId]="currentFolderId"
+  [adf-check-allowable-operation]="'create'"
+  (beginUpload)="fakeUpload()"
+>
   <adf-document-list
     #documentList
     [additionalSorting]="additionalSorting"
@@ -37,40 +38,42 @@
     [where]="where"
     [rowFilter]="rowFilter"
   >
-  <!-- <data-columns>
-    <data-column
-      key="$thumbnail"
-      type="image"
-      [sortable]="false"
-      class="app-image-table-cell"
-      [class.adf-cell-thumbnail]="thumbnails">
-  </data-column>
+    <!-- <data-columns>
+      <data-column key="$thumbnail" type="image" [sortable]="false" class="app-image-table-cell" [class.adf-cell-thumbnail]="thumbnails">
+      </data-column>
+      <data-column key="name" title="Name" class="full-width name-column"></data-column>
       <data-column
-          key="content.sizeInBytes"
-          title="{{'DOCUMENT_LIST.COLUMNS.SIZE' | translate}}"
-          type="fileSize"
-          sortingKey="sizeInBytes"
-          class="app-desktop-only adf-ellipsis-cell">
+        key="name"
+        sortingKey="name"
+        class="app-ellipsis-cell"
+        title="{{ 'DOCUMENT_LIST.COLUMNS.DISPLAY_NAME' | translate }}"
+        [formatTooltip]="getNodeNameTooltip"
+      >
+        <ng-template let-context>
+          <adf-name-column key="name" [context]="context"></adf-name-column>
+        </ng-template>
       </data-column>
       <data-column
-          *ngIf="searchTerm"
-          key="search"
-          title="Search"
-          class="app-desktop-only adf-expand-cell-3">
-          <ng-template let-entry="$implicit">
-              <div [innerHTML]="searchResultsHighlight(entry.row.node.entry.search) | highlight:searchTerm">
-              </div>
-          </ng-template>
+        key="name"
+        sortingKey="name"
+        title="{{ 'DOCUMENT_LIST.COLUMNS.DISPLAY_NAME' | translate }}"
+        [formatTooltip]="getNodeNameTooltip"
+        class="app-ellipsis-cell adf-expand-cell-5"
+      >
       </data-column>
+      <data-column key="content.sizeInBytes" title="Size" type="fileSize" sortingKey="sizeInBytes" class="app-desktop-only adf-ellipsis-cell">
+        <ng-template let-entry="$implicit">
+          <div [innerHTML]="searchResultsHighlight(entry.row.node.entry.search) | highlight: searchTerm"></div>
+        </ng-template>
+      </data-column>
+      <data-column key="createdAt" title="Created"></data-column>
+      <data-column key="createdByUser.displayName" title="Created By"></data-column>
+      <data-column key="path" type="location" format="/" title="Location"> </data-column>
     </data-columns> -->
-    <content-actions >
+    <content-actions>
       <!-- Conditional actions demo -->
-      <content-action
-          icon="get_app"
-          title="Download this file now!"
-          (execute)="fakeDownload()"
-          [visible]="true">
-      </content-action>
-      </content-actions>
+      <content-action icon="get_app" title="Download this file now!" (execute)="fakeDownload()" [visible]="true"> </content-action>
+    </content-actions>
   </adf-document-list>
-  </adf-upload-drag-area>
+  <!-- <adf-pagination #pagination [target]="documentList" (nextPage)="onNextPage($event)"> </adf-pagination> -->
+</adf-upload-drag-area>

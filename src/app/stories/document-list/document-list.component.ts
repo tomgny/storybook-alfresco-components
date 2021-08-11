@@ -1,15 +1,18 @@
-import { PermissionStyleModel, RowFilter } from '@alfresco/adf-content-services';
-import { DataSorting, ShowHeaderMode } from '@alfresco/adf-core';
-import { NodeEntry, NodePaging, SearchEntry } from '@alfresco/js-api';
-import { AfterViewInit, OnInit, ViewChild } from '@angular/core';
+import {  PermissionStyleModel, RowFilter } from '@alfresco/adf-content-services';
+import {  AppConfigService, DataSorting, PaginationComponent, ShowHeaderMode } from '@alfresco/adf-core';
+import { NodeEntry, NodePaging } from '@alfresco/js-api';
+import {   OnInit, ViewChild } from '@angular/core';
 import { Component, Input } from '@angular/core';
+import { mockConfig } from './mock/mock-config';
 
 @Component({
   selector: 'aca-document-list',
   templateUrl: './document-list.component.html',
   styleUrls: ['./document-list.component.scss']
 })
-export class DocumentListComponent implements OnInit, AfterViewInit{
+export class DocumentListComponent implements OnInit {
+  @ViewChild('pagination')
+  pagination: PaginationComponent;
 
   @ViewChild('documentList')
   documentList: DocumentListComponent;
@@ -107,31 +110,18 @@ export class DocumentListComponent implements OnInit, AfterViewInit{
   @Input()
   rowFilter: RowFilter;
 
-  searchTerm = 'name';
-
-    ngAfterViewInit() {
-      console.log(this.documentList);
-      console.log(this.sorting);
-      console.log(this.additionalSorting);
-
+  constructor(private appConfig: AppConfigService){
   }
 
-    ngOnInit() {
-    }
+  ngOnInit() {
+    this.appConfig.config = mockConfig;
+  }
 
-    fakeDownload(){
-      window.alert('Download started!');
-    }
+  fakeDownload() {
+    window.alert('Download started!');
+  }
 
-    fakeUpload(){
-      this.allowDropFiles ? window.alert('Upload started!') : window.alert('Upload not allowed!');
-      return null;
-    }
-
-    searchResultsHighlight(search: SearchEntry): string {
-      if (search && search.highlight) {
-          return search.highlight.map((currentHighlight) => currentHighlight.snippets).join(', ');
-      }
-      return '';
+  fakeUpload() {
+    this.allowDropFiles ? window.alert('Upload started!') : window.alert('Upload not allowed!');
   }
 }

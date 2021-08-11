@@ -33,9 +33,9 @@ export class UploadServiceStub{
 
   fileUploadError: Subject<FileUploadErrorEvent> = new Subject<FileUploadErrorEvent>();
 
-  beginUpload = () => null;
+  beginUpload() {}
 
-  addToQueue = () => null;
+  addToQueue() {}
 
-  uploadFilesInTheQueue = () => null;
+  uploadFilesInTheQueue() {}
 }
