@@ -1,6 +1,6 @@
 import { Component, Input, OnChanges, ViewEncapsulation } from '@angular/core';
 import { MenuPositionX, MenuPositionY } from '@angular/material/menu';
-import { setIsEcmUserLoggedIn } from './stub-services';
+import { setProvider } from './mock/stub-authentication-service';
 
 @Component({
   selector: 'aca-user-info',
@@ -27,15 +27,11 @@ export class UserInfoComponent implements OnChanges {
   showName: boolean;
 
   @Input()
-  user: string;
+  userLoggedInWith: 'ecm' | 'bpm' | 'both' | 'sso' | 'ssoAndEcm';
 
   constructor() {}
 
   ngOnChanges() {
-    if (this.user === 'ecm') {
-      setIsEcmUserLoggedIn(true);
-    } else {
-      setIsEcmUserLoggedIn(false);
-    }
+    setProvider(this.userLoggedInWith);
   }
 }

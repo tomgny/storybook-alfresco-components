@@ -1,11 +1,12 @@
-import { AuthenticationService, BpmUserService, CoreModule, EcmUserService } from '@alfresco/adf-core';
+import { AuthenticationService, BpmUserService, CoreModule, EcmUserService, IdentityUserService } from '@alfresco/adf-core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { APP_ROUTES } from '../../app.routes';
 import { AppCommonModule } from '../../components/common/common.module';
 import { UserInfoComponent } from './user-info.component';
-import { AuthenticationServiceStub, BpmUserServiceStub, EcmUserServiceStub } from './stub-services';
+import { BpmUserServiceStub, EcmUserServiceStub, IdentityUserServiceStub } from './mock/stub-user-services';
+import { AuthenticationServiceStub } from './mock/stub-authentication-service';
 
 export default {
   component: UserInfoComponent,
@@ -25,7 +26,8 @@ export default {
       providers: [
         { provide: AuthenticationService, useClass: AuthenticationServiceStub },
         { provide: EcmUserService, useClass: EcmUserServiceStub },
-        { provide: BpmUserService, useClass: BpmUserServiceStub }
+        { provide: BpmUserService, useClass: BpmUserServiceStub },
+        { provide: IdentityUserService, useClass: IdentityUserServiceStub }
       ]
     })
   ],
@@ -42,9 +44,9 @@ export default {
       options: ['left', 'right'],
       control: { type: 'radio' }
     },
-    user: {
-      options: ['ecm', 'bpm'],
-      control: { type: 'select' }
+    userLoggedInWith: {
+      //options: ['ecm', 'bpm'],
+      control: { type: null }
     }
   }
 } as Meta;
@@ -63,7 +65,39 @@ Default.args = {
   menuPositionY: 'below',
   namePosition: 'right',
   showName: true,
-  user: 'bpm'
+  userLoggedInWith: 'ecm'
+};
+
+export const UserLoggedInWithBpm = Template.bind({});
+
+UserLoggedInWithBpm.args = {
+  ...Default.args,
+  Primary: false,
+  userLoggedInWith: 'bpm'
+};
+
+export const UserLoggedInWithBoth = Template.bind({});
+
+UserLoggedInWithBoth.args = {
+  ...Default.args,
+  Primary: false,
+  userLoggedInWith: 'both'
+};
+
+export const UserLoggedInWithSso = Template.bind({});
+
+UserLoggedInWithSso.args = {
+  ...Default.args,
+  Primary: false,
+  userLoggedInWith: 'sso'
+};
+
+export const UserLoggedInWithSsoAndEcm = Template.bind({});
+
+UserLoggedInWithSsoAndEcm.args = {
+  ...Default.args,
+  Primary: false,
+  userLoggedInWith: 'ssoAndEcm'
 };
 
 export const WithNameHidden = Template.bind({});
