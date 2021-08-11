@@ -47,7 +47,15 @@ export default {
     userLoggedInWith: {
       //options: ['ecm', 'bpm'],
       control: { type: null }
-    }
+    },
+    bpmBackgroundImage: {
+      options: ['./assets/images/bpm-background.png', './assets/images/custom-background.png'],
+      control: { type: 'radio' }
+    },
+    ecmBackgroundImage: {
+      options: ['./assets/images/ecm-background.png', './assets/images/custom2-background.png'],
+      control: { type: 'radio' }
+    },
   }
 } as Meta;
 
@@ -142,3 +150,20 @@ MenuPostionBeforeAbove.args = {
   menuPositionX: 'before',
   menuPositionY: 'above'
 };
+
+export const CustomBackgroundImageForEcm = Template.bind({});
+
+CustomBackgroundImageForEcm.args = {
+  ...Default.args,
+  Primary: false,
+  ecmBackgroundImage: './assets/images/custom2-background.png'
+}
+
+export const CustomBackgroundImageForBpm = Template.bind({});
+
+CustomBackgroundImageForBpm.args = {
+  ...Default.args,
+  Primary: false,
+  userLoggedInWith: 'bpm',
+  bpmBackgroundImage: './assets/images/custom-background.png'
+}
