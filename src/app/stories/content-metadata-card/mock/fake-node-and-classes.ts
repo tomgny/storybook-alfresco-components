@@ -1,5 +1,5 @@
 import { PropertyGroup } from '@alfresco/adf-content-services/lib/content-metadata/interfaces/property-group.interface';
-import { Node } from '@alfresco/js-api';
+import { Constraint, Node } from '@alfresco/js-api';
 
 export const exifMetadataClassDescription: PropertyGroup = {
   name: 'exif:exif',
@@ -30,9 +30,9 @@ export const customMetadataClassDescription: PropertyGroup = {
   name: 'custom:custom',
   title: 'Custom metadata',
   properties: {
-    'custom:path': { title: 'Path (Paths)', name: 'custom:path', dataType: 'string', mandatory: false, multiValued: true },
+    'custom:path': { title: 'Path (Paths)', name: 'custom:path', dataType: 'd:text', mandatory: false, multiValued: true },
     'custom:source': { title: 'Source', name: 'custom:source', dataType: 'string', mandatory: false, multiValued: false },
-    'custom:purpose': { title: 'Purpose (purposes) of file', name: 'custom:purpose', dataType: 'string', mandatory: false, multiValued: true }
+    'custom:purpose': { title: 'Purpose (purposes) of file', name: 'custom:purpose', dataType: 'select', mandatory: false, multiValued: true }
   }
 };
 
@@ -41,7 +41,7 @@ export const mockNode1 = new Node({
   id: '70e1cc6a-6918-468a-b84a-1048093b06fd',
   isFile: true,
   isFolder: false,
-  nodeType: 'cm:image',
+  nodeType: 'cm:content',
   createdByUser: { id: 'admin', displayName: 'Administrator' },
   createdAt: '2021-08-08T15:17:35.640Z',
   modifiedByUser: { id: 'admin', displayName: 'Administrator' },
@@ -68,8 +68,22 @@ export const mockNode1 = new Node({
     'exif:model': 'A6100',
     'cm:description': 'A picture of a building',
     'custom:source': 'External device',
-    'custom:path': ['-my-', 'home/images/trip']
-  }
+    'custom:path': ['-my-', 'home/images/trip', 'Czy', 'To', 'Prawda', 'ze jestem', 'glupi']
+  },
+  definition: {
+    properties: [{
+        id: 'custom:source',
+        constraints: [
+            {
+                type: 'LIST',
+                parameters: {
+                    allowedValues: ['External device', 'two', 'three']
+                }
+            }
+        ]
+    } as Constraint]
+}
+
 });
 
 export const mockNode2 = {

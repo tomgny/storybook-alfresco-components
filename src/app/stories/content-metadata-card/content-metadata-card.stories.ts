@@ -49,7 +49,6 @@ const Template: Story<ContentMetadataCardComponent> = (args) => ({
 export const Default = Template.bind({});
 
 Default.args = {
-  Primary: true,
   node: mockNode1,
   preset: 'default',
   displayDefaultProperties: true,
@@ -59,34 +58,27 @@ Default.args = {
   readOnly: false,
   allowMultiValueChips: false,
   customSeparatorForMultiValueProperties: ', ',
-  areExifPropertiesEditable: true
-};
-
-const DefaultNotPrimary = Template.bind({});
-
-DefaultNotPrimary.args = {
-  ...Default.args,
-  Primary: false
+  areExifPropertiesEditable: true,
 };
 
 export const MetadataReadOnly = Template.bind({});
 
 MetadataReadOnly.args = {
-  ...DefaultNotPrimary.args,
+  ...Default.args,
   readOnly: true
 };
 
 export const EmptyPropertiesDisplayed = Template.bind({});
 
 EmptyPropertiesDisplayed.args = {
-  ...DefaultNotPrimary.args,
+  ...Default.args,
   displayEmpty: true
 };
 
 export const AllPropertiesDisplayed = Template.bind({});
 
 AllPropertiesDisplayed.args = {
-  ...DefaultNotPrimary.args,
+  ...Default.args,
   node: mockNode2,
   preset: 'allProperties',
   displayAspect: customMetadataClassDescription.title
@@ -194,7 +186,7 @@ CustomSeparatorForMultiValuePropertiesSet.args = {
 export const CherryPickedPropertiesGroupedIntoAccordionDrawer = Template.bind({});
 
 CherryPickedPropertiesGroupedIntoAccordionDrawer.args = {
-  ...DefaultNotPrimary.args,
+  ...Default.args,
   node: mockNode2,
   preset: 'customGroupOfCherryPickedProperties',
   displayAspect: 'Custom group'
@@ -306,7 +298,7 @@ EditionOfOneGroupPropertiesDisabled.args = {
 export const ExcludeAspectWhileIncludingAll = Template.bind({});
 
 ExcludeAspectWhileIncludingAll.args = {
-  ...DefaultNotPrimary.args,
+  ...Default.args,
   node: mockNode2,
   preset: 'exifExcludedFromAllProperties',
   displayAspect: customMetadataClassDescription.title

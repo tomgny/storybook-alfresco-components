@@ -1,8 +1,9 @@
-import { ClassDescription, MinimalNode } from '@alfresco/js-api';
+import { ClassDescription, MinimalNode,  } from '@alfresco/js-api';
 import { Observable, of, ReplaySubject, Subject } from 'rxjs';
 import { customMetadataClassDescription, exifMetadataClassDescription, mockNode1 } from './fake-node-and-classes';
 
 export class NodesApiServiceStub {
+
   updateNode(_: string, nodeBody: any, _2: any = {}): Observable<MinimalNode> {
     const updatedNode = { ...mockNode1 };
     updatedNode.properties = {
@@ -32,6 +33,7 @@ export class AlfrescoApiServiceStub {
   isEcmLoggedIn = () => true;
 
   classesApi = new ClassesApiStub();
+
 }
 
 class ClassesApiStub {

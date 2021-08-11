@@ -1,13 +1,13 @@
 import { AppConfigService } from '@alfresco/adf-core';
 import { Node } from '@alfresco/js-api';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'aca-content-metadata-card',
   templateUrl: './content-metadata-card.component.html',
   styleUrls: ['./content-metadata-card.component.scss']
 })
-export class ContentMetadataCardComponent implements OnInit {
+export class ContentMetadataCardComponent implements OnInit, OnChanges {
   @Input()
   node: Node;
 
@@ -39,6 +39,8 @@ export class ContentMetadataCardComponent implements OnInit {
   areExifPropertiesEditable: boolean;
 
   constructor(private appConfig: AppConfigService) { }
+
+  ngOnChanges(_: SimpleChanges): void { }
 
   ngOnInit(): void {
     this.appConfig.config['content-metadata'] = {
@@ -105,6 +107,7 @@ export class ContentMetadataCardComponent implements OnInit {
       },
       'multi-value-chips': this.allowMultiValueChips,
       'multi-value-pipe-separator': this.customSeparatorForMultiValueProperties,
+      'selectFilterLimit': 5,
     };
   }
 }
