@@ -1,0 +1,10 @@
+<adf-upload-button
+    [rootFolderId]="rootFolderId"
+    [uploadFolders]="uploadFolders"
+    [multipleFiles]="multipleFiles"
+    [acceptedFilesType]="acceptedFilesType"
+    [versioning]="versioning"
+    (success)="onSuccess($event)"
+    (permissionEvent)="onUploadPermissionFailed($event)">
+</adf-upload-button>
+<adf-file-uploading-dialog></adf-file-uploading-dialog>
