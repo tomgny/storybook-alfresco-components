@@ -89,6 +89,7 @@ import { DatatableComponent } from './stories/datatable/datatable.component';
 import { DatatableCustomComponent } from './stories/datatable/datatable-custom-data/datatable-custom-data.component';
 import { UserInfoComponent } from './stories/user-info/user-info.component';
 import { ToolbarComponent } from './stories/toolbar/toolbar.component';
+import { CorePipesComponent } from './stories/core-pipes/core-pipes.component';
 
 
 registerLocaleData(localeFr);
@@ -159,6 +160,7 @@ registerLocaleData(localeSv);
     DatatableCustomComponent,
     UserInfoComponent,
     ToolbarComponent,
+    CorePipesComponent,
   ],
   providers: [
     { provide: AppConfigService, useClass: DebugAppConfigService },
