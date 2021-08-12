@@ -6,14 +6,34 @@ Project made for building UI components and pages in isolation. Main purpose is 
 
 # ADF Components list
 
-|Component     |Status         |
-|--------------|---------------|
-|CardView      |In progress    |
-|Datatable     |In progress    |
-|Buttons menu  |In progress    |
-|UserInfo      |In progress    |
-|Viewer        |None           |
-|Toolbar       |None           |
+|Component             |Status         |
+|----------------------|---------------|
+|CardView              |Done           |
+|Datatable             |Done           |
+|Buttons menu          |In progress    |
+|UserInfo              |In progress    |
+|Viewer                |Done           |
+|Toolbar               |Done           |
+|Document List         |In progress    |
+|Content Metadata Card |In progress    |
+|Upload Button         |None           |
+
+# ADF Pipes list
+
+|Pipe              |Status |
+|------------------|-------|
+|App config        |None   |
+|Decimal number    |None   |
+|File size         |None   |
+|Format space      |None   |
+|Full name         |None   |
+|Localized date    |None   |
+|Mime type icon    |None   |
+|Multi value       |None   |
+|Node name tooltip |None   |
+|Text highlight    |None   |
+|Time ago          |None   |
+|User initial      |None   |
 
 # Build setup
 

@@ -59,7 +59,6 @@ const Template: Story<ViewerComponent> = (args) => ({
 export const Default = Template.bind({});
 
 Default.args = {
-    Primary: true,
     overlayMode: false,
     urlFile: './assets/images/alfresco-logo-flower.svg',
     allowThumbnails: true,
@@ -86,17 +85,10 @@ Default.args = {
     showDocumentList: false,
 }
 
-const DefaultNotPrimary = Template.bind({});
-
-DefaultNotPrimary.args = {
-    ...Default.args,
-    Primary: false,
-}
-
 export const PdfThumbnailsDisabled = Template.bind({});
 
 PdfThumbnailsDisabled.args = {
-    ...DefaultNotPrimary.args,
+    ...Default.args,
     urlFile: './assets/texts/lorem_ipsum.pdf',
     allowThumbnails: false,
 }
@@ -104,7 +96,7 @@ PdfThumbnailsDisabled.args = {
 export const PdfCustomThumbnails = Template.bind({})
 
 PdfCustomThumbnails.args = {
-    ...DefaultNotPrimary.args,
+    ...Default.args,
     urlFile: './assets/texts/lorem_ipsum.pdf',
     displayCustomThumbnails: true,
 }
@@ -112,7 +104,7 @@ PdfCustomThumbnails.args = {
 export const DonwloadAndFullscreenAndGoBackDisabled = Template.bind({});
 
 DonwloadAndFullscreenAndGoBackDisabled.args = {
-    ...DefaultNotPrimary.args,
+    ...Default.args,
     allowDownload: false,
     allowFullScreen: false,
     allowGoBack: false,
@@ -121,28 +113,28 @@ DonwloadAndFullscreenAndGoBackDisabled.args = {
 export const PrintEnabled = Template.bind({});
 
 PrintEnabled.args = {
-    ...DefaultNotPrimary.args,
+    ...Default.args,
     allowPrint: true,
 }
 
 export const ToolbarHidden = Template.bind({});
 
 ToolbarHidden.args = {
-    ...DefaultNotPrimary.args,
+    ...Default.args,
     showToolbar: false,
 }
 
 export const RightSidebarEnabled = Template.bind({});
 
 RightSidebarEnabled.args = {
-    ...DefaultNotPrimary.args,
+    ...Default.args,
     allowRightSidebar: true,
 }
 
 export const LeftSidebarEnabledWithMetadataTemplate = Template.bind({})
 
 LeftSidebarEnabledWithMetadataTemplate.args = {
-    ...DefaultNotPrimary.args,
+    ...Default.args,
     urlFile: '',
     nodeId: 'lorem_ipsum_text',
     allowLeftSidebar: true,
@@ -151,49 +143,49 @@ LeftSidebarEnabledWithMetadataTemplate.args = {
 export const ViewerAsFullPage = Template.bind({});
 
 ViewerAsFullPage.args = {
-    ...DefaultNotPrimary.args,
+    ...Default.args,
     overlayMode: true,
 }
 
 export const CustomToolbar = Template.bind({});
 
 CustomToolbar.args = {
-    ...DefaultNotPrimary.args,
+    ...Default.args,
     displayCustomToolbar: true,
 }
 
 export const MoreToolbarActions = Template.bind({})
 
 MoreToolbarActions.args = {
-    ...DefaultNotPrimary.args,
+    ...Default.args,
     displayMoreToolbarActions: true,
 }
 
 export const MoreToolbarActionsMenu = Template.bind({})
 
 MoreToolbarActionsMenu.args = {
-    ...DefaultNotPrimary.args,
+    ...Default.args,
     displayMoreActionsMenu: true,
 }
 
 export const OpenWithMenu = Template.bind({})
 
 OpenWithMenu.args = {
-    ...DefaultNotPrimary.args,
+    ...Default.args,
     displayOpenWith: true,
 }
 
 export const DisplayCustomFileName = Template.bind({})
 
 DisplayCustomFileName.args = {
-    ...DefaultNotPrimary.args,
+    ...Default.args,
     displayName: 'you_can_set_custom_display_names.exe',
 }
 
 export const BlobFile = Template.bind({})
 
 BlobFile.args = {
-    ...DefaultNotPrimary.args,
+    ...Default.args,
     urlFile: '',
     renderBlobFile: true,
     displayName: 'blob_file.txt'
@@ -202,7 +194,7 @@ BlobFile.args = {
 export const FileWithoutExtension = Template.bind({})
 
 FileWithoutExtension.args = {
-    ...DefaultNotPrimary.args,
+    ...Default.args,
     urlFile: './assets/texts/no_extension',
     mimeType: 'text/plain',
 }
@@ -210,7 +202,7 @@ FileWithoutExtension.args = {
 export const NavigationEnabled = Template.bind({})
 
 NavigationEnabled.args = {
-    ...DefaultNotPrimary.args,
+    ...Default.args,
     allowNavigate: true,
 }
 
@@ -231,7 +223,7 @@ NavigationNextDisabled.args = {
 export const IntegrationWithDocumentList = Template.bind({})
 
 IntegrationWithDocumentList.args = {
-    ...DefaultNotPrimary.args,
+    ...Default.args,
     showDocumentList: true,
     urlFile: '',
     showViewer: false,
