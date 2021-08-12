@@ -1,13 +1,13 @@
 import { AppConfigService } from '@alfresco/adf-core';
 import { Node } from '@alfresco/js-api';
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'aca-content-metadata-card',
   templateUrl: './content-metadata-card.component.html',
   styleUrls: ['./content-metadata-card.component.scss']
 })
-export class ContentMetadataCardComponent implements OnInit, OnChanges {
+export class ContentMetadataCardComponent implements OnInit {
   @Input()
   node: Node;
 
@@ -38,46 +38,47 @@ export class ContentMetadataCardComponent implements OnInit, OnChanges {
   @Input()
   areExifPropertiesEditable: boolean;
 
-  constructor(private appConfig: AppConfigService) { }
+  @Input()
+  selectFilterLimit: number;
 
-  ngOnChanges(_: SimpleChanges): void { }
+  constructor(private appConfig: AppConfigService) {}
 
   ngOnInit(): void {
     this.appConfig.config['content-metadata'] = {
       presets: {
-        default: "*",
+        default: '*',
         allProperties: {
-          includeAll: true,
+          includeAll: true
         },
         exifExcludedFromAllProperties: {
           includeAll: true,
-          exclude: "exif:exif",
+          exclude: 'exif:exif'
         },
         somePropertiesFromExifIncludedWhileExifIsExcluded: {
           includeAll: true,
-          exclude: "exif:exif",
-          "exif:exif": [ "exif:pixelXDimension", "exif:pixelYDimension" ]
+          exclude: 'exif:exif',
+          'exif:exif': ['exif:pixelXDimension', 'exif:pixelYDimension']
         },
         pixelDimensionPropertiesInReadOnlyMode: {
           includeAll: true,
-          readOnlyProperties: [ "exif:pixelXDimension", "exif:pixelYDimension" ]
+          readOnlyProperties: ['exif:pixelXDimension', 'exif:pixelYDimension']
         },
         exifInReadOnlyMode: {
           includeAll: true,
-          readOnlyAspects: [ "exif:exif" ],
+          readOnlyAspects: ['exif:exif']
         },
         exifAspectWhitelistedOnly: {
-          "exif:exif": "*",
+          'exif:exif': '*'
         },
         pixelDimensionsPropertiesFromExifWhitelistedOnly: {
-          "exif:exif": [ "exif:pixelXDimension", "exif:pixelYDimension" ]
+          'exif:exif': ['exif:pixelXDimension', 'exif:pixelYDimension']
         },
         customGroupOfCherryPickedProperties: [
           {
             title: 'Custom group',
             items: [
-              { "aspect": "custom:custom", "properties": "*" },
-              { "aspect": "exif:exif", "properties": [ "exif:pixelXDimension", "exif:pixelYDimension" ], "editable": this.areExifPropertiesEditable },
+              { aspect: 'custom:custom', properties: '*' },
+              { aspect: 'exif:exif', properties: ['exif:pixelXDimension', 'exif:pixelYDimension'], editable: this.areExifPropertiesEditable }
             ]
           }
         ],
@@ -85,29 +86,36 @@ export class ContentMetadataCardComponent implements OnInit, OnChanges {
           {
             title: 'Custom group 1',
             items: [
-              { "aspect": "custom:custom", "properties": "*" },
-              { "aspect": "exif:exif", "properties": [ "exif:pixelXDimension", "exif:pixelYDimension" ] },
+              { aspect: 'custom:custom', properties: '*' },
+              { aspect: 'exif:exif', properties: ['exif:pixelXDimension', 'exif:pixelYDimension'] }
             ]
           },
           {
             title: 'Custom group 2',
-            items: [
-              { "aspect": "exif:exif", "properties": "*" },
-            ]
+            items: [{ aspect: 'exif:exif', properties: '*' }]
           }
         ],
         propertyCustomTitle: [
           {
-          title: "Custom group",
-          items: [
-              { "aspect": "exif:exif", "properties": [ "exif:pixelXDimension", { name: "exif:pixelYDimension", title: "Custom Pixel Y Dimension Title" } ] }
+            title: 'Custom group',
+            items: [
+              { aspect: 'exif:exif', properties: ['exif:pixelXDimension', { name: 'exif:pixelYDimension', title: 'Custom Pixel Y Dimension Title' }] }
             ]
           }
         ],
+        propertiesWithListValueSelection: [
+          {
+            title: 'Properties with drop-down menu value selection',
+            items: [
+              { aspect: 'exif:exif', properties: ['exif:isoSpeedRatings', 'exif:exposureTime'] },
+              { aspect: 'custom:custom', properties: 'custom:source' }
+            ]
+          }
+        ]
       },
       'multi-value-chips': this.allowMultiValueChips,
       'multi-value-pipe-separator': this.customSeparatorForMultiValueProperties,
-      'selectFilterLimit': 5,
+      'selectFilterLimit': this.selectFilterLimit
     };
   }
 }

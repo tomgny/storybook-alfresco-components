@@ -38,6 +38,9 @@ export default {
     displayAspect: {
       options: [null, customMetadataClassDescription.title, exifMetadataClassDescription.title, 'Custom group', 'Custom group 1'],
       control: { type: 'radio' }
+    },
+    selectFilterLimit: {
+      control: { type: 'range', min: 2, max: 12, step: 2 }
     }
   }
 } as Meta;
@@ -59,6 +62,7 @@ Default.args = {
   allowMultiValueChips: false,
   customSeparatorForMultiValueProperties: ', ',
   areExifPropertiesEditable: true,
+  selectFilterLimit: 4
 };
 
 export const MetadataReadOnly = Template.bind({});
@@ -405,4 +409,12 @@ ChosenPropertiesInReadOnlyMode.parameters = {
       `
     }
   }
+};
+
+export const CustomSelectFilterLimitSet = Template.bind({});
+
+CustomSelectFilterLimitSet.args = {
+  ...DefaultPropertiesHidden.args,
+  selectFilterLimit: 2,
+  preset: 'propertiesWithListValueSelection'
 };
