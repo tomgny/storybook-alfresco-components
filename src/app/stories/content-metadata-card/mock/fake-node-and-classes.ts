@@ -1,5 +1,5 @@
 import { PropertyGroup } from '@alfresco/adf-content-services/lib/content-metadata/interfaces/property-group.interface';
-import { Constraint, Node } from '@alfresco/js-api';
+import { Constraint, Node, TypeEntry, TypePaging } from '@alfresco/js-api';
 
 export const exifMetadataClassDescription: PropertyGroup = {
   name: 'exif:exif',
@@ -112,4 +112,20 @@ export const mockNode1 = new Node({
 export const mockNode2 = {
   ...mockNode1,
   aspectNames: [exifMetadataClassDescription.name, customMetadataClassDescription.name]
+};
+
+export const fakeTypeEntry: TypeEntry = {
+  entry: {
+    id: 'fake-type-id',
+    title: 'fake-title',
+    description: 'optional-fake-description',
+    parentId: 'cm:parent',
+    properties: []
+  }
+};
+
+export const fakeTypePaging: TypePaging = {
+  list: {
+    entries: [fakeTypeEntry]
+  }
 };

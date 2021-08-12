@@ -1,5 +1,5 @@
 import { ContentMetadataModule } from '@alfresco/adf-content-services';
-import { AlfrescoApiService, CoreModule, NodesApiService } from '@alfresco/adf-core';
+import { AlfrescoApiService, CoreModule, NodesApiService, VersionCompatibilityService } from '@alfresco/adf-core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
@@ -7,7 +7,7 @@ import { APP_ROUTES } from '../../app.routes';
 import { AppCommonModule } from '../../components/common/common.module';
 import { ContentMetadataCardComponent } from './content-metadata-card.component';
 import { customMetadataClassDescription, exifMetadataClassDescription, mockNode1, mockNode2 } from './mock/fake-node-and-classes';
-import { AlfrescoApiServiceStub, NodesApiServiceStub } from './mock/stub-services-and-api';
+import { AlfrescoApiServiceStub, NodesApiServiceStub, VersionCompatibilityServiceStub } from './mock/stub-services-and-api';
 
 export default {
   component: ContentMetadataCardComponent,
@@ -27,13 +27,14 @@ export default {
       ],
       providers: [
         { provide: NodesApiService, useClass: NodesApiServiceStub },
-        { provide: AlfrescoApiService, useClass: AlfrescoApiServiceStub }
+        { provide: AlfrescoApiService, useClass: AlfrescoApiServiceStub }, 
+        { provide: VersionCompatibilityService, useClass: VersionCompatibilityServiceStub}
       ]
     })
   ],
   argTypes: {
     preset: {
-      control: { type: null }
+      table: { disable: true }
     },
     displayAspect: {
       options: [null, customMetadataClassDescription.title, exifMetadataClassDescription.title, 'Custom group', 'Custom group 1'],
