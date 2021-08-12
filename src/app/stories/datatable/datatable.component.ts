@@ -34,7 +34,7 @@ export class DatatableComponent {
    * The columns that the datatable will show.
    */
   @Input()
-  columns: any[] = undefined;
+  columns: any[] = [];
 
   /**
    * Toggles custom context menu for the component.
@@ -106,7 +106,7 @@ export class DatatableComponent {
    * The rows that the datatable will show.
    */
   @Input()
-  rows: any[] = undefined;
+  rows: any[] = [];
 
   /**
    * Row selection mode. Can be none, single or multiple. For multiple mode, you can use Cmd (macOS) or Ctrl (Win) modifier key to toggle selection for multiple rows.
