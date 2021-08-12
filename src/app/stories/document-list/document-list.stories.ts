@@ -2,7 +2,6 @@ import {
   ContentModule,
   ImageResolver,
   PermissionStyleModel,
-  SearchHeaderQueryBuilderService,
   ShareDataRow,
   UploadModule
 } from '@alfresco/adf-content-services';
@@ -49,7 +48,6 @@ export default {
         { provide: AlfrescoApiService, useClass: AlfrescoApiServiceStub },
         { provide: AuthenticationService, useClass: AuthenticationServiceStub },
         { provide: UploadService, useClass: UploadServiceStub },
-        { provide: SearchHeaderQueryBuilderService}
       ]
     })
   ]
@@ -57,7 +55,6 @@ export default {
 
 const folderFilter = (row: ShareDataRow) => {
   let node = row.node.entry;
-
   if (node && node.isFolder) {
     return true;
   }
@@ -67,7 +64,6 @@ const folderFilter = (row: ShareDataRow) => {
 
 const fileFilter = (row: ShareDataRow) => {
   let node = row.node.entry;
-
   if (node && node.isFile) {
     return true;
   }
@@ -78,21 +74,17 @@ const fileFilter = (row: ShareDataRow) => {
 const folderImageResolver: ImageResolver = (row: DataRow, _col: DataColumn) => {
   let isFolder = <boolean>row.getValue('isFolder');
   if (isFolder) {
-    // Format image url
     return '../../../assets/images/alfresco-24x24.png';
   }
 
-  // For the rest of the cases just fallback to default behaviour.
   return null;
 };
 
 const iconResolver: ImageResolver = (row: DataRow, _col: DataColumn) => {
   if (row.obj.entry.icon) {
-    // Format image url
     return row.obj.entry.icon;
   }
 
-  // For the rest of the cases just fallback to default behaviour.
   return null;
 };
 
