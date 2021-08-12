@@ -1,6 +1,6 @@
-import { ClassDescription, MinimalNode, TypeEntry, TypePaging } from '@alfresco/js-api';
+import { AspectPaging, ClassDescription, MinimalNode, TypeEntry, TypePaging } from '@alfresco/js-api';
 import { Observable, of, ReplaySubject, Subject } from 'rxjs';
-import { customMetadataClassDescription, exifMetadataClassDescription, fakeTypeEntry, fakeTypePaging, mockNode1 } from './fake-node-and-classes';
+import { customMetadataClassDescription, exifMetadataClassDescription, fakeTypeEntry, fakeTypePaging, listAspectResp, mockNode1, mockNode2 } from './fake-node-and-classes';
 
 export class NodesApiServiceStub {
   updateNode(_: string, nodeBody: any, _2: any = {}): Observable<MinimalNode> {
@@ -11,6 +11,10 @@ export class NodesApiServiceStub {
     };
 
     return of(updatedNode);
+  }
+
+  getNode(_: string, _2: any = {}): Observable<MinimalNode> {
+    return of(mockNode2);
   }
 }
 
@@ -33,6 +37,7 @@ export class AlfrescoApiServiceStub {
 
   classesApi = new ClassesApiStub();
   typesApi = new TypesApiStub();
+  aspectsApi = new AspectsApiStub();
 }
 
 class ClassesApiStub {
@@ -52,5 +57,11 @@ class TypesApiStub {
 
   listTypes(_?: any): Promise<TypePaging> {
     return Promise.resolve(fakeTypePaging);
+  }
+}
+
+class AspectsApiStub {
+  listAspects(_?: any): Promise<AspectPaging> {
+    return Promise.resolve(listAspectResp)
   }
 }

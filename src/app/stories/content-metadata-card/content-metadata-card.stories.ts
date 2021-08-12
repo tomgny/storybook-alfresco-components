@@ -23,7 +23,7 @@ export default {
         CoreModule.forRoot(),
         AppCommonModule,
         BrowserAnimationsModule,
-        ContentMetadataModule
+        ContentMetadataModule,
       ],
       providers: [
         { provide: NodesApiService, useClass: NodesApiServiceStub },

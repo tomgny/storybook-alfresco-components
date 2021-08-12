@@ -1,5 +1,5 @@
 import { PropertyGroup } from '@alfresco/adf-content-services/lib/content-metadata/interfaces/property-group.interface';
-import { Constraint, Node, TypeEntry, TypePaging } from '@alfresco/js-api';
+import { AspectEntry, AspectPaging, Constraint, Node, TypeEntry, TypePaging } from '@alfresco/js-api';
 
 export const exifMetadataClassDescription: PropertyGroup = {
   name: 'exif:exif',
@@ -127,5 +127,52 @@ export const fakeTypeEntry: TypeEntry = {
 export const fakeTypePaging: TypePaging = {
   list: {
     entries: [fakeTypeEntry]
+  }
+};
+
+const aspectListMock: AspectEntry[] = [{
+  entry: {
+      parentId: 'frs:aspectZero',
+      id: 'frs:AspectOne',
+      description: 'First Aspect with random description',
+      title: 'FirstAspect',
+      properties: [
+          {
+              id: 'channelPassword',
+              title: 'The authenticated channel password',
+              dataType: 'd:propA'
+          },
+          {
+              id: 'channelUsername',
+              title: 'The authenticated channel username',
+              dataType: 'd:propB'
+          }
+      ]
+  }
+},
+{
+  entry: {
+      parentId: 'frs:AspectZer',
+      id: 'frs:SecondAspect',
+      description: 'Second Aspect description',
+      title: 'SecondAspect',
+      properties: [
+          {
+              id: 'assetId',
+              title: 'Published Asset Id',
+              dataType: 'd:text'
+          },
+          {
+              id: 'assetUrl',
+              title: 'Published Asset URL',
+              dataType: 'd:text'
+          }
+      ]
+  }
+}];
+
+export const listAspectResp: AspectPaging = {
+  list : {
+      entries: aspectListMock
   }
 };
