@@ -25,7 +25,15 @@ export default {
   ],
   argTypes: {
     date: { control: { type: 'date' } },
-    showTimeAgo: { control: { type: null } }
+    locale: {
+      options: ['en-US', 'fr', 'de', 'it', 'es', 'ja', 'nl', 'pt', 'nb', 'ru', 'zh', 'ar', 'cs', 'pl', 'fi', 'da', 'sv'],
+      control: { type: 'select' }
+    },
+    showTimeAgo: { table: { disable: true } },
+    textForDate: { table: { disable: true } },
+    registerLocales: { table: { disable: true } },
+    ngOnInit: { table: { disable: true } },
+    getStringBasedOnDate: { table: { disable: true } }
   }
 } as Meta;
 
@@ -78,4 +86,18 @@ export const TimeAgo3DaysAfter = Template.bind({});
 TimeAgo3DaysAfter.args = {
   ...TimeAgoNow.args,
   date: getDateXDaysBefore(-3)
+};
+
+export const TimeAgoDifferentLocale8DaysAgo = Template.bind({});
+
+TimeAgoDifferentLocale8DaysAgo.args = {
+  ...TimeAgo8DaysBefore.args,
+  locale: 'pl'
+};
+
+export const TimeAgoDifferentLocale2DaysAgo = Template.bind({});
+
+TimeAgoDifferentLocale2DaysAgo.args = {
+  ...TimeAgoDifferentLocale8DaysAgo.args,
+  date: getDateXDaysBefore(2)
 };

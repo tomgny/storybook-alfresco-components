@@ -1,5 +1,3 @@
-<p>core-pipes works!</p>
-
 <div *ngIf="showTimeAgo">
-    {{textForDate}} {{ date | adfTimeAgo }}
+    {{textForDate}} {{ date | adfTimeAgo : locale }}
 </div>
