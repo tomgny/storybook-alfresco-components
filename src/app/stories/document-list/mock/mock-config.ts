@@ -1,175 +1,169 @@
 export const mockConfig = {
-  "search-headers": {
-    "filterWithContains": true,
-    "app:fields": [
-      "cm:name",
-      "cm:title",
-      "cm:description",
-      "TEXT",
-      "TAG"
-    ],
-    "categories": [
+  'search-headers': {
+    filterWithContains: true,
+    'app:fields': ['cm:name', 'cm:title', 'cm:description', 'TEXT', 'TAG'],
+    categories: [
       {
-        "id": "queryName",
-        "name": "SEARCH.SEARCH_HEADER.FILTERS.NAME.TITLE",
-        "columnKey": "name",
-        "enabled": true,
-        "component": {
-          "selector": "text",
-          "settings": {
-            "pattern": "cm:name:'(.*?)'",
-            "field": "cm:name",
-            "placeholder": "SEARCH.SEARCH_HEADER.FILTERS.NAME.PLACEHOLDER",
-            "searchPrefix" : "*",
-            "searchSuffix" : "*"
+        id: 'queryName',
+        name: 'SEARCH.SEARCH_HEADER.FILTERS.NAME.TITLE',
+        columnKey: 'name',
+        enabled: true,
+        component: {
+          selector: 'text',
+          settings: {
+            pattern: "cm:name:'(.*?)'",
+            field: 'cm:name',
+            placeholder: 'SEARCH.SEARCH_HEADER.FILTERS.NAME.PLACEHOLDER',
+            searchPrefix: '*',
+            searchSuffix: '*'
           }
         }
       },
       {
-        "id": "checkList",
-        "name": "SEARCH.SEARCH_HEADER.FILTERS.TYPE.TITLE",
-        "columnKey":"$thumbnail",
-        "enabled": true,
-        "component": {
-          "selector": "check-list",
-          "settings": {
-            "pageSize": 5,
-            "operator": "OR",
-            "options": [
+        id: 'checkList',
+        name: 'SEARCH.SEARCH_HEADER.FILTERS.TYPE.TITLE',
+        columnKey: '$thumbnail',
+        enabled: true,
+        component: {
+          selector: 'check-list',
+          settings: {
+            pageSize: 5,
+            operator: 'OR',
+            options: [
               {
-                "name": "SEARCH.SEARCH_HEADER.FILTERS.TYPE.FOLDER",
-                "value": "TYPE:'cm:folder'"
+                name: 'SEARCH.SEARCH_HEADER.FILTERS.TYPE.FOLDER',
+                value: "TYPE:'cm:folder'"
               },
               {
-                "name": "SEARCH.SEARCH_HEADER.FILTERS.TYPE.DOCUMENT",
-                "value": "TYPE:'cm:content'"
+                name: 'SEARCH.SEARCH_HEADER.FILTERS.TYPE.DOCUMENT',
+                value: "TYPE:'cm:content'"
               }
             ]
           }
         }
       },
       {
-        "id": "contentSize",
-        "name": "SEARCH.SEARCH_HEADER.FILTERS.SIZE.TITLE",
-        "columnKey":"content.sizeInBytes",
-        "enabled": true,
-        "component": {
-          "selector": "check-list",
-          "settings": {
-            "options": [
+        id: 'contentSize',
+        name: 'SEARCH.SEARCH_HEADER.FILTERS.SIZE.TITLE',
+        columnKey: 'content.sizeInBytes',
+        enabled: true,
+        component: {
+          selector: 'check-list',
+          settings: {
+            options: [
               {
-                "name": "SEARCH.SEARCH_HEADER.FILTERS.SIZE.SMALL",
-                "value": "content.size:[0 TO 1048576> OR TYPE:'cm:folder'"
+                name: 'SEARCH.SEARCH_HEADER.FILTERS.SIZE.SMALL',
+                value: "content.size:[0 TO 1048576> OR TYPE:'cm:folder'"
               },
               {
-                "name": "SEARCH.SEARCH_HEADER.FILTERS.SIZE.MEDIUM",
-                "value": "content.size:[1048576 TO 52428800] OR TYPE:'cm:folder'"
+                name: 'SEARCH.SEARCH_HEADER.FILTERS.SIZE.MEDIUM',
+                value: "content.size:[1048576 TO 52428800] OR TYPE:'cm:folder'"
               },
               {
-                "name": "SEARCH.SEARCH_HEADER.FILTERS.SIZE.LARGE",
-                "value": "content.size:<52428800 TO 524288000] OR TYPE:'cm:folder'"
+                name: 'SEARCH.SEARCH_HEADER.FILTERS.SIZE.LARGE',
+                value: "content.size:<52428800 TO 524288000] OR TYPE:'cm:folder'"
               },
               {
-                "name": "SEARCH.SEARCH_HEADER.FILTERS.SIZE.HUGE",
-                "value": "content.size:<524288000 TO MAX] OR TYPE:'cm:folder'"
+                name: 'SEARCH.SEARCH_HEADER.FILTERS.SIZE.HUGE',
+                value: "content.size:<524288000 TO MAX] OR TYPE:'cm:folder'"
               }
             ]
           }
         }
       },
       {
-        "id": "createdDateRange",
-        "name": "SEARCH.SEARCH_HEADER.FILTERS.DATE.TITLE",
-        "columnKey": "createdAt",
-        "enabled": true,
-        "component": {
-          "selector": "date-range",
-          "settings": {
-            "field": "cm:created",
-            "dateFormat": "DD-MMM-YY",
-            "maxDate": "today"
+        id: 'createdDateRange',
+        name: 'SEARCH.SEARCH_HEADER.FILTERS.DATE.TITLE',
+        columnKey: 'createdAt',
+        enabled: true,
+        component: {
+          selector: 'date-range',
+          settings: {
+            field: 'cm:created',
+            dateFormat: 'DD-MMM-YY',
+            maxDate: 'today'
           }
         }
       }
     ],
-    "highlight": {
-      "prefix": " ",
-      "postfix": " ",
-      "mergeContiguous": true,
-      "fields": [
+    highlight: {
+      prefix: ' ',
+      postfix: ' ',
+      mergeContiguous: true,
+      fields: [
         {
-          "field": "cm:title"
+          field: 'cm:title'
         },
         {
-          "field": "description",
-          "prefix": "(",
-          "postfix": ")"
+          field: 'description',
+          prefix: '(',
+          postfix: ')'
         }
       ]
     },
-    "sorting": {
-      "options": [
+    sorting: {
+      options: [
         {
-          "key": "name",
-          "label": "Name",
-          "type": "FIELD",
-          "field": "cm:name",
-          "ascending": true
+          key: 'name',
+          label: 'Name',
+          type: 'FIELD',
+          field: 'cm:name',
+          ascending: true
         },
         {
-          "key": "content.sizeInBytes",
-          "label": "Size",
-          "type": "FIELD",
-          "field": "content.size",
-          "ascending": true
+          key: 'content.sizeInBytes',
+          label: 'Size',
+          type: 'FIELD',
+          field: 'content.size',
+          ascending: true
         },
         {
-          "key": "createdByUser",
-          "label": "Author",
-          "type": "FIELD",
-          "field": "cm:creator",
-          "ascending": true
+          key: 'createdByUser',
+          label: 'Author',
+          type: 'FIELD',
+          field: 'cm:creator',
+          ascending: true
         },
         {
-          "key": "createdAt",
-          "label": "Created",
-          "type": "FIELD",
-          "field": "cm:created",
-          "ascending": true
+          key: 'createdAt',
+          label: 'Created',
+          type: 'FIELD',
+          field: 'cm:created',
+          ascending: true
         },
         {
-          "key": "modifiedAt",
-          "label": "SEARCH.SORT.MODIFIED_DATE",
-          "type": "FIELD",
-          "field": "cm:modified",
-          "ascending": true
+          key: 'modifiedAt',
+          label: 'SEARCH.SORT.MODIFIED_DATE',
+          type: 'FIELD',
+          field: 'cm:modified',
+          ascending: true
         },
         {
-          "key": "modifiedByUser.displayName",
-          "label": "SEARCH.SORT.MODIFIER",
-          "type": "FIELD",
-          "field": "cm:modifier",
-          "ascending": true
+          key: 'modifiedByUser.displayName',
+          label: 'SEARCH.SORT.MODIFIER',
+          type: 'FIELD',
+          field: 'cm:modifier',
+          ascending: true
         },
         {
-          "key": "score",
-          "label": "Relevance",
-          "type": "SCORE",
-          "field": "score",
-          "ascending": false
+          key: 'score',
+          label: 'Relevance',
+          type: 'SCORE',
+          field: 'score',
+          ascending: false
         }
       ],
-      "defaults": [
+      defaults: [
         {
-          "key": "score",
-          "type": "SCORE",
-          "field": "score",
-          "ascending": false
+          key: 'score',
+          type: 'SCORE',
+          field: 'score',
+          ascending: false
         }
       ]
     }
   }
-}
+};
 
 export const mimeTypeIcons: any = {
   'image/png': './assets/images/ft_ic_raster_image.svg',
@@ -305,4 +299,3 @@ export const mimeTypeIcons: any = {
   save: './assets/images/save.svg',
   task: './assets/images/task.svg'
 };
-

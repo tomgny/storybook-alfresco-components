@@ -13,7 +13,6 @@ export class AuthenticationServiceStub {
 }
 
 export class AlfrescoApiServiceStub {
-
   nodesApi = new NodesApiStub();
 
   nodes = this.nodesApi;
@@ -29,8 +28,7 @@ export class AlfrescoApiServiceStub {
   getInstance = () => this;
 }
 
-export class UploadServiceStub{
-
+export class UploadServiceStub {
   fileUploadError: Subject<FileUploadErrorEvent> = new Subject<FileUploadErrorEvent>();
 
   beginUpload() {}

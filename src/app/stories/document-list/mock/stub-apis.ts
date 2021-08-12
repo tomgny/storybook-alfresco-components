@@ -19,7 +19,6 @@ export class NodesApiStub {
   }
 
   getNodeChildren(nodeId: string, options: any): Promise<NodeChildAssociationPaging> {
-    //?NodePaging
     if (options.where) {
       const where: string = options.where;
       const whereCondition: string[] = where.split('=');

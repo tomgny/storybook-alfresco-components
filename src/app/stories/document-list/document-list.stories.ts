@@ -279,14 +279,14 @@ NodeIcons.args = {
   imageResolver: iconResolver
 };
 
-export const FilterHeader = Template.bind({});
+export const FilterHeader = Template.bind({}); //doesn't work
 FilterHeader.args = {
   ...DefaultStory.args,
   filterValue: { name: '' },
   headerFilters: true
 };
 
-export const PermissionsStyle = Template.bind({});
+export const PermissionsStyle = Template.bind({}); //doesn't work - BUG
 PermissionsStyle.args = {
   ...DefaultStory.args,
   rowStyle: null,
@@ -294,7 +294,7 @@ PermissionsStyle.args = {
   permissionsStyle: [new PermissionStyleModel('document-list__create', AllowableOperationsEnum.CREATE, true, true)]
 };
 
-export const MaxItems = Template.bind({});
+export const MaxItems = Template.bind({}); //doesn't work
 MaxItems.args = {
   ...DefaultStory.args,
   maxItems: 2
