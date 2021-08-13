@@ -191,8 +191,6 @@ export class ContentMetadataCardComponent implements OnInit {
         "direction": "rtl"
       }
     ],
-
-    
     
     // this.translateService.loadTranslation('en.json')
     this.translateService.loadTranslation('en')
