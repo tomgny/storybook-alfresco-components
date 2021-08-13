@@ -28,11 +28,18 @@ export const exifMetadataClassDescription: PropertyGroup = {
 
 export const customMetadataClassDescription: PropertyGroup = {
   name: 'custom:custom',
-  title: 'Custom metadata',
+  title: 'Custom',
   properties: {
     'custom:path': { title: 'Path (Paths)', name: 'custom:path', dataType: 'd:text', mandatory: false, multiValued: true },
     'custom:source': { title: 'Source', name: 'custom:source', dataType: 'd:text', mandatory: false, multiValued: false },
     'custom:purpose': { title: 'Purpose (purposes) of file', name: 'custom:purpose', dataType: 'd:text', mandatory: false, multiValued: true }
+  }
+};
+
+export const emptyClassDescription: PropertyGroup = {
+  name: '',
+  title: '',
+  properties: {
   }
 };
 
@@ -53,6 +60,7 @@ export const mockNode1 = new Node({
   },
   allowableOperations: ['delete', 'update'],
   properties: {
+    'custom:source': 'Camera USB',
     'cm:versionLabel': '1.0',
     'cm:versionType': 'MAJOR',
     'exif:pixelXDimension': '1500',
@@ -67,7 +75,6 @@ export const mockNode1 = new Node({
     'exif:manufacturer': 'Sony',
     'exif:model': 'A6100',
     'cm:description': 'A picture of a building',
-    'custom:source': 'Camera USB',
     'custom:path': ['-my-', 'home/images/trip']
   },
   definition: {
@@ -111,7 +118,7 @@ export const mockNode1 = new Node({
 
 export const mockNode2 = {
   ...mockNode1,
-  aspectNames: [exifMetadataClassDescription.name, customMetadataClassDescription.name]
+  aspectNames: ['custom:custom', exifMetadataClassDescription.name, 'halo:alo' ]
 };
 
 export const fakeTypeEntry: TypeEntry = {
@@ -130,49 +137,127 @@ export const fakeTypePaging: TypePaging = {
   }
 };
 
-const aspectListMock: AspectEntry[] = [{
-  entry: {
+const aspectListMock: AspectEntry[] = [
+  {
+    entry: {
       parentId: 'frs:aspectZero',
-      id: 'frs:AspectOne',
-      description: 'First Aspect with random description',
-      title: 'FirstAspect',
+      id: 'exif:exif',
+      description:
+        'Aspect for images, sound, and ancillary tags used by digital cameras (including smartphones), scanners and other systems handling image and sound files recorded by digital cameras.',
+      title: 'Exif',
       properties: [
-          {
-              id: 'channelPassword',
-              title: 'The authenticated channel password',
-              dataType: 'd:propA'
-          },
-          {
-              id: 'channelUsername',
-              title: 'The authenticated channel username',
-              dataType: 'd:propB'
-          }
+        {
+          id: 'exif:pixelYDimension',
+          title: 'Number of pixels in Y dimension',
+          dataType: 'd:int'
+        },
+        {
+          id: 'exif:pixelXDimension',
+          title: 'Number of pixels in X dimension',
+          dataType: 'd:int'
+        },
+        {
+          id: 'exif:dateTimeOriginal',
+          title: 'Date and time of when photograph was taken',
+          dataType: 'd:time'
+        },
+        {
+          id: 'exif:exposureTime',
+          title: 'Exposure time',
+          dataType: 'd:text'
+        },
+        {
+          id: 'exif:fNumber',
+          title: 'Aperture ',
+          dataType: 'd:text'
+        },
+        {
+          id: 'exif:flash',
+          title: 'Was flash used',
+          dataType: 'd:boolean'
+        },
+        {
+          id: 'exif:focalLength',
+          title: 'Focal length [mm]',
+          dataType: 'd:int'
+        },
+        {
+          id: 'exif:isoSpeedRatings',
+          title: 'ISO',
+          dataType: 'd:text'
+        },
+        {
+          id: 'exif:orientation',
+          title: 'Photograph orientation',
+          dataType: 'd:text'
+        },
+        {
+          id: 'exif:manufacturer',
+          title: 'Camera manufacturer',
+          dataType: 'd:text'
+        },
+        {
+          id: 'exif:model',
+          title: 'Camera specific model',
+          dataType: 'd:text'
+        },
+        {
+          id: 'exif:software',
+          title: 'Software the photograph was edited with',
+          dataType: 'd:text'
+        }
       ]
-  }
-},
-{
-  entry: {
+    }
+  }, 
+  {
+    entry: {
       parentId: 'frs:AspectZer',
-      id: 'frs:SecondAspect',
-      description: 'Second Aspect description',
-      title: 'SecondAspect',
+      id: 'custom:custom',
+      description: 'Custom aspect for testing purposes',
+      title: 'Custom',
       properties: [
-          {
-              id: 'assetId',
-              title: 'Published Asset Id',
-              dataType: 'd:text'
-          },
-          {
-              id: 'assetUrl',
-              title: 'Published Asset URL',
-              dataType: 'd:text'
-          }
+        {
+          id: 'custom:path',
+          title: 'custom ipsum',
+          dataType: 'd:text'
+        },
+        {
+          id: 'custom:source',
+          title: 'custom ipsum',
+          dataType: 'd:text'
+        },
+        {
+          id: 'custom:purpose',
+          title: 'custom ipsum',
+          dataType: 'd:text'
+        }
       ]
+    }
   }
-}];
+];
 
 export const listAspectResp: AspectPaging = {
-  list : {
-      entries: aspectListMock
+  list: {
+    entries: aspectListMock
   }
 };
+
+export const listAspectRespA: AspectPaging = {
+  list: {
+    entries: aspectListMock.slice(0, 0)
+  }
+};
+
+export const listAspectRespB: AspectPaging = {
+  list: {
+    entries: aspectListMock.slice(1, 1)
+  }
+};
+
+export const emptyAspectPaging: AspectPaging = {
+  list: {
+    entries: [
+      
+    ] 
+  }
+}

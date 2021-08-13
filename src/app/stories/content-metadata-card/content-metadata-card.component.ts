@@ -1,3 +1,4 @@
+import { AspectListService } from '@alfresco/adf-content-services';
 import { AppConfigService } from '@alfresco/adf-core';
 import { Node } from '@alfresco/js-api';
 import { Component, Input, OnInit } from '@angular/core';
@@ -41,7 +42,7 @@ export class ContentMetadataCardComponent implements OnInit {
   @Input()
   selectFilterLimit: number;
 
-  constructor(private appConfig: AppConfigService) {}
+  constructor(private appConfig: AppConfigService, private aspectListService: AspectListService) {}
 
   ngOnInit(): void {
     this.appConfig.config['content-metadata'] = {
@@ -117,6 +118,10 @@ export class ContentMetadataCardComponent implements OnInit {
       'multi-value-pipe-separator': this.customSeparatorForMultiValueProperties,
       'selectFilterLimit': this.selectFilterLimit
     };    
+
+    // this.appConfig.config['aspect-visible'] = [ "custom:custom", "exif:exif" ]   
+
+    console.log(this.aspectListService.getVisibleAspects())
   }
 
  

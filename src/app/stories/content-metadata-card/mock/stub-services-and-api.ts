@@ -1,14 +1,34 @@
 import { AspectPaging, ClassDescription, MinimalNode, TypeEntry, TypePaging } from '@alfresco/js-api';
 import { Observable, of, ReplaySubject, Subject } from 'rxjs';
-import { customMetadataClassDescription, exifMetadataClassDescription, fakeTypeEntry, fakeTypePaging, listAspectResp, mockNode1, mockNode2 } from './fake-node-and-classes';
+import {
+  customMetadataClassDescription,
+  emptyAspectPaging,
+  emptyClassDescription,
+  exifMetadataClassDescription,
+  fakeTypeEntry,
+  fakeTypePaging,
+  listAspectResp,
+  listAspectRespA,
+  listAspectRespB,
+  mockNode2
+} from './fake-node-and-classes';
 
 export class NodesApiServiceStub {
   updateNode(_: string, nodeBody: any, _2: any = {}): Observable<MinimalNode> {
-    const updatedNode = { ...mockNode1 };
-    updatedNode.properties = {
-      ...updatedNode.properties,
-      ...nodeBody.properties
-    };
+    const updatedNode = { ...mockNode2 };
+
+    if (nodeBody?.properties) {
+      updatedNode.properties = {
+        ...updatedNode.properties,
+        ...nodeBody.properties
+      };
+    }
+
+    if (nodeBody?.aspectNames) {
+      updatedNode.aspectNames = nodeBody.aspectNames.slice();
+    }
+
+    console.log(updatedNode);
 
     return of(updatedNode);
   }
@@ -42,7 +62,15 @@ export class AlfrescoApiServiceStub {
 
 class ClassesApiStub {
   getClass(className: string, _2?: any): Promise<ClassDescription> {
-    return className === 'exif_exif' ? Promise.resolve(exifMetadataClassDescription) : Promise.resolve(customMetadataClassDescription);
+    if (className === 'exif_exif') {
+      return Promise.resolve(exifMetadataClassDescription);
+    }
+
+    if (className === 'custom_custom') {
+      return Promise.resolve(customMetadataClassDescription);
+    }
+
+    return Promise.resolve(emptyClassDescription);
   }
 }
 
@@ -61,7 +89,21 @@ class TypesApiStub {
 }
 
 class AspectsApiStub {
-  listAspects(_?: any): Promise<AspectPaging> {
-    return Promise.resolve(listAspectResp)
+  listAspects(opts?: any): Promise<AspectPaging> {
+    if (mockNode2.aspectNames.indexOf('exif:exif') !== -1 && mockNode2.aspectNames.indexOf('custom:custom') !== -1) {
+      if (opts.where === `(not namespaceUri matches('http://www.alfresco.*'))`) {
+        return Promise.resolve(listAspectResp);
+      }
+    } else if (mockNode2.aspectNames.indexOf('exif:exif') !== -1) {
+      if (opts.where === `(not namespaceUri matches('http://www.alfresco.*'))`) {
+        return Promise.resolve(listAspectRespA);
+      }
+    } else if (mockNode2.aspectNames.indexOf('custom:custom') !== -1) {
+      if (opts.where === `(not namespaceUri matches('http://www.alfresco.*'))`) {
+        return Promise.resolve(listAspectRespB);
+      }
+    }
+
+    return Promise.resolve(emptyAspectPaging);
   }
 }

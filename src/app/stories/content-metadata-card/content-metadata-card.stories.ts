@@ -6,7 +6,7 @@ import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { APP_ROUTES } from '../../app.routes';
 import { AppCommonModule } from '../../components/common/common.module';
 import { ContentMetadataCardComponent } from './content-metadata-card.component';
-import { customMetadataClassDescription, exifMetadataClassDescription, mockNode1, mockNode2 } from './mock/fake-node-and-classes';
+import { customMetadataClassDescription, exifMetadataClassDescription, /* mockNode1 ,*/ mockNode2 } from './mock/fake-node-and-classes';
 import { AlfrescoApiServiceStub, NodesApiServiceStub, VersionCompatibilityServiceStub } from './mock/stub-services-and-api';
 
 export default {
@@ -61,7 +61,7 @@ const Template: Story<ContentMetadataCardComponent> = (args) => ({
 export const Default = Template.bind({});
 
 Default.args = {
-  node: mockNode1,
+  node: mockNode2,
   preset: 'default',
   displayDefaultProperties: true,
   displayAspect: null,
