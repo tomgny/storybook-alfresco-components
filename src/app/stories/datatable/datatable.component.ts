@@ -1,5 +1,5 @@
-import { DataRowEvent, ObjectDataTableAdapter, ShowHeaderMode } from '@alfresco/adf-core';
-import { Component, Input } from '@angular/core';
+import { CoreModule, DataRowEvent, ObjectDataTableAdapter, ShowHeaderMode } from '@alfresco/adf-core';
+import { Component, Input, NgModule } from '@angular/core';
 
 @Component({
   selector: 'aca-datatable',
@@ -134,3 +134,10 @@ export class DatatableComponent {
     window.alert(`Row double click event: ${event}`);
   }
 }
+
+@NgModule({
+  declarations: [DatatableComponent],
+  imports: [CoreModule.forChild()],
+  exports: [DatatableComponent],
+})
+export class DatatableModule {}

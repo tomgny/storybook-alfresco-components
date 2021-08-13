@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { APP_ROUTES } from '../../app.routes';
 import { AppCommonModule } from '../../components/common/common.module';
-import { DatatableComponent } from './datatable.component';
+import { DatatableComponent, DatatableModule } from './datatable.component';
 import { action } from '@storybook/addon-actions';
 
 export default {
@@ -14,8 +14,9 @@ export default {
   title: 'Datatable component',
   decorators: [
     moduleMetadata({
-      declarations: [DatatableComponent],
+      declarations: [],
       imports: [
+        DatatableModule,
         RouterModule.forRoot(APP_ROUTES, {
           useHash: true,
           enableTracing: false // enable for debug only
