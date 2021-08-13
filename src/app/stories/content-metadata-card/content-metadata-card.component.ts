@@ -1,4 +1,4 @@
-import { AppConfigService, TranslationService } from '@alfresco/adf-core';
+import { AppConfigService } from '@alfresco/adf-core';
 import { Node } from '@alfresco/js-api';
 import { Component, Input, OnInit } from '@angular/core';
 
@@ -41,7 +41,7 @@ export class ContentMetadataCardComponent implements OnInit {
   @Input()
   selectFilterLimit: number;
 
-  constructor(private appConfig: AppConfigService, private translateService: TranslationService) {}
+  constructor(private appConfig: AppConfigService) {}
 
   ngOnInit(): void {
     this.appConfig.config['content-metadata'] = {
@@ -116,93 +116,7 @@ export class ContentMetadataCardComponent implements OnInit {
       'multi-value-chips': this.allowMultiValueChips,
       'multi-value-pipe-separator': this.customSeparatorForMultiValueProperties,
       'selectFilterLimit': this.selectFilterLimit
-    };
-
-    this.appConfig.config['locale'] = 'en'
-
-    this.appConfig.config["languages"]= [
-      {
-        "key": "de",
-        "label": "Deutsch"
-      },
-      {
-        "key": "en",
-        "label": "English"
-      },
-      {
-        "key": "es",
-        "label": "Español"
-      },
-      {
-        "key": "fr",
-        "label": "Français"
-      },
-      {
-        "key": "it",
-        "label": "Italiano"
-      },
-      {
-        "key": "ja",
-        "label": "日本語"
-      },
-      {
-        "key": "nb",
-        "label": "Bokmål"
-      },
-      {
-        "key": "nl",
-        "label": "Nederlands"
-      },
-      {
-        "key": "pt-BR",
-        "label": "Português (Brasil)"
-      },
-      {
-        "key": "ru",
-        "label": "Русский"
-      },
-      {
-        "key": "zh-CN",
-        "label": "中文简体"
-      },
-      {
-        "key": "cs",
-        "label": "Čeština"
-      },
-      {
-        "key": "da",
-        "label": "Dansk"
-      },
-      {
-        "key": "fi",
-        "label": "Suomi"
-      },
-      {
-        "key": "pl",
-        "label": "Polski"
-      },
-      {
-        "key": "sv",
-        "label": "Svenska"
-      },
-      {
-        "key": "ar",
-        "label": "العربية",
-        "direction": "rtl"
-      }
-    ],
-    
-    // this.translateService.loadTranslation('en.json')
-    this.translateService.loadTranslation('en')
-    this.translateService.use('en');
-
-    console.log(this.translateService.instant('ADF-ASPECT-LIST.PROPERTY_NAME'));
-    
-
-    this.translateService.get('ADF-ASPECT-LIST.PROPERTY_NAME').subscribe(translation => {
-      console.log(translation);
-    });
-    
+    };    
   }
 
  

@@ -1,8 +1,7 @@
 import { ContentMetadataModule } from '@alfresco/adf-content-services';
-import { AlfrescoApiService, CoreModule, NodesApiService, TranslateLoaderService, TRANSLATION_PROVIDER, /* TRANSLATION_PROVIDER ,*/ VersionCompatibilityService } from '@alfresco/adf-core';
+import { AlfrescoApiService, CoreModule, NodesApiService, TRANSLATION_PROVIDER, VersionCompatibilityService } from '@alfresco/adf-core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
-import { TranslateLoader, TranslateModule, TranslateService, TranslateStore } from '@ngx-translate/core';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { APP_ROUTES } from '../../app.routes';
 import { AppCommonModule } from '../../components/common/common.module';
@@ -24,33 +23,20 @@ export default {
         CoreModule.forRoot(),
         AppCommonModule,
         BrowserAnimationsModule,
-        ContentMetadataModule,
-        TranslateModule.forRoot()
+        ContentMetadataModule
       ],
       providers: [
         { provide: NodesApiService, useClass: NodesApiServiceStub },
-        { provide: AlfrescoApiService, useClass: AlfrescoApiServiceStub }, 
-        { provide: VersionCompatibilityService, useClass: VersionCompatibilityServiceStub},
-        TranslateStore,
-        TranslateService,
-        { provide: TranslateLoader, useClass: TranslateLoaderService },
-        
+        { provide: AlfrescoApiService, useClass: AlfrescoApiServiceStub },
+        { provide: VersionCompatibilityService, useClass: VersionCompatibilityServiceStub },
         {
           provide: TRANSLATION_PROVIDER,
           multi: true,
           useValue: {
-              name: 'app',
-              source: 'assets'
+            name: 'app',
+            source: 'assets'
           }
-      },
-      // {
-      //     provide: TRANSLATION_PROVIDER,
-      //     multi: true,
-      //     useValue: {
-      //         name: 'lazy-loading',
-      //         source: 'src/adf-core/lazy-loading'
-      //     }
-      // },
+        }
       ]
     })
   ],
