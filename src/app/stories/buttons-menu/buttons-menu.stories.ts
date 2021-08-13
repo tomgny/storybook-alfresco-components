@@ -3,17 +3,18 @@ import { BrowserAnimationsModule, /* NoopAnimationsModule */ } from '@angular/pl
 import { RouterModule } from '@angular/router';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { APP_ROUTES } from '../../app.routes';
-import { AppCommonModule } from '../common/common.module';
+import { AppCommonModule } from '../../components/common/common.module';
 import { Button } from './button';
-import { MyButtonsMenuComponent } from './my-buttons-menu.component';
+import { ButtonsMenuComponent, ButtonsMenuModule } from './buttons-menu.component';
 
 export default {
-    component: MyButtonsMenuComponent,
+    component: ButtonsMenuComponent,
     title: 'Buttons Menu',
     decorators: [
         moduleMetadata({
-            declarations: [MyButtonsMenuComponent],
+            declarations: [],
             imports: [
+                ButtonsMenuModule,
                 RouterModule.forRoot(APP_ROUTES, {
                   useHash: true,
                   enableTracing: false // enable for debug only
@@ -26,7 +27,7 @@ export default {
     ]
 } as Meta;
 
-const Template: Story<MyButtonsMenuComponent> = (args) => ({
+const Template: Story<ButtonsMenuComponent> = (args) => ({
     props: args
 });
 

@@ -89,7 +89,7 @@ import { DatatableComponent } from './stories/datatable/datatable.component';
 import { DatatableCustomComponent } from './stories/datatable/datatable-custom-data/datatable-custom-data.component';
 import { UserInfoComponent } from './stories/user-info/user-info.component';
 import { ToolbarComponent } from './stories/toolbar/toolbar.component';
-import { MyButtonsMenuComponent } from './components/my-buttons-menu/my-buttons-menu.component';
+import { ButtonsMenuComponent } from './stories/buttons-menu/buttons-menu.component';
 
 
 registerLocaleData(localeFr);
@@ -160,7 +160,7 @@ registerLocaleData(localeSv);
     DatatableCustomComponent,
     UserInfoComponent,
     ToolbarComponent,
-    MyButtonsMenuComponent
+    ButtonsMenuComponent
   ],
   providers: [
     { provide: AppConfigService, useClass: DebugAppConfigService },
