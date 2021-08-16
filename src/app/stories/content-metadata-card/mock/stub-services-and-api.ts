@@ -10,12 +10,12 @@ import {
   listAspectResp,
   listAspectRespA,
   listAspectRespB,
-  mockNode2
+  mockNode
 } from './fake-node-and-classes';
 
 export class NodesApiServiceStub {
   updateNode(_: string, nodeBody: any, _2: any = {}): Observable<MinimalNode> {
-    const updatedNode = { ...mockNode2 };
+    const updatedNode = mockNode;
 
     if (nodeBody?.properties) {
       updatedNode.properties = {
@@ -26,16 +26,13 @@ export class NodesApiServiceStub {
 
     if (nodeBody?.aspectNames) {
       updatedNode.aspectNames = nodeBody.aspectNames.slice();
-      mockNode2.aspectNames = nodeBody.aspectNames.slice();
     }
-
-    console.log(updatedNode);
 
     return of(updatedNode);
   }
 
   getNode(_: string, _2: any = {}): Observable<MinimalNode> {
-    return of(mockNode2);
+    return of(mockNode);
   }
 }
 
@@ -92,23 +89,23 @@ class TypesApiStub {
 class AspectsApiStub {
   listAspects(opts?: any): Promise<AspectPaging> {
     if (opts.where === `(not namespaceUri matches('http://www.alfresco.*'))`) {
-      if (mockNode2.aspectNames.length === 2) {
+      if (mockNode.aspectNames.length === 2) {
         return Promise.resolve(listAspectResp);
-      } else if (mockNode2.aspectNames[0] === 'exif:exif') {
+      } else if (mockNode.aspectNames[0] === 'exif:exif') {
         return Promise.resolve(listAspectRespA);
-      } else if (mockNode2.aspectNames[0] === 'custom:custom') {
+      } else if (mockNode.aspectNames[0] === 'custom:custom') {
         return Promise.resolve(listAspectRespB);
       }
     }
 
     if (opts.where === `(modelId in ('cm:contentmodel', 'emailserver:emailserverModel', 'smf:smartFolder', 'app:applicationmodel' ))`) {
-      if (mockNode2.aspectNames.length === 2) {
+      if (mockNode.aspectNames.length === 2) {
         return Promise.resolve(emptyAspectPaging);
-      } else if (mockNode2.aspectNames.length === 0) {
+      } else if (mockNode.aspectNames.length === 0) {
         return Promise.resolve(listAspectResp);
-      } else if (mockNode2.aspectNames[0] === 'exif:exif') {
+      } else if (mockNode.aspectNames[0] === 'exif:exif') {
         return Promise.resolve(listAspectRespB);
-      } else if (mockNode2.aspectNames[0] === 'custom:custom') {
+      } else if (mockNode.aspectNames[0] === 'custom:custom') {
         return Promise.resolve(listAspectRespA);
       }
     }

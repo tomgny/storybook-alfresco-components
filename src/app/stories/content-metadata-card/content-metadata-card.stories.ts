@@ -6,7 +6,7 @@ import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { APP_ROUTES } from '../../app.routes';
 import { AppCommonModule } from '../../components/common/common.module';
 import { ContentMetadataCardComponent } from './content-metadata-card.component';
-import { customMetadataClassDescription, exifMetadataClassDescription, /* mockNode1 ,*/ mockNode2 } from './mock/fake-node-and-classes';
+import { customMetadataClassDescription, exifMetadataClassDescription, mockNode } from './mock/fake-node-and-classes';
 import { AlfrescoApiServiceStub, NodesApiServiceStub, VersionCompatibilityServiceStub } from './mock/stub-services-and-api';
 
 export default {
@@ -61,7 +61,7 @@ const Template: Story<ContentMetadataCardComponent> = (args) => ({
 export const Default = Template.bind({});
 
 Default.args = {
-  node: mockNode2,
+  node: mockNode,
   preset: 'default',
   displayDefaultProperties: true,
   displayAspect: null,
@@ -92,7 +92,7 @@ export const AllPropertiesDisplayed = Template.bind({});
 
 AllPropertiesDisplayed.args = {
   ...Default.args,
-  node: mockNode2,
+  node: mockNode,
   preset: 'allProperties',
   displayAspect: customMetadataClassDescription.title
 };
@@ -200,7 +200,7 @@ export const CherryPickedPropertiesGroupedIntoAccordionDrawer = Template.bind({}
 
 CherryPickedPropertiesGroupedIntoAccordionDrawer.args = {
   ...Default.args,
-  node: mockNode2,
+  node: mockNode,
   preset: 'customGroupOfCherryPickedProperties',
   displayAspect: 'Custom group'
 };
@@ -312,7 +312,7 @@ export const ExcludeAspectWhileIncludingAll = Template.bind({});
 
 ExcludeAspectWhileIncludingAll.args = {
   ...Default.args,
-  node: mockNode2,
+  node: mockNode,
   preset: 'exifExcludedFromAllProperties',
   displayAspect: customMetadataClassDescription.title
 };
@@ -426,4 +426,29 @@ CustomSelectFilterLimitSet.args = {
   ...DefaultPropertiesHidden.args,
   selectFilterLimit: 2,
   preset: 'propertiesWithListValueSelection'
+};
+
+CustomSelectFilterLimitSet.parameters = {
+  docs: {
+    description: {
+      story: ` 
+      \`
+
+      "content-metadata": {
+        "presets": {
+          "propertiesWithListValueSelection": [
+            {
+              title: 'Properties with drop-down menu value selection',
+              items: [
+                { aspect: 'exif:exif', properties: ['exif:isoSpeedRatings', 'exif:exposureTime'] },
+                { aspect: 'custom:custom', properties: 'custom:source' }
+              ]
+            }
+          ]
+        }  
+      }, 
+      \`  
+      `
+    }
+  }
 };

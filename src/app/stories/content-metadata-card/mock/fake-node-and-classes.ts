@@ -42,7 +42,7 @@ export const emptyClassDescription: PropertyGroup = {
   properties: {}
 };
 
-export const mockNode1 = new Node({
+export const mockNode = new Node({
   name: '1000555.jpg',
   id: '70e1cc6a-6918-468a-b84a-1048093b06fd',
   isFile: true,
@@ -112,13 +112,9 @@ export const mockNode1 = new Node({
         ]
       } as Constraint
     ]
-  }
-});
-
-export const mockNode2 = {
-  ...mockNode1,
+  },
   aspectNames: [customMetadataClassDescription.name, exifMetadataClassDescription.name]
-};
+});
 
 export const fakeTypeEntry: TypeEntry = {
   entry: {
