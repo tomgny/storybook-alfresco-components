@@ -7,24 +7,46 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './content-metadata-card.component.html',
 })
 export class ContentMetadataCardComponent implements OnInit {
+  
+  /**  
+  * (required) The node entity to fetch metadata about
+  */
   @Input()
   node: Node;
 
+  /**  
+  * (required) Name of the metadata preset, which defines aspects and their properties.
+  */
   @Input()
   preset: string;
 
+  /**  
+  * (optional) This flag displays desired aspect when open for the first time fields.
+  */
   @Input()
   displayAspect: string;
 
+  /**  
+  * (optional) This flag displays/hides empty metadata fields.
+  */
   @Input()
   displayEmpty: boolean;
 
+  /**  
+  * (optional) This flag allows the component to display more than one accordion at a time.
+  */
   @Input()
   multi: boolean;
 
+  /**  
+  * (optional) This flag sets the metadata in read only mode preventing changes.
+  */
   @Input()
   readOnly: boolean;
 
+  /**  
+  * (optional) This flag displays/hides the metadata properties.
+  */
   @Input()
   displayDefaultProperties: boolean;
 
