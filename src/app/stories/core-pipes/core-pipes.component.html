@@ -25,3 +25,7 @@
 <div *ngIf="showFullName">
     Project Leader: {{ user | fullName }}
 </div>
+
+<div *ngIf="showUserInitial">
+    <div [outerHTML]="user | usernameInitials : className : delimiter "></div>
+</div>

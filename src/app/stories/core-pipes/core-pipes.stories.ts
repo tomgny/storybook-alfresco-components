@@ -41,7 +41,12 @@ export default {
     validateAndSetDigitsInfoValues: { table: { disable: true } },
     showFileSize: { table: { disable: true } },
     showLocalizedDate: { table: { disable: true } },
-    showFullName: { table: { disable: true } }
+    showFullName: { table: { disable: true } },
+    showUserInitial: { table: { disable: true } },
+    className: {
+      options: [ '', 'adf-people-initial', 'adf-people-widget-pic', 'adf-notification-initiator-pic', 'adf-userinfo-pic', 'adf-userinfo-profile-initials adf-hide-small',  ],
+      control: { type: 'select' }
+    }
   }
 } as Meta;
 
@@ -289,3 +294,48 @@ FullNameNothing.args = {
   username: '',
   email: ''
 };
+
+export const UserInitialDefault = Template.bind({});
+
+UserInitialDefault.args = {
+  ...FullNameDefault.args,
+  showFullName: false,
+  showUserInitial: true,
+}
+
+export const UserInitialNoFirstName = Template.bind({});
+
+UserInitialNoFirstName.args = {
+  ...UserInitialDefault.args,
+  firstName: '',
+}
+
+export const UserInitialNoLastName = Template.bind({});
+
+UserInitialNoLastName.args = {
+  ...UserInitialDefault.args,
+  lastName: '',
+}
+
+export const UserInitialNoFirstAndLastName = Template.bind({});
+
+UserInitialNoFirstAndLastName.args = {
+  ...UserInitialDefault.args,
+  firstName: '',
+  lastName: '',
+}
+
+export const UserInitialClassNameSet = Template.bind({})
+
+UserInitialClassNameSet.args = {
+  ...UserInitialDefault.args,
+  className: 'adf-people-initial'
+}
+
+export const UserInitialCustomDelimiterSet = Template.bind({})
+
+UserInitialCustomDelimiterSet.args = {
+  ...UserInitialDefault.args,
+  delimiter: '-'
+}
+

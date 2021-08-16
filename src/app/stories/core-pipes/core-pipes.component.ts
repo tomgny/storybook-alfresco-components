@@ -17,7 +17,7 @@ import localePl from '@angular/common/locales/pl';
 import localeFi from '@angular/common/locales/fi';
 import localeDa from '@angular/common/locales/da';
 import localeSv from '@angular/common/locales/sv';
-import { DecimalNumberModel, TranslationService /* UserProcessModel */ } from '@alfresco/adf-core';
+import { DecimalNumberModel, TranslationService } from '@alfresco/adf-core';
 
 @Component({
   selector: 'aca-core-pipes',
@@ -102,6 +102,15 @@ export class CorePipesComponent implements OnInit {
 
   @Input()
   email: string;
+
+  @Input()
+  showUserInitial: string;
+
+  @Input()
+  className: string = '';
+
+  @Input()
+  delimiter: string = '';
 
   user: any;
 
