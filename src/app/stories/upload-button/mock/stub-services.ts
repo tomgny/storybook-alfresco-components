@@ -1,8 +1,5 @@
-
 import { NodeEntry } from '@alfresco/js-api';
-
 import { from, Observable, ReplaySubject, Subject } from 'rxjs';
-
 import { ContentApiStub, NodesApiStub } from './stub-apis';
 
 export class AuthenticationServiceStub {
@@ -31,8 +28,7 @@ export class AlfrescoApiServiceStub {
   getInstance = () => this;
 }
 
-export class ContentServiceStub{
-
+export class ContentServiceStub {
   apiService = new AlfrescoApiServiceStub();
 
   hasPermissions = () => true;
@@ -44,8 +40,7 @@ export class ContentServiceStub{
   }
 }
 
-export class NodesApiServiceStub{
-
+export class NodesApiServiceStub {
   nodesApi = new NodesApiStub();
 
   deleteNode(nodeId: string, _?: any): Observable<NodeEntry> {
@@ -55,5 +50,4 @@ export class NodesApiServiceStub{
   getNode(nodeId: string, _?: any): Observable<NodeEntry> {
     return from(this.nodesApi.getNode(nodeId, _));
   }
-
 }

@@ -265,35 +265,14 @@ export const fakeNodePaging: NodePaging = {
       },
       {
         entry: mockNode5
-      },
+      }
     ]
   }
 };
 
-export const mockPreselectedNodes: NodeEntry[] = [
-  {
-    entry: mockNode1
-  },
-  {
-    entry: mockNode2
-  },
-  {
-    entry: mockNode3
-  },
-  {
-    entry: mockNode4
-  },
-];
-
 export const mockNodeEntry: NodeEntry = {
   entry: mockNode1
-}
-
-export const mockFolderWithAllPermissions: NodeEntry[] = [
-  {
-    entry: fakeNodeWithCreatePermission
-  },
-];
+};
 
 export const mockNodePaging: NodePaging = {
   list: {
@@ -350,7 +329,7 @@ export const nodeIdToObjectTranslating = {
   mock_node_3: mockNode3,
   mock_node_4: mockNode4,
   mock_node_5: mockNode5,
-  'fake_node_with_create_permission': fakeNodeWithCreatePermission,
+  fake_node_with_create_permission: fakeNodeWithCreatePermission,
   fake_node_with_no_permission: fakeNodeWithNoPermission,
   '-root-': mockNodePaging,
   '-my-': fakeNodePaging

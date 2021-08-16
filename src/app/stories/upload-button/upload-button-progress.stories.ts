@@ -1,6 +1,13 @@
 import { ContentModule } from '@alfresco/adf-content-services';
-import { AlfrescoApiService, AuthenticationService, ContentService, CoreModule, MaterialModule, NodesApiService, UploadService,  } from '@alfresco/adf-core';
-import { A11yModule } from '@angular/cdk/a11y';
+import {
+  AlfrescoApiService,
+  AuthenticationService,
+  ContentService,
+  CoreModule,
+  MaterialModule,
+  NodesApiService,
+  UploadService
+} from '@alfresco/adf-core';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
@@ -27,16 +34,14 @@ export default {
         ContentModule.forRoot(),
         MaterialModule,
         BrowserAnimationsModule,
-        CommonModule,
-        A11yModule
-      ]
-      ,
+        CommonModule
+      ],
       providers: [
         { provide: AlfrescoApiService, useClass: AlfrescoApiServiceStub },
         { provide: AuthenticationService, useClass: AuthenticationServiceStub },
-        { provide: ContentService, useClass: ContentServiceStub},
+        { provide: ContentService, useClass: ContentServiceStub },
         { provide: UploadService, useClass: UploadServiceProgressStub },
-        { provide: NodesApiService, useClass: NodesApiServiceStub}
+        { provide: NodesApiService, useClass: NodesApiServiceStub }
       ]
     })
   ]
@@ -46,7 +51,7 @@ const Template: Story<UploadButtonComponent> = (args) => ({
   props: {
     ...args
   }
-})
+});
 
 export const ProgressUpload = Template.bind({});
 ProgressUpload.args = {
@@ -60,19 +65,19 @@ ProgressUpload.args = {
   nodeType: 'cm:content',
   rootFolderId: 'fake_node_with_create_permission',
   staticTitle: undefined,
-  tooltip: undefined, //not work
+  tooltip: undefined,
   uploadFolders: false,
-  versioning: false,
-}
+  versioning: false
+};
 
 export const ProgressMultipleUploadState = Template.bind({});
 ProgressMultipleUploadState.args = {
   ...ProgressUpload.args,
   multipleFiles: true
-}
+};
 
 export const ProgressFailFolderUploadState = Template.bind({});
 ProgressFailFolderUploadState.args = {
   ...ProgressUpload.args,
   uploadFolders: true
-}
+};

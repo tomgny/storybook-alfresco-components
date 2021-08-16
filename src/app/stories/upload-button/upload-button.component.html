@@ -20,9 +20,9 @@
 >
 </adf-upload-button>
 <adf-file-uploading-dialog></adf-file-uploading-dialog>
+<hr />
+<p>Comment: {{ comment }}</p>
+<p>Major version?: {{ majorVersion }}</p>
+<p>Node type: {{ nodeType }}</p>
 
-<adf-document-list style="visibility: hidden;"
-    #documentList
-    [currentFolderId]="'-my-'"
-    [contentActions]="true">
-</adf-document-list>
+<adf-document-list style="visibility: hidden" #documentList [currentFolderId]="'-my-'"> </adf-document-list>
