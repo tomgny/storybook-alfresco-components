@@ -33,6 +33,15 @@ export class CorePipesComponent implements OnInit {
   @Input()
   locale: string = 'en-US';
 
+  @Input()
+  showMultiValue: boolean = false;
+
+  @Input()
+  animals: string[];
+
+  @Input()
+  customSeparator: string = ', ';
+
   textForDate: string;
 
   constructor() { }

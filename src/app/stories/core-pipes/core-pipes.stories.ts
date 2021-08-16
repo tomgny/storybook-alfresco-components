@@ -33,7 +33,8 @@ export default {
     textForDate: { table: { disable: true } },
     registerLocales: { table: { disable: true } },
     ngOnInit: { table: { disable: true } },
-    getStringBasedOnDate: { table: { disable: true } }
+    getStringBasedOnDate: { table: { disable: true } },
+    showMultiValue: { table: { disable: true } },
   }
 } as Meta;
 
@@ -101,3 +102,17 @@ TimeAgoDifferentLocale2DaysAgo.args = {
   ...TimeAgoDifferentLocale8DaysAgo.args,
   date: getDateXDaysBefore(2)
 };
+
+export const MultiValueDefault = Template.bind({});
+
+MultiValueDefault.args = {
+  showMultiValue: true,
+  animals: ['cat', 'dog', 'parrot', 'dove', 'rabbit']
+}
+
+export const MultiValueCustomSeparatorSet = Template.bind({});
+
+MultiValueCustomSeparatorSet.args = {
+  ...MultiValueDefault.args,
+  customSeparator: ' :) '
+}

@@ -1,3 +1,7 @@
 <div *ngIf="showTimeAgo">
     {{textForDate}} {{ date | adfTimeAgo : locale }}
 </div>
+
+<div *ngIf="showMultiValue">
+    Animals: {{ animals | multiValue: customSeparator }}
+</div>
