@@ -40,7 +40,8 @@ export default {
     digitsInfo: { table: { disable: true } },
     validateAndSetDigitsInfoValues: { table: { disable: true } },
     showFileSize: { table: { disable: true } },
-    showLocalizedDate: { table: { disable: true } }
+    showLocalizedDate: { table: { disable: true } },
+    showFullName: { table: { disable: true } }
   }
 } as Meta;
 
@@ -236,4 +237,55 @@ export const LocalizedDateDifferentLocaleSet = Template.bind({});
 LocalizedDateDifferentLocaleSet.args = {
   ...LocalizedDateDefault.args,
   locale: 'pl'
+};
+
+export const FullNameDefault = Template.bind({});
+
+FullNameDefault.args = {
+  showFullName: true,
+  firstName: 'John',
+  lastName: 'Smith',
+  username: 'johny999',
+  email: 'john.smith@gmail.com'
+};
+
+export const FullNameNoFirstName = Template.bind({});
+
+FullNameNoFirstName.args = {
+  ...FullNameDefault.args,
+  firstName: ''
+};
+
+export const FullNameNoLastName = Template.bind({});
+
+FullNameNoLastName.args = {
+  ...FullNameDefault.args,
+  lastName: ''
+};
+
+export const FullNameNoFirstAndLastName = Template.bind({});
+
+FullNameNoFirstAndLastName.args = {
+  ...FullNameDefault.args,
+  firstName: '',
+  lastName: ''
+};
+
+export const FullNameNoFirstLastNameAndUsername = Template.bind({});
+
+FullNameNoFirstLastNameAndUsername.args = {
+  ...FullNameDefault.args,
+  firstName: '',
+  lastName: '',
+  username: ''
+};
+
+export const FullNameNothing = Template.bind({});
+
+FullNameNothing.args = {
+  ...FullNameDefault.args,
+  firstName: '',
+  lastName: '',
+  username: '',
+  email: ''
 };

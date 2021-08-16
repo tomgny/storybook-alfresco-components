@@ -21,3 +21,7 @@
 <div *ngIf="showLocalizedDate">
     Current date: {{ date | adfLocalizedDate : format : locale }}
 </div>
+
+<div *ngIf="showFullName">
+    Project Leader: {{ user | fullName }}
+</div>
