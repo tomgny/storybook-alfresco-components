@@ -139,10 +139,9 @@ export class UploadServiceFailStub {
     return Promise.resolve();
   }
 
-  private beginUpload(file: FileModel, _successEmitter?: EventEmitter<any>, errorEmitter?: EventEmitter<any>): any {
+  private beginUpload(file: FileModel, _successEmitter?: EventEmitter<any>, _errorEmitter?: EventEmitter<any>): any {
     const promise = this.getUploadPromise(file);
     this.onUploadError(file, undefined);
-    errorEmitter.emit({ 'Error!': 'Error upload file/files' });
     return promise;
   }
 
