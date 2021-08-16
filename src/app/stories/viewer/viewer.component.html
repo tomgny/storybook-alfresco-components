@@ -1,0 +1,119 @@
+<ng-template #customThumbnailsTemplate let-pdfViewer="viewer">
+    <aca-custom-thumbnails [pdfViewer]="pdfViewer"></aca-custom-thumbnails>
+</ng-template>
+
+<ng-template let-node="node" #sidebarTemplate>
+    <adf-content-metadata-card [node]="node"></adf-content-metadata-card>
+</ng-template>
+
+<adf-document-list
+    *ngIf="showDocumentList"
+    currentFolderId="nodeId"
+    sortingMode="client"
+    (preview)="showPreview($event)">
+
+    <data-columns>
+        <data-column 
+            key="$thumbnail" 
+            type="image">
+        </data-column>
+        <data-column 
+            title="Name" 
+            key="name" 
+            class="full-width ellipsis-cell"
+            focus="false">
+        </data-column>
+        <data-column
+            title="Size" 
+            key="content.sizeInBytes"
+            type="fileSize">
+        </data-column>
+        <data-column
+            title="Modified On" 
+            key="modifiedAt"
+            type="date">
+        </data-column>
+        <data-column
+            title="Modified By" 
+            key="modifiedByUser.displayName">
+        </data-column>
+    </data-columns>
+</adf-document-list>
+
+<adf-viewer
+[overlayMode]="overlayMode"
+[urlFile]="urlFile"
+[allowThumbnails]="allowThumbnails"
+[allowDownload]="allowDownload"
+[allowFullScreen]="allowFullScreen"
+[allowPrint]="allowPrint"
+[showToolbar]="showToolbar"
+[showViewer]="showViewer"
+[allowRightSidebar]="allowRightSidebar"
+[showRightSidebar]="allowRightSidebar"
+[nodeId]="nodeId"
+[sidebarLeftTemplate]="sidebarTemplate"
+[allowLeftSidebar]="allowLeftSidebar"
+[showLeftSidebar]="allowLeftSidebar"
+[displayName]="displayName"
+[allowGoBack]="allowGoBack"
+[thumbnailsTemplate]="displayCustomThumbnails ? customThumbnailsTemplate : null"
+[blobFile]="renderBlobFile ? (blobFile | async) : null"
+[mimeType]="mimeType"
+[allowNavigate]="allowNavigate"
+[canNavigateBefore]="canNavigateBefore"
+[canNavigateNext]="canNavigateNext"
+(print)="onPrintClick()"
+(navigateBefore)="onNavigateBeforeClick()"
+(navigateNext)="onNavigateNextClick()"
+(showViewerChange)="showViewerChange()">
+    <adf-viewer-sidebar *ngIf="allowRightSidebar">
+        <h1>Right sidebar</h1>
+    </adf-viewer-sidebar>
+
+    <adf-viewer-toolbar *ngIf="displayCustomToolbar">
+        <h2>Custom toolbar</h2>
+    </adf-viewer-toolbar>
+
+    <adf-viewer-toolbar-actions *ngIf="displayMoreToolbarActions">
+        <button mat-icon-button id="adf-viewer-time" (click)="customAction()">
+            <mat-icon>alarm</mat-icon>
+        </button>
+        <button mat-icon-button id="adf-viewer-upload" (click)="customAction()">
+            <mat-icon>backup</mat-icon>
+        </button>
+        <button mat-icon-button id="adf-viewer-bug" (click)="customAction()">
+            <mat-icon>bug_report</mat-icon>
+        </button>
+    </adf-viewer-toolbar-actions>
+
+    <adf-viewer-more-actions *ngIf="displayMoreActionsMenu">
+        <button mat-menu-item id="adf-viewer-more-menu-alarm" (click)="customAction()">
+            <mat-icon>alarm</mat-icon>
+            <span>Alarm</span>
+        </button>
+        <button mat-menu-item id="adf-viewer-more-menu-backup" (click)="customAction()">
+            <mat-icon>backup</mat-icon>
+            <span>Backup</span>
+        </button>
+        <button mat-menu-item id="adf-viewer-more-menu-bug" (click)="customAction()">
+            <mat-icon>bug_report</mat-icon>
+            <span>Bug report</span>
+        </button>
+    </adf-viewer-more-actions>
+
+    <adf-viewer-open-with *ngIf="displayOpenWith">
+        <button mat-menu-item (click)="customAction()">
+            <mat-icon>folder</mat-icon>
+            <span>File explorer</span>
+        </button>
+        <button mat-menu-item disabled (click)="customAction()">
+            <mat-icon>color_lens</mat-icon>
+            <span>Paint</span>
+        </button>
+        <button mat-menu-item (click)="customAction()">
+            <mat-icon>email</mat-icon>
+            <span>Email</span>
+        </button>
+    </adf-viewer-open-with>
+</adf-viewer>

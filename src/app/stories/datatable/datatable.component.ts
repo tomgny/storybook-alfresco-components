@@ -1,5 +1,5 @@
-import { DataRowEvent, ObjectDataTableAdapter, ShowHeaderMode } from '@alfresco/adf-core';
-import { Component, Input } from '@angular/core';
+import { CoreModule, DataRowEvent, ObjectDataTableAdapter, ShowHeaderMode } from '@alfresco/adf-core';
+import { Component, Input, NgModule } from '@angular/core';
 
 @Component({
   selector: 'aca-datatable',
@@ -34,7 +34,7 @@ export class DatatableComponent {
    * The columns that the datatable will show.
    */
   @Input()
-  columns: any[] = undefined;
+  columns: any[] = [];
 
   /**
    * Toggles custom context menu for the component.
@@ -106,7 +106,7 @@ export class DatatableComponent {
    * The rows that the datatable will show.
    */
   @Input()
-  rows: any[] = undefined;
+  rows: any[] = [];
 
   /**
    * Row selection mode. Can be none, single or multiple. For multiple mode, you can use Cmd (macOS) or Ctrl (Win) modifier key to toggle selection for multiple rows.
@@ -134,3 +134,10 @@ export class DatatableComponent {
     window.alert(`Row double click event: ${event}`);
   }
 }
+
+@NgModule({
+  declarations: [DatatableComponent],
+  imports: [CoreModule.forChild()],
+  exports: [DatatableComponent],
+})
+export class DatatableModule {}
