@@ -1,10 +1,28 @@
 <adf-upload-button
-    [rootFolderId]="rootFolderId"
-    [uploadFolders]="uploadFolders"
-    [multipleFiles]="multipleFiles"
-    [acceptedFilesType]="acceptedFilesType"
-    [versioning]="versioning"
-    (success)="onSuccess($event)"
-    (permissionEvent)="onUploadPermissionFailed($event)">
+  [acceptedFilesType]="acceptedFilesType"
+  [comment]="comment"
+  [disabled]="disabled"
+  [file]="file"
+  [majorVersion]="majorVersion"
+  [maxFilesSize]="maxFilesSize"
+  [multipleFiles]="multipleFiles"
+  [nodeType]="nodeType"
+  [rootFolderId]="rootFolderId"
+  [staticTitle]="staticTitle"
+  [tooltip]="tooltip"
+  [uploadFolders]="uploadFolders"
+  [versioning]="versioning"
+  (error)="onError($event)"
+  (beginUpload)="onBeginUpload($event)"
+  (success)="onSuccess($event)"
+  (permissionEvent)="onUploadPermissionFailed($event)"
+  (updateFileVersion)="onUpdateFileVersion($event)"
+>
 </adf-upload-button>
 <adf-file-uploading-dialog></adf-file-uploading-dialog>
+
+<adf-document-list style="visibility: hidden;"
+    #documentList
+    [currentFolderId]="'-my-'"
+    [contentActions]="true">
+</adf-document-list>

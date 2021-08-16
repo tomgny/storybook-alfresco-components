@@ -23,7 +23,7 @@ export const fakeNodeWithCreatePermission = new Node({
   name: 'fakeNodeWithCreatePermission',
   id: 'fake_node_with_create_permission',
   properties: {},
-  allowableOperations: ['delete', 'update', 'create']
+  allowableOperations: ['delete', 'update', 'create', 'copy', 'lock', 'updatePermissions']
 });
 
 export const fakeNodeWithNoPermission = new Node({
@@ -215,6 +215,38 @@ export const mockNode5 = new Node({
   allowableOperations: ['delete', 'update']
 });
 
+export const mockNodeEntry1 = new NodeEntry({
+  isFile: true,
+  createdByUser: { id: 'admin1', displayName: 'Administrator 1' },
+  modifiedAt: '2017-05-25T16:08:55.640Z',
+  nodeType: 'cm:content',
+  content: {
+    mimeType: 'application/rtf',
+    mimeTypeName: 'Rich Text Format',
+    sizeInBytes: 222214530,
+    encoding: 'UTF-8'
+  },
+  parentId: 'd124de26-6ba0-4f40-8d98-4907da2d337a',
+  createdAt: '2017-02-24T15:07:55.640Z',
+  path: {
+    name: '/Company Home/Guest Home',
+    isComplete: true,
+    elements: [
+      {
+        id: '94acfc73-7014-4475-9bd9-93a2162f0f8c',
+        name: 'Company Home'
+      },
+      { id: 'd124de26-6ba0-4f40-8d98-4907da2d337a', name: 'Guest Home' }
+    ]
+  },
+  isFolder: false,
+  modifiedByUser: { id: 'admin1', displayName: 'Administrator 1' },
+  name: 'a_txt_file.rtf',
+  id: 'mock_node_1',
+  properties: { 'cm:versionLabel': '1.0', 'cm:versionType': 'MAJOR' },
+  allowableOperations: ['delete', 'update', 'create']
+});
+
 export const fakeNodePaging: NodePaging = {
   list: {
     pagination: {
@@ -233,7 +265,7 @@ export const fakeNodePaging: NodePaging = {
       },
       {
         entry: mockNode5
-      }
+      },
     ]
   }
 };
@@ -247,7 +279,20 @@ export const mockPreselectedNodes: NodeEntry[] = [
   },
   {
     entry: mockNode3
-  }
+  },
+  {
+    entry: mockNode4
+  },
+];
+
+export const mockNodeEntry: NodeEntry = {
+  entry: mockNode1
+}
+
+export const mockFolderWithAllPermissions: NodeEntry[] = [
+  {
+    entry: fakeNodeWithCreatePermission
+  },
 ];
 
 export const mockNodePaging: NodePaging = {
@@ -305,7 +350,8 @@ export const nodeIdToObjectTranslating = {
   mock_node_3: mockNode3,
   mock_node_4: mockNode4,
   mock_node_5: mockNode5,
-  fake_node_with_create_permission: fakeNodeWithCreatePermission,
+  'fake_node_with_create_permission': fakeNodeWithCreatePermission,
   fake_node_with_no_permission: fakeNodeWithNoPermission,
-  '-root-': mockNodePaging
+  '-root-': mockNodePaging,
+  '-my-': fakeNodePaging
 };

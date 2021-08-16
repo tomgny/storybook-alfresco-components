@@ -18,6 +18,10 @@ export class NodesApiStub {
     return Promise.resolve(nodeIdToObjectTranslating[nodeId]);
   }
 
+  deleteNode(nodeId: string, _?: any): Promise<NodeEntry> {
+    return Promise.resolve(nodeIdToObjectTranslating[nodeId]);
+  }
+
   getNodeChildren(nodeId: string, options: any): Promise<NodeChildAssociationPaging> {
     if (options.where) {
       const where: string = options.where;

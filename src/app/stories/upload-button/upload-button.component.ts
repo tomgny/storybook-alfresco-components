@@ -1,5 +1,5 @@
-import { NotificationService } from '@alfresco/adf-core';
-import { File } from '@alfresco/js-api';
+import { PermissionModel, UploadFilesEvent } from '@alfresco/adf-content-services';
+import {  NotificationService } from '@alfresco/adf-core';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -8,7 +8,6 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./upload-button.component.scss']
 })
 export class UploadButtonComponent implements OnInit {
-
   @Input()
   acceptedFilesType: string = '*';
 
@@ -31,7 +30,7 @@ export class UploadButtonComponent implements OnInit {
   multipleFiles: boolean = false;
 
   @Input()
-  nodeType: string = 'cm:content'
+  nodeType: string = 'cm:content';
 
   @Input()
   rootFolderId: string = '-root-';
@@ -48,18 +47,47 @@ export class UploadButtonComponent implements OnInit {
   @Input()
   versioning: boolean = false;
 
-  constructor(private notificationService: NotificationService) { }
+  @Input()
+  fakeSuccess: boolean = true;
+
+  fakeError: boolean = false;
+
+  constructor(private notificationService: NotificationService) {}
 
   ngOnInit(): void {
   }
 
-  onSuccess(event){
+  onSuccess(event: any) {
+    console.log('onSuccess');
     console.log(event);
   }
 
-  onUploadPermissionFailed(event: any) {
-    this.notificationService.openSnackMessage(
-        `You don't have the ${event.permission} permission to ${event.action} the ${event.type} `, 4000
-    );
-}
+  onError(event: any) {
+    console.log('onError');
+    console.log(event);
+  }
+
+  onBeginUpload(event: UploadFilesEvent) {
+    console.log('onBeginUpload');
+    console.log(event.files);
+  }
+
+  onUpdateFileVersion(event: any) {
+    console.log('onUpdateFileVersion');
+    console.log(event);
+  }
+
+  onUploadPermissionFailed(event: PermissionModel) {
+    // this.notificationService.openSnackMessage(
+    //     `You don't have the ${event.permission} permission to ${event.action} the ${event.type} `, 4000
+    // );
+    this.notificationService.showError('PERMISSION.LACKOF', null, {
+      permission: event.permission,
+      action: event.action,
+      type: event.type
+    });
+    console.log(event.permission);
+    console.log(event.type);
+    console.log(event.action);
+  }
 }
