@@ -8,12 +8,12 @@ import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { APP_ROUTES } from '../../app.routes';
 import { AppCommonModule } from '../../components/common/common.module';
 import { AlfrescoApiServiceStub, AuthenticationServiceStub, ContentServiceStub, NodesApiServiceStub } from './mock/stub-services';
-import { UploadServiceStartedStub } from './mock/stub-upload-service-started';
+import { UploadServiceCanceledStub } from './mock/stub-upload-service-canceled';
 import { UploadButtonComponent } from './upload-button.component';
 
 export default {
   component: UploadButtonComponent,
-  title: 'Upload Button component/Started state',
+  title: 'Upload Button component/Canceled state',
   decorators: [
     moduleMetadata({
       declarations: [UploadButtonComponent],
@@ -35,7 +35,7 @@ export default {
         { provide: AlfrescoApiService, useClass: AlfrescoApiServiceStub },
         { provide: AuthenticationService, useClass: AuthenticationServiceStub },
         { provide: ContentService, useClass: ContentServiceStub},
-        { provide: UploadService, useClass: UploadServiceStartedStub },
+        { provide: UploadService, useClass: UploadServiceCanceledStub },
         { provide: NodesApiService, useClass: NodesApiServiceStub}
       ]
     })

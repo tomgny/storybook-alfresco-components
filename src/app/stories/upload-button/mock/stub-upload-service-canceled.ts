@@ -4,7 +4,7 @@ import { Subject } from 'rxjs';
 // const MIN_CANCELLABLE_FILE_SIZE = 1000000;
 // const MAX_CANCELLABLE_FILE_PERCENTAGE = 50;
 
-export class UploadServiceStartedStub{
+export class UploadServiceCanceledStub{
   private cache: { [key: string]: any } = {};
     // private totalComplete: number = 0;
     // private totalAborted: number = 0;
@@ -277,10 +277,10 @@ export class UploadServiceStartedStub{
         //successEmitter.emit({'Success!': 'Succ'})
         //this.onUploadError(file, undefined);
         //errorEmitter.emit({'Error!': 'Err'})
-        //this.onUploadCancelled(file);
+        this.onUploadCancelled(file);
         //this.onUploadDeleted(file);
         //starting
-        this.onUploadStarting(file);
+        //this.onUploadStarting(file);
         //progress
         //this.onUploadProgress
         //aborted
