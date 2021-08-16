@@ -26,6 +26,7 @@ export class NodesApiServiceStub {
 
     if (nodeBody?.aspectNames) {
       updatedNode.aspectNames = nodeBody.aspectNames.slice();
+      mockNode2.aspectNames = nodeBody.aspectNames.slice();
     }
 
     console.log(updatedNode);
@@ -90,17 +91,25 @@ class TypesApiStub {
 
 class AspectsApiStub {
   listAspects(opts?: any): Promise<AspectPaging> {
-    if (mockNode2.aspectNames.indexOf('exif:exif') !== -1 && mockNode2.aspectNames.indexOf('custom:custom') !== -1) {
-      if (opts.where === `(not namespaceUri matches('http://www.alfresco.*'))`) {
+    if (opts.where === `(not namespaceUri matches('http://www.alfresco.*'))`) {
+      if (mockNode2.aspectNames.length === 2) {
         return Promise.resolve(listAspectResp);
-      }
-    } else if (mockNode2.aspectNames.indexOf('exif:exif') !== -1) {
-      if (opts.where === `(not namespaceUri matches('http://www.alfresco.*'))`) {
+      } else if (mockNode2.aspectNames[0] === 'exif:exif') {
         return Promise.resolve(listAspectRespA);
-      }
-    } else if (mockNode2.aspectNames.indexOf('custom:custom') !== -1) {
-      if (opts.where === `(not namespaceUri matches('http://www.alfresco.*'))`) {
+      } else if (mockNode2.aspectNames[0] === 'custom:custom') {
         return Promise.resolve(listAspectRespB);
+      }
+    }
+
+    if (opts.where === `(modelId in ('cm:contentmodel', 'emailserver:emailserverModel', 'smf:smartFolder', 'app:applicationmodel' ))`) {
+      if (mockNode2.aspectNames.length === 2) {
+        return Promise.resolve(emptyAspectPaging);
+      } else if (mockNode2.aspectNames.length === 0) {
+        return Promise.resolve(listAspectResp);
+      } else if (mockNode2.aspectNames[0] === 'exif:exif') {
+        return Promise.resolve(listAspectRespB);
+      } else if (mockNode2.aspectNames[0] === 'custom:custom') {
+        return Promise.resolve(listAspectRespA);
       }
     }
 

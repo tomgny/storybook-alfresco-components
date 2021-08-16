@@ -39,8 +39,7 @@ export const customMetadataClassDescription: PropertyGroup = {
 export const emptyClassDescription: PropertyGroup = {
   name: '',
   title: '',
-  properties: {
-  }
+  properties: {}
 };
 
 export const mockNode1 = new Node({
@@ -118,7 +117,7 @@ export const mockNode1 = new Node({
 
 export const mockNode2 = {
   ...mockNode1,
-  aspectNames: ['custom:custom', exifMetadataClassDescription.name, 'halo:alo' ]
+  aspectNames: [customMetadataClassDescription.name, exifMetadataClassDescription.name]
 };
 
 export const fakeTypeEntry: TypeEntry = {
@@ -208,7 +207,7 @@ const aspectListMock: AspectEntry[] = [
         }
       ]
     }
-  }, 
+  },
   {
     entry: {
       parentId: 'frs:AspectZer',
@@ -244,20 +243,18 @@ export const listAspectResp: AspectPaging = {
 
 export const listAspectRespA: AspectPaging = {
   list: {
-    entries: aspectListMock.slice(0, 0)
+    entries: [aspectListMock[0]]
   }
 };
 
 export const listAspectRespB: AspectPaging = {
   list: {
-    entries: aspectListMock.slice(1, 1)
+    entries: [aspectListMock[1]]
   }
 };
 
 export const emptyAspectPaging: AspectPaging = {
   list: {
-    entries: [
-      
-    ] 
+    entries: []
   }
-}
+};
