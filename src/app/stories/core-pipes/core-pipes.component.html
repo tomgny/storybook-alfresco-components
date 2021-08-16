@@ -3,9 +3,13 @@
 </div>
 
 <div *ngIf="showMultiValue">
-    Animals: {{ animals | multiValue: customSeparator }}
+    Animals: {{ animals | multiValue : customSeparator }}
 </div>
 
 <div *ngIf="showFormatSpace">
-    {{ textToFormat | formatSpace: replaceChar: lowercase }}
+    {{ textToFormat | formatSpace : replaceChar : lowercase }}
+</div>
+
+<div *ngIf="showDecimalNumber">
+    {{ numberToTransform | adfDecimalNumber : digitsInfo : locale }}
 </div>

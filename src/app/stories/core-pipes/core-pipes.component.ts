@@ -17,6 +17,7 @@ import localePl from '@angular/common/locales/pl';
 import localeFi from '@angular/common/locales/fi';
 import localeDa from '@angular/common/locales/da';
 import localeSv from '@angular/common/locales/sv';
+import { DecimalNumberModel } from '@alfresco/adf-core';
 
 @Component({
   selector: 'aca-core-pipes',
@@ -54,14 +55,34 @@ export class CorePipesComponent implements OnInit {
   @Input()
   lowercase: boolean = true;
 
+  @Input()
+  showDecimalNumber: boolean = false;
+
+  @Input()
+  numberToTransform: number;
+
+  @Input()
+  minIntegerDigits: number = 1;
+
+  @Input()
+  minFractionDigits: number = 0;
+
+  @Input()
+  maxFractionDigits: number = 2;
+
+  @Input()
+  digitsInfo: DecimalNumberModel = { minIntegerDigits: 1, minFractionDigits: 0, maxFractionDigits: 2 };
+
   textForDate: string;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {    
+  ngOnInit(): void {
     if (this.date) this.textForDate = this.getStringBasedOnDate(this.date);
 
     if (this.locale !== 'en-US') this.registerLocales();
+
+    this.validateAndSetDigitsInfoValues();
   }
 
   private getStringBasedOnDate(date: Date): string {
@@ -85,5 +106,14 @@ export class CorePipesComponent implements OnInit {
     registerLocaleData(localeFi);
     registerLocaleData(localeDa);
     registerLocaleData(localeSv);
+  }
+
+  private validateAndSetDigitsInfoValues() {
+    if (this.minIntegerDigits < 0) this.minIntegerDigits = 0;
+    if (this.minFractionDigits < 0) this.minFractionDigits = 0;
+    if (this.maxFractionDigits < 0) this.maxFractionDigits = 0;
+    if (this.minFractionDigits > this.maxFractionDigits) this.minFractionDigits = this.maxFractionDigits;
+
+    this.digitsInfo = { minIntegerDigits: this.minIntegerDigits, minFractionDigits: this.minFractionDigits, maxFractionDigits: this.maxFractionDigits };
   }
 }

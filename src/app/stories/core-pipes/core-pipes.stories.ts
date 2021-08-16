@@ -36,6 +36,9 @@ export default {
     getStringBasedOnDate: { table: { disable: true } },
     showMultiValue: { table: { disable: true } },
     showFormatSpace: { table: { disable: true } },
+    showDecimalNumber: { table: { disable: true } },
+    digitsInfo: { table: { disable: true } },
+    validateAndSetDigitsInfoValues: { table: { disable: true } },
   }
 } as Meta;
 
@@ -139,3 +142,25 @@ FormatSpaceSkipConversionToLowercase.args = {
   lowercase: false,
 }
 
+export const DecimalNumberDefault = Template.bind({})
+
+DecimalNumberDefault.args = {
+  showDecimalNumber: true,
+  numberToTransform: 1234.567,
+}
+
+export const DecimalNumberCustomConfigurationSet = Template.bind({})
+
+DecimalNumberCustomConfigurationSet.args = {
+  ...DecimalNumberDefault.args,
+  minIntegerDigits: 2,
+  minFractionDigits: 1,
+  maxFractionDigits: 4,
+}
+
+export const DecimalNumberDifferentLocale = Template.bind({})
+
+DecimalNumberDifferentLocale.args = {
+  ...DecimalNumberDefault.args,
+  locale: 'pl',
+}
