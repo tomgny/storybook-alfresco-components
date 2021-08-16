@@ -17,7 +17,7 @@ import localePl from '@angular/common/locales/pl';
 import localeFi from '@angular/common/locales/fi';
 import localeDa from '@angular/common/locales/da';
 import localeSv from '@angular/common/locales/sv';
-import { DecimalNumberModel } from '@alfresco/adf-core';
+import { DecimalNumberModel, TranslationService } from '@alfresco/adf-core';
 
 @Component({
   selector: 'aca-core-pipes',
@@ -73,9 +73,18 @@ export class CorePipesComponent implements OnInit {
   @Input()
   digitsInfo: DecimalNumberModel = { minIntegerDigits: 1, minFractionDigits: 0, maxFractionDigits: 2 };
 
+  @Input()
+  showFileSize: boolean = false;
+
+  @Input()
+  sizeInBytes: number;
+
+  @Input()
+  decimalPlacesNumber: number = 2;
+
   textForDate: string;
 
-  constructor() {}
+  constructor(private translationService: TranslationService) {}
 
   ngOnInit(): void {
     if (this.date) this.textForDate = this.getStringBasedOnDate(this.date);
@@ -83,6 +92,8 @@ export class CorePipesComponent implements OnInit {
     if (this.locale !== 'en-US') this.registerLocales();
 
     this.validateAndSetDigitsInfoValues();
+
+    if(this.showFileSize) this.translationService.use(this.locale);
   }
 
   private getStringBasedOnDate(date: Date): string {

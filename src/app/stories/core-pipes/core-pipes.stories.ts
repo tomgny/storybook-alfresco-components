@@ -39,6 +39,7 @@ export default {
     showDecimalNumber: { table: { disable: true } },
     digitsInfo: { table: { disable: true } },
     validateAndSetDigitsInfoValues: { table: { disable: true } },
+    showFileSize: { table: { disable: true } }
   }
 } as Meta;
 
@@ -112,55 +113,98 @@ export const MultiValueDefault = Template.bind({});
 MultiValueDefault.args = {
   showMultiValue: true,
   animals: ['cat', 'dog', 'parrot', 'dove', 'rabbit']
-}
+};
 
 export const MultiValueCustomSeparatorSet = Template.bind({});
 
 MultiValueCustomSeparatorSet.args = {
   ...MultiValueDefault.args,
   customSeparator: ' :) '
-}
+};
 
 export const FormatSpaceDefault = Template.bind({});
 
 FormatSpaceDefault.args = {
   showFormatSpace: true,
-  textToFormat: 'LOREM IPSUM DOLOR SIT AMET',
-}
+  textToFormat: 'LOREM IPSUM DOLOR SIT AMET'
+};
 
 export const FormatSpaceCustomReplaceCharSet = Template.bind({});
 
 FormatSpaceCustomReplaceCharSet.args = {
   ...FormatSpaceDefault.args,
   replaceChar: '-'
-}
+};
 
 export const FormatSpaceSkipConversionToLowercase = Template.bind({});
 
 FormatSpaceSkipConversionToLowercase.args = {
   ...FormatSpaceDefault.args,
-  lowercase: false,
-}
+  lowercase: false
+};
 
-export const DecimalNumberDefault = Template.bind({})
+export const DecimalNumberDefault = Template.bind({});
 
 DecimalNumberDefault.args = {
   showDecimalNumber: true,
-  numberToTransform: 1234.567,
-}
+  numberToTransform: 1234.567
+};
 
-export const DecimalNumberCustomConfigurationSet = Template.bind({})
+export const DecimalNumberCustomConfigurationSet = Template.bind({});
 
 DecimalNumberCustomConfigurationSet.args = {
   ...DecimalNumberDefault.args,
   minIntegerDigits: 2,
   minFractionDigits: 1,
-  maxFractionDigits: 4,
-}
+  maxFractionDigits: 4
+};
 
-export const DecimalNumberDifferentLocale = Template.bind({})
+export const DecimalNumberDifferentLocale = Template.bind({});
 
 DecimalNumberDifferentLocale.args = {
   ...DecimalNumberDefault.args,
-  locale: 'pl',
-}
+  locale: 'pl'
+};
+
+export const FileSizeDefault = Template.bind({});
+
+FileSizeDefault.args = {
+  showFileSize: true,
+  sizeInBytes: 587
+};
+
+export const FileSizeKB = Template.bind({});
+
+FileSizeKB.args = {
+  ...FileSizeDefault.args,
+  sizeInBytes: 1057
+};
+
+export const FileSizeMB = Template.bind({});
+
+FileSizeMB.args = {
+  ...FileSizeDefault.args,
+  sizeInBytes: 1051237
+};
+
+export const FileSizeGB = Template.bind({});
+
+FileSizeGB.args = {
+  ...FileSizeDefault.args,
+  sizeInBytes: 10512331237
+};
+
+export const FileSizeDifferentDecimalPlacesNumberSet = Template.bind({});
+
+FileSizeDifferentDecimalPlacesNumberSet.args = {
+  ...FileSizeDefault.args,
+  sizeInBytes: 12312312312333,
+  decimalPlacesNumber: 3
+};
+
+export const FileSizeDifferentLang = Template.bind({});
+
+FileSizeDifferentLang.args = {
+  ...FileSizeDefault.args,
+  locale: 'ja'
+};

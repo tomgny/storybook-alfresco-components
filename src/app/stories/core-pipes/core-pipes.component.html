@@ -13,3 +13,7 @@
 <div *ngIf="showDecimalNumber">
     {{ numberToTransform | adfDecimalNumber : digitsInfo : locale }}
 </div>
+
+<div *ngIf="showFileSize">
+    File Size: {{ sizeInBytes | adfFileSize : decimalPlacesNumber }}
+</div>
