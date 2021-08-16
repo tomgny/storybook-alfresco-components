@@ -95,6 +95,7 @@ export class UploadButtonComponent implements OnInit {
   }
 
   onError(event: any) {
+    window.alert(event);
     console.log(event);
   }
 
