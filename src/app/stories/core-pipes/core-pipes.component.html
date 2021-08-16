@@ -17,3 +17,7 @@
 <div *ngIf="showFileSize">
     File Size: {{ sizeInBytes | adfFileSize : decimalPlacesNumber }}
 </div>
+
+<div *ngIf="showLocalizedDate">
+    Current date: {{ date | adfLocalizedDate : format : locale }}
+</div>

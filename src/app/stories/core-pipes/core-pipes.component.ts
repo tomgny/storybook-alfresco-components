@@ -82,6 +82,12 @@ export class CorePipesComponent implements OnInit {
   @Input()
   decimalPlacesNumber: number = 2;
 
+  @Input()
+  showLocalizedDate: boolean = false;
+
+  @Input()
+  format: string = 'medium';
+
   textForDate: string;
 
   constructor(private translationService: TranslationService) {}
@@ -93,7 +99,7 @@ export class CorePipesComponent implements OnInit {
 
     this.validateAndSetDigitsInfoValues();
 
-    if(this.showFileSize) this.translationService.use(this.locale);
+    if (this.showFileSize) this.translationService.use(this.locale);
   }
 
   private getStringBasedOnDate(date: Date): string {
@@ -125,6 +131,10 @@ export class CorePipesComponent implements OnInit {
     if (this.maxFractionDigits < 0) this.maxFractionDigits = 0;
     if (this.minFractionDigits > this.maxFractionDigits) this.minFractionDigits = this.maxFractionDigits;
 
-    this.digitsInfo = { minIntegerDigits: this.minIntegerDigits, minFractionDigits: this.minFractionDigits, maxFractionDigits: this.maxFractionDigits };
+    this.digitsInfo = {
+      minIntegerDigits: this.minIntegerDigits,
+      minFractionDigits: this.minFractionDigits,
+      maxFractionDigits: this.maxFractionDigits
+    };
   }
 }

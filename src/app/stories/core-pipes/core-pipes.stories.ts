@@ -39,7 +39,8 @@ export default {
     showDecimalNumber: { table: { disable: true } },
     digitsInfo: { table: { disable: true } },
     validateAndSetDigitsInfoValues: { table: { disable: true } },
-    showFileSize: { table: { disable: true } }
+    showFileSize: { table: { disable: true } },
+    showLocalizedDate: { table: { disable: true } }
   }
 } as Meta;
 
@@ -207,4 +208,32 @@ export const FileSizeDifferentLang = Template.bind({});
 FileSizeDifferentLang.args = {
   ...FileSizeDefault.args,
   locale: 'ja'
+};
+
+export const LocalizedDateDefault = Template.bind({});
+
+LocalizedDateDefault.args = {
+  showLocalizedDate: true,
+  date: new Date()
+};
+
+export const LocalizedDatePreDefinedFormatSet = Template.bind({});
+
+LocalizedDatePreDefinedFormatSet.args = {
+  ...LocalizedDateDefault.args,
+  format: 'long'
+};
+
+export const LocalizedDatecustomFormatSet = Template.bind({});
+
+LocalizedDatecustomFormatSet.args = {
+  ...LocalizedDateDefault.args,
+  format: 'EEEE, MMMM d, y, h:mm:ss a zzzz'
+};
+
+export const LocalizedDateDifferentLocaleSet = Template.bind({});
+
+LocalizedDateDifferentLocaleSet.args = {
+  ...LocalizedDateDefault.args,
+  locale: 'pl'
 };
