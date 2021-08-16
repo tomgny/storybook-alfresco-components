@@ -42,6 +42,18 @@ export class CorePipesComponent implements OnInit {
   @Input()
   customSeparator: string = ', ';
 
+  @Input()
+  showFormatSpace: boolean = false;
+
+  @Input()
+  textToFormat: string;
+
+  @Input()
+  replaceChar: string = '_';
+
+  @Input()
+  lowercase: boolean = true;
+
   textForDate: string;
 
   constructor() { }

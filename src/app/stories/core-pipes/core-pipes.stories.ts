@@ -35,6 +35,7 @@ export default {
     ngOnInit: { table: { disable: true } },
     getStringBasedOnDate: { table: { disable: true } },
     showMultiValue: { table: { disable: true } },
+    showFormatSpace: { table: { disable: true } },
   }
 } as Meta;
 
@@ -116,3 +117,25 @@ MultiValueCustomSeparatorSet.args = {
   ...MultiValueDefault.args,
   customSeparator: ' :) '
 }
+
+export const FormatSpaceDefault = Template.bind({});
+
+FormatSpaceDefault.args = {
+  showFormatSpace: true,
+  textToFormat: 'LOREM IPSUM DOLOR SIT AMET',
+}
+
+export const FormatSpaceCustomReplaceCharSet = Template.bind({});
+
+FormatSpaceCustomReplaceCharSet.args = {
+  ...FormatSpaceDefault.args,
+  replaceChar: '-'
+}
+
+export const FormatSpaceSkipConversionToLowercase = Template.bind({});
+
+FormatSpaceSkipConversionToLowercase.args = {
+  ...FormatSpaceDefault.args,
+  lowercase: false,
+}
+

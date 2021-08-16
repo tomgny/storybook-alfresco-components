@@ -5,3 +5,7 @@
 <div *ngIf="showMultiValue">
     Animals: {{ animals | multiValue: customSeparator }}
 </div>
+
+<div *ngIf="showFormatSpace">
+    {{ textToFormat | formatSpace: replaceChar: lowercase }}
+</div>
