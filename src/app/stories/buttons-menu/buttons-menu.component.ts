@@ -1,5 +1,5 @@
 import { CoreModule } from '@alfresco/adf-core';
-import {  Component, Input, NgModule, ViewEncapsulation } from '@angular/core';
+import { Component, Input, NgModule, ViewEncapsulation } from '@angular/core';
 
 import { Button } from './button';
 
@@ -15,12 +15,12 @@ export class ButtonsMenuComponent {
 
   alertFunctionName(functionName: string) {
     alert(functionName);
-  } 
+  }
 }
 
 @NgModule({
   declarations: [ButtonsMenuComponent],
   imports: [CoreModule.forChild()],
-  exports: [ButtonsMenuComponent],
+  exports: [ButtonsMenuComponent]
 })
 export class ButtonsMenuModule {}
