@@ -119,7 +119,7 @@ export const mockNode = new Node({
 export const fakeTypeEntry: TypeEntry = {
   entry: {
     id: 'fake-type-id',
-    title: 'fake-title',
+    title: 'Fake image',
     description: 'optional-fake-description',
     parentId: 'cm:parent',
     properties: []
