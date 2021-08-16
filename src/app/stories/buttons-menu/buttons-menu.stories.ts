@@ -5,22 +5,23 @@ import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { APP_ROUTES } from '../../app.routes';
 import { AppCommonModule } from '../../components/common/common.module';
 import { Button } from './button';
-import { ButtonsMenuComponent } from './buttons-menu.component';
+import { ButtonsMenuComponent, ButtonsMenuModule } from './buttons-menu.component';
 
 export default {
     component: ButtonsMenuComponent,
     title: 'Buttons Menu',
     decorators: [
         moduleMetadata({
-            declarations: [ButtonsMenuComponent],
+            declarations: [],
             imports: [
+                ButtonsMenuModule,
                 RouterModule.forRoot(APP_ROUTES, {
                   useHash: true,
-                  enableTracing: false // enable for debug only
+                  enableTracing: false 
                 }),
                 CoreModule.forRoot(),
                 AppCommonModule,
-                BrowserAnimationsModule, 
+                BrowserAnimationsModule,   
               ],
         }),
     ]
@@ -38,45 +39,44 @@ new Button(`displayInfo()`, `info`, `Display information`),
 new Button(`build()`, `build`, `Build`),
 ];
 
-export const sixButtons = Template.bind({})
+export const SixButtons = Template.bind({})
 
-sixButtons.args = {
-    primary: true,
+SixButtons.args = {
     buttonsToRender: buttons
 }
 
-export const fiveButtons = Template.bind({})
+export const FiveButtons = Template.bind({})
 
-fiveButtons.args = {
+FiveButtons.args = {
     buttonsToRender: buttons.slice(0, 5),
 }
 
-export const fourButtons = Template.bind({})
+export const FourButtons = Template.bind({})
 
-fourButtons.args = {
+FourButtons.args = {
     buttonsToRender: buttons.slice(0, 4),
 }
 
-export const threeButtons = Template.bind({})
+export const ThreeButtons = Template.bind({})
 
-threeButtons.args = {
+ThreeButtons.args = {
     buttonsToRender: buttons.slice(0, 3),
 }
 
-export const twoButtons = Template.bind({})
+export const TwoButtons = Template.bind({})
 
-twoButtons.args = {
+TwoButtons.args = {
     buttonsToRender: buttons.slice(0, 2),
 }
 
-export const oneButton = Template.bind({})
+export const OneButton = Template.bind({})
 
-oneButton.args = {
+OneButton.args = {
     buttonsToRender: buttons.slice(0, 1),
 }
 
-export const emptyMenu = Template.bind({})
+export const EmptyMenu = Template.bind({})
 
-emptyMenu.args = {
+EmptyMenu.args = {
     buttonsToRender: [],
 }

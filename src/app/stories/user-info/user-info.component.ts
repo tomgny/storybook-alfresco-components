@@ -1,13 +1,13 @@
-import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnChanges, ViewEncapsulation } from '@angular/core';
 import { MenuPositionX, MenuPositionY } from '@angular/material/menu';
+import { setProvider } from './mock/stub-authentication-service';
 
 @Component({
   selector: 'aca-user-info',
   templateUrl: './user-info.component.html',
-  encapsulation: ViewEncapsulation.None,
+  encapsulation: ViewEncapsulation.None
 })
-export class UserInfoComponent {
-
+export class UserInfoComponent implements OnChanges {
   @Input()
   bpmBackgroundImage: string;
 
@@ -26,6 +26,12 @@ export class UserInfoComponent {
   @Input()
   showName: boolean;
 
-  constructor() { }
+  @Input()
+  userLoggedInWith: 'ecm' | 'bpm' | 'both' | 'sso' | 'ssoAndEcm';
 
+  constructor() {}
+
+  ngOnChanges() {
+    setProvider(this.userLoggedInWith);
+  }
 }

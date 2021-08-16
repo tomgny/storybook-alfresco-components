@@ -31,7 +31,33 @@ export default {
   ]
 } as Meta;
 
-const dataSource = new ObjectDataTableAdapter([
+const schema = [
+  {
+    type: 'image',
+    key: 'icon',
+    sortable: false
+  },
+  {
+    type: 'text',
+    key: 'id',
+    title: 'Id',
+    sortable: true
+  },
+  {
+    type: 'text',
+    key: 'firstName',
+    title: 'First Name',
+    sortable: true
+  },
+  {
+    type: 'text',
+    key: 'lastName',
+    title: 'Last Name',
+    sortable: true
+  }
+];
+
+const rows = [
   {
     id: 1,
     firstName: 'Name #1',
@@ -62,9 +88,9 @@ const dataSource = new ObjectDataTableAdapter([
     lastName: 'Lastname #5',
     icon: 'material-icons://alarm'
   }
-]);
+];
 
-const dataSourceWithoutOneIcon = new ObjectDataTableAdapter([
+const dataSourceWithoutOneIcon = [
   {
     id: 1,
     firstName: 'Name #1',
@@ -74,9 +100,10 @@ const dataSourceWithoutOneIcon = new ObjectDataTableAdapter([
   {
     id: 2,
     firstName: 'Name #2',
-    lastName: 'Lastname #2'
+    lastName: 'Lastname #2',
+    icon: undefined
   }
-]);
+];
 
 const actionsData = {
   onRowClick: action('rowClick'),
@@ -97,14 +124,15 @@ DefaultStory.args = {
   actionsPosition: 'right',
   actionsVisibleOnHover: false,
   allowFiltering: false,
+  columns: schema,
   contextMenu: false,
-  data: dataSource,
   display: DisplayMode.List,
   fallbackThumbnail: '',
   loading: false,
   multiselect: false,
   noPermission: false,
   rowMenuCacheEnabled: true,
+  rows: rows,
   rowStyle: '',
   rowStyleClass: '',
   selectionMode: 'single',
@@ -115,26 +143,30 @@ DefaultStory.args = {
 export const HiddenHeader = Template.bind({});
 HiddenHeader.args = {
   showHeader: ShowHeaderMode.Never,
-  data: dataSource
+  columns: schema,
+  rows: rows
 };
 
 export const RowStyle = Template.bind({});
 RowStyle.args = {
   rowStyle: { 'font-style': 'italic', 'background-color': 'gold' },
-  data: dataSource
+  columns: schema,
+  rows: rows
 };
 
 export const RowStyleClass = Template.bind({});
 RowStyleClass.args = {
   rowStyleClass: 'adf-container-full-width',
-  data: dataSource
+  columns: schema,
+  rows: rows
 };
 
 export const ShowActions = Template.bind({});
 ShowActions.args = {
   actions: true,
   actionsPosition: 'right',
-  data: dataSource
+  columns: schema,
+  rows: rows
 };
 
 export const ShowActionsOnHover = Template.bind({});
@@ -142,48 +174,57 @@ ShowActionsOnHover.args = {
   actions: true,
   actionsVisibleOnHover: true,
   actionsPosition: 'left',
-  data: dataSource
+  columns: schema,
+  rows: rows
 };
 
 export const MultiSelect = Template.bind({});
 MultiSelect.args = {
   multiselect: true,
-  data: dataSource
+  columns: schema,
+  rows: rows
 };
 
 export const GaleryDisplay = Template.bind({});
 GaleryDisplay.args = {
   display: 'gallery',
   stickyHeader: false,
-  data: dataSource
+  columns: schema,
+  rows: rows
 };
 
 export const FallbackThumbnail = Template.bind({});
 FallbackThumbnail.args = {
   fallbackThumbnail: '../../../assets/images/alfresco-24x24.png',
-  data: dataSourceWithoutOneIcon
+  columns: schema,
+  selectionMode: 'none',
+  rows: dataSourceWithoutOneIcon
 };
 
 export const StickyHeader = Template.bind({});
 StickyHeader.args = {
   showHeader: ShowHeaderMode.Always,
   stickyHeader: true,
-  data: dataSource
+  columns: schema,
+  rows: rows
 };
 
 export const NoData = Template.bind({});
 NoData.args = {
-  data: undefined
+  data: new ObjectDataTableAdapter()
 };
 
 export const NoPermission = Template.bind({});
 NoPermission.args = {
   noPermission: true,
-  data: dataSource
+  showHeader: ShowHeaderMode.Always,
+  columns: schema,
+  rows: rows
 };
 
 export const Loading = Template.bind({});
 Loading.args = {
   loading: true,
-  data: dataSource
+  columns: schema,
+  rows: rows
 };
