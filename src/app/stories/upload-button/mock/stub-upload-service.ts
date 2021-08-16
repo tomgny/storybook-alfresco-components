@@ -2,14 +2,14 @@ import { EventEmitter } from '@angular/core';
 import {  FileModel, FileUploadCompleteEvent, FileUploadDeleteEvent, FileUploadErrorEvent, FileUploadEvent, FileUploadStatus } from '@alfresco/adf-core';
 import { fakeNodePaging, mockNodeEntry } from './fake-nodes';
 import { Subject } from 'rxjs';
-const MIN_CANCELLABLE_FILE_SIZE = 1000000;
-const MAX_CANCELLABLE_FILE_PERCENTAGE = 50;
+// const MIN_CANCELLABLE_FILE_SIZE = 1000000;
+// const MAX_CANCELLABLE_FILE_PERCENTAGE = 50;
 
 export class UploadServiceStub{
   private cache: { [key: string]: any } = {};
     private totalComplete: number = 0;
     private totalAborted: number = 0;
-    private totalError: number = 0;
+    // private totalError: number = 0;
     // private excludedFileList: string[] = [];
     // private excludedFoldersList: string[] = [];
     // private matchingOptions: any = null;
@@ -191,18 +191,22 @@ export class UploadServiceStub{
         console.log('cancelUpload');
 
         files.forEach((file) => {
-            const promise = this.cache[file.name];
-            if (promise) {
-                if (this.isSaveToAbortFile(file)) {
-                    promise.abort();
-                }
+          this.onUploadCancelled(file);
+            //const promise = this.cache[file.name];
+            //if (promise) {
+
+                // if (this.isSaveToAbortFile(file)) {
+                //     //promise.abort();
+                // }
                 // this.abortedFile = file.name;
-                delete this.cache[file.name];
-                promise.next();
-            } else {
-                const performAction = this.getAction(file);
-                performAction();
-            }
+                // delete this.cache[file.name];
+                // promise.next();
+
+
+            //} else {
+                // const performAction = this.getAction(file);
+                // performAction();
+            //}
         });
     }
 
@@ -213,7 +217,7 @@ export class UploadServiceStub{
         this.queue = [];
         this.totalComplete = 0;
         this.totalAborted = 0;
-        this.totalError = 0;
+        // this.totalError = 0;
     }
 
     /**
@@ -338,27 +342,27 @@ export class UploadServiceStub{
     //     }
     // }
 
-    private onUploadError(file: FileModel, error: any): void {
-      console.log('onUploadError');
-        if (file) {
-            file.errorCode = (error || {}).status;
-            file.status = FileUploadStatus.Error;
-            this.totalError++;
+    // private onUploadError(file: FileModel, error: any): void {
+    //   console.log('onUploadError');
+    //     if (file) {
+    //         file.errorCode = (error || {}).status;
+    //         file.status = FileUploadStatus.Error;
+    //         this.totalError++;
 
-            const promise = this.cache[file.name];
-            if (promise) {
-                delete this.cache[file.name];
-            }
+    //         const promise = this.cache[file.name];
+    //         if (promise) {
+    //             delete this.cache[file.name];
+    //         }
 
-            const event = new FileUploadErrorEvent(
-                file,
-                error,
-                this.totalError
-            );
-            this.fileUpload.next(event);
-            this.fileUploadError.next(event);
-        }
-    }
+    //         const event = new FileUploadErrorEvent(
+    //             file,
+    //             error,
+    //             this.totalError
+    //         );
+    //         this.fileUpload.next(event);
+    //         this.fileUploadError.next(event);
+    //     }
+    // }
 
     private onUploadComplete(file: FileModel, data: any): void {
       console.log('onUploadComplete');
@@ -406,28 +410,28 @@ export class UploadServiceStub{
         }
     }
 
-    private onUploadDeleted(file: FileModel): void {
-      console.log('onUploadDeleted');
-        if (file) {
-            file.status = FileUploadStatus.Deleted;
-            this.totalComplete--;
+    // private onUploadDeleted(file: FileModel): void {
+    //   console.log('onUploadDeleted');
+    //     if (file) {
+    //         file.status = FileUploadStatus.Deleted;
+    //         this.totalComplete--;
 
-            const event = new FileUploadDeleteEvent(file, this.totalComplete);
-            this.fileUpload.next(event);
-            this.fileUploadDeleted.next(event);
-        }
-    }
+    //         const event = new FileUploadDeleteEvent(file, this.totalComplete);
+    //         this.fileUpload.next(event);
+    //         this.fileUploadDeleted.next(event);
+    //     }
+    // }
 
-    private getAction(file: FileModel) {
-      console.log('getAction');
-        const actions = {
-            [FileUploadStatus.Pending]: () => this.onUploadCancelled(file),
-            [FileUploadStatus.Deleted]: () => this.onUploadDeleted(file),
-            [FileUploadStatus.Error]: () => this.onUploadError(file, null)
-        };
+    // private getAction(file: FileModel) {
+    //   console.log('getAction');
+    //     const actions = {
+    //         [FileUploadStatus.Pending]: () => this.onUploadCancelled(file),
+    //         [FileUploadStatus.Deleted]: () => this.onUploadDeleted(file),
+    //         [FileUploadStatus.Error]: () => this.onUploadError(file, null)
+    //     };
 
-        return actions[file.status];
-    }
+    //     return actions[file.status];
+    // }
 
     // private deleteAbortedNode(_nodeId: string) {
     //   console.log('deleteAbortedNode');
@@ -445,11 +449,11 @@ export class UploadServiceStub{
     //     //     .then(() => (this.abortedFile = undefined));
     // }
 
-    private isSaveToAbortFile(file: FileModel): boolean {
-      console.log('isSaveToAbortFile');
-        return (
-            file.size > MIN_CANCELLABLE_FILE_SIZE &&
-            file.progress.percent < MAX_CANCELLABLE_FILE_PERCENTAGE
-        );
-    }
+    // private isSaveToAbortFile(file: FileModel): boolean {
+    //   console.log('isSaveToAbortFile');
+    //     return (
+    //         file.size > MIN_CANCELLABLE_FILE_SIZE &&
+    //         file.progress.percent < MAX_CANCELLABLE_FILE_PERCENTAGE
+    //     );
+    // }
 }

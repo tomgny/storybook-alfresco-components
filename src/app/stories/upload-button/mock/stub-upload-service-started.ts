@@ -4,11 +4,11 @@ import { Subject } from 'rxjs';
 // const MIN_CANCELLABLE_FILE_SIZE = 1000000;
 // const MAX_CANCELLABLE_FILE_PERCENTAGE = 50;
 
-export class UploadServiceFailStub{
+export class UploadServiceStartedStub{
   private cache: { [key: string]: any } = {};
     // private totalComplete: number = 0;
     // private totalAborted: number = 0;
-    private totalError: number = 0;
+    // private totalError: number = 0;
     // private excludedFileList: string[] = [];
     // private excludedFoldersList: string[] = [];
     // private matchingOptions: any = null;
@@ -199,6 +199,12 @@ export class UploadServiceFailStub{
             //     // this.abortedFile = file.name;
             //     delete this.cache[file.name];
             //     promise.next();
+            //     this.onUploadCancelled(file);
+            // } else {
+            //     //const performAction = this.getAction(file);
+            //     //performAction();
+
+            // }
         });
     }
 
@@ -209,7 +215,7 @@ export class UploadServiceFailStub{
         this.queue = [];
         // this.totalComplete = 0;
         // this.totalAborted = 0;
-        this.totalError = 0;
+        // this.totalError = 0;
     }
 
     /**
@@ -259,7 +265,7 @@ export class UploadServiceFailStub{
         // }
     }
 
-    private beginUpload(file: FileModel, _successEmitter?: EventEmitter<any>, errorEmitter?: EventEmitter<any>): any {
+    private beginUpload(file: FileModel, _successEmitter?: EventEmitter<any>, _errorEmitter?: EventEmitter<any>): any {
         console.log('BEFORE ERROR');
 
 
@@ -269,12 +275,12 @@ export class UploadServiceFailStub{
         console.log(promise);
         //this.onUploadComplete(file, mockNodeEntry);
         //successEmitter.emit({'Success!': 'Succ'})
-        this.onUploadError(file, undefined);
-        errorEmitter.emit({'Error!': 'Error upload file/files'})
+        //this.onUploadError(file, undefined);
+        //errorEmitter.emit({'Error!': 'Err'})
         //this.onUploadCancelled(file);
         //this.onUploadDeleted(file);
         //starting
-        //this.onUploadStarting(file);
+        this.onUploadStarting(file);
         //progress
         //this.onUploadProgress
         //aborted
@@ -344,27 +350,27 @@ export class UploadServiceFailStub{
     //     }
     // }
 
-    private onUploadError(file: FileModel, error: any): void {
-      console.log('onUploadError');
-        if (file) {
-            file.errorCode = (error || {}).status;
-            file.status = FileUploadStatus.Error;
-            this.totalError++;
+    // private onUploadError(file: FileModel, error: any): void {
+    //   console.log('onUploadError');
+    //     if (file) {
+    //         file.errorCode = (error || {}).status;
+    //         file.status = FileUploadStatus.Error;
+    //         this.totalError++;
 
-            const promise = this.cache[file.name];
-            if (promise) {
-                delete this.cache[file.name];
-            }
+    //         const promise = this.cache[file.name];
+    //         if (promise) {
+    //             delete this.cache[file.name];
+    //         }
 
-            const event = new FileUploadErrorEvent(
-                file,
-                error,
-                this.totalError
-            );
-            this.fileUpload.next(event);
-            this.fileUploadError.next(event);
-        }
-    }
+    //         const event = new FileUploadErrorEvent(
+    //             file,
+    //             error,
+    //             this.totalError
+    //         );
+    //         this.fileUpload.next(event);
+    //         this.fileUploadError.next(event);
+    //     }
+    // }
 /*
     private onUploadComplete(file: FileModel, data: any): void {
       console.log('onUploadComplete');

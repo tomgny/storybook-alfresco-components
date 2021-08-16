@@ -8,12 +8,12 @@ import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { APP_ROUTES } from '../../app.routes';
 import { AppCommonModule } from '../../components/common/common.module';
 import { AlfrescoApiServiceStub, AuthenticationServiceStub, ContentServiceStub, NodesApiServiceStub } from './mock/stub-services';
-import { UploadServiceFailStub } from './mock/stub-upload-service-fail';
+import { UploadServiceStartedStub } from './mock/stub-upload-service-started';
 import { UploadButtonComponent } from './upload-button.component';
 
 export default {
   component: UploadButtonComponent,
-  title: 'Upload Button component/Fail state',
+  title: 'Upload Button component/Started state',
   decorators: [
     moduleMetadata({
       declarations: [UploadButtonComponent],
@@ -35,7 +35,7 @@ export default {
         { provide: AlfrescoApiService, useClass: AlfrescoApiServiceStub },
         { provide: AuthenticationService, useClass: AuthenticationServiceStub },
         { provide: ContentService, useClass: ContentServiceStub},
-        { provide: UploadService, useClass: UploadServiceFailStub },
+        { provide: UploadService, useClass: UploadServiceStartedStub },
         { provide: NodesApiService, useClass: NodesApiServiceStub}
       ]
     })
@@ -48,8 +48,8 @@ const Template: Story<UploadButtonComponent> = (args) => ({
   }
 })
 
-export const UploadFailState = Template.bind({});
-UploadFailState.args = {
+export const StartedUploadState = Template.bind({});
+StartedUploadState.args = {
   acceptedFilesType: '*',
   comment: 'default',
   disabled: false,
@@ -65,14 +65,14 @@ UploadFailState.args = {
   versioning: false,
 }
 
-export const MultipleUploadFailState = Template.bind({});
-MultipleUploadFailState.args = {
-  ...UploadFailState.args,
+export const StartedMultipleUploadState = Template.bind({});
+StartedMultipleUploadState.args = {
+  ...StartedUploadState.args,
   multipleFiles: true
 }
 
-export const FolderUploadFailState = Template.bind({});
-FolderUploadFailState.args = {
-  ...UploadFailState.args,
+export const StartedFailFolderUploadState = Template.bind({});
+StartedFailFolderUploadState.args = {
+  ...StartedUploadState.args,
   uploadFolders: true
 }
