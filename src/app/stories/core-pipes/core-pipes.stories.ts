@@ -49,6 +49,7 @@ export default {
     },
     user: { table: { disable: true } },
     showTextHighlight: { table: { disable: true } },
+    showMimeTypeIcon: { table: { disable: true } },
   }
 } as Meta;
 
@@ -347,4 +348,39 @@ TextHighlightDefault.args = {
   showTextHighlight: true,
   summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere varius fermentum. Aliquam pretium lacus sed tellus mollis dictum. Curabitur bibendum iaculis scelerisque.',
   rudeWordList: 'ipsum consectetur posuere',
+}
+
+export const MimeTypeIconDefault = Template.bind({})
+
+MimeTypeIconDefault.args = {
+  showMimeTypeIcon: true,
+  icon: "image/jpeg",
+}
+
+export const MimeTypeIconWrongInput = Template.bind({})
+
+MimeTypeIconWrongInput.args = {
+  ...MimeTypeIconDefault.args,
+  icon: "lorem/ipsum",
+}
+
+export const MimeTypeIconPdf = Template.bind({})
+
+MimeTypeIconPdf.args = {
+  ...MimeTypeIconDefault.args,
+  icon: 'application/pdf',
+}
+
+export const MimeTypeIconHtml = Template.bind({})
+
+MimeTypeIconHtml.args = {
+  ...MimeTypeIconDefault.args,
+  icon: 'text/html',
+}
+
+export const MimeTypeIconFolder = Template.bind({})
+
+MimeTypeIconFolder.args = {
+  ...MimeTypeIconDefault.args,
+  icon: "folder",
 }

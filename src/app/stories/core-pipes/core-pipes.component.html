@@ -33,3 +33,7 @@
 <div *ngIf="showTextHighlight">
     Some rude words have been detected in your summary: <div [innerHTML]="summary | highlight : rudeWordList"></div>
 </div>
+
+<div *ngIf="showMimeTypeIcon">
+    <img src='{{ icon | adfMimeTypeIcon }}' />
+</div>

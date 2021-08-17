@@ -120,6 +120,12 @@ export class CorePipesComponent implements OnInit {
 
   @Input()
   rudeWordList: string;
+  
+  @Input()
+  showMimeTypeIcon: boolean = false;
+
+  @Input()
+  icon: string;
 
   user: any;
 
