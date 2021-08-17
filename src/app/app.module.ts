@@ -90,6 +90,12 @@ import { DatatableCustomComponent } from './stories/datatable/datatable-custom-d
 import { UserInfoComponent } from './stories/user-info/user-info.component';
 import { ToolbarComponent } from './stories/toolbar/toolbar.component';
 import { CorePipesComponent } from './stories/core-pipes/core-pipes.component';
+import { TimeAgoComponent } from './stories/core-pipes/time-ago/time-ago.component';
+import { MultiValueComponent } from './stories/core-pipes/multi-value/multi-value.component';
+import { FormatSpaceComponent } from './stories/core-pipes/format-space/format-space.component';
+import { DecimalNumberComponent } from './stories/core-pipes/decimal-number/decimal-number.component';
+import { FileSizeComponent } from './stories/core-pipes/file-size/file-size.component';
+import { LocalizedDateComponent } from './stories/core-pipes/localized-date/localized-date.component';
 
 
 registerLocaleData(localeFr);
@@ -161,6 +167,12 @@ registerLocaleData(localeSv);
     UserInfoComponent,
     ToolbarComponent,
     CorePipesComponent,
+    TimeAgoComponent,
+    MultiValueComponent,
+    FormatSpaceComponent,
+    DecimalNumberComponent,
+    FileSizeComponent,
+    LocalizedDateComponent,
   ],
   providers: [
     { provide: AppConfigService, useClass: DebugAppConfigService },
