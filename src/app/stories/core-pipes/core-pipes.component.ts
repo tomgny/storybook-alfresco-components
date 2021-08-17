@@ -120,7 +120,7 @@ export class CorePipesComponent implements OnInit {
 
   @Input()
   rudeWordList: string;
-  
+
   @Input()
   showMimeTypeIcon: boolean = false;
 
@@ -139,11 +139,25 @@ export class CorePipesComponent implements OnInit {
   @Input()
   showAppConfigChaining: boolean = false;
 
-  configForChaining: string = "oauth2.publicUrls";
+  @Input()
+  showNodeNameTooltip: boolean = false;
+
+  @Input()
+  nodeName: string;
+
+  @Input()
+  nodeTitle: string;
+
+  @Input()
+  nodeDescription: string;
+
+  configForChaining: string = 'oauth2.publicUrls';
 
   user: any;
 
   textForDate: string;
+
+  node: any;
 
   constructor(private translationService: TranslationService) {}
 
@@ -161,6 +175,16 @@ export class CorePipesComponent implements OnInit {
       firstName: this.firstName,
       lastName: this.lastName,
       email: this.email
+    };
+
+    this.node = {
+      entry: {
+        name: this.nodeName,
+        properties: {
+          'cm:title': this.nodeTitle,
+          'cm:description': this.nodeDescription
+        }
+      }
     };
   }
 

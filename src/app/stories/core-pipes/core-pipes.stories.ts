@@ -52,6 +52,9 @@ export default {
     showMimeTypeIcon: { table: { disable: true } },
     showAppConfig: { table: { disable: true } },
     showAppConfigChaining: { table: { disable: true } },
+    configForChaining: { table: { disable: true } },
+    showNodeNameTooltip: { table: { disable: true } },
+    node: { table: { disable: true } },
   }
 } as Meta;
 
@@ -406,4 +409,65 @@ export const AppConfigChainingWithMultiValuePipe = Template.bind({})
 
 AppConfigChainingWithMultiValuePipe.args = {
   showAppConfigChaining: true,
+}
+
+export const NodeNameTooltipDefault = Template.bind({})
+
+NodeNameTooltipDefault.args = {
+  showNodeNameTooltip: true,
+  nodeName: 'Node name',
+  nodeTitle: 'Node title',
+  nodeDescription: 'Node description',
+}
+
+export const NodeNameTooltipOnlyName = Template.bind({})
+
+NodeNameTooltipOnlyName.args = {
+  ...NodeNameTooltipDefault.args,
+  nodeTitle: null,
+  nodeDescription: null,
+}
+
+export const NodeNameTooltipTitleMissing = Template.bind({})
+
+NodeNameTooltipTitleMissing.args = {
+  ...NodeNameTooltipDefault.args,
+  nodeTitle: null,
+}
+
+export const NodeNameTooltipDescriptionMissing = Template.bind({})
+
+NodeNameTooltipDescriptionMissing.args = {
+  ...NodeNameTooltipDefault.args,
+  nodeDescription: null,
+}
+
+export const NodeNameTooltipEverythingSame = Template.bind({})
+
+NodeNameTooltipEverythingSame.args = {
+  ...NodeNameTooltipDefault.args,
+  nodeTitle: 'Node name',
+  nodeDescription: 'Node name',
+}
+
+export const NodeNameTooltipTitleDescriptionSame = Template.bind({})
+
+NodeNameTooltipTitleDescriptionSame.args = {
+  ...NodeNameTooltipDefault.args, 
+  nodeTitle: 'Node title',
+  nodeDescription: 'Node title',
+}
+
+export const NodeNameTooltipDescriptionMissingNameTitleSame = Template.bind({})
+
+NodeNameTooltipDescriptionMissingNameTitleSame.args = {
+  ...NodeNameTooltipEverythingSame.args,
+  nodeDescription: null,
+}
+
+export const NodeNameTooltipTitleMissingNameDescriptionSame = Template.bind({})
+
+NodeNameTooltipTitleMissingNameDescriptionSame.args = {
+  ...NodeNameTooltipEverythingSame.args,
+  nodeTitle: null,
 }

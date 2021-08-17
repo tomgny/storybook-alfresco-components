@@ -46,3 +46,7 @@
     Without chaining - {{ configForChaining }} = "{{ configForChaining | adfAppConfig }}" <br>
     With chaining - {{ configForChaining }} = "{{ configForChaining | adfAppConfig | multiValue : ' --- ' }}"
 </div>
+
+<div *ngIf="showNodeNameTooltip">
+    <span title="{{ node | adfNodeNameTooltip }}">Hover over me!</span>
+</div>
