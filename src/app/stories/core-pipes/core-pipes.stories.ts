@@ -50,6 +50,8 @@ export default {
     user: { table: { disable: true } },
     showTextHighlight: { table: { disable: true } },
     showMimeTypeIcon: { table: { disable: true } },
+    showAppConfig: { table: { disable: true } },
+    showAppConfigChaining: { table: { disable: true } },
   }
 } as Meta;
 
@@ -383,4 +385,25 @@ export const MimeTypeIconFolder = Template.bind({})
 MimeTypeIconFolder.args = {
   ...MimeTypeIconDefault.args,
   icon: "folder",
+}
+
+export const AppConfigDefault = Template.bind({})
+
+AppConfigDefault.args = {
+  showAppConfig: true,
+  config: 'oauth2.host'
+}
+
+export const AppConfigFallbackTextSet = Template.bind({})
+
+AppConfigFallbackTextSet.args = {
+  ...AppConfigDefault.args,
+  config: 'lorem.ipsum',
+  fallbackText: 'Not able to find settings you are looking for.'
+}
+
+export const AppConfigChainingWithMultiValuePipe = Template.bind({})
+
+AppConfigChainingWithMultiValuePipe.args = {
+  showAppConfigChaining: true,
 }

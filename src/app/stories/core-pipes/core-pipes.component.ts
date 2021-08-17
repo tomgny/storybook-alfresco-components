@@ -127,6 +127,20 @@ export class CorePipesComponent implements OnInit {
   @Input()
   icon: string;
 
+  @Input()
+  showAppConfig: boolean = false;
+
+  @Input()
+  config: string;
+
+  @Input()
+  fallbackText: string = '';
+
+  @Input()
+  showAppConfigChaining: boolean = false;
+
+  configForChaining: string = "oauth2.publicUrls";
+
   user: any;
 
   textForDate: string;

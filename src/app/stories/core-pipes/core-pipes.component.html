@@ -37,3 +37,12 @@
 <div *ngIf="showMimeTypeIcon">
     <img src='{{ icon | adfMimeTypeIcon }}' />
 </div>
+
+<div *ngIf="showAppConfig">
+    {{ config }} = "{{ config | adfAppConfig : fallbackText }}"
+</div>
+
+<div *ngIf="showAppConfigChaining">
+    Without chaining - {{ configForChaining }} = "{{ configForChaining | adfAppConfig }}" <br>
+    With chaining - {{ configForChaining }} = "{{ configForChaining | adfAppConfig | multiValue : ' --- ' }}"
+</div>
