@@ -96,6 +96,12 @@ import { FormatSpaceComponent } from './stories/core-pipes/format-space/format-s
 import { DecimalNumberComponent } from './stories/core-pipes/decimal-number/decimal-number.component';
 import { FileSizeComponent } from './stories/core-pipes/file-size/file-size.component';
 import { LocalizedDateComponent } from './stories/core-pipes/localized-date/localized-date.component';
+import { FullNameComponent } from './stories/core-pipes/full-name/full-name.component';
+import { UserInitialComponent } from './stories/core-pipes/user-initial/user-initial.component';
+import { TextHighlightComponent } from './stories/core-pipes/text-highlight/text-highlight.component';
+import { MimeTypeIconComponent } from './stories/core-pipes/mime-type-icon/mime-type-icon.component';
+import { AppConfigComponent } from './stories/core-pipes/app-config/app-config.component';
+import { NodeNameTooltipComponent } from './stories/core-pipes/node-name-tooltip/node-name-tooltip.component';
 
 
 registerLocaleData(localeFr);
@@ -173,6 +179,12 @@ registerLocaleData(localeSv);
     DecimalNumberComponent,
     FileSizeComponent,
     LocalizedDateComponent,
+    FullNameComponent,
+    UserInitialComponent,
+    TextHighlightComponent,
+    MimeTypeIconComponent,
+    AppConfigComponent,
+    NodeNameTooltipComponent,
   ],
   providers: [
     { provide: AppConfigService, useClass: DebugAppConfigService },

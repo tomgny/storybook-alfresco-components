@@ -1,0 +1,10 @@
+<table>
+  <tr>
+    <th>Before using the pipe</th>
+    <th>After using the pipe</th>
+  </tr>
+  <tr>
+    <td>{{ summary }}</td>
+    <td><div [innerHTML]="summary | highlight: rudeWordList"></div></td>
+  </tr>
+</table>
