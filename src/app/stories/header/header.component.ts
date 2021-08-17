@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { CoreModule } from '@alfresco/adf-core';
+import { Component, Input, NgModule } from '@angular/core';
 
 @Component({
   selector: 'aca-header',
@@ -6,7 +7,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-
   /**
    * Background color for the header. It can be any hex color code or one of the Material theme colors: 'primary', 'accent' or 'warn'.
    */
@@ -55,4 +55,22 @@ export class HeaderComponent {
   @Input()
   tooltip: string = undefined;
 
+  @Input()
+  optionalContent: boolean = false;
+
+  @Input()
+  showRedirect: boolean = false;
+
+  onSidenavClick(){
+    this.expandedSidenav = !this.expandedSidenav;
+  }
+
+  links = ['Link 1', 'Link 2', 'Link 3', 'Link 4', 'Link 5'];
 }
+
+@NgModule({
+  declarations: [HeaderComponent],
+  imports: [CoreModule.forChild()],
+  exports: [HeaderComponent],
+})
+export class HeaderModule {}

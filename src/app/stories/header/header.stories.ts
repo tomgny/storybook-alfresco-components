@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { APP_ROUTES } from '../../app.routes';
 import { AppCommonModule } from '../../components/common/common.module';
-import { HeaderComponent } from './header.component';
+import { HeaderComponent, HeaderModule } from './header.component';
 
 export default {
   component: HeaderComponent,
@@ -15,6 +15,7 @@ export default {
     moduleMetadata({
       declarations: [],
       imports: [
+        HeaderModule,
         RouterModule.forRoot(APP_ROUTES, {
           useHash: true,
           enableTracing: false // enable for debug only
@@ -39,7 +40,7 @@ const Template: Story<HeaderComponent> = (args) => ({
 export const DefaultStory = Template.bind({});
 DefaultStory.args = {
   color: 'primary',
-  expandedSidenav: true,
+  expandedSidenav: false,
   logo: undefined,
   position: 'start',
   redirectUrl: '/',
@@ -57,13 +58,13 @@ AccentColor.args = {
 export const ExpandedSidenav = Template.bind({});
 ExpandedSidenav.args = {
   ...DefaultStory.args,
-  expandedSidenav: false
+  expandedSidenav: true
 }
 
 export const CustomLogo = Template.bind({});
 CustomLogo.args = {
   ...DefaultStory.args,
-  logo: undefined
+  logo: './assets/images/baseline-lock-24px.svg'
 }
 
 export const PositionEnd = Template.bind({});
@@ -75,11 +76,12 @@ PositionEnd.args = {
 export const RedirectUrl = Template.bind({});
 RedirectUrl.args = {
   ...DefaultStory.args,
-  redirectUrl: '/test'
+  showRedirect: true,
+  redirectUrl: '/custom-path'
 }
 
-export const ShowSidenavToggle = Template.bind({});
-ShowSidenavToggle.args = {
+export const SidenavToggleHidden = Template.bind({});
+SidenavToggleHidden.args = {
   ...DefaultStory.args,
   showSidenavToggle: false
 }
@@ -94,4 +96,10 @@ export const CustomLogoTooltip = Template.bind({});
 CustomLogoTooltip.args = {
   ...DefaultStory.args,
   tooltip: 'Custom Logo Tooltip'
+}
+
+export const OptionalContent = Template.bind({});
+OptionalContent.args = {
+  ...DefaultStory.args,
+  optionalContent: true
 }
