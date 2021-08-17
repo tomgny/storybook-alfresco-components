@@ -46,7 +46,9 @@ export default {
     className: {
       options: [ '', 'adf-people-initial', 'adf-people-widget-pic', 'adf-notification-initiator-pic', 'adf-userinfo-pic', 'adf-userinfo-profile-initials adf-hide-small',  ],
       control: { type: 'select' }
-    }
+    },
+    user: { table: { disable: true } },
+    showTextHighlight: { table: { disable: true } },
   }
 } as Meta;
 
@@ -339,3 +341,10 @@ UserInitialCustomDelimiterSet.args = {
   delimiter: '-'
 }
 
+export const TextHighlightDefault = Template.bind({})
+
+TextHighlightDefault.args = {
+  showTextHighlight: true,
+  summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere varius fermentum. Aliquam pretium lacus sed tellus mollis dictum. Curabitur bibendum iaculis scelerisque.',
+  rudeWordList: 'ipsum consectetur posuere',
+}

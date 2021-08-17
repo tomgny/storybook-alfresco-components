@@ -112,6 +112,15 @@ export class CorePipesComponent implements OnInit {
   @Input()
   delimiter: string = '';
 
+  @Input()
+  showTextHighlight: boolean = false;
+
+  @Input()
+  summary: string;
+
+  @Input()
+  rudeWordList: string;
+
   user: any;
 
   textForDate: string;

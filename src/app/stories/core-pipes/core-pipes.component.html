@@ -29,3 +29,7 @@
 <div *ngIf="showUserInitial">
     <div [outerHTML]="user | usernameInitials : className : delimiter "></div>
 </div>
+
+<div *ngIf="showTextHighlight">
+    Some rude words have been detected in your summary: <div [innerHTML]="summary | highlight : rudeWordList"></div>
+</div>
