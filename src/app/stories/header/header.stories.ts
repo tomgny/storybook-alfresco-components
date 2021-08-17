@@ -47,3 +47,51 @@ DefaultStory.args = {
   title: 'Default title',
   tooltip: 'Default tooltip'
 }
+
+export const AccentColor = Template.bind({});
+AccentColor.args = {
+  ...DefaultStory.args,
+  color: 'accent'
+}
+
+export const ExpandedSidenav = Template.bind({});
+ExpandedSidenav.args = {
+  ...DefaultStory.args,
+  expandedSidenav: false
+}
+
+export const CustomLogo = Template.bind({});
+CustomLogo.args = {
+  ...DefaultStory.args,
+  logo: undefined
+}
+
+export const PositionEnd = Template.bind({});
+PositionEnd.args = {
+  ...DefaultStory.args,
+  position: 'end'
+}
+
+export const RedirectUrl = Template.bind({});
+RedirectUrl.args = {
+  ...DefaultStory.args,
+  redirectUrl: '/test'
+}
+
+export const ShowSidenavToggle = Template.bind({});
+ShowSidenavToggle.args = {
+  ...DefaultStory.args,
+  showSidenavToggle: false
+}
+
+export const CustomTitle = Template.bind({});
+CustomTitle.args = {
+  ...DefaultStory.args,
+  title: 'Custom Header Title'
+}
+
+export const CustomLogoTooltip = Template.bind({});
+CustomLogoTooltip.args = {
+  ...DefaultStory.args,
+  tooltip: 'Custom Logo Tooltip'
+}

@@ -29,7 +29,7 @@ export class HeaderComponent {
    * The side of the page that the drawer is attached to (can be 'start' or 'end')
    */
   @Input()
-  position: string = 'start';
+  position: 'start' | 'end' = 'start';
 
   /**
    * The router link for the application logo, when clicked.
