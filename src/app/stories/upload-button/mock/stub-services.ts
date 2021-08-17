@@ -40,6 +40,18 @@ export class ContentServiceStub {
   }
 }
 
+export class ContentServiceNoPermissionsStub {
+  apiService = new AlfrescoApiServiceStub();
+
+  hasPermissions = () => false;
+
+  hasAllowableOperations = () => false;
+
+  getNode(nodeId: string, _?: any): Observable<NodeEntry> {
+    return from(this.apiService.getInstance().nodes.getNode(nodeId, _));
+  }
+}
+
 export class NodesApiServiceStub {
   nodesApi = new NodesApiStub();
 
