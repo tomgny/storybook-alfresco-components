@@ -91,6 +91,7 @@ import { UserInfoComponent } from './stories/user-info/user-info.component';
 import { ToolbarComponent } from './stories/toolbar/toolbar.component';
 import { ContentMetadataCardComponent } from './stories/content-metadata-card/content-metadata-card.component';
 import { ButtonsMenuComponent } from './stories/buttons-menu/buttons-menu.component';
+import { HeaderComponent } from './stories/header/header.component';
 
 registerLocaleData(localeFr);
 registerLocaleData(localeDe);
@@ -161,7 +162,8 @@ registerLocaleData(localeSv);
     UserInfoComponent,
     ToolbarComponent,
     ContentMetadataCardComponent,
-    ButtonsMenuComponent
+    ButtonsMenuComponent,
+    HeaderComponent
   ],
   providers: [
     { provide: AppConfigService, useClass: DebugAppConfigService },
