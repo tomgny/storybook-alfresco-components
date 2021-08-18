@@ -3,7 +3,7 @@ import { Component, Input } from '@angular/core';
 @Component({
   selector: 'aca-app-config',
   templateUrl: './app-config.component.html',
-  styleUrls: ['../core-pipes.component.scss']
+  styleUrls: ['../core-pipes.scss']
 })
 export class AppConfigComponent {
   @Input()

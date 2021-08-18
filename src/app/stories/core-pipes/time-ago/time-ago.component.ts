@@ -5,7 +5,7 @@ import { LocalizationService } from '../localization.service';
 @Component({
   selector: 'aca-time-ago',
   templateUrl: './time-ago.component.html',
-  styleUrls: ['../core-pipes.component.scss']
+  styleUrls: ['../core-pipes.scss']
 })
 export class TimeAgoComponent implements OnInit {
   @Input()

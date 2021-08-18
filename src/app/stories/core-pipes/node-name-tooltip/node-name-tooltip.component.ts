@@ -3,7 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 @Component({
   selector: 'aca-node-name-tooltip',
   templateUrl: './node-name-tooltip.component.html',
-  styleUrls: ['../core-pipes.component.scss']
+  styleUrls: ['../core-pipes.scss']
 })
 export class NodeNameTooltipComponent implements OnInit {
   @Input()

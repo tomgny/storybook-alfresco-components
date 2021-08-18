@@ -4,7 +4,7 @@ import { Component, Input, OnInit } from '@angular/core';
 @Component({
   selector: 'aca-file-size',
   templateUrl: './file-size.component.html',
-  styleUrls: ['../core-pipes.component.scss']
+  styleUrls: ['../core-pipes.scss']
 })
 export class FileSizeComponent implements OnInit {
   @Input()

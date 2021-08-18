@@ -5,7 +5,7 @@ import { LocalizationService } from '../localization.service';
 @Component({
   selector: 'aca-decimal-number',
   templateUrl: './decimal-number.component.html',
-  styleUrls: ['../core-pipes.component.scss']
+  styleUrls: ['../core-pipes.scss']
 })
 export class DecimalNumberComponent implements OnInit {
   @Input()
