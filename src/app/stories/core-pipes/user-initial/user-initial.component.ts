@@ -2,8 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'aca-user-initial',
-  templateUrl: './user-initial.component.html',
-  styleUrls: ['../core-pipes.scss']
+  templateUrl: './user-initial.component.html'
 })
 export class UserInitialComponent implements OnInit {
   @Input()

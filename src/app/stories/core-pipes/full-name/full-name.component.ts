@@ -2,8 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'aca-full-name',
-  templateUrl: './full-name.component.html',
-  styleUrls: ['../core-pipes.scss']
+  templateUrl: './full-name.component.html'
 })
 export class FullNameComponent implements OnInit {
   @Input()

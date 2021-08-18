@@ -2,8 +2,7 @@ import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'aca-mime-type-icon',
-  templateUrl: './mime-type-icon.component.html',
-  styleUrls: ['../core-pipes.scss']
+  templateUrl: './mime-type-icon.component.html'
 })
 export class MimeTypeIconComponent {
   /**
