@@ -8,21 +8,39 @@ import { setProvider } from './mock/stub-authentication-service';
   encapsulation: ViewEncapsulation.None
 })
 export class UserInfoComponent implements OnChanges {
+  /**
+   * Custom path for the background banner image for APS users.
+   */
   @Input()
   bpmBackgroundImage: string;
 
+  /**
+   * Custom path for the background banner image for ACS users.
+   */
   @Input()
   ecmBackgroundImage: string;
 
+  /**
+   * Custom choice for opening the menu at the bottom. Can be before or after.
+   */
   @Input()
   menuPositionX: MenuPositionX;
 
+  /**
+   * Custom choice for opening the menu at the bottom. Can be above or below.
+   */
   @Input()
   menuPositionY: MenuPositionY;
 
+  /**
+   * When the username is shown, this defines its position relative to the user info button. Can be right or left.
+   */
   @Input()
   namePosition: string;
 
+  /**
+   * Shows/hides the username next to the user info button.
+   */
   @Input()
   showName: boolean;
 
