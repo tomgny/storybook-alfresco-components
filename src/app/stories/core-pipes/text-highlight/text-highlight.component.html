@@ -1,0 +1,10 @@
+<table>
+  <tr>
+    <th>Before using the pipe</th>
+    <th>After using the pipe</th>
+  </tr>
+  <tr>
+    <td>{{ text }}</td>
+    <td><div [innerHTML]="text | highlight: wordsToHighlight"></div></td>
+  </tr>
+</table>

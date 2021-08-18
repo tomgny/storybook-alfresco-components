@@ -90,8 +90,21 @@ import { DatatableCustomComponent } from './stories/datatable/datatable-custom-d
 import { UserInfoComponent } from './stories/user-info/user-info.component';
 import { ToolbarComponent } from './stories/toolbar/toolbar.component';
 import { UploadButtonComponent } from './stories/upload-button/upload-button.component';
+import { TimeAgoComponent } from './stories/core-pipes/time-ago/time-ago.component';
+import { MultiValueComponent } from './stories/core-pipes/multi-value/multi-value.component';
+import { FormatSpaceComponent } from './stories/core-pipes/format-space/format-space.component';
+import { DecimalNumberComponent } from './stories/core-pipes/decimal-number/decimal-number.component';
+import { FileSizeComponent } from './stories/core-pipes/file-size/file-size.component';
+import { LocalizedDateComponent } from './stories/core-pipes/localized-date/localized-date.component';
+import { FullNameComponent } from './stories/core-pipes/full-name/full-name.component';
+import { UserInitialComponent } from './stories/core-pipes/user-initial/user-initial.component';
+import { TextHighlightComponent } from './stories/core-pipes/text-highlight/text-highlight.component';
+import { MimeTypeIconComponent } from './stories/core-pipes/mime-type-icon/mime-type-icon.component';
+import { AppConfigComponent } from './stories/core-pipes/app-config/app-config.component';
+import { NodeNameTooltipComponent } from './stories/core-pipes/node-name-tooltip/node-name-tooltip.component';
 import { ContentMetadataCardComponent } from './stories/content-metadata-card/content-metadata-card.component';
 import { ButtonsMenuComponent } from './stories/buttons-menu/buttons-menu.component';
+import { HeaderComponent } from './stories/header/header.component';
 
 registerLocaleData(localeFr);
 registerLocaleData(localeDe);
@@ -162,8 +175,21 @@ registerLocaleData(localeSv);
     UserInfoComponent,
     ToolbarComponent,
     UploadButtonComponent,
+    TimeAgoComponent,
+    MultiValueComponent,
+    FormatSpaceComponent,
+    DecimalNumberComponent,
+    FileSizeComponent,
+    LocalizedDateComponent,
+    FullNameComponent,
+    UserInitialComponent,
+    TextHighlightComponent,
+    MimeTypeIconComponent,
+    AppConfigComponent,
+    NodeNameTooltipComponent,
     ContentMetadataCardComponent,
-    ButtonsMenuComponent
+    ButtonsMenuComponent,
+    HeaderComponent
   ],
   providers: [
     { provide: AppConfigService, useClass: DebugAppConfigService },

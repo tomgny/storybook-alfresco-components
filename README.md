@@ -10,30 +10,30 @@ Project made for building UI components and pages in isolation. Main purpose is 
 |----------------------|---------------|
 |CardView              |Done           |
 |Datatable             |Done           |
-|Buttons menu          |In progress    |
-|UserInfo              |In progress    |
+|Buttons menu          |Done           |
+|UserInfo              |Done           |
 |Viewer                |Done           |
 |Toolbar               |Done           |
 |Document List         |In progress    |
-|Content Metadata Card |In progress    |
+|Content Metadata Card |Done           |
 |Upload Button         |None           |
 
 # ADF Pipes list
 
 |Pipe              |Status |
 |------------------|-------|
-|App config        |None   |
-|Decimal number    |None   |
-|File size         |None   |
-|Format space      |None   |
-|Full name         |None   |
-|Localized date    |None   |
-|Mime type icon    |None   |
-|Multi value       |None   |
-|Node name tooltip |None   |
-|Text highlight    |None   |
-|Time ago          |None   |
-|User initial      |None   |
+|App config        |Done   |
+|Decimal number    |Done   |
+|File size         |Done   |
+|Format space      |Done   |
+|Full name         |Done   |
+|Localized date    |Done   |
+|Mime type icon    |Done   |
+|Multi value       |Done   |
+|Node name tooltip |Done   |
+|Text highlight    |Done   |
+|Time ago          |Done   |
+|User initial      |Done   |
 
 # Build setup
 
