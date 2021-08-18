@@ -33,7 +33,7 @@ export default {
 
 const Template: Story<HeaderComponent> = (args) => ({
   props: {
-    ...args,
+    ...args
   }
 });
 
@@ -47,59 +47,59 @@ DefaultStory.args = {
   showSidenavToggle: true,
   title: 'Default title',
   tooltip: 'Default tooltip'
-}
+};
 
 export const AccentColor = Template.bind({});
 AccentColor.args = {
   ...DefaultStory.args,
   color: 'accent'
-}
+};
 
 export const ExpandedSidenav = Template.bind({});
 ExpandedSidenav.args = {
   ...DefaultStory.args,
   expandedSidenav: true
-}
+};
 
 export const CustomLogo = Template.bind({});
 CustomLogo.args = {
   ...DefaultStory.args,
   logo: './assets/images/baseline-lock-24px.svg'
-}
+};
 
 export const PositionEnd = Template.bind({});
 PositionEnd.args = {
   ...DefaultStory.args,
   position: 'end'
-}
+};
 
 export const RedirectUrl = Template.bind({});
 RedirectUrl.args = {
   ...DefaultStory.args,
   showRedirect: true,
   redirectUrl: '/custom-path'
-}
+};
 
 export const SidenavToggleHidden = Template.bind({});
 SidenavToggleHidden.args = {
   ...DefaultStory.args,
   showSidenavToggle: false
-}
+};
 
 export const CustomTitle = Template.bind({});
 CustomTitle.args = {
   ...DefaultStory.args,
   title: 'Custom Header Title'
-}
+};
 
 export const CustomLogoTooltip = Template.bind({});
 CustomLogoTooltip.args = {
   ...DefaultStory.args,
   tooltip: 'Custom Logo Tooltip'
-}
+};
 
 export const OptionalContent = Template.bind({});
 OptionalContent.args = {
   ...DefaultStory.args,
   optionalContent: true
-}
+};

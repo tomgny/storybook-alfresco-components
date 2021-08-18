@@ -3,8 +3,7 @@ import { Component, Input, NgModule } from '@angular/core';
 
 @Component({
   selector: 'aca-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  templateUrl: './header.component.html'
 })
 export class HeaderComponent {
   /**
@@ -61,7 +60,7 @@ export class HeaderComponent {
   @Input()
   showRedirect: boolean = false;
 
-  onSidenavClick(){
+  onSidenavClick() {
     this.expandedSidenav = !this.expandedSidenav;
   }
 
@@ -71,6 +70,6 @@ export class HeaderComponent {
 @NgModule({
   declarations: [HeaderComponent],
   imports: [CoreModule.forChild()],
-  exports: [HeaderComponent],
+  exports: [HeaderComponent]
 })
 export class HeaderModule {}
