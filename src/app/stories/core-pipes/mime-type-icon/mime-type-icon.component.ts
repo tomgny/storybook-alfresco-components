@@ -1,17 +1,13 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'aca-mime-type-icon',
   templateUrl: './mime-type-icon.component.html',
   styleUrls: ['../core-pipes.component.scss']
 })
-export class MimeTypeIconComponent implements OnInit {
+export class MimeTypeIconComponent {
   @Input()
   icon: string;
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  constructor() {}
 }

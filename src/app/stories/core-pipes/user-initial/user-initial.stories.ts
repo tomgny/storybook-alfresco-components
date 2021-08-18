@@ -44,45 +44,44 @@ const Template: Story<UserInitialComponent> = (args) => ({
   props: args
 });
 
-export const UserInitialDefault = Template.bind({});
+export const Default = Template.bind({});
 
-UserInitialDefault.args = {
+Default.args = {
   firstName: 'John',
   lastName: 'Smith'
 };
 
-export const UserInitialNoFirstName = Template.bind({});
+export const NoFirstName = Template.bind({});
 
-UserInitialNoFirstName.args = {
-  ...UserInitialDefault.args,
+NoFirstName.args = {
+  ...Default.args,
   firstName: ''
 };
 
-export const UserInitialNoLastName = Template.bind({});
+export const NoLastName = Template.bind({});
 
-UserInitialNoLastName.args = {
-  ...UserInitialDefault.args,
+NoLastName.args = {
+  ...Default.args,
   lastName: ''
 };
 
-export const UserInitialNoFirstAndLastName = Template.bind({});
+export const NoFirstAndLastName = Template.bind({});
 
-UserInitialNoFirstAndLastName.args = {
-  ...UserInitialDefault.args,
-  firstName: '',
+NoFirstAndLastName.args = {
+  ...NoFirstName.args,
   lastName: ''
 };
 
-export const UserInitialClassNameSet = Template.bind({});
+export const ClassNameSet = Template.bind({});
 
-UserInitialClassNameSet.args = {
-  ...UserInitialDefault.args,
+ClassNameSet.args = {
+  ...Default.args,
   className: 'adf-people-initial'
 };
 
-export const UserInitialCustomDelimiterSet = Template.bind({});
+export const CustomDelimiterSet = Template.bind({});
 
-UserInitialCustomDelimiterSet.args = {
-  ...UserInitialDefault.args,
+CustomDelimiterSet.args = {
+  ...Default.args,
   delimiter: '-'
 };

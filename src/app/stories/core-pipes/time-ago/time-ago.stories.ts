@@ -39,9 +39,9 @@ const Template: Story<TimeAgoComponent> = (args) => ({
   props: args
 });
 
-export const TimeAgoNow = Template.bind({});
+export const Now = Template.bind({});
 
-TimeAgoNow.args = {
+Now.args = {
   date: new Date()
 };
 
@@ -50,51 +50,51 @@ const getDateXDaysBefore = (numberOfDaysBefore: number) => {
   return date.setDate(date.getDate() - numberOfDaysBefore);
 };
 
-export const TimeAgoYesterday = Template.bind({});
+export const Yesterday = Template.bind({});
 
-TimeAgoYesterday.args = {
-  ...TimeAgoNow.args,
+Yesterday.args = {
+  ...Now.args,
   date: getDateXDaysBefore(1)
 };
 
-export const TimeAgo3DaysBefore = Template.bind({});
+export const ThreeDaysBefore = Template.bind({});
 
-TimeAgo3DaysBefore.args = {
-  ...TimeAgoNow.args,
+ThreeDaysBefore.args = {
+  ...Now.args,
   date: getDateXDaysBefore(3)
 };
 
-export const TimeAgo8DaysBefore = Template.bind({});
+export const EightDaysBefore = Template.bind({});
 
-TimeAgo8DaysBefore.args = {
-  ...TimeAgoNow.args,
+EightDaysBefore.args = {
+  ...Now.args,
   date: getDateXDaysBefore(8)
 };
 
-export const TimeAgoTomorrow = Template.bind({});
+export const Tomorrow = Template.bind({});
 
-TimeAgoTomorrow.args = {
-  ...TimeAgoNow.args,
+Tomorrow.args = {
+  ...Now.args,
   date: getDateXDaysBefore(-1)
 };
 
-export const TimeAgo3DaysAfter = Template.bind({});
+export const ThreeDaysAfter = Template.bind({});
 
-TimeAgo3DaysAfter.args = {
-  ...TimeAgoNow.args,
+ThreeDaysAfter.args = {
+  ...Now.args,
   date: getDateXDaysBefore(-3)
 };
 
-export const TimeAgoDifferentLocale8DaysAgo = Template.bind({});
+export const DifferentLocaleSetEightDaysAgo = Template.bind({});
 
-TimeAgoDifferentLocale8DaysAgo.args = {
-  ...TimeAgo8DaysBefore.args,
+DifferentLocaleSetEightDaysAgo.args = {
+  ...EightDaysBefore.args,
   locale: 'pl'
 };
 
-export const TimeAgoDifferentLocale2DaysAgo = Template.bind({});
+export const DifferentLocaleSetTwoDaysAgo = Template.bind({});
 
-TimeAgoDifferentLocale2DaysAgo.args = {
-  ...TimeAgoDifferentLocale8DaysAgo.args,
+DifferentLocaleSetTwoDaysAgo.args = {
+  ...DifferentLocaleSetEightDaysAgo.args,
   date: getDateXDaysBefore(2)
 };

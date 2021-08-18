@@ -22,20 +22,18 @@ export default {
         BrowserAnimationsModule
       ]
     })
-  ],
-  argTypes: {
-    ngOnInit: { table: { disable: true } },
-  }
+  ]
 } as Meta;
 
 const Template: Story<TextHighlightComponent> = (args) => ({
   props: args
 });
 
-export const TextHighlightDefault = Template.bind({})
+export const Default = Template.bind({});
 
-TextHighlightDefault.args = {
+Default.args = {
   showTextHighlight: true,
-  summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere varius fermentum. Aliquam pretium lacus sed tellus mollis dictum. Curabitur bibendum iaculis scelerisque.',
-  rudeWordList: 'ipsum consectetur posuere',
-}
+  text:
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere varius fermentum. Aliquam pretium lacus sed tellus mollis dictum. Curabitur bibendum iaculis scelerisque.',
+  wordsToHighlight: 'ipsum consectetur posuere'
+};

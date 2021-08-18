@@ -22,42 +22,39 @@ export default {
         BrowserAnimationsModule
       ]
     })
-  ],
-  argTypes: {
-    ngOnInit: { table: { disable: true } },
-  }
+  ]
 } as Meta;
 
 const Template: Story<MimeTypeIconComponent> = (args) => ({
   props: args
 });
 
-export const MimeTypeIconDefault = Template.bind({})
+export const JPEG = Template.bind({});
 
-MimeTypeIconDefault.args = {
-  icon: "image/jpeg",
-}
+JPEG.args = {
+  icon: 'image/jpeg'
+};
 
-export const MimeTypeIconWrongInput = Template.bind({})
+export const WrongMimeType = Template.bind({});
 
-MimeTypeIconWrongInput.args = {
-  icon: "lorem/ipsum",
-}
+WrongMimeType.args = {
+  icon: 'lorem/ipsum'
+};
 
-export const MimeTypeIconPdf = Template.bind({})
+export const PDF = Template.bind({});
 
-MimeTypeIconPdf.args = {
-  icon: 'application/pdf',
-}
+PDF.args = {
+  icon: 'application/pdf'
+};
 
-export const MimeTypeIconHtml = Template.bind({})
+export const HTML = Template.bind({});
 
-MimeTypeIconHtml.args = {
-  icon: 'text/html',
-}
+HTML.args = {
+  icon: 'text/html'
+};
 
-export const MimeTypeIconFolder = Template.bind({})
+export const Folder = Template.bind({});
 
-MimeTypeIconFolder.args = {
-  icon: "folder",
-}
+Folder.args = {
+  icon: 'folder'
+};

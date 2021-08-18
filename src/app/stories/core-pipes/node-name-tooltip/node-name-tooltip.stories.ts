@@ -1,4 +1,3 @@
-
 import { CoreModule } from '@alfresco/adf-core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
@@ -26,69 +25,69 @@ export default {
   ],
   argTypes: {
     ngOnInit: { table: { disable: true } },
-    node: { table: { disable: true } },
+    node: { table: { disable: true } }
   }
 } as Meta;
 
 const Template: Story<NodeNameTooltipComponent> = (args) => ({
   props: args
 });
-export const NodeNameTooltipDefault = Template.bind({})
+export const Default = Template.bind({});
 
-NodeNameTooltipDefault.args = {
+Default.args = {
   nodeName: 'Node name',
   nodeTitle: 'Node title',
-  nodeDescription: 'Node description',
-}
+  nodeDescription: 'Node description'
+};
 
-export const NodeNameTooltipOnlyName = Template.bind({})
+export const OnlyName = Template.bind({});
 
-NodeNameTooltipOnlyName.args = {
-  ...NodeNameTooltipDefault.args,
+OnlyName.args = {
+  ...Default.args,
   nodeTitle: null,
-  nodeDescription: null,
-}
+  nodeDescription: null
+};
 
-export const NodeNameTooltipTitleMissing = Template.bind({})
+export const NoTitle = Template.bind({});
 
-NodeNameTooltipTitleMissing.args = {
-  ...NodeNameTooltipDefault.args,
-  nodeTitle: null,
-}
+NoTitle.args = {
+  ...Default.args,
+  nodeTitle: null
+};
 
-export const NodeNameTooltipDescriptionMissing = Template.bind({})
+export const NoDescription = Template.bind({});
 
-NodeNameTooltipDescriptionMissing.args = {
-  ...NodeNameTooltipDefault.args,
-  nodeDescription: null,
-}
+NoDescription.args = {
+  ...Default.args,
+  nodeDescription: null
+};
 
-export const NodeNameTooltipEverythingSame = Template.bind({})
+export const EverythingSame = Template.bind({});
 
-NodeNameTooltipEverythingSame.args = {
-  ...NodeNameTooltipDefault.args,
+EverythingSame.args = {
+  ...Default.args,
   nodeTitle: 'Node name',
-  nodeDescription: 'Node name',
-}
+  nodeDescription: 'Node name'
+};
 
-export const NodeNameTooltipTitleDescriptionSame = Template.bind({})
+export const TitleDescriptionSame = Template.bind({});
 
-NodeNameTooltipTitleDescriptionSame.args = {
-  ...NodeNameTooltipDefault.args, 
+TitleDescriptionSame.args = {
+  ...Default.args,
   nodeTitle: 'Node title',
-  nodeDescription: 'Node title',
-}
+  nodeDescription: 'Node title'
+};
 
-export const NodeNameTooltipDescriptionMissingNameTitleSame = Template.bind({})
+export const NoDescriptionNameTitleSame = Template.bind({});
 
-NodeNameTooltipDescriptionMissingNameTitleSame.args = {
-  ...NodeNameTooltipEverythingSame.args,
-  nodeDescription: null,
-}
+NoDescriptionNameTitleSame.args = {
+  ...EverythingSame.args,
+  nodeDescription: null
+};
 
-export const NodeNameTooltipTitleMissingNameDescriptionSame = Template.bind({})
+export const NoTitleNameDescriptionSame = Template.bind({});
 
-NodeNameTooltipTitleMissingNameDescriptionSame.args = {
-  ...NodeNameTooltipEverythingSame.args,
-  nodeTitle: null,
-}
+NoTitleNameDescriptionSame.args = {
+  ...EverythingSame.args,
+  nodeTitle: null
+};

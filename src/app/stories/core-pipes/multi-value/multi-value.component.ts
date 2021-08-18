@@ -1,21 +1,16 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'aca-multi-value',
   templateUrl: './multi-value.component.html',
   styleUrls: ['../core-pipes.component.scss']
 })
-export class MultiValueComponent implements OnInit {
+export class MultiValueComponent {
   @Input()
-  showMultiValue: boolean = false;
-
-  @Input()
-  animals: string[];
+  words: string[];
 
   @Input()
   customSeparator: string = ', ';
 
   constructor() {}
-
-  ngOnInit(): void {}
 }

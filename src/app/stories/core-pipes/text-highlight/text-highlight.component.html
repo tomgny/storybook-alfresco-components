@@ -4,7 +4,7 @@
     <th>After using the pipe</th>
   </tr>
   <tr>
-    <td>{{ summary }}</td>
-    <td><div [innerHTML]="summary | highlight: rudeWordList"></div></td>
+    <td>{{ text }}</td>
+    <td><div [innerHTML]="text | highlight: wordsToHighlight"></div></td>
   </tr>
 </table>

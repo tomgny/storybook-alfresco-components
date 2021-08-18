@@ -22,26 +22,22 @@ export default {
         BrowserAnimationsModule
       ]
     })
-  ],
-  argTypes: {
-    ngOnInit: { table: { disable: true } },
-    showMultiValue: { table: { disable: true } }
-  }
+  ]
 } as Meta;
 
 const Template: Story<MultiValueComponent> = (args) => ({
   props: args
 });
 
-export const MultiValueDefault = Template.bind({});
+export const Default = Template.bind({});
 
-MultiValueDefault.args = {
-  animals: ['cat', 'dog', 'parrot', 'dove', 'rabbit']
+Default.args = {
+  words: ['cat', 'dog', 'parrot', 'dove', 'rabbit']
 };
 
-export const MultiValueCustomSeparatorSet = Template.bind({});
+export const CustomSeparatorSet = Template.bind({});
 
-MultiValueCustomSeparatorSet.args = {
-  ...MultiValueDefault.args,
+CustomSeparatorSet.args = {
+  ...Default.args,
   customSeparator: ' :) '
 };
