@@ -105,6 +105,7 @@ import { NodeNameTooltipComponent } from './stories/core-pipes/node-name-tooltip
 import { ContentMetadataCardComponent } from './stories/content-metadata-card/content-metadata-card.component';
 import { ButtonsMenuComponent } from './stories/buttons-menu/buttons-menu.component';
 import { HeaderComponent } from './stories/header/header.component';
+import { NotificationHistoryComponent } from './stories/notification-history/notification-history.component';
 
 registerLocaleData(localeFr);
 registerLocaleData(localeDe);
@@ -189,7 +190,8 @@ registerLocaleData(localeSv);
     NodeNameTooltipComponent,
     ContentMetadataCardComponent,
     ButtonsMenuComponent,
-    HeaderComponent
+    HeaderComponent,
+    NotificationHistoryComponent
   ],
   providers: [
     { provide: AppConfigService, useClass: DebugAppConfigService },
