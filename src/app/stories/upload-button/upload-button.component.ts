@@ -1,4 +1,4 @@
-import { PermissionModel, UploadFilesEvent } from '@alfresco/adf-content-services';
+import { PermissionModel } from '@alfresco/adf-content-services';
 import { NotificationService } from '@alfresco/adf-core';
 import { Component, Input, OnInit } from '@angular/core';
 
@@ -90,21 +90,8 @@ export class UploadButtonComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onSuccess(event: any) {
-    console.log(event);
-  }
-
   onError(event: any) {
     window.alert(event);
-    console.log(event);
-  }
-
-  onBeginUpload(event: UploadFilesEvent) {
-    console.log(event);
-  }
-
-  onUpdateFileVersion(event: any) {
-    console.log(event);
   }
 
   onUploadPermissionFailed(event: PermissionModel) {

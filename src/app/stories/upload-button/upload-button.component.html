@@ -13,10 +13,7 @@
   [uploadFolders]="uploadFolders"
   [versioning]="versioning"
   (error)="onError($event)"
-  (beginUpload)="onBeginUpload($event)"
-  (success)="onSuccess($event)"
   (permissionEvent)="onUploadPermissionFailed($event)"
-  (updateFileVersion)="onUpdateFileVersion($event)"
 >
 </adf-upload-button>
 <adf-file-uploading-dialog></adf-file-uploading-dialog>
