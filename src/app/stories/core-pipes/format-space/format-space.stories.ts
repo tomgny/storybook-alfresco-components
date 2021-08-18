@@ -32,22 +32,22 @@ const Template: Story<FormatSpaceComponent> = (args) => ({
   props: args
 });
 
-export const FormatSpaceDefault = Template.bind({});
+export const Default = Template.bind({});
 
-FormatSpaceDefault.args = {
+Default.args = {
   textToFormat: 'LOREM IPSUM DOLOR SIT AMET'
 };
 
-export const FormatSpaceCustomReplaceCharSet = Template.bind({});
+export const CustomReplaceCharSet = Template.bind({});
 
-FormatSpaceCustomReplaceCharSet.args = {
-  ...FormatSpaceDefault.args,
+CustomReplaceCharSet.args = {
+  ...Default.args,
   replaceChar: '-'
 };
 
-export const FormatSpaceSkipConversionToLowercase = Template.bind({});
+export const SkippingConversionToLowercaseEnabled = Template.bind({});
 
-FormatSpaceSkipConversionToLowercase.args = {
-  ...FormatSpaceDefault.args,
+SkippingConversionToLowercaseEnabled.args = {
+  ...Default.args,
   lowercase: false
 };

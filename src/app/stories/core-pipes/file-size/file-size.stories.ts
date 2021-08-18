@@ -37,40 +37,40 @@ const Template: Story<FileSizeComponent> = (args) => ({
   props: args
 });
 
-export const FileSizeDefault = Template.bind({});
+export const B = Template.bind({});
 
-FileSizeDefault.args = {
+B.args = {
   sizeInBytes: 587
 };
 
-export const FileSizeKB = Template.bind({});
+export const KB = Template.bind({});
 
-FileSizeKB.args = {
+KB.args = {
   sizeInBytes: 1057
 };
 
-export const FileSizeMB = Template.bind({});
+export const MB = Template.bind({});
 
-FileSizeMB.args = {
+MB.args = {
   sizeInBytes: 1051237
 };
 
-export const FileSizeGB = Template.bind({});
+export const GB = Template.bind({});
 
-FileSizeGB.args = {
+GB.args = {
   sizeInBytes: 10512331237
 };
 
-export const FileSizeDifferentDecimalPlacesNumberSet = Template.bind({});
+export const DifferentDecimalPlacesNumberSet = Template.bind({});
 
-FileSizeDifferentDecimalPlacesNumberSet.args = {
+DifferentDecimalPlacesNumberSet.args = {
   sizeInBytes: 12312312312333,
   decimalPlacesNumber: 3
 };
 
-export const FileSizeDifferentLang = Template.bind({});
+export const DifferentLangSet = Template.bind({});
 
-FileSizeDifferentLang.args = {
-  ...FileSizeDefault.args,
+DifferentLangSet.args = {
+  ...B.args,
   locale: 'ja'
 };

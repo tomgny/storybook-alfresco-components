@@ -20,8 +20,7 @@ export class FullNameComponent implements OnInit {
 
   user: any;
 
-
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
     this.user = {
@@ -31,5 +30,4 @@ export class FullNameComponent implements OnInit {
       email: this.email
     };
   }
-
 }

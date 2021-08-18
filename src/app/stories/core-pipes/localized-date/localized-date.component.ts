@@ -16,11 +16,9 @@ export class LocalizedDateComponent implements OnInit {
   @Input()
   format: string = 'medium';
 
-  constructor(private localizationService: LocalizationService) { }
+  constructor(private localizationService: LocalizationService) {}
 
   ngOnInit(): void {
     if (this.locale !== 'en-US') this.localizationService.registerLocales();
-
   }
-
 }

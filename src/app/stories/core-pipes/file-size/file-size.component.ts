@@ -1,6 +1,5 @@
 import { TranslationService } from '@alfresco/adf-core';
 import { Component, Input, OnInit } from '@angular/core';
-import { LocalizationService } from '../localization.service';
 
 @Component({
   selector: 'aca-file-size',
@@ -17,10 +16,9 @@ export class FileSizeComponent implements OnInit {
   @Input()
   decimalPlacesNumber: number = 2;
 
-  constructor(private localizationService: LocalizationService, private translationService: TranslationService) {}
+  constructor(private translationService: TranslationService) {}
 
   ngOnInit(): void {
-    if (this.locale !== 'en-US') this.localizationService.registerLocales();
-    this.translationService.use(this.locale);
+    if (this.locale !== 'en-US') this.translationService.use(this.locale);
   }
 }

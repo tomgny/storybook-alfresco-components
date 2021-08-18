@@ -38,30 +38,30 @@ const Template: Story<LocalizedDateComponent> = (args) => ({
   props: args
 });
 
-export const LocalizedDateDefault = Template.bind({});
+export const Default = Template.bind({});
 
-LocalizedDateDefault.args = {
+Default.args = {
   showLocalizedDate: true,
   date: new Date()
 };
 
-export const LocalizedDatePreDefinedFormatSet = Template.bind({});
+export const PreDefinedFormatSet = Template.bind({});
 
-LocalizedDatePreDefinedFormatSet.args = {
-  ...LocalizedDateDefault.args,
+PreDefinedFormatSet.args = {
+  ...Default.args,
   format: 'long'
 };
 
-export const LocalizedDatecustomFormatSet = Template.bind({});
+export const CustomFormatSet = Template.bind({});
 
-LocalizedDatecustomFormatSet.args = {
-  ...LocalizedDateDefault.args,
+CustomFormatSet.args = {
+  ...Default.args,
   format: 'EEEE, MMMM d, y, h:mm:ss a zzzz'
 };
 
-export const LocalizedDateDifferentLocaleSet = Template.bind({});
+export const DifferentLocaleSet = Template.bind({});
 
-LocalizedDateDifferentLocaleSet.args = {
-  ...LocalizedDateDefault.args,
+DifferentLocaleSet.args = {
+  ...Default.args,
   locale: 'pl'
 };

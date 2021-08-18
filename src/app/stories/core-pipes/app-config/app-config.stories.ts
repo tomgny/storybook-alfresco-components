@@ -24,33 +24,32 @@ export default {
     })
   ],
   argTypes: {
-    ngOnInit: { table: { disable: true } },
     configForChaining: { table: { disable: true } },
-    showAppConfig: { table: { disable: true } },
-   }
+    showAppConfig: { table: { disable: true } }
+  }
 } as Meta;
 
 const Template: Story<AppConfigComponent> = (args) => ({
   props: args
 });
 
-export const AppConfigDefault = Template.bind({});
+export const Default = Template.bind({});
 
-AppConfigDefault.args = {
+Default.args = {
   showAppConfig: true,
   config: 'oauth2.host'
 };
 
-export const AppConfigFallbackTextSet = Template.bind({});
+export const FallbackTextSet = Template.bind({});
 
-AppConfigFallbackTextSet.args = {
-  ...AppConfigDefault.args,
+FallbackTextSet.args = {
+  ...Default.args,
   config: 'lorem.ipsum',
   fallbackText: 'Not able to find settings you are looking for.'
 };
 
-export const AppConfigChainingWithMultiValuePipe = Template.bind({});
+export const ChainingObtainedValuesWithOtherPipe = Template.bind({});
 
-AppConfigChainingWithMultiValuePipe.args = {
-  showAppConfig: false,
+ChainingObtainedValuesWithOtherPipe.args = {
+  showAppConfig: false
 };

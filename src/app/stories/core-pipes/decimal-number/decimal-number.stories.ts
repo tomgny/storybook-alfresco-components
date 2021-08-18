@@ -30,7 +30,7 @@ export default {
     },
     ngOnInit: { table: { disable: true } },
     digitsInfo: { table: { disable: true } },
-    validateAndSetDigitsInfoValues: { table: { disable: true } },
+    validateAndSetDigitsInfoValues: { table: { disable: true } }
   }
 } as Meta;
 
@@ -38,25 +38,24 @@ const Template: Story<DecimalNumberComponent> = (args) => ({
   props: args
 });
 
-export const DecimalNumberDefault = Template.bind({});
+export const Default = Template.bind({});
 
-DecimalNumberDefault.args = {
-  showDecimalNumber: true,
+Default.args = {
   numberToTransform: 1234.567
 };
 
-export const DecimalNumberCustomConfigurationSet = Template.bind({});
+export const CustomConfigurationSet = Template.bind({});
 
-DecimalNumberCustomConfigurationSet.args = {
-  ...DecimalNumberDefault.args,
+CustomConfigurationSet.args = {
+  ...Default.args,
   minIntegerDigits: 2,
   minFractionDigits: 1,
   maxFractionDigits: 4
 };
 
-export const DecimalNumberDifferentLocale = Template.bind({});
+export const DifferentLocaleSet = Template.bind({});
 
-DecimalNumberDifferentLocale.args = {
-  ...DecimalNumberDefault.args,
+DifferentLocaleSet.args = {
+  ...Default.args,
   locale: 'pl'
 };

@@ -1,11 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'aca-format-space',
   templateUrl: './format-space.component.html',
   styleUrls: ['../core-pipes.component.scss']
 })
-export class FormatSpaceComponent implements OnInit {
+export class FormatSpaceComponent {
   @Input()
   textToFormat: string;
 
@@ -15,9 +15,5 @@ export class FormatSpaceComponent implements OnInit {
   @Input()
   lowercase: boolean = true;
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  constructor() {}
 }

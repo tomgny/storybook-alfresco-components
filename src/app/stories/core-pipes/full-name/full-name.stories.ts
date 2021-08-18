@@ -25,7 +25,7 @@ export default {
   ],
   argTypes: {
     ngOnInit: { table: { disable: true } },
-    user: { table: { disable: true } },
+    user: { table: { disable: true } }
   }
 } as Meta;
 
@@ -33,52 +33,46 @@ const Template: Story<FullNameComponent> = (args) => ({
   props: args
 });
 
-export const FullNameDefault = Template.bind({});
+export const Default = Template.bind({});
 
-FullNameDefault.args = {
+Default.args = {
   firstName: 'John',
   lastName: 'Smith',
   username: 'johny999',
   email: 'john.smith@gmail.com'
 };
 
-export const FullNameNoFirstName = Template.bind({});
+export const NoFirstName = Template.bind({});
 
-FullNameNoFirstName.args = {
-  ...FullNameDefault.args,
+NoFirstName.args = {
+  ...Default.args,
   firstName: ''
 };
 
-export const FullNameNoLastName = Template.bind({});
+export const NoLastName = Template.bind({});
 
-FullNameNoLastName.args = {
-  ...FullNameDefault.args,
+NoLastName.args = {
+  ...Default.args,
   lastName: ''
 };
 
-export const FullNameNoFirstAndLastName = Template.bind({});
+export const NoFirstAndLastName = Template.bind({});
 
-FullNameNoFirstAndLastName.args = {
-  ...FullNameDefault.args,
-  firstName: '',
+NoFirstAndLastName.args = {
+  ...NoFirstName.args,
   lastName: ''
 };
 
-export const FullNameNoFirstLastNameAndUsername = Template.bind({});
+export const NoFirstLastNameAndUsername = Template.bind({});
 
-FullNameNoFirstLastNameAndUsername.args = {
-  ...FullNameDefault.args,
-  firstName: '',
-  lastName: '',
+NoFirstLastNameAndUsername.args = {
+  ...NoFirstAndLastName.args,
   username: ''
 };
 
-export const FullNameNothing = Template.bind({});
+export const Nothing = Template.bind({});
 
-FullNameNothing.args = {
-  ...FullNameDefault.args,
-  firstName: '',
-  lastName: '',
-  username: '',
+Nothing.args = {
+  ...NoFirstLastNameAndUsername.args,
   email: ''
 };
