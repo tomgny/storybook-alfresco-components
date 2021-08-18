@@ -1,0 +1,28 @@
+<adf-layout-header
+  [color]="color"
+  [expandedSidenav]="expandedSidenav"
+  [logo]="logo"
+  [position]="position"
+  [redirectUrl]="redirectUrl"
+  [showSidenavToggle]="showSidenavToggle"
+  [title]="title"
+  [tooltip]="tooltip"
+  (clicked)="onSidenavClick()"
+>
+  <div *ngIf="optionalContent" style="display: flex; margin-left: auto">
+    <button data-automation-id="language-menu-button" mat-icon-button [matMenuTriggerFor]="langMenu">
+      <mat-icon>language</mat-icon>
+    </button>
+    <mat-menu #langMenu="matMenu" class="app-menu">
+      <adf-language-menu></adf-language-menu>
+    </mat-menu>
+    <adf-notification-history menuPositionX="before" menuPositionY="below"></adf-notification-history>
+  </div>
+</adf-layout-header>
+<mat-nav-list *ngIf="expandedSidenav">
+  <a mat-list-item *ngFor="let link of links"> {{ link }} </a>
+</mat-nav-list>
+<div *ngIf="showRedirect">
+  <hr />
+  <p>Redirect url: {{ redirectUrl }}</p>
+</div>
