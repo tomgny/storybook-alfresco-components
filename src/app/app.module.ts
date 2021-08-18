@@ -101,7 +101,9 @@ import { TextHighlightComponent } from './stories/core-pipes/text-highlight/text
 import { MimeTypeIconComponent } from './stories/core-pipes/mime-type-icon/mime-type-icon.component';
 import { AppConfigComponent } from './stories/core-pipes/app-config/app-config.component';
 import { NodeNameTooltipComponent } from './stories/core-pipes/node-name-tooltip/node-name-tooltip.component';
-
+import { ContentMetadataCardComponent } from './stories/content-metadata-card/content-metadata-card.component';
+import { ButtonsMenuComponent } from './stories/buttons-menu/buttons-menu.component';
+import { HeaderComponent } from './stories/header/header.component';
 
 registerLocaleData(localeFr);
 registerLocaleData(localeDe);
@@ -183,6 +185,9 @@ registerLocaleData(localeSv);
     MimeTypeIconComponent,
     AppConfigComponent,
     NodeNameTooltipComponent,
+    ContentMetadataCardComponent,
+    ButtonsMenuComponent,
+    HeaderComponent
   ],
   providers: [
     { provide: AppConfigService, useClass: DebugAppConfigService },

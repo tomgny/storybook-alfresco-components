@@ -1,523 +1,299 @@
 {
-  "APP": {
-    "COPYRIGHT": "حقوق الطبع والنشر © 2017 - 2020 Alfresco Software, Inc. جميع الحقوق محفوظة.",
-    "ABOUT": {
-      "VERSION": "الإصدار:",
-      "PLUGINS": {
-        "TITLE": "الامتدادات",
-        "ID": "المعرف",
-        "NAME": "الاسم",
-        "VERSION": "الإصدار",
-        "VENDOR": "المورد",
-        "LICENSE": "الترخيص",
-        "RUNTIME": "وقت التشغيل",
-        "DESCRIPTION": "الوصف"
-      },
-      "LICENSE": {
-        "TITLE": "الترخيص",
-        "PROPERTY": "الملكية",
-        "VALUE": "القيمة"
-      },
-      "STATUS": {
-        "TITLE": "الحالة",
-        "PROPERTY": "الملكية",
-        "VALUE": "القيمة"
-      },
-      "MODULES": {
-        "TITLE": "وحدات نظام Alfresco الأساسي",
-        "ID": "المعرف",
-        "NAME": "الاسم",
-        "VERSION": "الإصدار"
-      },
-      "PACKAGES": {
-        "TITLE": "حزم",
-        "NAME": "الاسم",
-        "VERSION": "الإصدار"
-      }
-    },
-    "LANGUAGE": "اللغة",
-    "SIGN_IN": "تسجيل دخول",
-    "SIGN_OUT": "تسجيل خروج",
-    "SETTINGS": {
-      "TITLE": "الإعدادات",
-      "APPLICATION-SETTINGS": "إعدادات التطبيق",
-      "REPOSITORY-SETTINGS": "إعدادات المستودع",
-      "INVALID-VALUE-FORMAT": "تنسيق قيمة غير صالح",
-      "REQUIRED-FIELD": "هذا الحقل مطلوب",
-      "RESET": "إعادة تعيين",
-      "APPLY": "تطبيق"
-    },
-    "LOCKED_BY": "مغلق من قبل ",
-    "PREVIEW": {
-      "TITLE": "معاينة"
-    },
-    "DETAILS": {
-      "TITLE": "تفاصيل"
-    },
-    "NEW_MENU": {
-      "LABEL": "جديد",
-      "TOOLTIP": "إضافة ملفات ومجلدات جديدة، أو إنشاء مكتبة ملفات جديدة",
-      "MENU_ITEMS": {
-        "CREATE_FOLDER": "إنشاء مجلد",
-        "UPLOAD_FILE": "تحميل ملف",
-        "UPLOAD_FOLDER": "تحميل مجلد",
-        "CREATE_LIBRARY": "إنشاء مكتبة",
-        "FILE_TEMPLATE": "إنشاء ملف من قالب",
-        "FOLDER_TEMPLATE": "إنشاء مجلد من قالب"
-      },
-      "TOOLTIPS": {
-        "CREATE_FOLDER": "إنشاء مجلد جديد",
-        "CREATE_FOLDER_NOT_ALLOWED": "يتعذر إنشاء مجلدات أثناء عرض العناصر الحالية",
-        "CREATE_FILE_NOT_ALLOWED": "لا يمكن إنشاء الملفات أثناء عرض العناصر الحالية",
-        "UPLOAD_FILES": "تحديد ملفات لتحميلها",
-        "UPLOAD_FILES_NOT_ALLOWED": "يتعذر تحميل الملفات أثناء عرض العناصر الحالية",
-        "UPLOAD_FOLDERS": "تحديد مجلدات لتحميلها",
-        "UPLOAD_FOLDERS_NOT_ALLOWED": "يتعذر تحميل المجلدات أثناء عرض العناصر الحالية",
-        "CREATE_LIBRARY": "إنشاء مكتبة ملفات جديدة"
-      }
-    },
-    "BROWSE": {
-      "PERSONAL": {
-        "TITLE": "الملفات الشخصية",
-        "SIDENAV_LINK": {
-          "LABEL": "الملفات الشخصية",
-          "TOOLTIP": "عرض الملفات الشخصية"
-        }
-      },
-      "LIBRARIES": {
-        "TITLE": "مكتبات الملفات",
-        "DESCRIPTION": "الوصول إلى مكتبات الملفات",
-        "SIDENAV_LINK": {
-          "LABEL": "مكتبات الملفات",
-          "TOOLTIP": "مكتبات الملفات"
-        },
-        "EMPTY_STATE": {
-          "FILE_LIBRARIES": {
-            "TITLE": "أنت لست عضوًا في أي مكتبات ملفات بعد",
-            "TEXT": "انضم إلى المكتبات لتحميل الملفات وعرضها ومشاركتها."
-          },
-          "FAVORITE_LIBRARIES": {
-            "TITLE": "لا توجد مكتبات مفضلة",
-            "TEXT": "حدد مكتبة تريد العثور عليها بسهولة لاحقًا كمفضلة."
-          }
-        },
-        "MENU": {
-          "MY_LIBRARIES": {
-            "TITLE": "مكتباتي",
-            "SIDENAV_LINK": {
-              "LABEL": "مكتباتي",
-              "TOOLTIP": "الوصول إلى مكتباتي"
-            }
-          },
-          "FAVORITE_LIBRARIES": {
-            "TITLE": "المكتبات المفضلة",
-            "SIDENAV_LINK": {
-              "LABEL": "المكتبات المفضلة",
-              "TOOLTIP": "الوصول إلى مكتباتي المفضلة"
-            }
-          }
-        }
-      },
-      "SHARED": {
-        "TITLE": "الملفات المشتركة",
-        "SIDENAV_LINK": {
-          "LABEL": "مشترك",
-          "TOOLTIP": "عرض الملفات التي تمت مشاركتها"
-        },
-        "EMPTY_STATE": {
-          "TITLE": "لا توجد ملفات أو مجلدات مشتركة",
-          "TEXT": "يتم إظهار العناصر التي تشاركها باستخدام الخيار \"مشاركة\" هنا."
-        }
-      },
-      "RECENT": {
-        "TITLE": "أحدث الملفات",
-        "SIDENAV_LINK": {
-          "LABEL": "أحدث الملفات",
-          "TOOLTIP": "عرض الملفات التي حررتها مؤخرًا"
-        },
-        "EMPTY_STATE": {
-          "TITLE": "لا توجد ملفات حديثة",
-          "TEXT": "يتم إظهار العناصر التي قمت بتحميلها أو تحريرها في آخر 30 يومًا هنا."
-        }
-      },
-      "FAVORITES": {
-        "TITLE": "مفضلات",
-        "SIDENAV_LINK": {
-          "LABEL": "مفضلات",
-          "TOOLTIP": "عرض الملفات والمجلدات المفضلة"
-        },
-        "EMPTY_STATE": {
-          "TITLE": "لا توجد ملفات أو مجلدات مفضلة",
-          "TEXT": "حدد العناصر التي تريد العثور عليها بسهولة لاحقًا كمفضلة."
-        }
-      },
-      "TRASHCAN": {
-        "TITLE": "المهملات",
-        "SIDENAV_LINK": {
-          "LABEL": "المهملات",
-          "TOOLTIP": "عرض الملفات المحذوفة في المهملات"
-        },
-        "EMPTY_STATE": {
-          "TITLE": "المهملات فارغة",
-          "FIRST_TEXT": "تم نقل العناصر المحذوفة إلى المهملات.",
-          "SECOND_TEXT": "أفرغ المهملات لحذف العناصر بشكل دائم."
-        }
-      },
-      "ABOUT": {
-        "TITLE": "حول"
-      },
-      "SEARCH": {
-        "DEFAULT_SEARCH": "تفاصيل",
-        "TITLE": "نتائج البحث",
-        "FOUND_RESULTS": "تم العثور على {{ number }} نتائج",
-        "FOUND_ONE_RESULT": "تم العثور على {{ number }} نتيجة",
-        "CUSTOM_ROW": {
-          "MODIFIED": "تم التعديل",
-          "BY_USER": "بواسطة {{ user }}",
-          "LOCATION": "مكان",
-          "SIZE": "الحجم"
-        },
-        "UNKNOWN_LOCATION": "غير معروف",
-        "NO_RESULTS": "أرجع البحث 0 نتائج",
-        "EMPTY_SEARCH": "مصطلح البحث مطلوب",
-        "NO_FILTER_RESULTS": "أعاد الفلتر 0 نتيجة",
-        "ERRORS": {
-          "500": "حدث خطأ أثناء معالجة استعلام البحث [500]",
-          "GENERIC": "حدث خطأ أثناء معالجة استعلام البحث"
-        }
-      },
-      "SEARCH_LIBRARIES": {
-        "TITLE": "المكتبات التي تم العثور عليها...",
-        "FOUND_RESULTS": "{{ number }} نتائج",
-        "FOUND_ONE_RESULT": "{{ number }} نتيجة"
-      }
-    },
+  "ADF_VERSION_LIST": {
     "ACTIONS": {
-      "VIEW": "عرض",
-      "EDIT": "تحرير",
-      "DOWNLOAD": "تنزيل",
-      "COPY": "نسخ",
-      "MOVE": "نقل",
-      "DELETE": "حذف",
-      "DELETE_PERMANENT": "حذف دائم",
-      "MORE": "إجراءات أكثر",
-      "UNDO": "تراجع",
-      "PERMISSIONS": "الأذونات",
       "RESTORE": "استعادة",
-      "FAVORITE": "مفضلة",
-      "ADD_FAVORITE": "إضافة مفضلة",
-      "REMOVE_FAVORITE": "إزالة مفضلة",
-      "UNSHARE": "إلغاء مشاركة",
-      "DETAILS": "عرض التفاصيل",
-      "VERSIONS": "إدارة الإصدارات",
-      "UPLOAD_VERSION": "تحميل إصدار جديد",
-      "TOGGLE-SIDENAV": "تبديل شريط التنقل الجانبي",
-      "SHARE": "مشاركة",
-      "SHARE_EDIT": "إعدادات الرابط المشترك",
-      "PRINT": "طباعة",
-      "FULLSCREEN": "تنشيط وضع ملء الشاشة",
-      "JOIN": "انضمام",
-      "CANCEL_JOIN": "إلغاء طلب الانضمام",
-      "LEAVE": "مغادرة المكتبة",
-      "EDIT_OFFLINE": "تحرير دون اتصال بالإنترنت",
-      "EDIT_OFFLINE_CANCEL": "إلغاء التحرير",
-      "LIST_MODE": "عرض القائمة",
-      "GALLERY_MODE": "عرض المعرض",
-      "CHANGE_ASPECT": "تحرير الجوانب"
-    },
-    "DIALOGS": {
-      "CONFIRM_PURGE": {
-        "TITLE": "أتريد الحذف من المهملات؟",
-        "MESSAGE": "سيعمل هذا على إزالة العنصر (العناصر) المحدد بشكل نهائي.",
-        "YES_LABEL": "حذف",
-        "NO_LABEL": "احتفاظ"
-      },
-      "CONFIRM_LEAVE": {
-        "TITLE": "أتريد مغادرة هذه المكتبة؟",
-        "MESSAGE": "ستعمل المغادرة على إزالة حق وصولك.",
-        "YES_LABEL": "موافق",
-        "NO_LABEL": "إلغاء"
+      "DELETE": "حذف",
+      "DOWNLOAD": "تنزيل",
+      "VIEW": "عرض",
+      "UPLOAD": {
+        "TITLE": "تحميل إصدار جديد",
+        "TOOLTIP": "القيد: يجب عليك تحميل ملف بنفس الاسم لإنشاء إصدار جديد منه",
+        "MAJOR": "تغييرات كبيرة (2.0)",
+        "MINOR": "تغييرات صغيرة (1.1)",
+        "COMMENT": "ترك تعليق",
+        "ADD": "إضافة إصدار جديد",
+        "CANCEL": "إلغاء"
       }
     },
-    "DOCUMENT_LIST": {
-      "COLUMNS": {
-        "ID": "المعرف",
-        "NAME": "الاسم",
-        "DESCRIPTION": "الوصف",
-        "SIZE": "الحجم",
-        "MODIFIED_ON": "تم التعديل",
-        "MODIFIED_BY": "تم التعديل بواسطة",
-        "VISIBILITY": "رؤية",
-        "TITLE": "العنوان",
-        "LOCATION": "مكان",
-        "SHARED_BY": "تمت المشاركة بواسطة",
-        "DELETED_ON": "تم الحذف",
-        "DELETED_BY": "تم الحذف بواسطة",
-        "ROLE": "دوري"
+    "CONFIRM_DELETE": {
+      "TITLE": "حذف إصدار",
+      "MESSAGE": "لم يمكن استعادة إصدارات الملفات المحذوفة. أتريد المتابعة؟",
+      "YES_LABEL": "نعم",
+      "NO_LABEL": "لا"
+    }
+  },
+  "ADF_VERSION_COMPARISON": {
+    "CURRENT_VERSION": "الحالي",
+    "NEW_VERSION": "جديد",
+    "ACCESSIBILITY": {
+      "ICON_TEXT": "نوع العنصر {{ type }}",
+      "ARROW_ICON": "أيقونة السهم الأيمن"
+    }
+  },
+  "ADF_CONFIRM_DIALOG": {
+    "TITLE": "تأكيد",
+    "ACTION": "هل تريد المتابعة؟",
+    "YES_LABEL": "نعم",
+    "NO_LABEL": "لا"
+  },
+  "ADF-DOCUMENT-LIST": {
+    "EMPTY": {
+      "HEADER": "هذا المجلد فارغ"
+    },
+    "NO_PERMISSION": "ليس لديك إذن لعرض هذا الملف أو المجلد.",
+    "LAYOUT": {
+      "CREATED": "تم الإنشاء",
+      "CREATED_BY": "تم الإنشاء بواسطة",
+      "THUMBNAIL": "صورة مصغرة",
+      "NAME": "الاسم",
+      "LOCATION": "مكان",
+      "SIZE": "الحجم",
+      "DELETED_ON": "تم الحذف",
+      "DELETED_BY": "تم الحذف بواسطة",
+      "STATUS": "الحالة",
+      "MODIFIED_ON": "تم التعديل",
+      "MODIFIED_BY": "تم التعديل بواسطة",
+      "SHARED_BY": "تمت المشاركة بواسطة",
+      "LOAD_MORE": "تحميل المزيد"
+    },
+    "MENU_ACTIONS": {
+      "VIEW": "عرض",
+      "REMOVE": "إزالة",
+      "DOWNLOAD": "تنزيل"
+    }
+  },
+  "ALFRESCO_DOCUMENT_LIST": {
+    "BUTTON": {
+      "ACTION_CREATE": "إنشاء...",
+      "ACTION_NEW_FOLDER": "مجلد جديد",
+      "CREATE": "إنشاء",
+      "CANCEL": "إلغاء"
+    }
+  },
+  "DROPDOWN": {
+    "PLACEHOLDER_LABEL": "قائمة المواقع",
+    "MY_FILES_OPTION": "ملفاتي"
+  },
+  "NODE_SELECTOR": {
+    "CANCEL": "إلغاء",
+    "CHOOSE": "اختيار",
+    "ATTACH": "إرفاق",
+    "CHOOSE_ITEM": "اختيار محتوى لإرفاقه من '{{ name }}'",
+    "COPY": "نسخ",
+    "COPY_ITEM": "نسخ '{{ name }}' إلى...",
+    "MOVE": "نقل",
+    "MOVE_ITEM": "نقل '{{ name }}' إلى...",
+    "NO_RESULTS": "لم يتم العثور على نتائج",
+    "SEARCH": "بحث",
+    "SEARCH_RESULTS": "نتائج البحث",
+    "SELECT_LOCATION": "تحديد المكان",
+    "UPLOAD_BUTTON_SEARCH_WARNING_MESSAGE": "لا يمكنك تحميل ملف أثناء تشغيل بحث",
+    "UPLOAD_BUTTON_PERMISSION_WARNING_MESSAGE": "لا يملك المستخدم إذنًا لتحميل المحتوى إلى المجلد",
+    "REPOSITORY": "مخزن",
+    "UPLOAD_FROM_DEVICE": "تحميل من جهازك"
+  },
+  "OPERATION": {
+    "SUCCESS": {
+      "CONTENT": {
+        "COPY": "نسخ ناجح",
+        "MOVE": "نقل ناجح"
       },
-      "TOOLBAR": {
-        "CARDVIEW": "وضع عرض البطاقة",
-        "LISTVIEW": "وضع عرض القائمة"
+      "FOLDER": {
+        "COPY": "نسخ ناجح",
+        "MOVE": "نقل ناجح"
+      }
+    },
+    "ERROR": {
+      "CONFLICT": "هذا الاسم قيد الاستخدام بالفعل، جرّب اسمًا مختلفًا.",
+      "UNKNOWN": "كان الإجراء غير ناجح. حاول مرة أخرى أو اتصل بفريق تكنولوجيا المعلومات.",
+      "PERMISSION": "ليس لديك حق الوصول لفعل هذا."
+    }
+  },
+  "TAG": {
+    "LABEL": {
+      "NEWTAG": "علامة جديدة"
+    },
+    "MESSAGES": {
+      "EXIST": "العلامة موجودة بالفعل"
+    },
+    "BUTTON": {
+      "ADD": "إضافة علامة"
+    }
+  },
+  "ADF_FILE_UPLOAD": {
+    "BUTTON": {
+      "MINIMIZE": "تصغير",
+      "MAXIMIZE": "تكبير",
+      "CLOSE": "إغلاق",
+      "CANCEL_ALL": "إلغاء التحميلات",
+      "CANCEL_FILE": "إلغاء التحميل",
+      "REMOVE_FILE": "إزالة الملف المحمل"
+    },
+    "STATUS": {
+      "FILE_CANCELED_STATUS": "تم الإلغاء",
+      "FILE_DONE_STATUS": "تم التحميل"
+    },
+    "CONFIRMATION": {
+      "BUTTON": {
+        "CANCEL": "نعم",
+        "CONTINUE": "لا"
+      },
+      "MESSAGE": {
+        "TITLE": "إلغاء التحميل",
+        "TEXT": "قم بإيقاف التحميل وإزالة الملفات التي تم تحميلها بالفعل."
+      }
+    },
+    "ARIA-LABEL": {
+      "VERSION": "إصدار الملف {{ version }}",
+      "DIALOG": "قائمة التحميل",
+      "DIALOG_MAXIMIZE": "تكبير مربع حوار التحميل",
+      "DIALOG_MINIMIZE": "تصغير مربع حوار التحميل",
+      "DIALOG_CLOSE": "إغلاق مربع حوار التحميل",
+      "CANCEL_ALL": "إلغاء كل ملفات التي يتم تحميلها",
+      "REMOVE_FILE": "إزالة الملف الذي تم تحميله {{ file }}",
+      "CANCEL_FILE": "إلغاء الملف المجدول {{ file }}",
+      "CANCEL_FILE_UPLOAD": "إلغاء تحميل الملف {{ file }}",
+      "UPLOAD_FILE_ERROR": "خطأ في التحميل {{ error }}",
+      "CONFIRMATION": {
+        "CANCEL": "تأكيد الإلغاء",
+        "CONTINUE": "متابعة التحميل"
+      }
+    }
+  },
+  "FILE_UPLOAD": {
+    "BUTTON": {
+      "UPLOAD_FILE": "تحميل ملف",
+      "UPLOAD_FOLDER": "تحميل مجلد",
+      "PERMISSION_CHECK_ERROR": "خطأ عند التحقق من الإذن."
+    },
+    "VERSION": {
+      "MESSAGES": {
+        "NO_ACCEPTED_FILE_TYPES": "يرجى ملاحظة أن إعداد \"acceptedFilesType\" ليس له تأثير على تحميلات الإصدارات الجديدة. سيكون نوع الملف هو نفس نوع الملف الأصلي.",
+        "INCOMPATIBLE_VERSION": "يمكن تحميل ملف من نفس النوع فقط كإصدار جديد."
       }
     },
     "MESSAGES": {
-      "ERRORS": {
-        "CANNOT_NAVIGATE_LOCATION": "يتعذر فتح هذا الموقع",
-        "MISSING_CONTENT": "لم يعد هذا العنصر موجودًا أو ليس لديك إذن لعرضه.",
-        "GENERIC": "كان الإجراء غير ناجح. حاول مرة أخرى أو اتصل بفريق تكنولوجيا المعلومات.",
-        "CONFLICT": "هذا الاسم قيد الاستخدام بالفعل، جرّب اسمًا مختلفًا.",
-        "NODE_MOVE": "نقل غير ناجح، يوجد ملف بنفس الاسم بالفعل.",
-        "EXISTENT_FOLDER": "يوجد مجلد بهذا الاسم بالفعل. جرّب اسمًا مختلفًا.",
-        "NODE_DELETION": "تعذر حذف {{ name }}",
-        "NODE_DELETION_PLURAL": "تعذر حذف {{ number }} من العناصر",
-        "NODE_RESTORE": "تتعذر استعادة {{ name }}",
-        "NODE_RESTORE_PLURAL": "تتعذر استعادة {{ number }} عناصر",
-        "PERMISSION": "ليس لديك حق الوصول لفعل هذا",
-        "LOCK_NODE": "حدثت مشكلة أثناء تأمين ملف {{fileName}}",
-        "UNLOCK_NODE": "حدثت مشكلة أثناء إلغاء تأمين ملف {{fileName}}",
-        "TRASH": {
-          "NODES_PURGE": {
-            "PLURAL": "تعذر حذف {{ number }} من العناصر",
-            "SINGULAR": "تعذر حذف {{ name }}"
-          },
-          "NODES_RESTORE": {
-            "PARTIAL_PLURAL": "لم تتم استعادة {{ number }} من العناصر بسبب مشكلات في مكان الاستعادة",
-            "NODE_EXISTS": "تتعذر استعادة {{ name }}، الموقع الأصلي لم يعد موجودًا",
-            "LOCATION_MISSING": "تتعذر استعادة {{ name }}، المكان الأصلي لم يعد موجودًا",
-            "GENERIC": "حدثت مشكلة في استعادة {{ name }}"
-          }
-        },
-        "DELETE_LIBRARY_FAILED": "يتعذر حذف المكتبة",
-        "JOIN_REQUEST_FAILED": "يتعذر الانضمام للمكتبة",
-        "JOIN_CANCEL_FAILED": "يتعذر إلغاء طلب انضمامك",
-        "LEAVE_LIBRARY_FAILED": "تتعذر مغادرة هذه المكتبة",
-        "INVALID_SENDER_EMAIL": "يجب أن يكون عنوان بريدك الإلكتروني صالحًا قبل طلب الانضمام.",
-        "INVALID_RECEIVER_EMAIL": "عنوان البريد الإلكتروني للمستلم (المستلمين) غير صالح، اتصل بقسم تكنولوجيا المعلومات."
-      },
-      "UPLOAD": {
-        "ERROR": {
-          "GENERIC": "التحميل غير ناجح. اتصل بقسم تكنولوجيا المعلومات في حالة استمرار هذه المشكلة",
-          "CONFLICT": "لم يتم تحميل إصدار جديد، يوجد ملف آخر بنفس الاسم بالفعل.",
-          "500": "خطأ في خادم الإنترنت، حاول مرة أخرى أو اتصل بدعم تكنولوجيا المعلومات [500]",
-          "504": "انتهلت مهلة الخادم، حاول مرة أخرى أو اتصل بدعم تكنولوجيا المعلومات [504]",
-          "403": "أذونات غير كافية للتحميل في هذا المكان [403]",
-          "404": "مكان التحميل لم يعد موجودًا [404]"
-        }
-      },
-      "INFO": {
-        "TRASH": {
-          "NODES_PURGE": {
-            "PLURAL": "تم حذف {{ number }} عناصر",
-            "SINGULAR": "تم حذف {{ name }}",
-            "PARTIAL_SINGULAR": "تم حذف {{ name }}، يتعذر حذف {{ failed }}",
-            "PARTIAL_PLURAL": "تم حذف {{ number }}، يتعذر حذف {{ failed }}"
-          },
-          "NODES_RESTORE": {
-            "PLURAL": "نجحت الاستعادة",
-            "SINGULAR": "تمت استعادة {{ name }}"
-          }
-        },
-        "NODE_DELETION": {
-          "SINGULAR": "تم حذف {{ name }}",
-          "PLURAL": "{{ number }} عناصر محذوفة",
-          "PARTIAL_SINGULAR": "تم حذف {{ success }} عنصر، تعذر حذف {{ failed }}",
-          "PARTIAL_PLURAL": "تم حذف {{ success }} عناصر، تعذر حذف {{ failed }}"
-        },
-        "NODE_COPY": {
-          "SINGULAR": "عنصر {{ success }} تم نسخه",
-          "PLURAL": "عناصر {{ success }} تم نسخها",
-          "PARTIAL_SINGULAR": "عنصر {{ success }} تم نسخه، تعذر نسخ {{ failed }}.",
-          "PARTIAL_PLURAL": "عناصر {{ success }} تم نسخها، تعذر نسخ {{ failed }}.",
-          "FAIL_SINGULAR": "تعذر نسخ {{ failed }} عنصر.",
-          "FAIL_PLURAL": "تعذر نسخ {{ failed }} عناصر."
-        },
-        "NODE_MOVE": {
-          "SINGULAR": "عنصر {{ success }} تم نقله.",
-          "PLURAL": "عنصر {{ success }} تم نقله.",
-          "PARTIAL": {
-            "SINGULAR": "عنصر {{ partially }} تم نقله جزئيًا.",
-            "PLURAL": "عناصر {{ partially }} تم نقلها جزئيًا.",
-            "FAIL": "تعذر نقل {{ failed }}."
-          }
-        },
-        "LIBRARY_DELETED": "تم حذف المكتبة",
-        "JOINED": "تم الانضمام للمكتبة",
-        "JOIN_REQUESTED": "تم إرسال الطلب للانضمام للمكتبة",
-        "JOIN_CANCELED": "تم إلغاء الطلب للانضمام للمكتبة",
-        "LEFT_LIBRARY": "لقد غادرت المكتبة"
-      }
+      "UPLOAD_CANCELED": "تم إلغاء التحميل",
+      "UPLOAD_PROGRESS": "تم تحميل {{ completed }} / {{ total }}",
+      "UPLOAD_ERROR": "{{ total }} تحميل غير ناجح",
+      "UPLOAD_ERRORS": "{{ total }} تحميلات غير ناجحة",
+      "PROGRESS": "التحميل قيد التقدم...",
+      "FOLDER_ALREADY_EXIST": "المجلد {0} موجود بالفعل",
+      "FOLDER_NOT_SUPPORTED": "تحميل المجلد غير مدعوم بواسطة المستعرض، جرّب مستعرضًا آخر",
+      "REMOVE_FILE_ERROR": "تعذرت إزالة {{ fileName }}، حاول مرة أخرى أو تحقق من الأمر مع فريق تكنولوجيا المعلومات لديك.",
+      "REMOVE_FILES_ERROR": "تعذرت إزالة الملفات {{ total }}، حاول مرة أخرى أو تحقق من الأمر مع فريق تكنولوجيا المعلومات لديك.",
+      "EXCEED_MAX_FILE_SIZE": "الملف {{ fileName }} أكبر من حجم الملف المسموح"
     },
-    "CONTENT_METADATA": {
-      "EXIF_GROUP_TITLE": "صورة EXIF",
-      "GROUP_IPTC_CORE_CONTACT_INFO": "جهة اتصال IPTC",
-      "GROUP_IPTC_CORE_IMAGE_INFO": "صورة IPTC",
-      "GROUP_IPTC_CORE_CONTENT_INFO": "محتوى IPTC",
-      "GROUP_IPTC_CORE_STATUS_INFO": "حالة IPTC",
-      "GROUP_IPTC_EXT_DESCRIPTION": "وصف صورة IPTC",
-      "GROUP_IPTC_EXT_AO_DETAIL": "رسم IPTC أو تفاصيل الكائن",
-      "GROUP_IPTC_EXT_MODEL_INFO": "معلومات نموذج IPTC",
-      "GROUP_IPTC_EXT_ADMIN_INFO": "معلومات مسؤول IPTC",
-      "GROUP_IPTC_EXT_RIGHTS_INFO": "معلومات حقوق IPTC",
-      "GROUP_IPTC_EXT_OTHER": "IPTC أخرى",
-      "EFFECTIVITY_GROUP_TITLE": "الفاعلية"
-    },
-    "INFO_DRAWER": {
-      "TITLE": "التفاصيل",
-      "TABS": {
-        "PROPERTIES": "الخصائص",
-        "LIBRARY_PROPERTIES": "حول",
-        "VERSIONS": "الإصدارات",
-        "COMMENTS": "تعليقات",
-        "PERMISSIONS": "أذونات",
-        "EXPAND": "توسيع"
-      }
-    }
-  },
-  "NODE_SELECTOR": {
-    "COPY_ITEM": "نسخ '{{ name }}' إلى...",
-    "COPY_ITEMS": "نسخ {{ number }} عناصر إلى...",
-    "MOVE_ITEM": "نقل '{{ name }}' إلى...",
-    "MOVE_ITEMS": "نقل {{ number }} عناصر إلى...",
-    "SEARCH": "بحث",
-    "NEXT": "التالي",
-    "SELECT_FILE_TEMPLATE_TITLE": "تحديد قالب مستند",
-    "SELECT_FOLDER_TEMPLATE_TITLE": "تحديد قالب مجلد"
-  },
-  "NODE_FROM_TEMPLATE": {
-    "CANCEL": "إلغاء",
-    "CREATE": "إنشاء",
-    "FOLDER_DIALOG_TITLE": "إنشاء مجلد جديد من <span class=\"bold\">'{{ template }}'</span>",
-    "FILE_DIALOG_TITLE": "إنشاء مجلد جديد من <span class=\"bold\">'{{ template }}'</span>",
-    "FORM": {
-      "PLACEHOLDER": {
-        "NAME": "الاسم",
-        "TITLE": "العنوان",
-        "DESCRIPTION": "الوصف"
-      },
-      "ERRORS": {
-        "DESCRIPTION_TOO_LONG": "استخدم 512 حرفًا أو أقل للوصف",
-        "TITLE_TOO_LONG": "استخدم 256 أو أقل للعنوان",
-        "REQUIRED": "الاسم مطلوب",
-        "SPECIAL_CHARACTERS": "لا يمكن أن يحتوي الاسم على هذه الرموز * \" < > \\ / ? : |",
-        "ENDING_DOT": "لا يمكن أن ينتهي الاسم بنقطة .",
-        "ONLY_SPACES": "لا يمكن أن يحتوي الاسم على مسافات فقط"
-      }
-    }
-  },
-  "SHARED_LINK": {
-    "UNSHARE_PERMISSION_ERROR": "ليس لديك إذن لإلغاء مشاركة هذا الملف"
-  },
-  "VERSION": {
-    "DIALOG_ADF": {
-      "TITLE": "إدارة الإصدارات",
-      "CLOSE": "إغلاق"
-    },
-    "DIALOG": {
-      "TITLE": "تحميل إصدار جديد",
-      "CANCEL": "إلغاء",
-      "UPLOAD": "تحميل"
-    },
-    "FORM": {
-      "SUBTITLE": "ما مستوى التغييرات التي تم إجراؤها على هذا الإصدار؟",
-      "VERSION": {
-        "MINOR": "ثانوية (#.1)",
-        "MAJOR": "رئيسية (2.0)"
-      },
-      "COMMENT": {
-        "PLACEHOLDER": "أضف ملاحظات تصف ما تم تغييره"
-      }
-    },
-    "SELECTION": {
-      "EMPTY": "يرجى اختيار مستند للاطلاع على إصداراته.",
-      "NO_PERMISSION": "ليس لديك إذن لإدارة إصدارات هذا المحتوى."
-    },
-    "ERROR": {
-      "GENERIC": "حدث خطأ في تعيين إصدار الملف"
-    }
-  },
-  "INFO_PANEL": {
-    "TABS": {},
-    "DETAILS": "تفاصيل"
-  },
-  "LIBRARY": {
-    "DIALOG": {
-      "CREATE_TITLE": "إنشاء مكتبة",
-      "CREATE": "إنشاء",
-      "UPDATE": "تحديث",
-      "EDIT": "تحرير",
-      "CANCEL": "إلغاء",
-      "FORM": {
-        "DESCRIPTION": "الوصف",
-        "SITE_ID": "معرف المكتبة",
-        "NAME": "الاسم",
-        "VISIBILITY": "رؤية"
-      }
-    },
-    "VISIBILITY": {
-      "PRIVATE": "خاص",
-      "PUBLIC": "عام",
-      "MODERATED": "معتدل"
-    },
-    "HINTS": {
-      "SITE_TITLE_EXISTS": "اسم المكتبة قيد الاستخدام بالفعل"
+    "ACTION": {
+      "UNDO": "تراجع"
     },
     "ERRORS": {
-      "GENERIC": "نواجه مشكلة",
-      "EXISTENT_SITE": "معرف المكتبة هذا غير متاح. جرّب معرف مكتبة مختلفًا.",
-      "CONFLICT": "معرف المكتبة هذا قيد الاستخدام بالفعل. تحقق من سلة المحذوفات.",
-      "ID_TOO_LONG": "استخدم 72 حرفًا أو أقل لاسم URL",
-      "DESCRIPTION_TOO_LONG": "استخدم 512 حرفًا أو أقل للوصف",
-      "TITLE_TOO_LONG": "استخدم 256 أو أقل للعنوان",
-      "ILLEGAL_CHARACTERS": "استخدم الأرقام والحروف فقط",
-      "ONLY_SPACES": "لا يمكن أن يحتوي اسم المكتبة على أية مسافات",
-      "LIBRARY_UPDATE_ERROR": "حدث خطأ أثناء تحديث خصائص المكتبة"
+      "GENERIC": "التحميل غير ناجح. اتصل بقسم تكنولوجيا المعلومات في حالة استمرار هذه المشكلة",
+      "500": "خطأ في خادم الإنترنت، حاول مرة أخرى أو اتصل بدعم تكنولوجيا المعلومات [500]",
+      "504": "انتهلت مهلة الخادم، حاول مرة أخرى أو اتصل بدعم تكنولوجيا المعلومات [504]",
+      "403": "أذونات غير كافية للتحميل في هذا المكان [403]",
+      "404": "مكان التحميل لم يعد موجودًا [404]",
+      "409": "يوجد بالفعل ملف يحمل الاسم ذاته [409]"
     },
-    "SUCCESS": {
-      "LIBRARY_UPDATED": "تم تحديث خصائص المكتبة"
+    "ARIA-LABEL": {
+      "ERROR": "خطأ في التحميل"
     }
   },
+  "WEBSCRIPT": {
+    "ERROR": "تعذر إتمام الإجراء. شارك هذه الرسالة مع فريق تكنولوجيا المعلومات لديك: حدث خطأ أثناء إلغاء تسلسل{{data}} كـ {{contentType}}"
+  },
   "SEARCH": {
+    "CONTROL": {},
+    "BUTTON": {
+      "TOOLTIP": "بحث",
+      "ARIA-LABEL": "زر البحث"
+    },
     "INPUT": {
-      "PLACEHOLDER": "بحث",
-      "FILES": "ملفات",
-      "FOLDERS": "مجلدات",
-      "LIBRARIES": "مكتبات",
-      "HINT": "يجب أن يحتوي إدخال البحث على حرفين أبجديين رقميين على الأقل."
+      "ARIA-LABEL": "إدخال البحث"
     },
-    "SORT": {
-      "RELEVANCE": "الصلة",
-      "FILENAME": "اسم الملف",
-      "TITLE": "العنوان",
-      "MODIFIED_DATE": "تاريخ التعديل",
-      "SIZE": "الحجم",
-      "TYPE": "النوع",
-      "MODIFIER": "المعدل",
-      "CREATE_DATE": "تاريخ الإنشاء"
+    "RESULTS": {
+      "SUMMARY": "تم العثور على نتيجة {{numResults}} ل{{searchTerm}}",
+      "NONE": "لم يتم العثور على نتائج ل{{searchTerm}}",
+      "ERROR": "نواجه مشكلة أثناء البحث - حاول مرة أخرى.",
+      "COLUMNS": {
+        "NAME": "اسم العرض",
+        "MODIFIED_BY": "تم التعديل بواسطة",
+        "MODIFIED_AT": "تم التعديل في"
+      }
     },
-    "FACET_FIELDS": {
-      "FILE_TYPE": "نوع الملف",
-      "CREATOR": "المنشئ",
-      "MODIFIER": "المعدل",
-      "LOCATION": "مكان"
-    },
-    "CATEGORIES": {
-      "MODIFIED_DATE": "تاريخ التعديل",
-      "SIZE": "الحجم",
-      "SIZE_OPTIONS": {
-        "SMALL": "صغير",
-        "MEDIUM": "متوسط",
-        "LARGE": "كبير",
-        "HUGE": "ضخم"
+    "FILTER": {
+      "ACTIONS": {
+        "SEARCH": "بحث",
+        "CLEAR": "مسح",
+        "APPLY": "تطبيق",
+        "CLEAR-ALL": "مسح الكل",
+        "SHOW-MORE": "إظهار المزيد",
+        "SHOW-LESS": "إظهار أقل"
       },
-      "CREATED_DATE": "تاريخ الإنشاء"
+      "BUTTONS": {
+        "CLOSE": "إغلاق",
+        "REMOVE": "إزالة",
+        "APPLY": "تطبيق",
+        "CLEAR-ALL": {
+          "LABEL": "مسح الكل",
+          "TOOLTIP": "سيزيل ذلك كل التحديدات"
+        },
+        "RESET-ALL": {
+          "LABEL": "إعادة تعيين الكل",
+          "TOOLTIP": "سيعيد ذلك تعيين كل التحديدات وعوامل التصفية"
+        }
+      },
+      "RANGE": {
+        "FROM": "من",
+        "TO": "إلى",
+        "FROM-DATE": "من",
+        "TO-DATE": "إلى"
+      },
+      "VALIDATION": {
+        "REQUIRED-VALUE": "القيمة المطلوبة",
+        "NO-DAYS": "لم يتم تحديد أيام.",
+        "INVALID-FORMAT": "تنسيق غير صالح",
+        "INVALID-DATE": "تاريخ غير صالح. يجب أن يكون التاريخ بالتنسيق '{{ requiredFormat }}'",
+        "BEYOND-MAX-DATE": "يتجاوز التاريخ الحد الأقصى للتاريخ.",
+        "INVALID-DATETIME": "التاريخ والوقت غير صالحين. يجب أن يكون التاريخ والوقت بالتنسيق '{{ requiredFormat }}'",
+        "BEYOND-MAX-DATETIME": "التاريخ والوقت يتجاوزان الحد الأقصى للتاريخ والوقت."
+      }
     },
-    "FACET_QUERIES": {
-      "TODAY": "اليوم",
-      "THIS_WEEK": "هذا الأسبوع",
-      "THIS_MONTH": "هذا الشهر",
-      "LAST_6_MONTHS": "في آخر 6 أشهر",
-      "THIS_YEAR": "هذا العام"
+    "ICONS": {
+      "ft_ic_raster_image": "ملف صورة",
+      "ft_ic_pdf": "مستند PDF",
+      "ft_ic_ms_excel": "ملف Microsoft Excel",
+      "ft_ic_ms_word": "مستند Microsoft Word",
+      "ft_ic_ms_powerpoint": "ملف Microsoft PowerPoint",
+      "ft_ic_video": "ملف فيديو",
+      "ft_ic_document": "ملف مستند",
+      "ft_ic_website": "مورد ويب",
+      "ft_ic_archive": "ملف أرشيف",
+      "ft_ic_presentation": "ملف عرض تقديمي",
+      "ft_ic_spreadsheet": "ملف جدول بيانات"
     },
+    "DOCUMENT_LIST": {
+      "COLUMNS": {
+        "DISPLAY_NAME": "اسم العرض",
+        "CREATED_BY": "تم الإنشاء بواسطة",
+        "CREATED_ON": "تم الإنشاء"
+      },
+      "ACTIONS": {
+        "FOLDER": {
+          "DELETE": "حذف",
+          "MOVE": "نقل",
+          "COPY": "نسخ"
+        },
+        "DOCUMENT": {
+          "DOWNLOAD": "تنزيل",
+          "DELETE": "حذف",
+          "MOVE": "نقل",
+          "COPY": "نسخ",
+          "PROCESS_ACTION": "بدء العملية"
+        }
+      }
+    },
+    "UNKNOWN_CONFIGURATION": "تكوين غير معروف",
     "SEARCH_HEADER": {
       "TITLE": "عامل التصفية",
       "TYPE": "النوع",
@@ -547,47 +323,200 @@
       }
     }
   },
-  "AVATAR": {
-    "ACCESSIBILITY": {
-      "AVATAR_BUTTON_ARIA_LABEL": "خيارات المستخدم"
-    }
+  "PERMISSION": {
+    "LACKOF": "ليس لديك الإذن {{permission}} ل{{action}} من نوع {{type}}"
   },
-  "CORE": {
-    "METADATA": {
-      "ACTIONS": {
-        "SAVE": "حفظ التغييرات",
-        "CANCEL": "تجاهل التغييرات"
+  "METADATA": {
+    "BASIC": {
+      "HEADER": "الخصائص",
+      "NAME": "الاسم",
+      "TITLE": "العنوان",
+      "DESCRIPTION": "الوصف",
+      "AUTHOR": "المؤلف",
+      "MIMETYPE": "نوع Mime",
+      "SIZE": "الحجم",
+      "CREATOR": "المنشئ",
+      "CREATED_DATE": "تاريخ الإنشاء",
+      "MODIFIER": "المعدل",
+      "MODIFIED_DATE": "تاريخ التعديل",
+      "CONTENT_TYPE": "نوع المحتوى"
+    },
+    "CONTENT_TYPE": {
+      "DIALOG": {
+        "TITLE": "تغيير نوع المحتوى",
+        "DESCRIPTION": "سيؤدي إجراء هذا التغيير على نوع المحتوى إلى إضافة بعض الخصائص وبيانات التعريف المخزنة إلى المستند.",
+        "CONFIRM": "هل أنت متأكد أنك تريد تغيير نوع المحتوى؟",
+        "CANCEL": "إلغاء",
+        "APPLY": "حفظ التغييرات",
+        "VIEW_DETAILS": "عرض التفاصيل",
+        "PROPERTY": {
+          "NAME": "الاسم",
+          "DESCRIPTION": "الوصف",
+          "DATA_TYPE": "نوع البيانات"
+        }
       }
-    }
-  },
-  "ADF_VIEWER": {
-    "ACTIONS": {
-      "INFO": "عرض التفاصيل",
-      "PREVIEW": "عرض المعاينة"
-    }
-  },
-  "FILE_UPLOAD": {
+    },
     "ERRORS": {
-      "409": "هذا الاسم قيد الاستخدام بالفعل ، جرب اسمًا مختلفًا [409]"
+      "GENERIC": "خطأ في تحديث الخاصية",
+      "409": "غير مسموح باسم تابع مكرر [409]",
+      "422": "قيمة خاصية غير صالحة"
     }
   },
-  "ADF_VERSION_LIST": {
-    "ACTIONS": {
-      "UPLOAD": {
-        "TOOLTIP": "تحميل إصدار جديد"
-      }
+  "SHARE": {
+    "PUBLIC-LINK": "رابط عام",
+    "DIALOG-TITLE": "مشاركة",
+    "DESCRIPTION": "انقر فوق الرابط أدناه لنسخه إلى الحافظة.",
+    "TITLE": "رابط للمشاركة",
+    "EXPIRES": "تنتهي الصلاحية في",
+    "EXPIRATION-LABEL": "تاريخ الانتهاء",
+    "CLIPBOARD-MESSAGE": "تم نسخ الرابط إلى الحافظة",
+    "CLOSE": "إغلاق",
+    "CONFIRMATION": {
+      "DIALOG-TITLE": "إزالة هذا الرابط المشترك",
+      "MESSAGE": "سيتم حذف هذا الرابط وسيتم إنشاء رابط جديد في المرة التالية التي يتم فيها مشاركة هذا الملف",
+      "CANCEL": "إلغاء",
+      "REMOVE": "إزالة"
+    },
+    "UNSHARE_ERROR": "خطأ في إلغاء مشاركة هذا الملف",
+    "UNSHARE_PERMISSION_ERROR": "ليس لديك إذن لإلغاء مشاركة هذا الملف"
+  },
+  "PERMISSION_MANAGER": {
+    "PERMISSION_DISPLAY": {
+      "INHERITED": "تم توريث",
+      "AUTHORITY_ID": "معرف المرجع",
+      "ROLE": "الدور",
+      "LOCALLY_SET": "تعيين محلي",
+      "NO_PERMISSIONS": "لا توجد أذونات"
+    },
+    "ADD-PERMISSION": {
+      "SEARCH": "بحث عن مستخدمين أو مجموعات لإضافتها",
+      "TITLE": "إضافة إذن",
+      "TYPE-MESSAGE": "اكتب شيئًا لبدء البحث في المجموعات أو الأشخاص",
+      "NO-RESULT": "لم يتم العثور على نتيجة لهذا البحث",
+      "SELECT-ACTION": "تحديد",
+      "ADD-ACTION": "إضافة",
+      "CLOSE-ACTION": "إلغاء",
+      "BASE-DIALOG-TITLE": "بحث عن مجموعة أو أشخاص لإضافتهم...",
+      "EVERYONE": "كل شخص"
+    },
+    "COLUMN": {
+      "NAME": "المستخدمون والمجموعات ({{count}})",
+      "LOCATION": "مكان",
+      "BULK-ROLE": "تعيين كل الأدوار الى"
+    },
+    "LABELS": {
+      "ON": "تشغيل",
+      "OFF": "إيقاف",
+      "DIRECT-PERMISSIONS": "الإذن المطبق بشكل مباشر",
+      "INHERITED-PERMISSIONS": "إذن موروث",
+      "INHERITED-SUBTITLE": "{{count}} المستخدمين أو المجموعات يرثون الإذن من مجلد رئيسي",
+      "SELECT-ROLE": "حدد الدور"
+    },
+    "MESSAGE": {
+      "EMPTY-PERMISSION": "لا مستخدمين / مجموعات",
+      "EMPTY-SUBTITLE": "إضافة مستخدم / مجموعة لإدارة الإذن.",
+      "NO-MEMBERS": "أضف مجموعات أو أشخاصًا لإدارة الأدوار",
+      "PERMISSION-BULK-UPDATE-SUCCESS": "تم تحديث {{user}} مستخدم (مستخدمين) {{group}} مجموعة (مجموعات)",
+      "PERMISSION-UPDATE-SUCCESS": "تم تحديث المستخدم / المجموعة",
+      "PERMISSION-UPDATE-FAIL": "تعذّر تحديث المستخدم / المجموعة",
+      "PERMISSION-BULK-DELETE-SUCCESS": "تم حذف {{user}} مستخدم (مستخدمين) {{group}} مجموعة (مجموعات)",
+      "PERMISSION-DELETE-SUCCESS": "تم حذف المستخدم / المجموعة",
+      "PERMISSION-DELETE-FAIL": "تعذّر حذف المستخدم / المجموعة",
+      "PERMISSION-ADD-SUCCESS": "تمت إضافة {{user}} مستخدم (مستخدمين) {{group}} مجموعة (مجموعات)",
+      "PERMISSION-ADD-FAIL": "تعذّر إضافة مستخدم / مجموعة",
+      "INHERIT-ENABLE-SUCCESS": "تم تمكين الإذن الموروث",
+      "INHERIT-DISABLE-SUCCESS": "الإذن الموروث المعطل",
+      "TOGGLE-PERMISSION-FAILED": "تعذّر تبديل الإذن المورث"
+    },
+    "ACTION": {
+      "DELETE": "حذف",
+      "ADD-PERMISSION": "إضافة مستخدم أو مجموعة"
+    },
+    "ERROR": {
+      "NOT-FOUND": "لم يعد هذا العنصر موجودًا أو ليس لديك إذن لعرضه.",
+      "DUPLICATE-PERMISSION": "أحد الأذونات أو أكثر من إذن قمت بتعيينه موجود بالفعل : {{list}}",
+      "NOT-ALLOWED": "غير مسموح لك بتغيير الأذونات"
     }
   },
-  "CUSTOM_NAME_COLUMN": {
+  "ADF-TREE-VIEW": {
+    "MISSING-ID": "معرف العقدة غير متوفر!",
     "ACCESSIBILITY": {
-      "FILE_LINK_ARIA_LABEL": "عرض {{ name }}",
-      "FOLDER_LINK_ARIA_LABEL": "فتح مجلد {{ name }}"
+      "ARIA_LABEL": "تبديل {{ name }}"
     }
   },
-  "ADF-DATATABLE": {
-    "FILE_TYPE": {
-      "BOOKS-24PX": "مكتبة ملفات",
-      "BASELINE-LOCK-24PX": "ملف مؤمن"
+  "LIBRARY": {
+    "DIALOG": {
+      "CREATE_TITLE": "إنشاء مكتبة",
+      "CREATE": "إنشاء",
+      "UPDATE": "تحديث",
+      "EDIT": "تحرير",
+      "CANCEL": "إلغاء",
+      "FORM": {
+        "DESCRIPTION": "الوصف",
+        "SITE_ID": "معرف المكتبة",
+        "NAME": "الاسم",
+        "VISIBILITY": "رؤية"
+      }
+    },
+    "ROLE": {
+      "MANAGER": "مدير",
+      "COLLABORATOR": "معاون",
+      "CONTRIBUTOR": "مساهم",
+      "CONSUMER": "مستهلك",
+      "NONE": "ليس رقمًا"
+    },
+    "VISIBILITY": {
+      "PRIVATE": "خاص",
+      "PUBLIC": "عام",
+      "MODERATED": "معتدل"
+    },
+    "HINTS": {
+      "SITE_TITLE_EXISTS": "اسم المكتبة قيد الاستخدام بالفعل"
+    },
+    "ERRORS": {
+      "GENERIC": "نواجه مشكلة",
+      "EXISTENT_SITE": "معرف المكتبة هذا غير متاح. جرّب معرف مكتبة مختلفًا.",
+      "CONFLICT": "معرف المكتبة هذا قيد الاستخدام بالفعل. تحقق من سلة المحذوفات.",
+      "ID_TOO_LONG": "استخدم 72 حرفًا أو أقل لاسم URL",
+      "DESCRIPTION_TOO_LONG": "استخدم 512 حرفًا أو أقل للوصف",
+      "TITLE_TOO_LONG": "استخدم 256 أو أقل للعنوان",
+      "TITLE_TOO_SHORT": "يجب أن يكون طول العنوان حرفين على الأقل",
+      "ILLEGAL_CHARACTERS": "استخدم الأرقام والحروف فقط",
+      "ONLY_SPACES": "لا يمكن أن يحتوي اسم المكتبة على أية مسافات",
+      "LIBRARY_UPDATE_ERROR": "حدث خطأ أثناء تحديث خصائص المكتبة"
+    },
+    "SUCCESS": {
+      "LIBRARY_UPDATED": "تم تحديث خصائص المكتبة"
     }
-  }
+  },
+  "BREADCRUMB": {
+    "ARIA-LABEL": {
+      "BREADCRUMB": "مسار التنقل",
+      "DROPDOWN": "القائمة المنسدلة"
+    }
+  },
+  "NAME_COLUMN_LINK": {
+    "ACCESSIBILITY": {
+      "ARIA_LABEL": "فتح {{ name }}"
+    }
+  },
+  "ADF-ASPECT-LIST": {
+    "PROPERTY_NAME": "اسم الخاصية",
+    "DESCRIPTION": "الوصف",
+    "DATA_TYPE": "نوع البيانات",
+    "DIALOG": {
+      "TITLE": "تخصيص الخصائص",
+      "DESCRIPTION": "قم بإدارة الخصائص المرتبطة بالملف (الملفات) المحددة. اختر من بين جوانب الملكية المدرجة أدناه ، لعرض وتطبيق بيانات تعريف ووظائف إضافية",
+      "RESET": "إعادة تعيين",
+      "CLEAR": "مسح",
+      "CANCEL": "إلغاء",
+      "APPLY": "تطبيق",
+      "OVER-TABLE-MESSAGE": "حدد جوانب الملكية",
+      "SELECTED": "المحدد"
+    }
+  },
+  "NODE_COUNTER": {
+    "SELECTED_COUNT": "تم تحديد {{count}}"
+  },
+  "swsdp": "عينة: مشروع تصميم موقع الويب"
 }

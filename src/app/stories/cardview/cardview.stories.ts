@@ -18,15 +18,16 @@ import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { of } from 'rxjs';
 import { APP_ROUTES } from '../../app.routes';
 import { AppCommonModule } from '../../components/common/common.module';
-import { CardviewComponent } from './cardview.component';
+import { CardviewComponent, CardviewModule } from './cardview.component';
 
 export default {
   component: CardviewComponent,
   title: 'Cardview component',
   decorators: [
     moduleMetadata({
-      declarations: [CardviewComponent],
+      declarations: [],
       imports: [
+        CardviewModule,
         RouterModule.forRoot(APP_ROUTES, {
           useHash: true,
           enableTracing: false // enable for debug only
