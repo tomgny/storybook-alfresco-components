@@ -1,4 +1,4 @@
-import { CoreModule } from '@alfresco/adf-core';
+import { CoreModule, NotificationModel, NOTIFICATION_TYPE } from '@alfresco/adf-core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
@@ -31,9 +31,101 @@ export default {
     menuPositionY: {
       options: ['above', 'below'],
       control: { type: 'radio' }
-    }
+    },
+    notifications: { table: { disable: true } },
   }
 } as Meta;
+
+const notification1 = {
+  messages: ['Hey'],
+  datetime: new Date(),
+  initiator: { displayName: 'System', key: 'system' },
+  type: NOTIFICATION_TYPE.INFO
+} as NotificationModel;
+
+const notification2 = {
+  messages: ['Hey'],
+  datetime: new Date(),
+  initiator: { displayName: 'System', key: 'system' },
+  type: NOTIFICATION_TYPE.INFO
+} as NotificationModel;
+
+const notification3 = {
+  messages: ['Hey'],
+  datetime: new Date(),
+  initiator: { displayName: 'System', key: 'system' },
+  type: NOTIFICATION_TYPE.INFO
+} as NotificationModel;
+
+const notification4 = {
+  messages: ['Hey'],
+  datetime: new Date(),
+  initiator: { displayName: 'System', key: 'system' },
+  type: NOTIFICATION_TYPE.INFO
+} as NotificationModel;
+
+const notification5 = {
+  messages: ['Hey'],
+  datetime: new Date(),
+  initiator: { displayName: 'System', key: 'system' },
+  type: NOTIFICATION_TYPE.INFO
+} as NotificationModel;
+
+const notification6 = {
+  messages: ['Hey'],
+  datetime: new Date(),
+  initiator: { displayName: 'System', key: 'system' },
+  type: NOTIFICATION_TYPE.INFO
+} as NotificationModel;
+
+const notification7 = {
+  messages: ['Hey'],
+  datetime: new Date(),
+  initiator: { displayName: 'System', key: 'system' },
+  type: NOTIFICATION_TYPE.INFO
+} as NotificationModel;
+
+const notification8 = {
+  messages: ['Hey'],
+  datetime: new Date(),
+  initiator: { displayName: 'System', key: 'system' },
+  type: NOTIFICATION_TYPE.INFO
+} as NotificationModel;
+
+const notification9 = {
+  messages: ['Hey'],
+  datetime: new Date(),
+  initiator: { displayName: 'System', key: 'system' },
+  type: NOTIFICATION_TYPE.INFO
+} as NotificationModel;
+
+const notification10 = {
+  messages: ['Hey'],
+  datetime: new Date(),
+  initiator: { displayName: 'System', key: 'system' },
+  type: NOTIFICATION_TYPE.INFO
+} as NotificationModel;
+
+const notification11 = {
+  messages: ['Hey'],
+  datetime: new Date(),
+  initiator: { displayName: 'System', key: 'system' },
+  type: NOTIFICATION_TYPE.INFO
+} as NotificationModel;
+
+const notifications = [
+  notification1,
+  notification2,
+  notification3,
+  notification4,
+  notification5,
+  notification6,
+  notification7,
+  notification8,
+  notification9,
+  notification10,
+  notification11
+];
 
 const Template: Story<NotificationHistoryComponent> = (args) => ({
   props: args
@@ -44,7 +136,8 @@ export const Default = Template.bind({});
 Default.args = {
   maxNotifications: 5,
   menuPositionX: 'after',
-  menuPositionY: 'below'
+  menuPositionY: 'below',
+  notifications: notifications
 };
 
 export const BeforeAbovePostion = Template.bind({});
@@ -63,6 +156,13 @@ BeforeAbovePostion.parameters = {
 export const DifferentMaxNotificationsSet = Template.bind({});
 
 DifferentMaxNotificationsSet.args = {
-    ...Default.args,
-    maxNotifications: 2,
-}
+  ...Default.args,
+  maxNotifications: 2
+};
+
+export const NoNotifications = Template.bind({});
+
+NoNotifications.args = {
+  ...Default.args,
+  notifications: null
+};

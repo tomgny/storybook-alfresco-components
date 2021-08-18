@@ -1,10 +1,9 @@
-import { NotificationModel, NOTIFICATION_TYPE, StorageService } from '@alfresco/adf-core';
+import { NotificationModel, StorageService } from '@alfresco/adf-core';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'aca-notification-history',
   templateUrl: './notification-history.component.html',
-  styleUrls: ['./notification-history.component.scss']
 })
 export class NotificationHistoryComponent implements OnInit {
   /**
@@ -25,16 +24,12 @@ export class NotificationHistoryComponent implements OnInit {
   @Input()
   menuPositionY: 'above' | 'below';
 
+  @Input()
+  notifications: NotificationModel[];
+
   constructor(private storageService: StorageService) {}
 
-  ngOnInit(): void {    
-    const notification = {
-      messages: ['Hey'],
-      datetime: new Date(),
-      initiator: { displayName: 'System', key: 'system' },
-      type: NOTIFICATION_TYPE.INFO
-    } as NotificationModel;
-    
-    this.storageService.setItem('notification-history', JSON.stringify([notification]))
+  ngOnInit(): void {
+    this.storageService.setItem('notification-history', JSON.stringify(this.notifications));
   }
 }
