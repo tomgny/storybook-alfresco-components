@@ -1,5 +1,5 @@
-import { CardViewItem, CardViewUpdateService, UpdateNotification } from '@alfresco/adf-core';
-import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { CardViewItem, CardViewUpdateService, CoreModule, UpdateNotification } from '@alfresco/adf-core';
+import { Component, ElementRef, Input, NgModule, OnInit, ViewChild } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
@@ -93,3 +93,9 @@ export class CardviewComponent implements OnInit {
   }
 }
 
+@NgModule({
+  declarations: [CardviewComponent],
+  imports: [CoreModule.forChild()],
+  exports: [CardviewComponent],
+})
+export class CardviewModule {}

@@ -90,7 +90,8 @@ import { DatatableCustomComponent } from './stories/datatable/datatable-custom-d
 import { UserInfoComponent } from './stories/user-info/user-info.component';
 import { ToolbarComponent } from './stories/toolbar/toolbar.component';
 import { UploadButtonComponent } from './stories/upload-button/upload-button.component';
-
+import { ContentMetadataCardComponent } from './stories/content-metadata-card/content-metadata-card.component';
+import { ButtonsMenuComponent } from './stories/buttons-menu/buttons-menu.component';
 
 registerLocaleData(localeFr);
 registerLocaleData(localeDe);
@@ -161,6 +162,8 @@ registerLocaleData(localeSv);
     UserInfoComponent,
     ToolbarComponent,
     UploadButtonComponent,
+    ContentMetadataCardComponent,
+    ButtonsMenuComponent
   ],
   providers: [
     { provide: AppConfigService, useClass: DebugAppConfigService },
