@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
 })
 export class MimeTypeIconComponent {
   /**
-   * https://alfresco.zoom.us/j/96852672189?pwd=VzFodG8vTVY2NU1KbnJ1Q3pJNFg5QT09&from=addon
+   * https://github.com/Alfresco/alfresco-ng2-components/blob/develop/docs/core/services/thumbnail.service.md#details
    */
   @Input()
   icon: string;
