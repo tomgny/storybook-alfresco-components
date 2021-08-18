@@ -1,0 +1,25 @@
+<adf-upload-button
+  [acceptedFilesType]="acceptedFilesType"
+  [comment]="comment"
+  [disabled]="disabled"
+  [file]="file"
+  [majorVersion]="majorVersion"
+  [maxFilesSize]="maxFilesSize"
+  [multipleFiles]="multipleFiles"
+  [nodeType]="nodeType"
+  [rootFolderId]="rootFolderId"
+  [staticTitle]="staticTitle"
+  [tooltip]="tooltip"
+  [uploadFolders]="uploadFolders"
+  [versioning]="versioning"
+  (error)="onError($event)"
+  (permissionEvent)="onUploadPermissionFailed($event)"
+>
+</adf-upload-button>
+<adf-file-uploading-dialog></adf-file-uploading-dialog>
+<hr />
+<p>Comment: {{ comment }}</p>
+<p>Major version?: {{ majorVersion }}</p>
+<p>Node type: {{ nodeType }}</p>
+
+<adf-document-list style="visibility: hidden" #documentList [currentFolderId]="'-my-'"> </adf-document-list>
