@@ -29,7 +29,7 @@ export default {
       control: { type: 'select' }
     },
     ngOnInit: { table: { disable: true } },
-    digitsInfo: { table: { disable: true } },
+    digitsInfo: { control: { type: null } },
     validateAndSetDigitsInfoValues: { table: { disable: true } }
   }
 } as Meta;

@@ -8,21 +8,36 @@ import { LocalizationService } from '../localization.service';
   styleUrls: ['../core-pipes.scss']
 })
 export class DecimalNumberComponent implements OnInit {
+  /**
+   * A locale id for the locale format rules to use.
+   */
   @Input()
   locale: string = 'en-US';
 
   @Input()
   numberToTransform: number;
 
+  /**
+   * https://github.com/Alfresco/alfresco-ng2-components/blob/develop/lib/core/models/decimal-number.model.ts
+   */
   @Input()
   minIntegerDigits: number = 1;
 
+  /**
+   * https://github.com/Alfresco/alfresco-ng2-components/blob/develop/lib/core/models/decimal-number.model.ts
+   */
   @Input()
   minFractionDigits: number = 0;
 
+  /**
+   * https://github.com/Alfresco/alfresco-ng2-components/blob/develop/lib/core/models/decimal-number.model.ts
+   */
   @Input()
   maxFractionDigits: number = 2;
 
+  /**
+   * Configuration object that deterimnes how number will be transformed.
+   */
   @Input()
   digitsInfo: DecimalNumberModel = { minIntegerDigits: 1, minFractionDigits: 0, maxFractionDigits: 2 };
 

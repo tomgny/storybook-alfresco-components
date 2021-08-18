@@ -39,5 +39,5 @@ export const CustomSeparatorSet = Template.bind({});
 
 CustomSeparatorSet.args = {
   ...Default.args,
-  customSeparator: ' :) '
+  separator: ' :) '
 };

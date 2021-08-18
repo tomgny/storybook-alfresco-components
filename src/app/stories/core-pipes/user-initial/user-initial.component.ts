@@ -12,9 +12,15 @@ export class UserInitialComponent implements OnInit {
   @Input()
   lastName: string;
 
+  /**
+   * Specifies an optional CSS class to add to the <div> element (eg, a background color is commonly used to emphasise initials).
+   */
   @Input()
   className: string = '';
 
+  /**
+   * Delimiter to add between the initials.
+   */
   @Input()
   delimiter: string = '';
 

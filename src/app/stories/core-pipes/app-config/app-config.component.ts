@@ -12,6 +12,9 @@ export class AppConfigComponent {
   @Input()
   config: string;
 
+  /**
+   * Value will be used if the property name is not found.
+   */
   @Input()
   fallbackText: string = '';
 

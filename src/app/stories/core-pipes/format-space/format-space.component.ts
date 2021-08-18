@@ -12,6 +12,9 @@ export class FormatSpaceComponent {
   @Input()
   replaceChar: string = '_';
 
+  /**
+   * If set to false the conversion to lowercase is skipped.
+   */
   @Input()
   lowercase: boolean = true;
 

@@ -10,7 +10,7 @@ export class MultiValueComponent {
   words: string[];
 
   @Input()
-  customSeparator: string = ', ';
+  separator: string = ', ';
 
   constructor() {}
 }

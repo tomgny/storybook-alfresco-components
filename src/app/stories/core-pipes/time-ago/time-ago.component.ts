@@ -11,6 +11,9 @@ export class TimeAgoComponent implements OnInit {
   @Input()
   date: Date;
 
+  /**
+   * A locale id for the locale format rules to use.
+   */
   @Input()
   locale: string = 'en-US';
 

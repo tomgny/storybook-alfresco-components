@@ -13,6 +13,9 @@ export class FileSizeComponent implements OnInit {
   @Input()
   sizeInBytes: number;
 
+  /**
+   * The number of decimal places to use for the value
+   */
   @Input()
   decimalPlacesNumber: number = 2;
 
