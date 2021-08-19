@@ -12,7 +12,7 @@ import { CommentProcessServiceStub } from './mock/stub-comment-process-service';
 
 export default {
   component: CommentsComponent,
-  title: 'Comments component',
+  title: 'Core/Components/Comments',
   decorators: [
     moduleMetadata({
       declarations: [],
