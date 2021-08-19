@@ -33,7 +33,14 @@ export default {
         { provide: CommentProcessService, useClass: CommentProcessServiceStub }
       ]
     })
-  ]
+  ],
+  argTypes: {
+    readOnly: {
+      table:{
+        disable: true
+      }
+    }
+  }
 } as Meta;
 
 const Template: Story<CommentsComponent> = (args) => ({
