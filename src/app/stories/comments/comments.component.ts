@@ -7,11 +7,11 @@ import { Component, Input } from '@angular/core';
 })
 export class CommentsComponent {
   @Input()
-  nodeId: string = undefined;
+  nodeId: string = null;
 
   @Input()
   readOnly: boolean = false;
 
   @Input()
-  taskId: string = undefined;
+  taskId: string = null;
 }

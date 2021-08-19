@@ -29,8 +29,8 @@ export default {
         CommonModule
       ],
       providers: [
-        {provide: CommentContentService, useClass: CommentContentServiceStub},
-        {provide: CommentProcessService, useClass: CommentProcessServiceStub},
+        { provide: CommentContentService, useClass: CommentContentServiceStub },
+        { provide: CommentProcessService, useClass: CommentProcessServiceStub }
       ]
     })
   ]
@@ -51,7 +51,7 @@ DefaultStory.args = {
 
 export const NodeComments = Template.bind({});
 NodeComments.args = {
-  nodeId: '-root-',
+  nodeId: '-fake-',
   readOnly: false,
   taskId: undefined
 };

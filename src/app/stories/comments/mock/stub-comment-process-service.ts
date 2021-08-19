@@ -1,12 +1,13 @@
 import { CommentModel } from '@alfresco/adf-core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { fakeComments } from './fake-comments';
 
-export class CommentProcessServiceStub{
+export class CommentProcessServiceStub {
+  getTaskComments(_taskId: string): Observable<CommentModel[]> {
+    return of(fakeComments);
+  }
 
-  fakeCommentsSubject = new BehaviorSubject<CommentModel[]>(fakeComments);
-
-  getTaskComments(_taskId: string): Observable<CommentModel[]>{
-    return this.fakeCommentsSubject;
+  addTaskComment(_taskId: string, message: string): Observable<CommentModel> {
+    return of(new CommentModel({ message: message, created: Date.now(), createdBy: { firstName: 'Task', lastName: 'Comment' } }));
   }
 }
