@@ -1,4 +1,4 @@
-import { CoreModule,  } from '@alfresco/adf-core';
+import { CoreModule } from '@alfresco/adf-core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
@@ -19,10 +19,14 @@ export default {
         }),
         CoreModule.forRoot(),
         AppCommonModule,
-        BrowserAnimationsModule,
+        BrowserAnimationsModule
       ]
     })
-  ]
+  ],
+  argTypes: {
+    textAreaPlaceHolder: { table: { disable: true } },
+    buttonCopyingInputValueText: { table: { disable: true } }
+  }
 } as Meta;
 
 const Template: Story<ClipboardComponent> = (args) => ({
@@ -32,5 +36,22 @@ const Template: Story<ClipboardComponent> = (args) => ({
 export const Default = Template.bind({});
 
 Default.args = {
-  
+  tooltip: 'CLIPBOARD.CLICK_TO_COPY',
+  notification: 'CLIPBOARD.SUCCESS_COPY',
+  spanText: 'You can copy text. Click on me!',
+  buttonText: 'You can copy content of HTML element. Click me!'
+};
+
+export const CustomTooltipTextSet = Template.bind({});
+
+CustomTooltipTextSet.args = {
+  ...Default.args,
+  tooltip: 'Custom tooltip'
+};
+
+export const CustomNotificationTextSet = Template.bind({});
+
+CustomNotificationTextSet.args = {
+  ...Default.args,
+  notification: 'Custom notification'
 };

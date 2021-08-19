@@ -1,7 +1,7 @@
-<span adf-clipboard="translate_key" [clipboard-notification]="notify_message">
-    text to copy
-</span>
-
-<button adf-clipboard="translate_key" target="ref" [clipboard-notification]="notify_message">
-    Copy
+<span adf-clipboard="{{ tooltip }}" [clipboard-notification]="notification">{{ spanText }}</span>
+<button adf-clipboard="{{ tooltip }}" [clipboard-notification]="notification">{{ buttonText }}</button>
+<input #textToBeCopiedByButton value="Lorem Ipsum" />
+<button adf-clipboard="{{ tooltip }}" [target]="textToBeCopiedByButton" [clipboard-notification]="notification">
+  {{ buttonCopyingInputValueText }}
 </button>
+<textarea placeholder="{{ textAreaPlaceHolder }}" #ref rows="5" cols="50"></textarea>
