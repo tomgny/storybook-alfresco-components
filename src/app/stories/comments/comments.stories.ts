@@ -62,3 +62,10 @@ TaskComments.args = {
   readOnly: false,
   taskId: '-fake-'
 };
+
+export const ReadOnly = Template.bind({});
+ReadOnly.args = {
+  nodeId: undefined,
+  readOnly: true,
+  taskId: '-fake-'
+};
