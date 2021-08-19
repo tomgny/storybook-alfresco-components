@@ -107,6 +107,7 @@ import { ButtonsMenuComponent } from './stories/buttons-menu/buttons-menu.compon
 import { HeaderComponent } from './stories/header/header.component';
 import { LanguageMenuComponent } from './stories/language-menu/language-menu.component';
 import { NotificationHistoryComponent } from './stories/notification-history/notification-history.component';
+import { ClipboardComponent } from './stories/clipboard/clipboard.component';
 
 registerLocaleData(localeFr);
 registerLocaleData(localeDe);
@@ -194,6 +195,7 @@ registerLocaleData(localeSv);
     HeaderComponent,
     LanguageMenuComponent,
     NotificationHistoryComponent,
+    ClipboardComponent,
   ],
   providers: [
     { provide: AppConfigService, useClass: DebugAppConfigService },
