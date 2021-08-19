@@ -2,15 +2,14 @@ import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'aca-comments',
-  templateUrl: './comments.component.html',
-  styleUrls: ['./comments.component.scss']
+  templateUrl: './comments.component.html'
 })
 export class CommentsComponent {
   /**
    * The numeric ID of the node.
    */
   @Input()
-  nodeId: string = null;
+  nodeId: string = undefined;
 
   /**
    * Are the comments read only?
@@ -22,5 +21,5 @@ export class CommentsComponent {
    * The numeric ID of the task.
    */
   @Input()
-  taskId: string = null;
+  taskId: string = undefined;
 }

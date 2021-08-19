@@ -1,10 +1,10 @@
 import { CommentModel } from '@alfresco/adf-core';
 import { Observable, of } from 'rxjs';
-import { fakeComments } from './fake-comments';
+import { fakeTaskComments } from './fake-comments';
 
 export class CommentProcessServiceStub {
   getTaskComments(_taskId: string): Observable<CommentModel[]> {
-    return of(fakeComments);
+    return of(fakeTaskComments);
   }
 
   addTaskComment(_taskId: string, message: string): Observable<CommentModel> {
