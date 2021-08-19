@@ -1,0 +1,31 @@
+<button mat-icon-button [matMenuTriggerFor]="langMenu" *ngIf="!showLanguageMenuInsideNestedMenu">
+  <mat-icon>language</mat-icon>
+</button>
+<button mat-icon-button class="dw-profile-menu" [matMenuTriggerFor]="profileMenu" *ngIf="showLanguageMenuInsideNestedMenu">
+  <mat-icon>more_vert</mat-icon>
+</button>
+<mat-menu #langMenu="matMenu">
+  <adf-language-menu></adf-language-menu>
+</mat-menu>
+<mat-menu #profileMenu="matMenu">
+  <button mat-menu-item [matMenuTriggerFor]="langMenu">Languages</button>
+</mat-menu>
+
+<table>
+  <tr>
+    <th>Key to translate</th>
+    <th>Value after translation</th>
+  </tr>
+  <tr>
+    <td>{{ key1 }}</td>
+    <td>{{ key1 | translate }}</td>
+  </tr>
+  <tr>
+    <td>{{ key2 }}</td>
+    <td>{{ key2 | translate }}</td>
+  </tr>
+  <tr>
+    <td>{{ key3 }}</td>
+    <td>{{ key3 | translate }}</td>
+  </tr>
+</table>
