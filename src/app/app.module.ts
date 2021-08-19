@@ -106,6 +106,7 @@ import { ContentMetadataCardComponent } from './stories/content-metadata-card/co
 import { ButtonsMenuComponent } from './stories/buttons-menu/buttons-menu.component';
 import { HeaderComponent } from './stories/header/header.component';
 import { LanguageMenuComponent } from './stories/language-menu/language-menu.component';
+import { NotificationHistoryComponent } from './stories/notification-history/notification-history.component';
 
 registerLocaleData(localeFr);
 registerLocaleData(localeDe);
@@ -191,7 +192,8 @@ registerLocaleData(localeSv);
     ContentMetadataCardComponent,
     ButtonsMenuComponent,
     HeaderComponent,
-    LanguageMenuComponent
+    LanguageMenuComponent,
+    NotificationHistoryComponent,
   ],
   providers: [
     { provide: AppConfigService, useClass: DebugAppConfigService },
