@@ -8,7 +8,7 @@ import { UserInitialComponent } from './user-initial.component';
 
 export default {
   component: UserInitialComponent,
-  title: 'Pipes from Core/User Initial',
+  title: 'Core/Pipes/User Initial',
   decorators: [
     moduleMetadata({
       declarations: [UserInitialComponent],

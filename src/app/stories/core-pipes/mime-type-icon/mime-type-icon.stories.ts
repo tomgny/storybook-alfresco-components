@@ -8,7 +8,7 @@ import { MimeTypeIconComponent } from './mime-type-icon.component';
 
 export default {
   component: MimeTypeIconComponent,
-  title: 'Pipes from Core/Mime Type Icon',
+  title: 'Core/Pipes/Mime Type Icon',
   decorators: [
     moduleMetadata({
       declarations: [MimeTypeIconComponent],

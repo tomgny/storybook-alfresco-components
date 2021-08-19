@@ -8,7 +8,7 @@ import { NotificationHistoryComponent } from './notification-history.component';
 
 export default {
   component: NotificationHistoryComponent,
-  title: 'Notification History component',
+  title: 'Core/Components/Notification History',
   decorators: [
     moduleMetadata({
       declarations: [NotificationHistoryComponent],

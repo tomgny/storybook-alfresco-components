@@ -28,7 +28,7 @@ const allLanguages = [
 
 export default {
   component: LanguageMenuComponent,
-  title: 'Language Menu component',
+  title: 'Core/Components/Language Menu',
   decorators: [
     moduleMetadata({
       declarations: [LanguageMenuComponent],

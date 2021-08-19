@@ -12,7 +12,7 @@ import { AlfrescoApiServiceStub, AuthenticationServiceStub } from './mock/stub-s
 
 export default {
     component: ViewerComponent,
-    title: 'Viewer component',
+    title: 'Core/Components/Viewer',
     decorators: [
         moduleMetadata({
             declarations: [ViewerComponent],

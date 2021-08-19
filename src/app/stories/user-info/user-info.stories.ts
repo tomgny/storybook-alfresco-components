@@ -10,7 +10,7 @@ import { AuthenticationServiceStub } from './mock/stub-authentication-service';
 
 export default {
   component: UserInfoComponent,
-  title: 'User Info component',
+  title: 'Core/Components/User Info',
   decorators: [
     moduleMetadata({
       declarations: [UserInfoComponent],

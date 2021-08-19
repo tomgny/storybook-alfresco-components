@@ -8,7 +8,7 @@ import { FormatSpaceComponent } from './format-space.component';
 
 export default {
   component: FormatSpaceComponent,
-  title: 'Pipes from Core/Format Space',
+  title: 'Core/Pipes/Format Space',
   decorators: [
     moduleMetadata({
       declarations: [FormatSpaceComponent],

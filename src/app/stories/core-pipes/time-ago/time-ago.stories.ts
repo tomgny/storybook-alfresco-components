@@ -8,7 +8,7 @@ import { TimeAgoComponent } from './time-ago.component';
 
 export default {
   component: TimeAgoComponent,
-  title: 'Pipes from Core/Time Ago',
+  title: 'Core/Pipes/Time Ago',
   decorators: [
     moduleMetadata({
       declarations: [TimeAgoComponent],
