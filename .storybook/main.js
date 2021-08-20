@@ -5,6 +5,7 @@ module.exports = {
   ],
   "addons": [
     "@storybook/addon-links",
-    "@storybook/addon-essentials"
+    "@storybook/addon-essentials",
+    "@arcblock/storybook-addon-user-agent"
   ]
 }

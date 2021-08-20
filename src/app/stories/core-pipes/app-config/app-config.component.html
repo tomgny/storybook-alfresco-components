@@ -1,0 +1,27 @@
+<div *ngIf="showAppConfig">
+  <table>
+    <tr>
+      <th>Config property name</th>
+      <th>Config property value obtained by the pipe</th>
+    </tr>
+    <tr>
+      <td>{{ config }}</td>
+      <td>{{ config | adfAppConfig: fallbackText }}</td>
+    </tr>
+  </table>
+</div>
+
+<div *ngIf="!showAppConfig">
+  <table>
+    <tr>
+      <th>Config property name</th>
+      <th>Config property value obtained by the pipe without chaining</th>
+      <th>Config property value obtained by the pipe with chaining</th>
+    </tr>
+    <tr>
+      <td>{{ configForChaining }}</td>
+      <td>{{ configForChaining | adfAppConfig }}</td>
+      <td>{{ configForChaining | adfAppConfig | multiValue: ' --- ' }}</td>
+    </tr>
+  </table>
+</div>

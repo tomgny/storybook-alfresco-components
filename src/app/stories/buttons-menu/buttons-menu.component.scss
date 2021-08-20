@@ -1,0 +1,21 @@
+.mat-menu-item {
+  background: transparent;
+  color: rgba(0, 0, 0, 0.87);
+  outline: none;
+  border: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  line-height: 48px;
+  height: 48px;
+  text-align: left;
+  position: relative;
+  max-width: 100%;
+  text-decoration: none;
+  width: 100%;
+}
+
+.mat-icon {
+  vertical-align: middle;
+}

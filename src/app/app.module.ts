@@ -84,11 +84,32 @@ import localeFi from '@angular/common/locales/fi';
 import localeDa from '@angular/common/locales/da';
 import localeSv from '@angular/common/locales/sv';
 import { CardviewComponent } from './stories/cardview/cardview.component';
+import { ViewerComponent } from './stories/viewer/viewer.component';
 import { DatatableComponent } from './stories/datatable/datatable.component';
 import { DatatableCustomComponent } from './stories/datatable/datatable-custom-data/datatable-custom-data.component';
 import { UserInfoComponent } from './stories/user-info/user-info.component';
 import { ToolbarComponent } from './stories/toolbar/toolbar.component';
 import { DocumentListComponent } from './stories/document-list/document-list.component';
+import { UploadButtonComponent } from './stories/upload-button/upload-button.component';
+import { TimeAgoComponent } from './stories/core-pipes/time-ago/time-ago.component';
+import { MultiValueComponent } from './stories/core-pipes/multi-value/multi-value.component';
+import { FormatSpaceComponent } from './stories/core-pipes/format-space/format-space.component';
+import { DecimalNumberComponent } from './stories/core-pipes/decimal-number/decimal-number.component';
+import { FileSizeComponent } from './stories/core-pipes/file-size/file-size.component';
+import { LocalizedDateComponent } from './stories/core-pipes/localized-date/localized-date.component';
+import { FullNameComponent } from './stories/core-pipes/full-name/full-name.component';
+import { UserInitialComponent } from './stories/core-pipes/user-initial/user-initial.component';
+import { TextHighlightComponent } from './stories/core-pipes/text-highlight/text-highlight.component';
+import { MimeTypeIconComponent } from './stories/core-pipes/mime-type-icon/mime-type-icon.component';
+import { AppConfigComponent } from './stories/core-pipes/app-config/app-config.component';
+import { NodeNameTooltipComponent } from './stories/core-pipes/node-name-tooltip/node-name-tooltip.component';
+import { ContentMetadataCardComponent } from './stories/content-metadata-card/content-metadata-card.component';
+import { ButtonsMenuComponent } from './stories/buttons-menu/buttons-menu.component';
+import { HeaderComponent } from './stories/header/header.component';
+import { CommentsComponent } from './stories/comments/comments.component';
+import { LanguageMenuComponent } from './stories/language-menu/language-menu.component';
+import { NotificationHistoryComponent } from './stories/notification-history/notification-history.component';
+import { ClipboardComponent } from './stories/clipboard/clipboard.component';
 
 registerLocaleData(localeFr);
 registerLocaleData(localeDe);
@@ -153,11 +174,32 @@ registerLocaleData(localeSv);
     SharedFilesComponent,
     CreateFromTemplateDialogComponent,
     CardviewComponent,
+    ViewerComponent,
     DatatableComponent,
     DatatableCustomComponent,
     UserInfoComponent,
     ToolbarComponent,
     DocumentListComponent,
+    UploadButtonComponent,
+    TimeAgoComponent,
+    MultiValueComponent,
+    FormatSpaceComponent,
+    DecimalNumberComponent,
+    FileSizeComponent,
+    LocalizedDateComponent,
+    FullNameComponent,
+    UserInitialComponent,
+    TextHighlightComponent,
+    MimeTypeIconComponent,
+    AppConfigComponent,
+    NodeNameTooltipComponent,
+    ContentMetadataCardComponent,
+    ButtonsMenuComponent,
+    HeaderComponent,
+    CommentsComponent,
+    LanguageMenuComponent,
+    NotificationHistoryComponent,
+    ClipboardComponent,
   ],
   providers: [
     { provide: AppConfigService, useClass: DebugAppConfigService },
