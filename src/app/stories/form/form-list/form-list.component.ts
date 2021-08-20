@@ -1,11 +1,10 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'aca-form',
-  templateUrl: './form.component.html',
-  styleUrls: ['./form.component.scss']
+  selector: 'aca-form-list',
+  templateUrl: './form-list.component.html'
 })
-export class FormComponent {
+export class FormListComponent {
   /**
    * The array that contains the information to show inside the list.
    */

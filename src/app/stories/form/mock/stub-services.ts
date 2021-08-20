@@ -1,4 +1,4 @@
-import { ReplaySubject } from 'rxjs';
+import { Observable, of, ReplaySubject, Subject } from 'rxjs';
 import { ModelsApiStub } from './stub-apis';
 
 export class AuthenticationServiceStub {
@@ -12,14 +12,9 @@ export class AuthenticationServiceStub {
 }
 
 export class AlfrescoApiServiceStub {
-  //nodesApi = new NodesApiStub();
+  nodeUpdated = new Subject<Node>();
 
-  //nodes = this.nodesApi;
-
-  //contentApi = new ContentApiStub();
-
-  //nodeUpdated = new Subject<Node>();
-  // modelsApi = new ModelsApiStub();
+  modelsApi = new ModelsApiStub();
 
   alfrescoApiInitialized: ReplaySubject<boolean> = new ReplaySubject(1);
 
@@ -29,8 +24,9 @@ export class AlfrescoApiServiceStub {
 }
 
 export class FormServiceStub {
-
-  getForms(){}
+  getForms(): Observable<any> {
+    return of([]);
+  }
 
   modelsApi = new ModelsApiStub();
 }
