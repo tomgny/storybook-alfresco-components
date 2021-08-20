@@ -2,9 +2,9 @@ import { DownloadEntry } from '@alfresco/js-api';
 
 export const loremIpsumTextNode = {
   entry: {
-    name: 'lorem_ipsum.txt',
-    contentUrl: './assets/fake_folder/lorem_ipsum.txt',
-    id: 'lorem_ipsum_text'
+    name: 'files.zip',
+    contentUrl: './assets/files.zip',
+    id: 'files_in_zip'
   }
 };
 
