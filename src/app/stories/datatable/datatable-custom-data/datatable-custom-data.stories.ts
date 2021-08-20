@@ -10,7 +10,7 @@ import { DatatableCustomComponent } from './datatable-custom-data.component';
 
 export default {
   component: DatatableCustomComponent,
-  title: 'Datatable component/custom data and resolver',
+  title: 'Core/Components/Datatable/Custom data and resolver',
   decorators: [
     moduleMetadata({
       declarations: [DatatableCustomComponent],

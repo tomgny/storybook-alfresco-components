@@ -10,7 +10,7 @@ import { ToolbarComponent } from './toolbar.component';
 
 export default {
   component: ToolbarComponent,
-  title: 'Toolbar component',
+  title: 'Core/Components/Toolbar',
   decorators: [
     moduleMetadata({
       declarations: [ToolbarComponent],

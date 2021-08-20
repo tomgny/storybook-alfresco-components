@@ -8,7 +8,7 @@ import { DecimalNumberComponent } from './decimal-number.component';
 
 export default {
   component: DecimalNumberComponent,
-  title: 'Pipes from Core/Decimal Number',
+  title: 'Core/Pipes/Decimal Number',
   decorators: [
     moduleMetadata({
       declarations: [DecimalNumberComponent],

@@ -8,7 +8,7 @@ import { TextHighlightComponent } from './text-highlight.component';
 
 export default {
   component: TextHighlightComponent,
-  title: 'Pipes from Core/Text Highlight',
+  title: 'Core/Pipes/Text Highlight',
   decorators: [
     moduleMetadata({
       declarations: [TextHighlightComponent],

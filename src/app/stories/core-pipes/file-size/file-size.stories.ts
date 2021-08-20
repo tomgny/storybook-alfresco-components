@@ -8,7 +8,7 @@ import { FileSizeComponent } from './file-size.component';
 
 export default {
   component: FileSizeComponent,
-  title: 'Pipes from Core/File Size',
+  title: 'Core/Pipes/File Size',
   decorators: [
     moduleMetadata({
       declarations: [FileSizeComponent],

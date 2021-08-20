@@ -8,7 +8,7 @@ import { LocalizedDateComponent } from './localized-date.component';
 
 export default {
   component: LocalizedDateComponent,
-  title: 'Pipes from Core/Localized Date',
+  title: 'Core/Pipes/Localized Date',
   decorators: [
     moduleMetadata({
       declarations: [LocalizedDateComponent],

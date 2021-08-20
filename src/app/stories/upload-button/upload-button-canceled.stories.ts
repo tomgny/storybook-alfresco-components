@@ -21,7 +21,7 @@ import { UploadButtonComponent } from './upload-button.component';
 
 export default {
   component: UploadButtonComponent,
-  title: 'Upload Button component/Canceled state',
+  title: 'Content Services/Components/Upload Button/Canceled state',
   decorators: [
     moduleMetadata({
       declarations: [UploadButtonComponent],

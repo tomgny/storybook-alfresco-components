@@ -109,6 +109,7 @@ import { CommentsComponent } from './stories/comments/comments.component';
 import { LanguageMenuComponent } from './stories/language-menu/language-menu.component';
 import { NotificationHistoryComponent } from './stories/notification-history/notification-history.component';
 import { FormComponent } from './stories/form/form.component';
+import { ClipboardComponent } from './stories/clipboard/clipboard.component';
 
 registerLocaleData(localeFr);
 registerLocaleData(localeDe);
@@ -194,10 +195,11 @@ registerLocaleData(localeSv);
     ContentMetadataCardComponent,
     ButtonsMenuComponent,
     HeaderComponent,
-    CommentsComponent
+    CommentsComponent,
     LanguageMenuComponent,
     NotificationHistoryComponent,
     FormComponent,
+    ClipboardComponent,
   ],
   providers: [
     { provide: AppConfigService, useClass: DebugAppConfigService },

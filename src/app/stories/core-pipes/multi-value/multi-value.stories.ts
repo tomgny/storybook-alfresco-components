@@ -8,7 +8,7 @@ import { MultiValueComponent } from './multi-value.component';
 
 export default {
   component: MultiValueComponent,
-  title: 'Pipes from Core/Multi Value',
+  title: 'Core/Pipes/Multi Value',
   decorators: [
     moduleMetadata({
       declarations: [MultiValueComponent],

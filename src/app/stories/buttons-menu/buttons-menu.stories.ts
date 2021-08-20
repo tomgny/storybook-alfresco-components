@@ -9,7 +9,7 @@ import { ButtonsMenuComponent, ButtonsMenuModule } from './buttons-menu.componen
 
 export default {
   component: ButtonsMenuComponent,
-  title: 'Buttons Menu component',
+  title: 'Core/Components/Buttons Menu',
   decorators: [
     moduleMetadata({
       declarations: [],

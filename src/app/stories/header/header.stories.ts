@@ -10,7 +10,7 @@ import { HeaderComponent, HeaderModule } from './header.component';
 
 export default {
   component: HeaderComponent,
-  title: 'Header component',
+  title: 'Core/Components/Header',
   decorators: [
     moduleMetadata({
       declarations: [],

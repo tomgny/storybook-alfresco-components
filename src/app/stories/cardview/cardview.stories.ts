@@ -22,7 +22,7 @@ import { CardviewComponent, CardviewModule } from './cardview.component';
 
 export default {
   component: CardviewComponent,
-  title: 'Cardview component',
+  title: 'Core/Components/Card View',
   decorators: [
     moduleMetadata({
       declarations: [],
