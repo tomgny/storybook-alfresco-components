@@ -15,13 +15,13 @@ export class AlfrescoApiServiceStub {
 
 class AlfrescoApiCompatibilityStub {
   core = new CoreStub();
-  content = new ContentApiStub()
+  content = new ContentApiStub();
 }
 
 class ContentApiStub {
-    getContentUrl(_: string, _1?: boolean, _2?: string): string {
-        return loremIpsumTextNode.entry.contentUrl;
-    }
+  getContentUrl(_: string, _1?: boolean, _2?: string): string {
+    return loremIpsumTextNode.entry.contentUrl;
+  }
 }
 
 class CoreStub {
@@ -30,21 +30,23 @@ class CoreStub {
 }
 
 class NodesApiStub {
-    getNode(_: string, _2?: any): any {
-        return Promise.resolve(loremIpsumTextNode);
-    }
+  getNode(_: string, _2?: any): any {
+    return Promise.resolve(loremIpsumTextNode);
+  }
 }
 
 class DownloadsApiStub {
   createDownload(_: DownloadBodyCreate, _2?: any): Promise<DownloadEntry> {
-    return Promise.resolve(donwloadEntry);
+    return Promise.resolve(downloadEntry);
   }
   getDownload(_: string, _2?: any): Promise<DownloadEntry> {
-    return Promise.resolve(donwloadEntry)
+    return Promise.resolve(downloadEntry);
   }
+
+  cancelDownload(_: string) {}
 }
 
-const donwloadEntry: DownloadEntry = {
+export const downloadEntry: DownloadEntry = {
   entry: {
     id: 'entryId',
     status: 'DONE'

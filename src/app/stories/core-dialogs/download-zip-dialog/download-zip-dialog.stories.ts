@@ -27,10 +27,7 @@ export default {
   ],
   argTypes: {
     ngOnInit: { table: { disable: true } },
-    settings: { table: { disable: true } },
-    openEditJsonDialog: { table: { disable: true } },
-    buttonText: { table: { disable: true } },
-    json: { table: { disable: true } }
+    openDownloadZipDialog: { table: { disable: true } }
   }
 } as Meta;
 
@@ -40,4 +37,12 @@ const Template: Story<DownloadZipDialogComponent> = (args) => ({
 
 export const Default = Template.bind({});
 
-Default.args = {};
+Default.args = {
+  showLoading: false
+};
+
+export const LoadingDialog = Template.bind({});
+
+LoadingDialog.args = {
+  showLoading: true
+};
