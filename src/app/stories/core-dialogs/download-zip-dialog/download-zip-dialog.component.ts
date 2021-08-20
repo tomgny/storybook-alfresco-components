@@ -1,8 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DownloadZipDialogComponent as DownloadZipDialogComponentAdf } from '@alfresco/adf-core';
-import { loremIpsumTextNode } from './mock/stub-data';
-import { downloadEntry } from './mock/stub-services';
+import { downloadEntry, loremIpsumTextNode } from './mock/stub-data';
 
 @Component({
   selector: 'aca-download-zip-dialog',
