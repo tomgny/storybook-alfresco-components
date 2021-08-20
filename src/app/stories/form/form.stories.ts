@@ -1,10 +1,11 @@
-import { CoreModule } from '@alfresco/adf-core';
+import { AlfrescoApiService, CoreModule, FormService } from '@alfresco/adf-core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { APP_ROUTES } from '../../app.routes';
 import { AppCommonModule } from '../../components/common/common.module';
 import { FormComponent } from './form.component';
+import { AlfrescoApiServiceStub, FormServiceStub } from './mock/stub-services';
 
 export default {
   component: FormComponent,
@@ -21,6 +22,11 @@ export default {
         AppCommonModule,
         BrowserAnimationsModule
       ],
+      providers: [
+        { provide: AlfrescoApiService, useClass: AlfrescoApiServiceStub },
+        { provide: FormService, useClass: FormServiceStub },
+        // { provide: AuthenticationService, useClass: AuthenticationServiceStub },
+      ]
     })
   ],
 } as Meta;
