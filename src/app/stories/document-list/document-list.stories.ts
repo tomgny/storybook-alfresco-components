@@ -28,7 +28,7 @@ import { AlfrescoApiServiceStub, AuthenticationServiceStub, UploadServiceStub } 
 
 export default {
   component: DocumentListComponent,
-  title: 'Document List component',
+  title: 'Content Services/Components/Document List',
   decorators: [
     moduleMetadata({
       declarations: [DocumentListComponent],
@@ -149,6 +149,12 @@ FolderImageResolver.args = {
   imageResolver: folderImageResolver
 };
 
+export const NodeIcons = Template.bind({});
+NodeIcons.args = {
+  ...DefaultStory.args,
+  imageResolver: iconResolver
+};
+
 export const FolderFilter = Template.bind({});
 FolderFilter.args = {
   ...DefaultStory.args,
@@ -219,7 +225,7 @@ export const Loading = Template.bind({});
 Loading.args = {
   ...DefaultStory.args,
   navigate: true,
-  loading: true
+  loading: false
 };
 
 export const Multiselect = Template.bind({});
@@ -250,7 +256,7 @@ export const SortingAndSortingMode = Template.bind({});
 SortingAndSortingMode.args = {
   ...DefaultStory.args,
   sortingMode: 'client',
-  sorting: ['name', 'desc']
+  sorting: ['name', 'asc']
 };
 
 export const StickyHeaderOff = Template.bind({});
@@ -263,12 +269,6 @@ export const WhereCondition = Template.bind({});
 WhereCondition.args = {
   ...DefaultStory.args,
   where: 'id=mock_node_4'
-};
-
-export const NodeIcons = Template.bind({});
-NodeIcons.args = {
-  ...DefaultStory.args,
-  imageResolver: iconResolver
 };
 
 export const FilterHeader = Template.bind({}); //doesn't work
