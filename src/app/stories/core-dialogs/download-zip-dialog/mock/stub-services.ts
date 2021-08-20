@@ -1,6 +1,6 @@
 import { DownloadBodyCreate, DownloadEntry } from '@alfresco/js-api';
 import { ReplaySubject, Subject } from 'rxjs';
-import { downloadEntry, loremIpsumTextNode } from './stub-data';
+import { downloadEntry, zipNode } from './stub-data';
 
 export class AlfrescoApiServiceStub {
   nodeUpdated = new Subject<Node>();
@@ -14,10 +14,15 @@ export class AlfrescoApiServiceStub {
 class AlfrescoApiCompatibilityStub {
   core = new CoreStub();
   content = new ContentApiStub();
+
+  isOauthConfiguration = () => true;
+  isLoggedIn = () => true;
+  isEcmConfiguration = () => true;
+  isEcmLoggedIn = () => true;
 }
 
 class ContentApiStub {
-  getContentUrl = (_: string, _1?: boolean, _2?: string): string => loremIpsumTextNode.entry.contentUrl;
+  getContentUrl = (_: string, _1?: boolean, _2?: string): string => zipNode.entry.contentUrl;
 }
 
 class CoreStub {
@@ -26,7 +31,7 @@ class CoreStub {
 }
 
 class NodesApiStub {
-  getNode = (_: string, _2?: any): any => Promise.resolve(loremIpsumTextNode);
+  getNode = (_: string, _2?: any): any => Promise.resolve(zipNode);
 }
 
 class DownloadsApiStub {

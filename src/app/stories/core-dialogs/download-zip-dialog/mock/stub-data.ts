@@ -1,6 +1,6 @@
 import { DownloadEntry } from '@alfresco/js-api';
 
-export const loremIpsumTextNode = {
+export const zipNode = {
   entry: {
     name: 'files.zip',
     contentUrl: './assets/files.zip',

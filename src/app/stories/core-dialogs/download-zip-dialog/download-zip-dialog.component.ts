@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DownloadZipDialogComponent as DownloadZipDialogComponentAdf } from '@alfresco/adf-core';
-import { downloadEntry, loremIpsumTextNode } from './mock/stub-data';
+import { downloadEntry, zipNode } from './mock/stub-data';
 
 @Component({
   selector: 'aca-download-zip-dialog',
@@ -25,7 +25,7 @@ export class DownloadZipDialogComponent implements OnInit {
     this.dialog.open(DownloadZipDialogComponentAdf, {
       minWidth: '50%',
       data: {
-        nodeIds: [loremIpsumTextNode.entry.id]
+        nodeIds: [zipNode.entry.id]
       }
     });
   }
