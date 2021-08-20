@@ -25,11 +25,17 @@ export default {
   ],
 } as Meta;
 
+const formsArray = [
+  { name: 'Form List', lastUpdatedByFullName: 'Form List Component', lastUpdated: Date.now()},
+  { name: 'My Name', lastUpdatedByFullName: 'My User Name', lastUpdated: '2020-02-14'},
+  { name: 'Admin', lastUpdatedByFullName: 'Super Admin', lastUpdated: '2017-06-01'},
+]
+
 const Template: Story<FormComponent> = (args) => ({
   props: args
 });
 
 export const Default = Template.bind({});
 Default.args = {
-
+  forms: formsArray
 }
