@@ -20,7 +20,7 @@ import { UploadButtonComponent } from './upload-button.component';
 
 export default {
   component: UploadButtonComponent,
-  title: 'Upload Button component/No Permissions',
+  title: 'Content Services/Components/Upload Button/No Permissions',
   decorators: [
     moduleMetadata({
       declarations: [UploadButtonComponent],

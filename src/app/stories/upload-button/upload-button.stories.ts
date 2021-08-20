@@ -22,7 +22,7 @@ import { UploadButtonComponent } from './upload-button.component';
 
 export default {
   component: UploadButtonComponent,
-  title: 'Upload Button component',
+  title: 'Content Services/Components/Upload Button',
   decorators: [
     moduleMetadata({
       declarations: [UploadButtonComponent],

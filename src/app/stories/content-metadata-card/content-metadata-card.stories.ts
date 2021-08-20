@@ -11,7 +11,7 @@ import { AlfrescoApiServiceStub, NodesApiServiceStub, VersionCompatibilityServic
 
 export default {
   component: ContentMetadataCardComponent,
-  title: 'Content Metadata Card component',
+  title: 'Content Services/Components/Content Metadata Card',
   decorators: [
     moduleMetadata({
       declarations: [ContentMetadataCardComponent],

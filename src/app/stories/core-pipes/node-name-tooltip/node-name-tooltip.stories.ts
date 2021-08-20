@@ -8,7 +8,7 @@ import { NodeNameTooltipComponent } from './node-name-tooltip.component';
 
 export default {
   component: NodeNameTooltipComponent,
-  title: 'Pipes from Core/Node Name Tooltip',
+  title: 'Core/Pipes/Node Name Tooltip',
   decorators: [
     moduleMetadata({
       declarations: [NodeNameTooltipComponent],

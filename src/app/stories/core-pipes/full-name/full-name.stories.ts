@@ -8,7 +8,7 @@ import { FullNameComponent } from './full-name.component';
 
 export default {
   component: FullNameComponent,
-  title: 'Pipes from Core/Full Name',
+  title: 'Core/Pipes/Full Name',
   decorators: [
     moduleMetadata({
       declarations: [FullNameComponent],

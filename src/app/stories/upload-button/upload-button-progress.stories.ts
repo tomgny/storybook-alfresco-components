@@ -20,7 +20,7 @@ import { UploadButtonComponent } from './upload-button.component';
 
 export default {
   component: UploadButtonComponent,
-  title: 'Upload Button component/Progress state',
+  title: 'Content Services/Components/Upload Button/Progress state',
   decorators: [
     moduleMetadata({
       declarations: [UploadButtonComponent],

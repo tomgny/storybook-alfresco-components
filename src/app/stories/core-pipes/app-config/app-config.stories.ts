@@ -8,7 +8,7 @@ import { AppConfigComponent } from './app-config.component';
 
 export default {
   component: AppConfigComponent,
-  title: 'Pipes from Core/App Config',
+  title: 'Core/Pipes/App Config',
   decorators: [
     moduleMetadata({
       declarations: [AppConfigComponent],

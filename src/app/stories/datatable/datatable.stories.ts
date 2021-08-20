@@ -11,7 +11,7 @@ import { action } from '@storybook/addon-actions';
 
 export default {
   component: DatatableComponent,
-  title: 'Datatable component',
+  title: 'Core/Components/Datatable',
   decorators: [
     moduleMetadata({
       declarations: [],
