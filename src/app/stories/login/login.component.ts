@@ -23,28 +23,28 @@ export class LoginComponent implements OnInit {
   @Input()
   copyrightText: string;
 
-  /** 
-   * Path to a custom logo image. 
+  /**
+   * Path to a custom logo image.
    */
   @Input()
   logoImageUrl: string;
 
-  /** 
-   * Path to a custom background image. 
+  /**
+   * Path to a custom background image.
    */
   @Input()
   backgroundImageUrl: string;
 
-  /** 
+  /**
    * Sets the URL of the NEED HELP link in the footer.
    */
-   @Input()
+  @Input()
   needHelpLink: string;
 
-  /** 
+  /**
    * Sets the URL of the REGISTER link in the footer.
    */
-   @Input()
+  @Input()
   registerLink: string;
 
   @Input()
@@ -58,6 +58,12 @@ export class LoginComponent implements OnInit {
 
   @Input()
   footerText: string;
+
+  @Input()
+  showCustomContent: boolean;
+
+  @Input()
+  customContent: string;
 
   constructor() {}
 

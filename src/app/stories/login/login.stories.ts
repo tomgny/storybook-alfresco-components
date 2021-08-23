@@ -52,7 +52,9 @@ Default.args = {
   showCustomHeader: false,
   showCustomFooter: false,
   headerText: 'My custom HTML for the header',
-  footerText: 'My custom HTML for the footer'
+  footerText: 'My custom HTML for the footer',
+  showCustomContent: false,
+  customContent: 'Custom content'
 };
 
 export const RememberMeHidden = Template.bind({});
@@ -116,4 +118,11 @@ export const ShowCustomFooter = Template.bind({});
 ShowCustomFooter.args = {
   ...Default.args,
   showCustomFooter: true
+};
+
+export const ShowCustomContent = Template.bind({});
+
+ShowCustomContent.args = {
+  ...Default.args,
+  showCustomContent: true
 };
