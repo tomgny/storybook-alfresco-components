@@ -23,7 +23,12 @@ export default {
       ]
     })
   ],
-  argTypes: {}
+  argTypes: {
+      logoImageUrl: {
+          options: ['./assets/images/alfresco-logo.svg', './assets/images/bpm-background.png'],
+          control: { type: 'radio' }
+      }
+    }
 } as Meta;
 
 const Template: Story<LoginComponent> = (args) => ({
@@ -34,7 +39,9 @@ export const Default = Template.bind({});
 
 Default.args = {
   showRememberMe: true,
-  showLoginActions: true
+  showLoginActions: true,
+  copyrightText: null,
+  logoImageUrl: './assets/images/alfresco-logo.svg'
 };
 
 export const RememberMeHidden = Template.bind({});
@@ -50,3 +57,17 @@ LoginActionsHidden.args = {
   ...Default.args,
   showLoginActions: false
 };
+
+export const CustomCopyrightTextSet = Template.bind({})
+
+CustomCopyrightTextSet.args = {
+    ...Default.args,
+    copyrightText: 'Custom copyright text.'
+}
+
+export const CustomLogoImageSet = Template.bind({})
+
+CustomLogoImageSet.args = {
+    ...Default.args,
+    logoImageUrl: './assets/images/bpm-background.png'
+}

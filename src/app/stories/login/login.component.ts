@@ -17,6 +17,20 @@ export class LoginComponent implements OnInit {
   @Input()
   showLoginActions: boolean;
 
+  /**
+   * The copyright text below the login box.
+   */
+  @Input()
+  copyrightText: string;
+
+  /** Path to a custom logo image. */
+  @Input()
+  logoImageUrl: string;
+
+  /** Path to a custom background image. */
+  @Input()
+  backgroundImageUrl: string;
+
   constructor() {}
 
   ngOnInit(): void {}
