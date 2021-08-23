@@ -20,5 +20,15 @@ export class AppConfigComponent {
 
   configForChaining: string = 'oauth2.publicUrls';
 
+  dataSource: string[];
+  dataSourceChaining: string[];
+  displayedColumns = ['propertyName', 'propertyValue'];
+  displayedColumnsChaining = ['propertyName', 'propertyValueBeforeChaining', 'propertyValueAfterChaining'];
+
   constructor() {}
+
+  ngOnInit() {
+    this.dataSource = [this.config];
+    this.dataSourceChaining = [this.configForChaining];
+  }
 }
