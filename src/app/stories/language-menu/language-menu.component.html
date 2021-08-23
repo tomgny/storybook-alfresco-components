@@ -11,21 +11,17 @@
   <button mat-menu-item [matMenuTriggerFor]="langMenu">Languages</button>
 </mat-menu>
 
-<table>
-  <tr>
-    <th>Key to translate</th>
-    <th>Value after translation</th>
-  </tr>
-  <tr>
-    <td>{{ key1 }}</td>
-    <td>{{ key1 | translate }}</td>
-  </tr>
-  <tr>
-    <td>{{ key2 }}</td>
-    <td>{{ key2 | translate }}</td>
-  </tr>
-  <tr>
-    <td>{{ key3 }}</td>
-    <td>{{ key3 | translate }}</td>
-  </tr>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <ng-container matColumnDef="key">
+    <th mat-header-cell *matHeaderCellDef class="header_centered">Key</th>
+    <td mat-cell *matCellDef="let element" class="cell_padded">{{ element }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="translation">
+    <th mat-header-cell *matHeaderCellDef class="header_centered">Translation</th>
+    <td mat-cell *matCellDef="let element" class="cell_padded">{{ element | translate }}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
 </table>

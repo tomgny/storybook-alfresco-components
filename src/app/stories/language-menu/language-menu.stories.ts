@@ -59,7 +59,9 @@ export default {
       control: { type: 'check' }
     },
     languagesConfig: { table: { disable: true } },
-    ngOnInit: { table: { disable: true } }
+    ngOnInit: { table: { disable: true } },
+    dataSource: { table: { disable: true } },
+    displayedColumns: { table: { disable: true } }
   }
 } as Meta;
 

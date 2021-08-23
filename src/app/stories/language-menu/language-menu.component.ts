@@ -94,9 +94,14 @@ export class LanguageMenuComponent implements OnInit {
     }
   ];
 
+  dataSource;
+  displayedColumns: string[] = ['key', 'translation'];
+
   constructor(private languageService: LanguageService) {}
 
   ngOnInit(): void {
+    this.dataSource = [this.key1, this.key2, this.key3];
+
     this.languagesConfig = this.languagesConfig.filter((value) => this.languages.includes(value.label));
     this.languageService.setLanguages(this.languagesConfig);
   }

@@ -1,18 +1,12 @@
-td,
-th {
-  border: 1px solid;
-  text-align: left;
-  padding: 5px;
+table {
+  margin-top: 15px;
+  width: 65%;
 }
 
-th {
+.header_centered {
   text-align: center;
 }
 
-tr:nth-child(odd) {
-  background-color: #b4b1b1;
-}
-
-table {
-  margin-top: 30px;
+.cell_padded {
+  padding: 10px;
 }
