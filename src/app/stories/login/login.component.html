@@ -1,5 +1,12 @@
 <adf-login
-[showRememberMe]="showRememberMe"
-[showLoginActions]="showLoginActions"
-[copyrightText]="copyrightText"
-[logoImageUrl]="logoImageUrl"></adf-login>
+  [showRememberMe]="showRememberMe"
+  [showLoginActions]="showLoginActions"
+  [copyrightText]="copyrightText"
+  [logoImageUrl]="logoImageUrl"
+  [backgroundImageUrl]="backgroundImageUrl"
+  [needHelpLink]="needHelpLink"
+  [registerLink]="registerLink"
+>
+  <adf-login-header *ngIf="showCustomHeader"><ng-template>{{ headerText }}</ng-template></adf-login-header>
+  <adf-login-footer *ngIf="showCustomFooter"><ng-template>{{ footerText }}</ng-template></adf-login-footer>
+</adf-login>

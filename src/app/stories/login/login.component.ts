@@ -23,13 +23,41 @@ export class LoginComponent implements OnInit {
   @Input()
   copyrightText: string;
 
-  /** Path to a custom logo image. */
+  /** 
+   * Path to a custom logo image. 
+   */
   @Input()
   logoImageUrl: string;
 
-  /** Path to a custom background image. */
+  /** 
+   * Path to a custom background image. 
+   */
   @Input()
   backgroundImageUrl: string;
+
+  /** 
+   * Sets the URL of the NEED HELP link in the footer.
+   */
+   @Input()
+  needHelpLink: string;
+
+  /** 
+   * Sets the URL of the REGISTER link in the footer.
+   */
+   @Input()
+  registerLink: string;
+
+  @Input()
+  showCustomHeader: boolean;
+
+  @Input()
+  showCustomFooter: boolean;
+
+  @Input()
+  headerText: string;
+
+  @Input()
+  footerText: string;
 
   constructor() {}
 

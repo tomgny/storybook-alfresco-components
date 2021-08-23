@@ -24,11 +24,15 @@ export default {
     })
   ],
   argTypes: {
-      logoImageUrl: {
-          options: ['./assets/images/alfresco-logo.svg', './assets/images/bpm-background.png'],
-          control: { type: 'radio' }
-      }
+    logoImageUrl: {
+      options: ['./assets/images/alfresco-logo.svg', './assets/images/bpm-background.png'],
+      control: { type: 'radio' }
+    },
+    backgroundImageUrl: {
+      options: ['./assets/images/background.svg', './assets/images/Wallpaper-BG-generic.svg'],
+      control: { type: 'radio' }
     }
+  }
 } as Meta;
 
 const Template: Story<LoginComponent> = (args) => ({
@@ -40,8 +44,15 @@ export const Default = Template.bind({});
 Default.args = {
   showRememberMe: true,
   showLoginActions: true,
-  copyrightText: null,
-  logoImageUrl: './assets/images/alfresco-logo.svg'
+  copyrightText: '\u00A9 2016 Alfresco Software, Inc. All Rights Reserved.',
+  logoImageUrl: './assets/images/alfresco-logo.svg',
+  backgroundImageUrl: './assets/images/background.svg',
+  registerLink: '',
+  needHelpLink: '',
+  showCustomHeader: false,
+  showCustomFooter: false,
+  headerText: 'My custom HTML for the header',
+  footerText: 'My custom HTML for the footer'
 };
 
 export const RememberMeHidden = Template.bind({});
@@ -58,16 +69,51 @@ LoginActionsHidden.args = {
   showLoginActions: false
 };
 
-export const CustomCopyrightTextSet = Template.bind({})
+export const CustomCopyrightTextSet = Template.bind({});
 
 CustomCopyrightTextSet.args = {
-    ...Default.args,
-    copyrightText: 'Custom copyright text.'
-}
+  ...Default.args,
+  copyrightText: 'Custom copyright text.'
+};
 
-export const CustomLogoImageSet = Template.bind({})
+export const CustomLogoImageSet = Template.bind({});
 
 CustomLogoImageSet.args = {
-    ...Default.args,
-    logoImageUrl: './assets/images/bpm-background.png'
-}
+  ...Default.args,
+  logoImageUrl: './assets/images/bpm-background.png'
+};
+
+export const CustomBackgroundImageSet = Template.bind({});
+
+CustomBackgroundImageSet.args = {
+  ...Default.args,
+  backgroundImageUrl: './assets/images/Wallpaper-BG-generic.svg'
+};
+
+export const CustomNeedHelpLinkSet = Template.bind({});
+
+CustomNeedHelpLinkSet.args = {
+  ...Default.args,
+  needHelpLink: '?path=/story/core-components-login--default'
+};
+
+export const CustomRegisterLinkSet = Template.bind({});
+
+CustomRegisterLinkSet.args = {
+  ...Default.args,
+  registerLink: '?path=/story/core-components-login--default'
+};
+
+export const ShowCustomHeader = Template.bind({});
+
+ShowCustomHeader.args = {
+  ...Default.args,
+  showCustomHeader: true
+};
+
+export const ShowCustomFooter = Template.bind({});
+
+ShowCustomFooter.args = {
+  ...Default.args,
+  showCustomFooter: true
+};
