@@ -24,8 +24,6 @@ export default {
     })
   ],
   argTypes: {
-    ngOnInit: { table: { disable: true } },
-    dataSource: { table: { disable: true } },
     displayedColumns: { table: { disable: true } }
   }
 } as Meta;
@@ -37,7 +35,7 @@ const Template: Story<FormatSpaceComponent> = (args) => ({
 export const Default = Template.bind({});
 
 Default.args = {
-  textToFormat: 'LOREM IPSUM DOLOR SIT AMET'
+  textsToFormat: ['LOREM IPSUM DOLOR SIT AMET']
 };
 
 export const CustomReplaceCharSet = Template.bind({});

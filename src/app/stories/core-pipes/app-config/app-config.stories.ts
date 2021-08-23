@@ -26,8 +26,6 @@ export default {
   argTypes: {
     configForChaining: { table: { disable: true } },
     showAppConfig: { table: { disable: true } },
-    dataSource: { table: { disable: true } },
-    displayedColumns: { table: { disable: true } },
     dataSourceChaining: { table: { disable: true } },
     displayedColumnsChaining: { table: { disable: true } }
   }
@@ -41,14 +39,14 @@ export const Default = Template.bind({});
 
 Default.args = {
   showAppConfig: true,
-  config: 'oauth2.host'
+  configs: ['oauth2.host']
 };
 
 export const FallbackTextSet = Template.bind({});
 
 FallbackTextSet.args = {
   ...Default.args,
-  config: 'lorem.ipsum',
+  configs: ['lorem.ipsum'],
   fallbackText: 'Not able to find settings you are looking for.'
 };
 

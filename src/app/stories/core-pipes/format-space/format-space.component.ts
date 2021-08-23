@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class FormatSpaceComponent {
   @Input()
-  textToFormat: string;
+  textsToFormat: string[];
 
   @Input()
   replaceChar: string = '_';
@@ -18,12 +18,7 @@ export class FormatSpaceComponent {
   @Input()
   lowercase: boolean = true;
 
-  dataSource: string[];
   displayedColumns = ['textBeforeFormatting', 'textAfterFormatting'];
 
   constructor() {}
-
-  ngOnInit() {
-    this.dataSource = [this.textToFormat];
-  }
 }

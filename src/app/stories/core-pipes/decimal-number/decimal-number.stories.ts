@@ -31,7 +31,6 @@ export default {
     ngOnInit: { table: { disable: true } },
     digitsInfo: { control: { type: null } },
     validateAndSetDigitsInfoValues: { table: { disable: true } },
-    dataSource: { table: { disable: true } },
     displayedColumns: { table: { disable: true } }
   }
 } as Meta;
@@ -43,7 +42,7 @@ const Template: Story<DecimalNumberComponent> = (args) => ({
 export const Default = Template.bind({});
 
 Default.args = {
-  numberToTransform: 1234.567
+  numbersToTransform: [1234.567]
 };
 
 export const CustomConfigurationSet = Template.bind({});

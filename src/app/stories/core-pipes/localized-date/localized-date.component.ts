@@ -8,7 +8,7 @@ import { LocalizationService } from '../localization.service';
 })
 export class LocalizedDateComponent implements OnInit {
   @Input()
-  date: Date;
+  dates: Date[];
 
   /**
    * A locale id for the locale format rules to use.
@@ -22,14 +22,11 @@ export class LocalizedDateComponent implements OnInit {
   @Input()
   format: string = 'medium';
 
-  dataSource: Date[];
   displayedColumns = ['dateBeforeLocalization', 'dateAfterLocalization'];
 
   constructor(private localizationService: LocalizationService) {}
 
   ngOnInit(): void {
-    this.dataSource = [this.date];
-
     if (this.locale !== 'en-US') this.localizationService.registerLocales();
   }
 }

@@ -10,7 +10,7 @@ export class AppConfigComponent {
   showAppConfig: boolean;
 
   @Input()
-  config: string;
+  configs: string[];
 
   /**
    * Value will be used if the property name is not found.
@@ -18,17 +18,10 @@ export class AppConfigComponent {
   @Input()
   fallbackText: string = '';
 
-  configForChaining: string = 'oauth2.publicUrls';
+  configsForChaining: string[] = ['oauth2.publicUrls'];
 
-  dataSource: string[];
-  dataSourceChaining: string[];
   displayedColumns = ['propertyName', 'propertyValue'];
   displayedColumnsChaining = ['propertyName', 'propertyValueBeforeChaining', 'propertyValueAfterChaining'];
 
   constructor() {}
-
-  ngOnInit() {
-    this.dataSource = [this.config];
-    this.dataSourceChaining = [this.configForChaining];
-  }
 }

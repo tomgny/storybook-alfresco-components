@@ -1,5 +1,5 @@
 <div *ngIf="showAppConfig">
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <table mat-table [dataSource]="configs" class="mat-elevation-z8">
     <ng-container matColumnDef="propertyName">
       <th mat-header-cell *matHeaderCellDef>Config property name</th>
       <td mat-cell *matCellDef="let element">{{ element }}</td>
@@ -16,7 +16,7 @@
 </div>
 
 <div *ngIf="!showAppConfig">
-  <table mat-table [dataSource]="dataSourceChaining" class="mat-elevation-z8" style="width: 60%">
+  <table mat-table [dataSource]="configsForChaining" class="mat-elevation-z8" style="width: 60%">
     <ng-container matColumnDef="propertyName">
       <th mat-header-cell *matHeaderCellDef>Config property name</th>
       <td mat-cell *matCellDef="let element">{{ element }}</td>

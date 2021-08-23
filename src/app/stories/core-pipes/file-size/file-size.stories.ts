@@ -30,7 +30,6 @@ export default {
     },
     ngOnInit: { table: { disable: true } },
     showFileSize: { table: { disable: true } },
-    dataSource: { table: { disable: true } },
     displayedColumns: { table: { disable: true } }
   }
 } as Meta;
@@ -42,31 +41,31 @@ const Template: Story<FileSizeComponent> = (args) => ({
 export const B = Template.bind({});
 
 B.args = {
-  sizeInBytes: 587
+  sizesInBytes: [587]
 };
 
 export const KB = Template.bind({});
 
 KB.args = {
-  sizeInBytes: 1057
+  sizesInBytes: [1057]
 };
 
 export const MB = Template.bind({});
 
 MB.args = {
-  sizeInBytes: 1051237
+  sizesInBytes: [1051237]
 };
 
 export const GB = Template.bind({});
 
 GB.args = {
-  sizeInBytes: 10512331237
+  sizesInBytes: [10512331237]
 };
 
 export const DifferentDecimalPlacesNumberSet = Template.bind({});
 
 DifferentDecimalPlacesNumberSet.args = {
-  sizeInBytes: 12312312312333,
+  sizesInBytes: [12312312312333],
   decimalPlacesNumber: 3
 };
 
