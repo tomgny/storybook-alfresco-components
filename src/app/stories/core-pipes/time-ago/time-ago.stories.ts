@@ -32,6 +32,8 @@ export default {
     textForDate: { table: { disable: true } },
     ngOnInit: { table: { disable: true } },
     getStringBasedOnDate: { table: { disable: true } },
+    dataSource: { table: { disable: true } },
+    displayedColumns: { table: { disable: true } }
   }
 } as Meta;
 

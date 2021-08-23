@@ -19,9 +19,14 @@ export class FileSizeComponent implements OnInit {
   @Input()
   decimalPlacesNumber: number = 2;
 
+  dataSource: number[];
+  displayedColumns = ['number', 'bytes'];
+
   constructor(private translationService: TranslationService) {}
 
   ngOnInit(): void {
+    this.dataSource = [this.sizeInBytes];
+
     if (this.locale !== 'en-US') this.translationService.use(this.locale);
   }
 }

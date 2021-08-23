@@ -18,5 +18,12 @@ export class FormatSpaceComponent {
   @Input()
   lowercase: boolean = true;
 
+  dataSource: string[];
+  displayedColumns = ['textBeforeFormatting', 'textAfterFormatting'];
+
   constructor() {}
+
+  ngOnInit() {
+    this.dataSource = [this.textToFormat];
+  }
 }

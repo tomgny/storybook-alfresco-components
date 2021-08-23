@@ -25,6 +25,8 @@ export default {
   ],
   argTypes: {
     ngOnInit: { table: { disable: true } },
+    dataSource: { table: { disable: true } },
+    displayedColumns: { table: { disable: true } }
   }
 } as Meta;
 

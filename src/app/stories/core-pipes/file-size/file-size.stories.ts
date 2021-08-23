@@ -30,6 +30,8 @@ export default {
     },
     ngOnInit: { table: { disable: true } },
     showFileSize: { table: { disable: true } },
+    dataSource: { table: { disable: true } },
+    displayedColumns: { table: { disable: true } }
   }
 } as Meta;
 

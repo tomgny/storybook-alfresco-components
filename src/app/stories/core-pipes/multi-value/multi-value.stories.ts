@@ -22,7 +22,12 @@ export default {
         BrowserAnimationsModule
       ]
     })
-  ]
+  ],
+  argTypes: {
+    ngOnInit: { table: { disable: true } },
+    dataSource: { table: { disable: true } },
+    displayedColumns: { table: { disable: true } }
+  }
 } as Meta;
 
 const Template: Story<MultiValueComponent> = (args) => ({

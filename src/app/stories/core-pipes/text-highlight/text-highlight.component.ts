@@ -15,5 +15,12 @@ export class TextHighlightComponent {
   @Input()
   wordsToHighlight: string;
 
-  constructor() { }
+  dataSource: string[];
+  displayedColumns = ['textBeforeHighlighting', 'textAfterHighlighting'];
+
+  constructor() {}
+
+  ngOnInit() {
+    this.dataSource = [this.text];
+  }
 }
