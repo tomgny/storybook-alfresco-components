@@ -25,7 +25,11 @@ export default {
   ],
   argTypes: {
     configForChaining: { table: { disable: true } },
-    showAppConfig: { table: { disable: true } }
+    showAppConfig: { table: { disable: true } },
+    dataSource: { table: { disable: true } },
+    displayedColumns: { table: { disable: true } },
+    dataSourceChaining: { table: { disable: true } },
+    displayedColumnsChaining: { table: { disable: true } }
   }
 } as Meta;
 

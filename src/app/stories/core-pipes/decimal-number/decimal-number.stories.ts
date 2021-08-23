@@ -30,7 +30,9 @@ export default {
     },
     ngOnInit: { table: { disable: true } },
     digitsInfo: { control: { type: null } },
-    validateAndSetDigitsInfoValues: { table: { disable: true } }
+    validateAndSetDigitsInfoValues: { table: { disable: true } },
+    dataSource: { table: { disable: true } },
+    displayedColumns: { table: { disable: true } }
   }
 } as Meta;
 
