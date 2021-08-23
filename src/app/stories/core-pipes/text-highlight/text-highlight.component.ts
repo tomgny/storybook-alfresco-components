@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class TextHighlightComponent {
   @Input()
-  text: string;
+  texts: string[];
 
   /**
    * String to search for in the text. Any occurrences of the string will be highlighted with added HTML. Can contain spaces, in which case each separate "word" in the string will be highlighted individually.
@@ -15,12 +15,7 @@ export class TextHighlightComponent {
   @Input()
   wordsToHighlight: string;
 
-  dataSource: string[];
   displayedColumns = ['textBeforeHighlighting', 'textAfterHighlighting'];
 
   constructor() {}
-
-  ngOnInit() {
-    this.dataSource = [this.text];
-  }
 }

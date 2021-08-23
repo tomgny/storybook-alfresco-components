@@ -24,8 +24,6 @@ export default {
     })
   ],
   argTypes: {
-    ngOnInit: { table: { disable: true } },
-    dataSource: { table: { disable: true } },
     displayedColumns: { table: { disable: true } }
   }
 } as Meta;
@@ -38,7 +36,8 @@ export const Default = Template.bind({});
 
 Default.args = {
   showTextHighlight: true,
-  text:
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere varius fermentum. Aliquam pretium lacus sed tellus mollis dictum. Curabitur bibendum iaculis scelerisque.',
+  texts: [
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere varius fermentum. Aliquam pretium lacus sed tellus mollis dictum. Curabitur bibendum iaculis scelerisque.'
+  ],
   wordsToHighlight: 'ipsum consectetur posuere'
 };
