@@ -31,7 +31,9 @@ export default {
     backgroundImageUrl: {
       options: ['./assets/images/background.svg', './assets/images/Wallpaper-BG-generic.svg'],
       control: { type: 'radio' }
-    }
+    },
+    alfrescoLogin: { table: { disable: true } },
+    customValidation: { control: { type: null } },
   }
 } as Meta;
 
@@ -54,7 +56,8 @@ Default.args = {
   headerText: 'My custom HTML for the header',
   footerText: 'My custom HTML for the footer',
   showCustomContent: false,
-  customContent: 'Custom content'
+  customContent: 'Custom content',
+  useCustomValidation: false
 };
 
 export const RememberMeHidden = Template.bind({});
@@ -125,4 +128,11 @@ export const ShowCustomContent = Template.bind({});
 ShowCustomContent.args = {
   ...Default.args,
   showCustomContent: true
+};
+
+export const UseCustomValidation = Template.bind({});
+
+UseCustomValidation.args = {
+  ...Default.args,
+  useCustomValidation: true
 };

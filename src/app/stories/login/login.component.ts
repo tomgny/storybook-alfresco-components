@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Validators } from '@angular/forms';
 
 @Component({
   selector: 'aca-login',
@@ -65,7 +66,31 @@ export class LoginComponent implements OnInit {
   @Input()
   customContent: string;
 
+  @Input()
+  useCustomValidation: boolean;
+
+  @ViewChild('alfrescoLogin')
+  alfrescoLogin: any;
+
+  /**
+   * Custom validation rules for the login form.
+   */
+  fieldsValidation: any;
+
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if (this.useCustomValidation) {
+      this.fieldsValidation = {
+        username: ['', Validators.compose([Validators.required, Validators.minLength(10)])],
+        password: ['', Validators.required]
+      };
+    }
+  }
+
+  ngAfterViewInit() {
+    if (this.useCustomValidation) {
+      this.alfrescoLogin.addCustomValidationError('username', 'minlength', 'Username must be at least 10 characters.', { minLength: 10 });
+    }
+  }
 }
