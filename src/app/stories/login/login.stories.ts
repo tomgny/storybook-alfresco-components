@@ -1,9 +1,10 @@
-import { CoreModule } from '@alfresco/adf-core';
+import { AuthenticationService, CoreModule } from '@alfresco/adf-core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { APP_ROUTES } from '../../app.routes';
 import { AppCommonModule } from '../../components/common/common.module';
+import { AuthenticationStubService } from './authentication-stub.service';
 import { LoginComponent } from './login.component';
 
 export default {
@@ -20,7 +21,8 @@ export default {
         CoreModule.forRoot(),
         AppCommonModule,
         BrowserAnimationsModule
-      ]
+      ],
+      providers: [{ provide: AuthenticationService, useClass: AuthenticationStubService }]
     })
   ],
   argTypes: {
@@ -33,7 +35,7 @@ export default {
       control: { type: 'radio' }
     },
     alfrescoLogin: { table: { disable: true } },
-    customValidation: { control: { type: null } },
+    customValidation: { control: { type: null } }
   }
 } as Meta;
 
@@ -57,7 +59,8 @@ Default.args = {
   footerText: 'My custom HTML for the footer',
   showCustomContent: false,
   customContent: 'Custom content',
-  useCustomValidation: false
+  useCustomValidation: false,
+  ssoLogin: false
 };
 
 export const RememberMeHidden = Template.bind({});
@@ -135,4 +138,11 @@ export const UseCustomValidation = Template.bind({});
 UseCustomValidation.args = {
   ...Default.args,
   useCustomValidation: true
+};
+
+export const SsoLogin = Template.bind({});
+
+SsoLogin.args = {
+  ...Default.args,
+  ssoLogin: true
 };

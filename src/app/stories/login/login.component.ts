@@ -1,5 +1,7 @@
+import { AppConfigService } from '@alfresco/adf-core';
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { Validators } from '@angular/forms';
+import { setIsOuathReturnValue } from './authentication-stub.service';
 
 @Component({
   selector: 'aca-login',
@@ -69,6 +71,9 @@ export class LoginComponent implements OnInit {
   @Input()
   useCustomValidation: boolean;
 
+  @Input()
+  ssoLogin: boolean;
+
   @ViewChild('alfrescoLogin')
   alfrescoLogin: any;
 
@@ -77,9 +82,23 @@ export class LoginComponent implements OnInit {
    */
   fieldsValidation: any;
 
-  constructor() {}
+  constructor(private appConfigService: AppConfigService) {}
+
+  ngOnChanges() {
+    this.appConfigService.config['authType'] = 'OAUTH';
+    this.appConfigService.config['oauth2'] = {
+      ...this.appConfigService.config['oauth2'],
+      host: 'https://apadev.envalfresco.com/auth/realms/alfresco',
+      silentLogin: false,
+      redirectSilentIframeUri: '/assets/silent-refresh.html'
+    };
+    console.log('sso login', this.ssoLogin);
+    setIsOuathReturnValue(this.ssoLogin);
+  }
 
   ngOnInit(): void {
+    console.log(this.appConfigService.config);
+
     if (this.useCustomValidation) {
       this.fieldsValidation = {
         username: ['', Validators.compose([Validators.required, Validators.minLength(10)])],
