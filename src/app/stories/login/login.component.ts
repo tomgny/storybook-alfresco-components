@@ -74,6 +74,9 @@ export class LoginComponent implements OnInit {
   @Input()
   ssoLogin: boolean;
 
+  @Input()
+  silentLogin: boolean;
+
   @ViewChild('alfrescoLogin')
   alfrescoLogin: any;
 
@@ -88,17 +91,12 @@ export class LoginComponent implements OnInit {
     this.appConfigService.config['authType'] = 'OAUTH';
     this.appConfigService.config['oauth2'] = {
       ...this.appConfigService.config['oauth2'],
-      host: 'https://apadev.envalfresco.com/auth/realms/alfresco',
-      silentLogin: false,
-      redirectSilentIframeUri: '/assets/silent-refresh.html'
+      silentLogin: this.silentLogin
     };
-    console.log('sso login', this.ssoLogin);
     setIsOuathReturnValue(this.ssoLogin);
   }
 
   ngOnInit(): void {
-    console.log(this.appConfigService.config);
-
     if (this.useCustomValidation) {
       this.fieldsValidation = {
         username: ['', Validators.compose([Validators.required, Validators.minLength(10)])],

@@ -14,7 +14,7 @@ export const setIsOuathReturnValue = (value: boolean) => {
 export class AuthenticationStubService {
   onLogin: ReplaySubject<any> = new ReplaySubject<any>(1);
   onLogout: ReplaySubject<any> = new ReplaySubject<any>(1);
-  private redirectUrl: RedirectionModel = null;
+  redirectUrl: RedirectionModel = null;
 
   isEcmLoggedIn = () => false;
   isLoggedIn = () => false;
@@ -27,7 +27,6 @@ export class AuthenticationStubService {
 
   setRedirect(url: RedirectionModel) {
     this.redirectUrl = url;
-    console.log(this.redirectUrl);
   }
 
   constructor() {}
