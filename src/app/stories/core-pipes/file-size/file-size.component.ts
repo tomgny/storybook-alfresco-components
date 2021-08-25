@@ -11,13 +11,15 @@ export class FileSizeComponent implements OnInit {
   locale: string = 'en-US';
 
   @Input()
-  sizeInBytes: number;
+  sizesInBytes: number[];
 
   /**
    * The number of decimal places to use for the value
    */
   @Input()
   decimalPlacesNumber: number = 2;
+
+  displayedColumns = ['number', 'bytes'];
 
   constructor(private translationService: TranslationService) {}
 

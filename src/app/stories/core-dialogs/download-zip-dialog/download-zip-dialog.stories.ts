@@ -1,17 +1,18 @@
-import { CoreModule } from '@alfresco/adf-core';
+import { AlfrescoApiService, CoreModule } from '@alfresco/adf-core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { APP_ROUTES } from '../../../app.routes';
 import { AppCommonModule } from '../../../components/common/common.module';
-import { MultiValueComponent } from './multi-value.component';
+import { DownloadZipDialogComponent } from './download-zip-dialog.component';
+import { AlfrescoApiServiceStub } from './mock/stub-services';
 
 export default {
-  component: MultiValueComponent,
-  title: 'Core/Pipes/Multi Value',
+  component: DownloadZipDialogComponent,
+  title: 'Core/Dialogs/Download ZIP',
   decorators: [
     moduleMetadata({
-      declarations: [MultiValueComponent],
+      declarations: [DownloadZipDialogComponent],
       imports: [
         RouterModule.forRoot(APP_ROUTES, {
           useHash: true,
@@ -20,29 +21,28 @@ export default {
         CoreModule.forRoot(),
         AppCommonModule,
         BrowserAnimationsModule
-      ]
+      ],
+      providers: [{ provide: AlfrescoApiService, useClass: AlfrescoApiServiceStub }]
     })
   ],
   argTypes: {
     ngOnInit: { table: { disable: true } },
-    dataSource: { table: { disable: true } },
-    displayedColumns: { table: { disable: true } }
+    openDownloadZipDialog: { table: { disable: true } }
   }
 } as Meta;
 
-const Template: Story<MultiValueComponent> = (args) => ({
+const Template: Story<DownloadZipDialogComponent> = (args) => ({
   props: args
 });
 
 export const Default = Template.bind({});
 
 Default.args = {
-  words: ['cat', 'dog', 'parrot', 'dove', 'rabbit']
+  showLoading: false
 };
 
-export const CustomSeparatorSet = Template.bind({});
+export const LoadingDialog = Template.bind({});
 
-CustomSeparatorSet.args = {
-  ...Default.args,
-  separator: ' :) '
+LoadingDialog.args = {
+  showLoading: true
 };

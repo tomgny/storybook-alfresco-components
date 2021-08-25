@@ -1,27 +1,38 @@
 <div *ngIf="showAppConfig">
-  <table>
-    <tr>
-      <th>Config property name</th>
-      <th>Config property value obtained by the pipe</th>
-    </tr>
-    <tr>
-      <td>{{ config }}</td>
-      <td>{{ config | adfAppConfig: fallbackText }}</td>
-    </tr>
+  <table mat-table [dataSource]="configs" class="mat-elevation-z8">
+    <ng-container matColumnDef="propertyName">
+      <th mat-header-cell *matHeaderCellDef>Config property name</th>
+      <td mat-cell *matCellDef="let element">{{ element }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="propertyValue">
+      <th mat-header-cell *matHeaderCellDef>Config property value obtained by the pipe</th>
+      <td mat-cell *matCellDef="let element">{{ element | adfAppConfig: fallbackText }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
   </table>
 </div>
 
 <div *ngIf="!showAppConfig">
-  <table>
-    <tr>
-      <th>Config property name</th>
-      <th>Config property value obtained by the pipe without chaining</th>
-      <th>Config property value obtained by the pipe with chaining</th>
-    </tr>
-    <tr>
-      <td>{{ configForChaining }}</td>
-      <td>{{ configForChaining | adfAppConfig }}</td>
-      <td>{{ configForChaining | adfAppConfig | multiValue: ' --- ' }}</td>
-    </tr>
+  <table mat-table [dataSource]="configsForChaining" class="mat-elevation-z8" style="width: 60%">
+    <ng-container matColumnDef="propertyName">
+      <th mat-header-cell *matHeaderCellDef>Config property name</th>
+      <td mat-cell *matCellDef="let element">{{ element }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="propertyValueBeforeChaining">
+      <th mat-header-cell *matHeaderCellDef>Config property value obtained by the pipe without chaining</th>
+      <td mat-cell *matCellDef="let element">{{ element | adfAppConfig }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="propertyValueAfterChaining">
+      <th mat-header-cell *matHeaderCellDef>Config property value obtained by the pipe with chaining</th>
+      <td mat-cell *matCellDef="let element">{{ element | adfAppConfig | multiValue: ' --- ' }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumnsChaining"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumnsChaining"></tr>
   </table>
 </div>

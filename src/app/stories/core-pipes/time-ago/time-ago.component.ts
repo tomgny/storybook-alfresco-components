@@ -19,9 +19,14 @@ export class TimeAgoComponent implements OnInit {
 
   textForDate: string;
 
+  dataSource: Date[];
+  displayedColumns = ['date', 'timeAgo'];
+
   constructor(private localizationService: LocalizationService) {}
 
   ngOnInit(): void {
+    this.dataSource = [this.date]
+
     if (this.date) this.textForDate = this.getStringBasedOnDate(this.date);
 
     if (this.locale !== 'en-US') this.localizationService.registerLocales();
