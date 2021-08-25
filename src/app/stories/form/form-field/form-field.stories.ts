@@ -56,9 +56,18 @@ const dynamicTableField = new FormFieldModel(fakeForm, {
   fields: [amountField, booleanField, dateField, readOnlyTextField, readOnlyField, dropdownField],
   columns: { fields: [amountField, amountField] }
 });
-const functionalGroupField = new FormFieldModel(fakeForm, { id: 'functionalGroupField', placeholder: 'Group name (Admins, Users)', type: 'functional-group' });
+const functionalGroupField = new FormFieldModel(fakeForm, {
+  id: 'functionalGroupField',
+  placeholder: 'Group name (Admins, Users)',
+  type: 'functional-group'
+});
 const groupField = new FormFieldModel(fakeForm, { id: 'groupField', value: 'users', type: 'group' });
-const hyperlinkField = new FormFieldModel(fakeForm, { id: 'hyperlinkField', value: 'https://www.alfresco.com/', displayText: 'Alfresco hyperlink', type: 'hyperlink' });
+const hyperlinkField = new FormFieldModel(fakeForm, {
+  id: 'hyperlinkField',
+  value: 'https://www.alfresco.com/',
+  displayText: 'Alfresco hyperlink',
+  type: 'hyperlink'
+});
 const multiLineTextField = new FormFieldModel(fakeForm, { id: 'multiLineTextField', value: 'Multi\nLine\nText\nField', type: 'multi-line-text' });
 const integerField = new FormFieldModel(fakeForm, { id: 'integerField', value: 21, name: 'Type only integer', type: 'integer' });
 const peopleField = new FormFieldModel(fakeForm, { id: 'peopleField', value: 'Users', name: 'Users', type: 'people' });

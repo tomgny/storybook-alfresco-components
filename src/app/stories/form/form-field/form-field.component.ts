@@ -12,5 +12,5 @@ export class FormFieldComponent {
    * not create this data manually but instead create the form in APS and export it to get to all the FormFieldModel definitions.
    */
   @Input()
-  field: FormFieldModel
+  field: FormFieldModel;
 }

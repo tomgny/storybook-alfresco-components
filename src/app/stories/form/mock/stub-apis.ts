@@ -1,5 +1,3 @@
 export class ModelsApiStub {}
 
-export class GroupApiStub {
-  
-}
+export class GroupApiStub {}

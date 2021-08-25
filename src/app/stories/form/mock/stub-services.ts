@@ -44,28 +44,21 @@ export class FormServiceStub {
       ].filter((group) => group.name.toLowerCase().startsWith(filter.toLowerCase()))
     );
   }
-  // id
-  // email?: string;
-  //   firstName?: string;
-  //   lastName?: string;
-  //   pictureId?: number;
-  //   externalId?: string;
-  //   userImage?: string;
 
-  //id: '1', firstName: 'Leanne', lastName: 'Graham', pictureId: 1, externalId: '1', userImage: '/test'
-
-  getWorkflowUsers(_filter: string, _groupId?: string): Observable<UserProcessModel[]> {
-    return of([
-      new UserProcessModel({ id: 1, firstName: 'Leanne', lastName: 'Graham' }),
-      // new UserProcessModel({ id: 2, firstName: 'Ervin', lastName: 'Howell' }),
-      // new UserProcessModel({ id: 3, firstName: 'Clementine', lastName: 'Bauch' }),
-      // new UserProcessModel({ id: 4, firstName: 'Patricia', lastName: 'Lebsack' }),
-      // new UserProcessModel({ id: 5, firstName: 'Chelsey', lastName: 'Dietrich' }),
-      // new UserProcessModel({ id: 6, firstName: 'Dennis', lastName: 'Schulist' }),
-      // new UserProcessModel({ id: 7, firstName: 'Kurtis', lastName: 'Weissnat' }),
-      // new UserProcessModel({ id: 8, firstName: 'Nicholas', lastName: 'Runolfsdottir' }),
-      // new UserProcessModel({ id: 9, firstName: 'Glenna', lastName: 'Reichert' }),
-      // new UserProcessModel({ id: 10, firstName: 'Clementina', lastName: 'DuBuque' }),
-    ]);
+  getWorkflowUsers(filter: string, _groupId?: string): Observable<UserProcessModel[]> {
+    return of(
+      [
+        new UserProcessModel({ id: 1, firstName: 'Leanne', lastName: 'Graham' }),
+        new UserProcessModel({ id: 2, firstName: 'Ervin', lastName: 'Howell' }),
+        new UserProcessModel({ id: 3, firstName: 'Clementine', lastName: 'Bauch' }),
+        new UserProcessModel({ id: 4, firstName: 'Patricia', lastName: 'Lebsack' }),
+        new UserProcessModel({ id: 5, firstName: 'Chelsey', lastName: 'Dietrich' }),
+        new UserProcessModel({ id: 6, firstName: 'Dennis', lastName: 'Schulist' }),
+        new UserProcessModel({ id: 7, firstName: 'Kurtis', lastName: 'Weissnat' }),
+        new UserProcessModel({ id: 8, firstName: 'Nicholas', lastName: 'Runolfsdottir' }),
+        new UserProcessModel({ id: 9, firstName: 'Glenna', lastName: 'Reichert' }),
+        new UserProcessModel({ id: 10, firstName: 'Clementina', lastName: 'DuBuque' })
+      ].filter((user) => user.firstName.toLowerCase().startsWith(filter) || user.lastName.toLowerCase().startsWith(filter))
+    );
   }
 }
