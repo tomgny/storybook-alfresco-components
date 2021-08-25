@@ -4,8 +4,8 @@ import { RouterModule } from '@angular/router';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { APP_ROUTES } from '../../app.routes';
 import { AppCommonModule } from '../../components/common/common.module';
-import { AlfrescoApiStubService } from './alfresco-api-stub.service';
-import { AuthenticationStubService } from './authentication-stub.service';
+import { AlfrescoApiStubService } from './mock/alfresco-api-stub.service';
+import { AuthenticationStubService } from './mock/authentication-stub.service';
 import { LoginComponent } from './login.component';
 
 export default {
