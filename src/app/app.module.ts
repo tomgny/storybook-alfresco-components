@@ -109,6 +109,7 @@ import { CommentsComponent } from './stories/comments/comments.component';
 import { LanguageMenuComponent } from './stories/language-menu/language-menu.component';
 import { NotificationHistoryComponent } from './stories/notification-history/notification-history.component';
 import { ClipboardComponent } from './stories/clipboard/clipboard.component';
+import { LoginComponent } from './stories/login/login.component';
 import { EditJsonDialogComponent } from './stories/core-dialogs/edit-json-dialog/edit-json-dialog.component';
 import { DownloadZipDialogComponent } from './stories/core-dialogs/download-zip-dialog/download-zip-dialog.component';
 
@@ -200,6 +201,7 @@ registerLocaleData(localeSv);
     LanguageMenuComponent,
     NotificationHistoryComponent,
     ClipboardComponent,
+    LoginComponent,
     EditJsonDialogComponent,
     DownloadZipDialogComponent,
   ],
