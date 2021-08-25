@@ -1,11 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { SortingType } from './models/sorting-type.model';
 
 @Component({
   selector: 'aca-sorting-picker',
   templateUrl: './sorting-picker.component.html'
 })
-export class SortingPickerComponent implements OnInit {
+export class SortingPickerComponent {
   /**
    * Current sorting direction
    */
@@ -24,11 +24,15 @@ export class SortingPickerComponent implements OnInit {
   @Input()
   selected: string;
 
+  /**
+   * Raised each time direction gets changed.
+   */
   onSortingChanged(_: any) {}
 
+  /**
+   * Raised each time sorting key gets changed.
+   */
   onValueChanged(_: any) {}
 
   constructor() {}
-
-  ngOnInit(): void { }
 }

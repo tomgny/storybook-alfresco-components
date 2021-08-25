@@ -25,7 +25,8 @@ export default {
     })
   ],
   argTypes: {
-    ngOnInit: { table: { disable: true } }
+    onSortingChanged: { action: 'clicked' },
+    onValueChanged: { action: 'clicked' }
   }
 } as Meta;
 
