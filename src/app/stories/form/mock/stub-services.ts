@@ -1,5 +1,6 @@
+import { GroupModel } from '@alfresco/adf-core';
 import { Observable, of, ReplaySubject, Subject } from 'rxjs';
-import { ModelsApiStub } from './stub-apis';
+import { GroupApiStub, ModelsApiStub } from './stub-apis';
 
 export class AuthenticationServiceStub {
   onLogin: ReplaySubject<any> = new ReplaySubject<any>(1);
@@ -29,4 +30,18 @@ export class FormServiceStub {
   }
 
   modelsApi = new ModelsApiStub();
+
+  groupsApi = new GroupApiStub();
+
+  formEvents = new Subject<Event>();
+
+  getWorkflowGroups(filter: string, _groupId?: string): Observable<GroupModel[]> {
+    return of(
+      [
+        { externalId: 'users', groups: 'groups', id: 'users', name: 'Users', status: 'users' },
+        { externalId: 'admins', groups: 'groups', id: 'admins', name: 'Admins', status: 'admins' },
+        { externalId: 'super admins', groups: 'super groups', id: 'super admins', name: 'Super Admins', status: 'super admins' }
+      ].filter((group) => group.name.toLowerCase().startsWith(filter.toLowerCase()))
+    );
+  }
 }
