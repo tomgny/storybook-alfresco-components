@@ -69,7 +69,7 @@ export class HeaderComponent implements OnDestroy {
   links = ['Link 1', 'Link 2', 'Link 3', 'Link 4', 'Link 5'];
 
   ngOnDestroy() {
-    this.languageService.changeLanguage({key: 'en', label: 'English'});
+    this.languageService.changeLanguage({ key: 'en', label: 'English' });
   }
 }
 
