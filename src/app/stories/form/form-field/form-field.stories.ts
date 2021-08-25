@@ -56,10 +56,10 @@ const dynamicTableField = new FormFieldModel(fakeForm, {
   fields: [amountField, booleanField, dateField, readOnlyTextField, readOnlyField, dropdownField],
   columns: { fields: [amountField, amountField] }
 });
-const functionalGroupField = new FormFieldModel(fakeForm, { id: 'functionalGroupField', placeholder: 'Group name', type: 'functional-group' });
+const functionalGroupField = new FormFieldModel(fakeForm, { id: 'functionalGroupField', placeholder: 'Group name (Admins, Users)', type: 'functional-group' });
 const groupField = new FormFieldModel(fakeForm, { id: 'groupField', value: 'users', type: 'group' });
-const hyperlinkField = new FormFieldModel(fakeForm, { id: 'hyperlinkField', value: 21, type: 'hyperlink' });
-const multiLineTextField = new FormFieldModel(fakeForm, { id: 'multiLineTextField', value: 21, type: 'multi-line-text' });
+const hyperlinkField = new FormFieldModel(fakeForm, { id: 'hyperlinkField', value: 'https://www.alfresco.com/', displayText: 'Alfresco hyperlink', type: 'hyperlink' });
+const multiLineTextField = new FormFieldModel(fakeForm, { id: 'multiLineTextField', value: 'Multi\nLine\nText\nField', type: 'multi-line-text' });
 const integerField = new FormFieldModel(fakeForm, { id: 'integerField', value: 21, type: 'integer' });
 const peopleField = new FormFieldModel(fakeForm, { id: 'peopleField', value: 21, type: 'people' });
 const radioButtonsField = new FormFieldModel(fakeForm, { id: 'radioButtonsField', value: 21, type: 'radio-buttons' });
