@@ -110,6 +110,7 @@ import { LanguageMenuComponent } from './stories/language-menu/language-menu.com
 import { NotificationHistoryComponent } from './stories/notification-history/notification-history.component';
 import { ClipboardComponent } from './stories/clipboard/clipboard.component';
 import { FormListComponent } from './stories/form/form-list/form-list.component';
+import { FormFieldComponent } from './stories/form/form-field/form-field.component';
 
 registerLocaleData(localeFr);
 registerLocaleData(localeDe);
@@ -200,6 +201,7 @@ registerLocaleData(localeSv);
     NotificationHistoryComponent,
     FormListComponent,
     ClipboardComponent,
+    FormFieldComponent,
   ],
   providers: [
     { provide: AppConfigService, useClass: DebugAppConfigService },
