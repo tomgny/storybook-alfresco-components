@@ -15,7 +15,7 @@ export class DecimalNumberComponent implements OnInit {
   locale: string = 'en-US';
 
   @Input()
-  numberToTransform: number;
+  numbersToTransform: number[];
 
   /**
    * https://github.com/Alfresco/alfresco-ng2-components/blob/develop/lib/core/models/decimal-number.model.ts
@@ -40,6 +40,8 @@ export class DecimalNumberComponent implements OnInit {
    */
   @Input()
   digitsInfo: DecimalNumberModel = { minIntegerDigits: 1, minFractionDigits: 0, maxFractionDigits: 2 };
+
+  displayedColumns = ['number', 'numberFormatted'];
 
   constructor(private localizationService: LocalizationService) {}
 
