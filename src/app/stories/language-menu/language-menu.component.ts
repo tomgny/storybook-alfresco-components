@@ -1,12 +1,12 @@
 import { LanguageItem, LanguageService } from '@alfresco/adf-core';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 
 @Component({
   selector: 'aca-language-menu',
   templateUrl: './language-menu.component.html',
   styleUrls: ['./language-menu.component.scss']
 })
-export class LanguageMenuComponent implements OnInit {
+export class LanguageMenuComponent implements OnInit, OnDestroy {
   @Input()
   showLanguageMenuInsideNestedMenu: boolean = false;
 
@@ -104,5 +104,9 @@ export class LanguageMenuComponent implements OnInit {
 
     this.languagesConfig = this.languagesConfig.filter((value) => this.languages.includes(value.label));
     this.languageService.setLanguages(this.languagesConfig);
+  }
+
+  ngOnDestroy(): void {
+    this.languageService.changeLanguage(this.languagesConfig.find(lang => lang.key === 'en'))
   }
 }
