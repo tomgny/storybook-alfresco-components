@@ -1,11 +1,11 @@
-import { CoreModule } from '@alfresco/adf-core';
-import { Component, Input, NgModule } from '@angular/core';
+import { CoreModule, LanguageService } from '@alfresco/adf-core';
+import { Component, Input, NgModule, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'aca-header',
   templateUrl: './header.component.html'
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnDestroy {
   /**
    * Background color for the header. It can be any hex color code or one of the Material theme colors: 'primary', 'accent' or 'warn'.
    */
@@ -60,11 +60,17 @@ export class HeaderComponent {
   @Input()
   showRedirect: boolean = false;
 
+  constructor(private languageService: LanguageService) {}
+
   onSidenavClick() {
     this.expandedSidenav = !this.expandedSidenav;
   }
 
   links = ['Link 1', 'Link 2', 'Link 3', 'Link 4', 'Link 5'];
+
+  ngOnDestroy() {
+    this.languageService.changeLanguage({key: 'en', label: 'English'});
+  }
 }
 
 @NgModule({
