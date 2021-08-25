@@ -77,6 +77,12 @@ export class LoginComponent implements OnInit {
   @Input()
   silentLogin: boolean;
 
+  @Input()
+  useCustomErrorHandlingMethod: boolean;
+
+  @Input()
+  useCustomExecuteSubmitMethod: boolean;
+
   @ViewChild('alfrescoLogin')
   alfrescoLogin: any;
 
@@ -88,12 +94,14 @@ export class LoginComponent implements OnInit {
   constructor(private appConfigService: AppConfigService) {}
 
   ngOnChanges() {
-    this.appConfigService.config['authType'] = 'OAUTH';
-    this.appConfigService.config['oauth2'] = {
-      ...this.appConfigService.config['oauth2'],
-      silentLogin: this.silentLogin
-    };
     setIsOuathReturnValue(this.ssoLogin);
+    if (this.ssoLogin) {
+      this.appConfigService.config['authType'] = 'OAUTH';
+      this.appConfigService.config['oauth2'] = {
+        ...this.appConfigService.config['oauth2'],
+        silentLogin: this.silentLogin
+      };
+    }
   }
 
   ngOnInit(): void {
@@ -109,5 +117,18 @@ export class LoginComponent implements OnInit {
     if (this.useCustomValidation) {
       this.alfrescoLogin.addCustomValidationError('username', 'minlength', 'Username must be at least 10 characters.', { minLength: 10 });
     }
+  }
+
+  customSuccessMethod(_: any) {
+    alert(`You would be redirected to login success page!
+This alert was displayed by handling success event.`);
+  }
+
+  customErrorMethod(_: any) {
+    if (this.useCustomErrorHandlingMethod) alert(`This alert was displayed by handling error event.`);
+  }
+
+  executeSubmit(_: any) {
+    if (this.useCustomExecuteSubmitMethod) alert(`This alert was displayed by handling form submitting event.`);
   }
 }

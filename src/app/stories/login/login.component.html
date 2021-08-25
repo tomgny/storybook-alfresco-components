@@ -7,6 +7,9 @@
   [needHelpLink]="needHelpLink"
   [registerLink]="registerLink"
   [fieldsValidation]="fieldsValidation"
+  (success)="customSuccessMethod($event)"
+  (error)="customErrorMethod($event)"
+  (executeSubmit)="executeSubmit($event)"
   #alfrescoLogin
 >
   <adf-login-header *ngIf="showCustomHeader"

@@ -2,15 +2,15 @@ import { AppConfigService } from '@alfresco/adf-core';
 import { Injectable } from '@angular/core';
 import { ReplaySubject, Subject } from 'rxjs';
 
-
 @Injectable({
   providedIn: 'root'
 })
 export class AlfrescoApiStubService {
   nodeUpdated = new Subject<Node>();
   alfrescoApiInitialized: ReplaySubject<boolean> = new ReplaySubject(1);
+  
   async load() {
-    await this.appConfig.load()
+    await this.appConfig.load();
   }
 
   oauth2Auth = {
@@ -21,6 +21,5 @@ export class AlfrescoApiStubService {
 
   getInstance = () => this;
 
-  constructor(private appConfig: AppConfigService) { }
+  constructor(private appConfig: AppConfigService) {}
 }
-

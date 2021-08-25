@@ -65,7 +65,9 @@ Default.args = {
   customContent: 'Custom content',
   useCustomValidation: false,
   ssoLogin: false,
-  silentLogin: false
+  silentLogin: false,
+  useCustomErrorHandlingMethod: false,
+  useCustomExecuteSubmitMethod: false
 };
 
 export const RememberMeHidden = Template.bind({});
@@ -157,4 +159,18 @@ export const SsoLoginSilentLogin = Template.bind({});
 SsoLoginSilentLogin.args = {
   ...SsoLogin.args,
   silentLogin: true
+};
+
+export const customErrorHandlingMethod = Template.bind({});
+
+customErrorHandlingMethod.args = {
+  ...Default.args,
+  useCustomErrorHandlingMethod: true
+};
+
+export const customExecuteSubmitMethod = Template.bind({});
+
+customExecuteSubmitMethod.args = {
+  ...Default.args,
+  useCustomExecuteSubmitMethod: true
 };
