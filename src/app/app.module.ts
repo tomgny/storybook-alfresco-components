@@ -112,6 +112,7 @@ import { ClipboardComponent } from './stories/clipboard/clipboard.component';
 import { LoginComponent } from './stories/login/login.component';
 import { EditJsonDialogComponent } from './stories/core-dialogs/edit-json-dialog/edit-json-dialog.component';
 import { DownloadZipDialogComponent } from './stories/core-dialogs/download-zip-dialog/download-zip-dialog.component';
+import { SidenavLayoutComponent } from './stories/layout/components/sidenav-layout/sidenav-layout.component';
 
 registerLocaleData(localeFr);
 registerLocaleData(localeDe);
@@ -204,6 +205,7 @@ registerLocaleData(localeSv);
     LoginComponent,
     EditJsonDialogComponent,
     DownloadZipDialogComponent,
+    SidenavLayoutComponent,
   ],
   providers: [
     { provide: AppConfigService, useClass: DebugAppConfigService },
