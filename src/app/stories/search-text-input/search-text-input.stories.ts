@@ -1,8 +1,7 @@
-import { CoreModule, MaterialModule, SearchTextStateEnum } from '@alfresco/adf-core';
+import { CoreModule, MaterialModule } from '@alfresco/adf-core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
-import { of } from 'rxjs';
 import { APP_ROUTES } from '../../app.routes';
 import { AppCommonModule } from '../../components/common/common.module';
 import { SearchTextInputComponent } from './search-text-input.component';
@@ -24,7 +23,21 @@ export default {
             BrowserAnimationsModule
           ]
         })
-    ]
+    ],
+    argTypes: {
+      defaultState: {
+        options: ['collapsed', 'expanded'],
+        control: { type: 'radio' }
+      },
+      ngOnInit: { table: { disable: true } },
+      ngOnDestroy: { table: { disable: true } },
+      onDestroy$: { table: { disable: true } },
+      logs: { table: { disable: true } },
+      inputChange: { table: { disable: true } },
+      onSubmit: { table: { disable: true } },
+      console: { table: { disable: true } },
+      focusListener: { table: { disable: true } }
+    }
 } as Meta;
 
 const Template: Story<SearchTextInputComponent> = (args) => ({
@@ -41,9 +54,8 @@ DefaultStory.args = {
   searchAutocomplete: false,
   debounceTime: 0,
   searchTerm: "",
-  focusListener: of(),
   collapseOnSubmit: false,
-  defaultState: SearchTextStateEnum.collapsed,
+  defaultState: 'collapsed',
   collapseOnBlur: false,
   showClearButton: false
 };

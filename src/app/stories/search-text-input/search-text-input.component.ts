@@ -79,9 +79,6 @@ export class SearchTextInputComponent implements OnInit, OnDestroy {
     @Input()
     showClearButton: boolean = false;
 
-    @ViewChild('searchTextInput')
-    searchTextInput: SearchTextInputComponent;
-
     private onDestroy$ = new Subject<boolean>();
 
     constructor() {
