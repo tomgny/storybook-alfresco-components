@@ -9,7 +9,7 @@
 >
   <adf-sidenav-layout-header *ngIf="showSidenavLayoutHeader">
     <ng-template let-toggleMenu="toggleMenu" let-isMenuMinimized="isMenuMinimized">
-      <adf-layout-header title="Sidenav layout" color="primary" (toggled)="toggleMenu($event)"> </adf-layout-header>
+      <adf-layout-header title="Sidenav layout" color="primary" (clicked)="toggleMenu($event)"> </adf-layout-header>
     </ng-template>
   </adf-sidenav-layout-header>
 
