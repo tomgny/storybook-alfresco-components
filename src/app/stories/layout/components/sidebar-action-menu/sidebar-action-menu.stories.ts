@@ -35,8 +35,30 @@ const Template: Story<SidebarActionMenuComponent> = (args) => ({
 export const Default = Template.bind({});
 
 Default.args = {
-    expanded: false,
-    title: 'Menu',
-    width: 272
+  expanded: false,
+  title: 'Menu',
+  width: 272,
+  expandIcon: 'queue',
+  titleIcon: 'arrow_drop_down'
 };
 
+export const ExpandedSet = Template.bind({});
+
+ExpandedSet.args = {
+  ...Default.args,
+  expanded: true
+};
+
+export const DifferentTitleSet = Template.bind({});
+
+DifferentTitleSet.args = {
+  ...ExpandedSet.args,
+  title: 'Drop Down Menu'
+};
+
+export const DifferentWidthSet = Template.bind({});
+
+DifferentWidthSet.args = {
+  ...Default.args,
+  width: 450
+};

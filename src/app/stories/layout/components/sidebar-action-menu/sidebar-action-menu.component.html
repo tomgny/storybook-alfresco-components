@@ -1,12 +1,12 @@
 <adf-sidebar-action-menu [expanded]="expanded" [width]="width" [title]="title">
-  <mat-icon adf-sidebar-menu-title-icon>arrow_drop_down</mat-icon>
+  <mat-icon adf-sidebar-menu-title-icon>{{ titleIcon }}</mat-icon>
   <div adf-sidebar-menu-expand-icon>
-    <mat-icon>queue</mat-icon>
+    <mat-icon>{{ expandIcon }}</mat-icon>
   </div>
   <div adf-sidebar-menu-options>
-    <button mat-menu-item>
-      <mat-icon>assignment</mat-icon>
-      <span>Button Name</span>
+    <button mat-menu-item *ngFor="let item of menuItems">
+      <mat-icon>{{ item.itemIcon }}</mat-icon>
+      <span>{{ item.label }}</span>
     </button>
   </div>
 </adf-sidebar-action-menu>

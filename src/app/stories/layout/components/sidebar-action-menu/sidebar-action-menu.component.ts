@@ -1,11 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ButtonMatMenuItem } from '../../models/button-mat-menu-item.model';
 
 @Component({
   selector: 'aca-sidebar-action-menu',
-  templateUrl: './sidebar-action-menu.component.html',
-  styleUrls: ['./sidebar-action-menu.component.scss']
+  templateUrl: './sidebar-action-menu.component.html'
 })
-export class SidebarActionMenuComponent implements OnInit {
+export class SidebarActionMenuComponent {
   /** Toggle the sidebar action menu on expand. */
   @Input()
   expanded: boolean;
@@ -18,9 +18,17 @@ export class SidebarActionMenuComponent implements OnInit {
   @Input()
   width: number;
 
-  constructor() { }
+  @Input()
+  expandIcon: string;
 
-  ngOnInit(): void {
-  }
+  @Input()
+  titleIcon: string;
 
+  menuItems: ButtonMatMenuItem[] = [
+    { itemIcon: 'add_task', label: 'Add Task' },
+    { itemIcon: 'done', label: 'Mark as Done' },
+    { itemIcon: 'delete', label: 'Delete Task' }
+  ];
+
+  constructor() {}
 }
