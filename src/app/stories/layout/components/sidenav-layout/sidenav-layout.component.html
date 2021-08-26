@@ -1,18 +1,19 @@
 <adf-sidenav-layout
-  [sidenavMin]="70"
-  [sidenavMax]="220"
-  [stepOver]="600"
-  [hideSidenav]="false"
-  [expandedSidenav]="true"
+  [sidenavMin]="sidenavMin"
+  [sidenavMax]="sidenavMax"
+  [stepOver]="stepOver"
+  [position]="position"
+  [hideSidenav]="hideSidenav"
+  [expandedSidenav]="expandedSidenav"
   (expanded)="setState($event)"
 >
-  <adf-sidenav-layout-header>
+  <adf-sidenav-layout-header *ngIf="showSidenavLayoutHeader">
     <ng-template let-toggleMenu="toggleMenu" let-isMenuMinimized="isMenuMinimized">
       <adf-layout-header title="Sidenav layout" color="primary" (toggled)="toggleMenu($event)"> </adf-layout-header>
     </ng-template>
   </adf-sidenav-layout-header>
 
-  <adf-sidenav-layout-navigation>
+  <adf-sidenav-layout-navigation *ngIf="showSidenavLayoutNavigation">
     <ng-template let-isMenuMinimized="isMenuMinimized">
       <mat-nav-list class="app-sidenav-linklist">
         <ng-container *ngFor="let link of links">
@@ -54,7 +55,7 @@
     </ng-template>
   </adf-sidenav-layout-navigation>
 
-  <adf-sidenav-layout-content>
+  <adf-sidenav-layout-content *ngIf="showSidenavLayoutContent">
     <ng-template>
       <div class="fake-router-outlet">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis non massa dictum porttitor. Nam ac elit nulla. Morbi posuere odio at
@@ -82,7 +83,7 @@
       mat-menu-item
       *ngFor="let link of links"
       class="app-sidenav-link"
-      [attr.data-automation-id]="link.title | translate"
+      [attr.data-automation-id]="link.title"
       routerLinkActive="app-sidenav-link--active"
       [routerLink]="link.href"
       [routerLinkActiveOptions]="{ exact: true }"
