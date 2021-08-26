@@ -12,5 +12,12 @@ export class MultiValueComponent {
   @Input()
   separator: string = ', ';
 
+  dataSource: string[][];
+  displayedColumns = ['wordsBeforeSeparation', 'wordsAfterSeparation'];
+
   constructor() {}
+
+  ngOnInit() {
+    this.dataSource = [this.words];
+  }
 }

@@ -2,17 +2,6 @@
   background-color: #ffff00;
 }
 
-td,
-th {
-  border: 1px solid;
-  text-align: left;
-  padding: 10px;
-}
-
-td {
-    text-align: center;
-}
-
-tr:nth-child(odd) {
-  background-color: #b4b1b1;
+table * {
+  padding: 10px ;
 }

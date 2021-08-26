@@ -4,14 +4,14 @@ import { RouterModule } from '@angular/router';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { APP_ROUTES } from '../../../app.routes';
 import { AppCommonModule } from '../../../components/common/common.module';
-import { MultiValueComponent } from './multi-value.component';
+import { EditJsonDialogComponent } from './edit-json-dialog.component';
 
 export default {
-  component: MultiValueComponent,
-  title: 'Core/Pipes/Multi Value',
+  component: EditJsonDialogComponent,
+  title: 'Core/Dialogs/Edit JSON',
   decorators: [
     moduleMetadata({
-      declarations: [MultiValueComponent],
+      declarations: [EditJsonDialogComponent],
       imports: [
         RouterModule.forRoot(APP_ROUTES, {
           useHash: true,
@@ -25,24 +25,35 @@ export default {
   ],
   argTypes: {
     ngOnInit: { table: { disable: true } },
-    dataSource: { table: { disable: true } },
-    displayedColumns: { table: { disable: true } }
+    settings: { table: { disable: true } },
+    openEditJsonDialog: { table: { disable: true } },
+    buttonText: { table: { disable: true } },
+    json: { table: { disable: true } }
   }
 } as Meta;
 
-const Template: Story<MultiValueComponent> = (args) => ({
+const Template: Story<EditJsonDialogComponent> = (args) => ({
   props: args
 });
 
 export const Default = Template.bind({});
 
 Default.args = {
-  words: ['cat', 'dog', 'parrot', 'dove', 'rabbit']
+  dialogTitle: '',
+  isJsonEditable: false
 };
 
-export const CustomSeparatorSet = Template.bind({});
+export const CustomTitleSet = Template.bind({});
 
-CustomSeparatorSet.args = {
+CustomTitleSet.args = {
   ...Default.args,
-  separator: ' :) '
+  dialogTitle: 'Custom Title'
+};
+
+export const JsonEditionEnabled = Template.bind({});
+
+JsonEditionEnabled.args = {
+  ...Default.args,
+  isJsonEditable: true,
+  dialogTitle: 'Edit Json'
 };
