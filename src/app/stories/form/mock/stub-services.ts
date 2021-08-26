@@ -1,4 +1,4 @@
-import { GroupModel, UserProcessModel } from '@alfresco/adf-core';
+import { GroupModel, UserProcessModel, ValidateDynamicTableRowEvent } from '@alfresco/adf-core';
 import { Observable, of, ReplaySubject, Subject } from 'rxjs';
 import { GroupApiStub, ModelsApiStub } from './stub-apis';
 
@@ -25,15 +25,17 @@ export class AlfrescoApiServiceStub {
 }
 
 export class FormServiceStub {
-  getForms(): Observable<any> {
-    return of([]);
-  }
-
   modelsApi = new ModelsApiStub();
 
   groupsApi = new GroupApiStub();
 
   formEvents = new Subject<Event>();
+
+  validateDynamicTableRow = new Subject<ValidateDynamicTableRowEvent>();
+
+  getForms(): Observable<any> {
+    return of([]);
+  }
 
   getWorkflowGroups(filter: string, _groupId?: string): Observable<GroupModel[]> {
     return of(
