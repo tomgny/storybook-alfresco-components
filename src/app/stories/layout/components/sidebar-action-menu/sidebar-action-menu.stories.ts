@@ -24,7 +24,7 @@ export default {
     })
   ],
   argTypes: {
-    ngOnInit: { table: { disable: true } }
+    menuItems: { table: { disable: true } }
   }
 } as Meta;
 
@@ -38,8 +38,8 @@ Default.args = {
   expanded: false,
   title: 'Menu',
   width: 272,
-  expandIcon: 'queue',
-  titleIcon: 'arrow_drop_down'
+  narrowExpandButtonIcon: 'queue',
+  wideExpandButtonIcon: 'arrow_drop_down'
 };
 
 export const ExpandedSet = Template.bind({});

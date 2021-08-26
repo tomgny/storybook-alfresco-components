@@ -20,10 +20,10 @@ export class SidebarActionMenuComponent {
   width: number;
 
   @Input()
-  expandIcon: string;
+  narrowExpandButtonIcon: string;
 
   @Input()
-  titleIcon: string;
+  wideExpandButtonIcon: string;
 
   menuItems: ButtonMatMenuItem[] = [
     { itemIcon: 'add_task', label: 'Add Task' },
