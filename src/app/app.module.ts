@@ -113,6 +113,7 @@ import { LoginComponent } from './stories/login/login.component';
 import { EditJsonDialogComponent } from './stories/core-dialogs/edit-json-dialog/edit-json-dialog.component';
 import { DownloadZipDialogComponent } from './stories/core-dialogs/download-zip-dialog/download-zip-dialog.component';
 import { SidenavLayoutComponent } from './stories/layout/components/sidenav-layout/sidenav-layout.component';
+import { SidebarActionMenuComponent } from './stories/layout/components/sidebar-action-menu/sidebar-action-menu.component';
 
 registerLocaleData(localeFr);
 registerLocaleData(localeDe);
@@ -198,7 +199,7 @@ registerLocaleData(localeSv);
     ContentMetadataCardComponent,
     ButtonsMenuComponent,
     HeaderComponent,
-    CommentsComponent
+    CommentsComponent,
     LanguageMenuComponent,
     NotificationHistoryComponent,
     ClipboardComponent,
@@ -206,6 +207,7 @@ registerLocaleData(localeSv);
     EditJsonDialogComponent,
     DownloadZipDialogComponent,
     SidenavLayoutComponent,
+    SidebarActionMenuComponent,
   ],
   providers: [
     { provide: AppConfigService, useClass: DebugAppConfigService },
