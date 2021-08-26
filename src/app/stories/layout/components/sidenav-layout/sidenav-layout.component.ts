@@ -1,11 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'aca-sidenav-layout',
   templateUrl: './sidenav-layout.component.html',
   styleUrls: ['./sidenav-layout.component.scss']
 })
-export class SidenavLayoutComponent implements OnInit {
+export class SidenavLayoutComponent {
   /**
    * Minimum size of the navigation region.
    */
@@ -53,19 +53,7 @@ export class SidenavLayoutComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
-
-  setState(_) {
-    console.log('?');
-  }
-
-  toggleMenu($event) {
-    console.log('!', $event);
-  }
-
-  isMenuMinimized() {
-    console.log('halo');
-  }
+  setState(_: any) {}
 
   links: Array<any> = [
     { href: '/home', icon: 'home', title: 'Home' },
@@ -80,7 +68,7 @@ export class SidenavLayoutComponent implements OnInit {
       ]
     },
     { href: '/files', icon: 'folder_open', title: 'Files' },
-    { href: '/filtered-search', icon: 'rowing', title: 'Search' },
+    { href: '/filtered-search', icon: 'rowing', title: 'Quick Search' },
     { href: '/breadcrumb', icon: 'label', title: 'Labels' },
     { href: '/notifications', icon: 'alarm', title: 'Notifications' },
     { href: '/card-view', icon: 'view_headline', title: 'Card View' },
@@ -94,6 +82,12 @@ export class SidenavLayoutComponent implements OnInit {
       ]
     },
     { href: '/login', icon: 'vpn_key', title: 'VPN' },
+    { href: '/tag', icon: 'local_offer', title: 'Tags' },
+    { href: '/social', icon: 'thumb_up', title: 'Socials' },
+    { href: '/pipes', icon: 'layers', title: 'Pipes' },
+    { href: '/settings-layout', icon: 'settings', title: 'Settings' },
+    { href: '/config-editor', icon: 'code', title: 'Editor' },
+    { href: '/extendedSearch', icon: 'search', title: 'Extended Search' },
     { href: '/trashcan', icon: 'delete', title: 'Thrash' }
   ];
 }

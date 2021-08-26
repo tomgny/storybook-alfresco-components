@@ -24,9 +24,9 @@ export default {
     })
   ],
   argTypes: {
-    ngOnInit: { table: { disable: true } },
     position: { options: ['start', 'end'], control: 'radio' },
-    links: { table: { disable: true } }
+    links: { table: { disable: true } },
+    setState: { table: { disable: true } }
   }
 } as Meta;
 
