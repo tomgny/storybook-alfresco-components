@@ -1,7 +1,6 @@
 import { PermissionStyleModel, RowFilter } from '@alfresco/adf-content-services';
-import { DataSorting, PaginationComponent, ShowHeaderMode } from '@alfresco/adf-core';
+import { DataSorting, ShowHeaderMode } from '@alfresco/adf-core';
 import { NodeEntry, NodePaging } from '@alfresco/js-api';
-import { ViewChild } from '@angular/core';
 import { Component, Input } from '@angular/core';
 
 @Component({
@@ -10,12 +9,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./document-list.component.scss']
 })
 export class DocumentListComponent {
-  @ViewChild('pagination')
-  pagination: PaginationComponent;
-
-  @ViewChild('documentList')
-  documentList: DocumentListComponent;
-
   /** Defines default sorting. The format is an array of strings `[key direction, otherKey otherDirection]`
    * i.e. `['name desc', 'nodeType asc']` or `['name asc']`. Set this value if you want a base
    * rule to be added to the sorting apart from the one driven by the header.

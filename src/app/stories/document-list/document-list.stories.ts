@@ -1,10 +1,4 @@
-import {
-  ContentModule,
-  ImageResolver,
-  PermissionStyleModel,
-  ShareDataRow,
-  UploadModule
-} from '@alfresco/adf-content-services';
+import { ContentModule, ImageResolver, PermissionStyleModel, ShareDataRow, UploadModule } from '@alfresco/adf-content-services';
 import {
   AlfrescoApiService,
   AllowableOperationsEnum,
@@ -47,10 +41,30 @@ export default {
       providers: [
         { provide: AlfrescoApiService, useClass: AlfrescoApiServiceStub },
         { provide: AuthenticationService, useClass: AuthenticationServiceStub },
-        { provide: UploadService, useClass: UploadServiceStub },
+        { provide: UploadService, useClass: UploadServiceStub }
       ]
     })
-  ]
+  ],
+  argTypes: {
+    contentActionsPosition: {
+      options: ['left', 'right'],
+      control: { type: 'radio' }
+    },
+    showHeader: {
+      options: ['always', 'data', 'never'],
+      control: { type: 'radio' }
+    },
+    currentFolderId: { table: { disable: true } },
+    filterValue: { table: { disable: true } },
+    imageResolver: { table: { disable: true } },
+    locationFormat: { table: { disable: true } },
+    node: { table: { disable: true } },
+    preselectNodes: { table: { disable: true } },
+    rowFilter: { table: { disable: true } },
+    fakeDownload: { table: { disable: true } },
+    fakeUpload: { table: { disable: true } },
+    ngOnInit: { table: { disable: true } }
+  }
 } as Meta;
 
 const folderFilter = (row: ShareDataRow) => {
