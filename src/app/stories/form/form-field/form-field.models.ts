@@ -2,11 +2,18 @@ import { FormFieldModel, FormModel } from '@alfresco/adf-core';
 
 export const fakeForm = new FormModel();
 
-export const amountField = new FormFieldModel(fakeForm, { id: 'amountField', value: 512, type: 'amount', minValue: '0', maxValue: '1024' });
+export const amountField = new FormFieldModel(fakeForm, {
+  id: 'amountField',
+  value: 512,
+  type: 'amount',
+  name: 'Amount',
+  minValue: '0',
+  maxValue: '1024'
+});
 
 export const uploadField = new FormFieldModel(fakeForm, { id: 'uploadField', type: 'upload' });
 
-export const booleanField = new FormFieldModel(fakeForm, { id: 'booleanField', value: 21, type: 'boolean' });
+export const booleanField = new FormFieldModel(fakeForm, { id: 'booleanField', name: 'Checkbox', type: 'boolean' });
 
 export const dateField = new FormFieldModel(fakeForm, { id: 'dateField', value: Date.now(), type: 'date' });
 
@@ -16,8 +23,7 @@ export const readOnlyField = new FormFieldModel(fakeForm, { id: 'readOnlyField',
 
 export const integerField = new FormFieldModel(fakeForm, { id: 'integerField', value: 21, name: 'Type only integer', type: 'integer' });
 export const peopleField = new FormFieldModel(fakeForm, { id: 'peopleField', value: 'Users', name: 'Users', type: 'people' });
-export const groupField = new FormFieldModel(fakeForm, { id: 'groupField', value: 'users', type: 'group' });
-export const textField = new FormFieldModel(fakeForm, { id: 'textField', value: 'Text field', type: 'text' });
+export const textField = new FormFieldModel(fakeForm, { id: 'textField', name: 'Text Field', value: 'Text field', type: 'text' });
 export const typeaheadField = new FormFieldModel(fakeForm, { id: 'typeaheadField', type: 'typeahead' });
 export const unknownType = new FormFieldModel(fakeForm, { id: 'unknownType' });
 
@@ -64,7 +70,6 @@ export const radioButtonsField = new FormFieldModel(fakeForm, {
 export const dynamicTableField = new FormFieldModel(fakeForm, {
   id: 'dynamicTableField',
   type: 'dynamic-table',
-  colspan: 1,
   params: {
     existingColspan: 1,
     maxColspan: 1
@@ -98,4 +103,14 @@ export const dynamicTableField = new FormFieldModel(fakeForm, {
       visible: true
     }
   ]
+});
+
+export const groupField = new FormFieldModel(fakeForm, {
+  id: 'groupField',
+  name: 'Group section field',
+  value: 'users',
+  type: 'group',
+  fields: {
+    1: [textField, amountField, integerField]
+  }
 });
