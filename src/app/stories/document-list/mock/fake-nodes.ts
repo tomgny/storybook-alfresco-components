@@ -1,4 +1,4 @@
-import { Node, NodePaging, NodeEntry, NodeChildAssociationPaging } from '@alfresco/js-api';
+import { Node, NodePaging, NodeEntry } from '@alfresco/js-api';
 
 export const fakeNodeWithCreatePermission = new Node({
   isFile: false,
@@ -284,20 +284,6 @@ export const mockNodePaging: NodePaging = {
     ]
   }
 };
-
-export const folderNodeChildrenWithPaginationInfo = new NodeChildAssociationPaging({
-  list: {
-    pagination: {
-      count: 4,
-      hasMoreItems: false,
-      totalItems: 14,
-      skipCount: 10,
-      maxItems: 10
-    },
-    entries: [fakeNodeWithCreatePermission, fakeNodeWithNoPermission, fakeNodePaging, mockNode1, mockNode2, mockNode3]
-  },
-  id: 'fake'
-});
 
 export const nodeIdToObjectTranslating = {
   mock_node_1: mockNode1,

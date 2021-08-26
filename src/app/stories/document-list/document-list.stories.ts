@@ -225,7 +225,7 @@ export const Loading = Template.bind({});
 Loading.args = {
   ...DefaultStory.args,
   navigate: true,
-  loading: false
+  loading: true
 };
 
 export const Multiselect = Template.bind({});

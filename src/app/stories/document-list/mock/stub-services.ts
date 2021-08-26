@@ -1,4 +1,5 @@
-import { FileUploadErrorEvent } from '@alfresco/adf-core';
+import { AppConfigService, FileUploadErrorEvent } from '@alfresco/adf-core';
+import { Injectable } from '@angular/core';
 import { ReplaySubject, Subject } from 'rxjs';
 import { ContentApiStub, NodesApiStub } from './stub-apis';
 
@@ -12,6 +13,9 @@ export class AuthenticationServiceStub {
   isEcmLoggedIn = () => true;
 }
 
+@Injectable({
+  providedIn: 'root'
+})
 export class AlfrescoApiServiceStub {
   nodesApi = new NodesApiStub();
 
@@ -23,9 +27,14 @@ export class AlfrescoApiServiceStub {
 
   alfrescoApiInitialized: ReplaySubject<boolean> = new ReplaySubject(1);
 
-  load() {}
+  async load() {
+    await this.appConfig.load();
+  }
 
   getInstance = () => this;
+
+  constructor(private appConfig: AppConfigService){
+  }
 }
 
 export class UploadServiceStub {

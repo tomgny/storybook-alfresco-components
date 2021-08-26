@@ -1,16 +1,15 @@
 import { PermissionStyleModel, RowFilter } from '@alfresco/adf-content-services';
-import { AppConfigService, DataSorting, PaginationComponent, ShowHeaderMode } from '@alfresco/adf-core';
+import { DataSorting, PaginationComponent, ShowHeaderMode } from '@alfresco/adf-core';
 import { NodeEntry, NodePaging } from '@alfresco/js-api';
-import { OnInit, ViewChild } from '@angular/core';
+import { ViewChild } from '@angular/core';
 import { Component, Input } from '@angular/core';
-import { mockConfig } from './mock/mock-config';
 
 @Component({
   selector: 'aca-document-list',
   templateUrl: './document-list.component.html',
   styleUrls: ['./document-list.component.scss']
 })
-export class DocumentListComponent implements OnInit {
+export class DocumentListComponent {
   @ViewChild('pagination')
   pagination: PaginationComponent;
 
@@ -185,12 +184,6 @@ export class DocumentListComponent implements OnInit {
    */
   @Input()
   rowFilter: RowFilter;
-
-  constructor(private appConfig: AppConfigService) {}
-
-  ngOnInit() {
-    this.appConfig.config = mockConfig;
-  }
 
   fakeDownload() {
     window.alert('Download started!');
