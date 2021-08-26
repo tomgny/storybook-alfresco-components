@@ -6,7 +6,25 @@ import { APP_ROUTES } from '../../../app.routes';
 import { AppCommonModule } from '../../../components/common/common.module';
 import { AlfrescoApiServiceStub, AuthenticationServiceStub, FormServiceStub } from '../mock/stub-services';
 import { FormFieldComponent } from './form-field.component';
-import { amountField, booleanField, dateField, dropdownField, dynamicTableField, functionalGroupField, groupField, hyperlinkField, integerField, multiLineTextField, peopleField, radioButtonsField, readOnlyField, readOnlyTextField, textField, typeaheadField, unknownType, uploadField } from './form-field.models';
+import {
+  amountField,
+  booleanField,
+  dateField,
+  dropdownField,
+  dynamicTableField,
+  functionalGroupField,
+  groupField,
+  hyperlinkField,
+  integerField,
+  multiLineTextField,
+  peopleField,
+  radioButtonsField,
+  readOnlyField,
+  readOnlyTextField,
+  textField,
+  unknownType,
+  uploadField
+} from './form-field.models';
 
 export default {
   component: FormFieldComponent,
@@ -114,11 +132,6 @@ RadioButtonsField.args = {
 export const TextField = Template.bind({});
 TextField.args = {
   field: textField
-};
-
-export const TypeaheadField = Template.bind({});
-TypeaheadField.args = {
-  field: typeaheadField
 };
 
 export const UnknownType = Template.bind({});

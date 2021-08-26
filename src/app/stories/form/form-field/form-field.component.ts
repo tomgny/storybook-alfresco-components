@@ -3,8 +3,7 @@ import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'aca-form-field',
-  templateUrl: './form-field.component.html',
-  styleUrls: ['./form-field.component.scss']
+  templateUrl: './form-field.component.html'
 })
 export class FormFieldComponent {
   /**

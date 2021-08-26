@@ -2,6 +2,16 @@ import { FormFieldModel, FormModel } from '@alfresco/adf-core';
 
 export const fakeForm = new FormModel();
 
+export const uploadField = new FormFieldModel(fakeForm, { id: 'uploadField', type: 'upload' });
+export const booleanField = new FormFieldModel(fakeForm, { id: 'booleanField', name: 'Checkbox', type: 'boolean' });
+export const dateField = new FormFieldModel(fakeForm, { id: 'dateField', value: Date.now(), type: 'date' });
+export const readOnlyTextField = new FormFieldModel(fakeForm, { id: 'readOnlyTextField', value: 'Read only text field', type: 'readonly-text' });
+export const readOnlyField = new FormFieldModel(fakeForm, { id: 'readOnlyField', value: 'Read only field', type: 'readonly' });
+export const integerField = new FormFieldModel(fakeForm, { id: 'integerField', value: 21, name: 'Type only integer', type: 'integer' });
+export const peopleField = new FormFieldModel(fakeForm, { id: 'peopleField', value: 'Users', name: 'Users', type: 'people' });
+export const textField = new FormFieldModel(fakeForm, { id: 'textField', name: 'Text Field', value: 'Text field', type: 'text' });
+export const unknownType = new FormFieldModel(fakeForm, { id: 'unknownType' });
+
 export const amountField = new FormFieldModel(fakeForm, {
   id: 'amountField',
   value: 512,
@@ -10,22 +20,6 @@ export const amountField = new FormFieldModel(fakeForm, {
   minValue: '0',
   maxValue: '1024'
 });
-
-export const uploadField = new FormFieldModel(fakeForm, { id: 'uploadField', type: 'upload' });
-
-export const booleanField = new FormFieldModel(fakeForm, { id: 'booleanField', name: 'Checkbox', type: 'boolean' });
-
-export const dateField = new FormFieldModel(fakeForm, { id: 'dateField', value: Date.now(), type: 'date' });
-
-export const readOnlyTextField = new FormFieldModel(fakeForm, { id: 'readOnlyTextField', value: 'Read only text field', type: 'readonly-text' });
-
-export const readOnlyField = new FormFieldModel(fakeForm, { id: 'readOnlyField', value: 'Read only field', type: 'readonly' });
-
-export const integerField = new FormFieldModel(fakeForm, { id: 'integerField', value: 21, name: 'Type only integer', type: 'integer' });
-export const peopleField = new FormFieldModel(fakeForm, { id: 'peopleField', value: 'Users', name: 'Users', type: 'people' });
-export const textField = new FormFieldModel(fakeForm, { id: 'textField', name: 'Text Field', value: 'Text field', type: 'text' });
-export const typeaheadField = new FormFieldModel(fakeForm, { id: 'typeaheadField', type: 'typeahead' });
-export const unknownType = new FormFieldModel(fakeForm, { id: 'unknownType' });
 
 export const dropdownField = new FormFieldModel(fakeForm, {
   id: 'dropdownField',
