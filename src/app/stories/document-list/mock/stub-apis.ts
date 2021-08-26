@@ -1,6 +1,6 @@
 import { NodeChildAssociationPaging, NodeEntry } from '@alfresco/js-api';
 import { nodeIdToObjectTranslating } from './fake-nodes';
-import { mimeTypeIcons } from './mock-config';
+import { mimeTypeIcons } from './mock-icons';
 
 export class ContentApiStub{
 
