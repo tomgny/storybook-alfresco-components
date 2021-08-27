@@ -27,7 +27,11 @@ export default {
         CommonModule
       ]
     })
-  ]
+  ],
+  argTypes: {
+    data: { table: { disable: true } },
+    resolverFn: { table: { disable: true } }
+  }
 } as Meta;
 
 class FilteredDataAdapter extends ObjectDataTableAdapter {
