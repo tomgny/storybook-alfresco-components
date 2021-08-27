@@ -96,6 +96,6 @@ export class CardviewComponent implements OnInit {
 @NgModule({
   declarations: [CardviewComponent],
   imports: [CoreModule.forChild()],
-  exports: [CardviewComponent],
+  exports: [CardviewComponent]
 })
 export class CardviewModule {}
