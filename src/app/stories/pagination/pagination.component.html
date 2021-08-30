@@ -1,0 +1,12 @@
+<adf-document-list #documentList [currentFolderId]="'-root-'" [navigate]="false"> </adf-document-list>
+
+<adf-pagination
+  [target]="documentList"
+  [supportedPageSizes]="supportedPageSizes"
+  (change)="onChange($event)"
+  (nextPage)="onNextPage($event)"
+  (prevPage)="onPreviousPage($event)"
+  (changePageSize)="onChangePageSize($event)"
+  (changePageNumber)="onChangePageNumber($event)"
+  >
+</adf-pagination>
