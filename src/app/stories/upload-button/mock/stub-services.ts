@@ -1,4 +1,6 @@
+import { AppConfigService } from '@alfresco/adf-core';
 import { NodeEntry } from '@alfresco/js-api';
+import { Injectable } from '@angular/core';
 import { from, Observable, ReplaySubject, Subject } from 'rxjs';
 import { ContentApiStub, NodesApiStub } from './stub-apis';
 
@@ -12,6 +14,9 @@ export class AuthenticationServiceStub {
   isEcmLoggedIn = () => true;
 }
 
+@Injectable({
+  providedIn: 'root'
+})
 export class AlfrescoApiServiceStub {
   nodesApi = new NodesApiStub();
 
@@ -23,13 +28,20 @@ export class AlfrescoApiServiceStub {
 
   alfrescoApiInitialized: ReplaySubject<boolean> = new ReplaySubject(1);
 
-  load() {}
+  async load() {
+    await this.appConfig.load();
+  }
 
   getInstance = () => this;
+
+  constructor(private appConfig: AppConfigService) {}
 }
 
+@Injectable({
+  providedIn: 'root'
+})
 export class ContentServiceStub {
-  apiService = new AlfrescoApiServiceStub();
+  apiService = new AlfrescoApiServiceStub(this.appConfig);
 
   hasPermissions = () => true;
 
@@ -38,10 +50,15 @@ export class ContentServiceStub {
   getNode(nodeId: string, _?: any): Observable<NodeEntry> {
     return from(this.apiService.getInstance().nodes.getNode(nodeId, _));
   }
+
+  constructor(private appConfig: AppConfigService) {}
 }
 
+@Injectable({
+  providedIn: 'root'
+})
 export class ContentServiceNoPermissionsStub {
-  apiService = new AlfrescoApiServiceStub();
+  apiService = new AlfrescoApiServiceStub(this.appConfig);
 
   hasPermissions = () => false;
 
@@ -50,6 +67,8 @@ export class ContentServiceNoPermissionsStub {
   getNode(nodeId: string, _?: any): Observable<NodeEntry> {
     return from(this.apiService.getInstance().nodes.getNode(nodeId, _));
   }
+
+  constructor(private appConfig: AppConfigService) {}
 }
 
 export class NodesApiServiceStub {
