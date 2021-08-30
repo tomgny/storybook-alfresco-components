@@ -29,7 +29,17 @@ export default {
         CommonModule
       ]
     })
-  ]
+  ],
+  argTypes: {
+    data: { table: { disable: true } },
+    resolverFn: { table: { disable: true } },
+    onRowClick: { table: { disable: true } },
+    onRowDblClick: { table: { disable: true } },
+    showHeader: {
+      options: ['always', 'data', 'never'],
+      control: { type: 'radio' }
+    }
+  }
 } as Meta;
 
 const schema = [

@@ -1,15 +1,9 @@
 import { NodeChildAssociationPaging, NodeEntry } from '@alfresco/js-api';
 import { nodeIdToObjectTranslating } from './fake-nodes';
-import { mimeTypeIcons } from './mock-config';
 
 export class ContentApiStub {
   getContentUrl(nodeId: string, _?: boolean, _2?: string): string {
     return nodeIdToObjectTranslating[nodeId].entry.contentUrl;
-  }
-
-  getDocumentThumbnailUrl(nodeId: string, _?: boolean, _2?: string): string {
-    const mimeTypeIcon = nodeIdToObjectTranslating[nodeId].content.mimeType;
-    return mimeTypeIcons[mimeTypeIcon];
   }
 }
 

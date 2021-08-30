@@ -8,7 +8,7 @@ import { LocalizationService } from '../localization.service';
 })
 export class LocalizedDateComponent implements OnInit {
   @Input()
-  date: Date;
+  dates: Date[];
 
   /**
    * A locale id for the locale format rules to use.
@@ -16,11 +16,13 @@ export class LocalizedDateComponent implements OnInit {
   @Input()
   locale: string = 'en-US';
 
-  /**  
-  * Pre-defined options: https://angular.io/api/common/DatePipe#pre-defined-format-options Custom options: https://angular.io/api/common/DatePipe#custom-format-options
-  */
+  /**
+   * Pre-defined options: https://angular.io/api/common/DatePipe#pre-defined-format-options Custom options: https://angular.io/api/common/DatePipe#custom-format-options
+   */
   @Input()
   format: string = 'medium';
+
+  displayedColumns = ['dateBeforeLocalization', 'dateAfterLocalization'];
 
   constructor(private localizationService: LocalizationService) {}
 

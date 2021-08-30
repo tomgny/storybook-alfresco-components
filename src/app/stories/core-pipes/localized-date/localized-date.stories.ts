@@ -31,6 +31,7 @@ export default {
     },
     ngOnInit: { table: { disable: true } },
     showLocalizedDate: { table: { disable: true } },
+    displayedColumns: { table: { disable: true } }
   }
 } as Meta;
 
@@ -42,7 +43,7 @@ export const Default = Template.bind({});
 
 Default.args = {
   showLocalizedDate: true,
-  date: new Date()
+  dates: [new Date()]
 };
 
 export const PreDefinedFormatSet = Template.bind({});

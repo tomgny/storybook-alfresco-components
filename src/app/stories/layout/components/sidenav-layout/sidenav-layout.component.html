@@ -1,0 +1,104 @@
+<adf-sidenav-layout
+  [sidenavMin]="sidenavMin"
+  [sidenavMax]="sidenavMax"
+  [stepOver]="stepOver"
+  [position]="position"
+  [hideSidenav]="hideSidenav"
+  [expandedSidenav]="expandedSidenav"
+  (expanded)="setState($event)"
+>
+  <adf-sidenav-layout-header *ngIf="showSidenavLayoutHeader">
+    <ng-template let-toggleMenu="toggleMenu" let-isMenuMinimized="isMenuMinimized">
+      <adf-layout-header title="Sidenav layout" color="primary" (clicked)="toggleMenu($event)"> </adf-layout-header>
+    </ng-template>
+  </adf-sidenav-layout-header>
+
+  <adf-sidenav-layout-navigation *ngIf="showSidenavLayoutNavigation">
+    <ng-template let-isMenuMinimized="isMenuMinimized">
+      <!-- Copied from demo-shell -->
+      <mat-nav-list class="app-sidenav-linklist">
+        <ng-container *ngFor="let link of links">
+          <ng-container *ngIf="link.children">
+            <mat-list-item (click)="trigger.openMenu()" [attr.data-automation-id]="link.title" class="app-sidenav-link">
+              <mat-icon matListIcon>{{ link.icon }}</mat-icon>
+              <span matLine *ngIf="!isMenuMinimized()">{{ link.title }}</span>
+              <mat-icon
+                class="app-sidenav-link__expand-button"
+                [matMenuTriggerData]="{ links: link.children }"
+                rippleTrigger
+                mat-icon-button
+                #trigger="matMenuTrigger"
+                [matMenuTriggerFor]="nestedMenu"
+                >arrow_right</mat-icon
+              >
+            </mat-list-item>
+          </ng-container>
+
+          <ng-container *ngIf="!link.children">
+            <mat-list-item
+              [routerLink]="link.href"
+              routerLinkActive="app-sidenav-link--active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              [attr.data-automation-id]="link.title"
+              class="app-sidenav-link"
+            >
+              <mat-icon matListIcon>{{ link.icon }}</mat-icon>
+              <span matLine *ngIf="!isMenuMinimized()">{{ link.title }}</span>
+            </mat-list-item>
+          </ng-container>
+        </ng-container>
+
+        <mat-list-item adf-logout class="app-sidenav-link" data-automation-id="Logout">
+          <mat-icon matListIcon>exit_to_app</mat-icon>
+          <span matLine *ngIf="!isMenuMinimized()">Logout</span>
+        </mat-list-item>
+      </mat-nav-list>
+    </ng-template>
+  </adf-sidenav-layout-navigation>
+
+  <adf-sidenav-layout-content *ngIf="showSidenavLayoutContent">
+    <ng-template>
+      <div class="fake-router-outlet">
+        Thanks to transclusion you can put anything you want inside header, sidenav and this (content) sections.
+        <a href="https://github.com/Alfresco/alfresco-ng2-components/blob/develop/docs/core/components/header.component.md" target="_blank"
+          >ADF Layout Header component</a
+        >
+        is located in header section. In navigation, there is
+        <a href="https://material.angular.io/components/list/overview#navigation-lists" target="_blank">Angular Material Navigation list</a> where
+        items can contain routes to ADF components which then they will be rendered here, in content section. <br />
+        <br />
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis non massa dictum porttitor. Nam ac elit nulla. Morbi posuere odio at
+        ornare venenatis. Etiam rhoncus suscipit purus, eu tincidunt ante vulputate at. Cras quis neque felis. Maecenas augue turpis, suscipit non
+        aliquet sit amet, aliquet at turpis. Etiam feugiat mattis nisi imperdiet aliquet. Donec ornare ex non turpis ullamcorper, non lacinia elit
+        volutpat. Integer congue nunc lacus, vel sagittis ipsum sagittis sit amet. Integer eu arcu rutrum, semper urna non, efficitur libero. Aliquam
+        fringilla quis felis sit amet convallis. Aliquam non egestas urna. Proin consectetur lacinia tincidunt. Vestibulum et leo lacus. Nam efficitur
+        ante mollis lobortis pharetra. Nullam elit ligula, ullamcorper sed orci id, pharetra commodo est. Vestibulum ac accumsan urna, sit amet
+        pellentesque nunc. Sed non metus quis elit pretium varius et in eros. <br />
+        Maecenas pellentesque felis eu dolor facilisis, ut pellentesque quam condimentum. Morbi fermentum, tortor et feugiat tempus, nunc elit
+        malesuada ligula, pretium dictum erat felis vitae odio. Donec eros ante, blandit a augue sed, aliquet imperdiet velit. Duis nibh justo,
+        dignissim in sodales id, faucibus fermentum ante. Cras semper mauris ac velit iaculis, ac scelerisque ipsum mattis. Nunc vitae arcu gravida,
+        mollis dui a, tempor dolor. Cras malesuada eleifend elementum. Fusce nisl velit, ultricies quis justo id, imperdiet venenatis magna. Cras
+        hendrerit massa at mi varius finibus. Cras vitae nibh et nisl fermentum posuere nec ut libero. Nunc erat quam, tristique a mauris eget, dictum
+        volutpat nisl.
+      </div>
+    </ng-template>
+  </adf-sidenav-layout-content>
+</adf-sidenav-layout>
+
+<!-- Copied from demo-shell -->
+<mat-menu #nestedMenu="matMenu" xPosition="after" class="nestedMenu">
+  <ng-template matMenuContent let-links="links">
+    <button
+      mat-menu-item
+      *ngFor="let link of links"
+      class="app-sidenav-link"
+      [attr.data-automation-id]="link.title"
+      routerLinkActive="app-sidenav-link--active"
+      [routerLink]="link.href"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <mat-icon matListIcon>{{ link.icon }}</mat-icon>
+      {{ link.title }}
+    </button>
+  </ng-template>
+</mat-menu>

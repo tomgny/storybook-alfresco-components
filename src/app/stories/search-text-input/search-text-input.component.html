@@ -1,0 +1,17 @@
+<div class="app-main-content">
+    <div class="search-container">
+        <adf-search-text-input
+            [searchTerm]= "searchTerm"
+            [expandable]="expandable"
+            [autocomplete]="autocomplete"
+            [liveSearchEnabled]="liveSearchEnabled"
+            [searchAutocomplete]="auto"
+            (searchChange)="inputChange($event)"
+            (submit)="onSubmit($event)">
+        </adf-search-text-input>
+    </div>
+    <div class="search-console" #console>
+        <h3>Changes log:</h3>
+        <p *ngFor="let log of logs">{{ log }}</p>
+    </div>
+</div>

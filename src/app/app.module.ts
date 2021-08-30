@@ -89,6 +89,7 @@ import { DatatableComponent } from './stories/datatable/datatable.component';
 import { DatatableCustomComponent } from './stories/datatable/datatable-custom-data/datatable-custom-data.component';
 import { UserInfoComponent } from './stories/user-info/user-info.component';
 import { ToolbarComponent } from './stories/toolbar/toolbar.component';
+import { DocumentListComponent } from './stories/document-list/document-list.component';
 import { UploadButtonComponent } from './stories/upload-button/upload-button.component';
 import { TimeAgoComponent } from './stories/core-pipes/time-ago/time-ago.component';
 import { MultiValueComponent } from './stories/core-pipes/multi-value/multi-value.component';
@@ -112,6 +113,12 @@ import { ClipboardComponent } from './stories/clipboard/clipboard.component';
 import { FormListComponent } from './stories/form/form-list/form-list.component';
 import { FormFieldComponent } from './stories/form/form-field/form-field.component';
 import { FormRendererComponent } from './stories/form/form-renderer/form-renderer.component';
+import { SortingPickerComponent } from './stories/sorting-picker/sorting-picker.component';
+import { LoginComponent } from './stories/login/login.component';
+import { EditJsonDialogComponent } from './stories/core-dialogs/edit-json-dialog/edit-json-dialog.component';
+import { DownloadZipDialogComponent } from './stories/core-dialogs/download-zip-dialog/download-zip-dialog.component';
+import { SidenavLayoutComponent } from './stories/layout/components/sidenav-layout/sidenav-layout.component';
+import { SidebarActionMenuComponent } from './stories/layout/components/sidebar-action-menu/sidebar-action-menu.component';
 
 registerLocaleData(localeFr);
 registerLocaleData(localeDe);
@@ -181,6 +188,7 @@ registerLocaleData(localeSv);
     DatatableCustomComponent,
     UserInfoComponent,
     ToolbarComponent,
+    DocumentListComponent,
     UploadButtonComponent,
     TimeAgoComponent,
     MultiValueComponent,
@@ -204,6 +212,12 @@ registerLocaleData(localeSv);
     ClipboardComponent,
     FormFieldComponent,
     FormRendererComponent,
+    SortingPickerComponent,
+    LoginComponent,
+    EditJsonDialogComponent,
+    DownloadZipDialogComponent,
+    SidenavLayoutComponent,
+    SidebarActionMenuComponent,
   ],
   providers: [
     { provide: AppConfigService, useClass: DebugAppConfigService },

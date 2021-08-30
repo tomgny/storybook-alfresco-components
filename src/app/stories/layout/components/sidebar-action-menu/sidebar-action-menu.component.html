@@ -1,0 +1,14 @@
+<div class="sidebar-action-menu-container">
+  <adf-sidebar-action-menu [expanded]="expanded" [width]="width" [title]="title">
+    <mat-icon adf-sidebar-menu-title-icon>{{ wideExpandButtonIcon }}</mat-icon>
+    <div adf-sidebar-menu-expand-icon>
+      <mat-icon>{{ narrowExpandButtonIcon }}</mat-icon>
+    </div>
+    <div adf-sidebar-menu-options>
+      <button mat-menu-item *ngFor="let item of menuItems">
+        <mat-icon>{{ item.itemIcon }}</mat-icon>
+        <span>{{ item.label }}</span>
+      </button>
+    </div>
+  </adf-sidebar-action-menu>
+</div>

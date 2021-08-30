@@ -1,0 +1,46 @@
+<adf-upload-drag-area
+  fxFlex="1 1 auto"
+  [disabled]="allowDropFiles"
+  [rootFolderId]="currentFolderId"
+  [adf-check-allowable-operation]="'create'"
+  (beginUpload)="fakeUpload()"
+>
+  <adf-document-list
+    #documentList
+    [additionalSorting]="additionalSorting"
+    [allowDropFiles]="allowDropFiles"
+    [contentActions]="contentActions"
+    [contentActionsPosition]="contentActionsPosition"
+    [contextMenuActions]="contextMenuActions"
+    [currentFolderId]="currentFolderId"
+    [display]="display"
+    [emptyFolderImageUrl]="emptyFolderImageUrl"
+    [filterValue]="filterValue"
+    [headerFilters]="headerFilters"
+    [imageResolver]="imageResolver"
+    [includeFields]="includeFields"
+    [loading]="loading"
+    [locationFormat]="locationFormat"
+    [maxItems]="maxItems"
+    [multiselect]="multiselect"
+    [navigate]="navigate"
+    [navigationMode]="navigationMode"
+    [node]="node"
+    [permissionsStyle]="permissionsStyle"
+    [preselectNodes]="preselectNodes"
+    [rowStyle]="rowStyle"
+    [rowStyleClass]="rowStyleClass"
+    [selectionMode]="selectionMode"
+    [showHeader]="showHeader"
+    [sorting]="sorting"
+    [sortingMode]="sortingMode"
+    [thumbnails]="thumbnails"
+    [where]="where"
+    [rowFilter]="rowFilter"
+  >
+    <content-actions>
+      <!-- Conditional actions demo -->
+      <content-action icon="get_app" title="Download this file now!" (execute)="fakeDownload()" [visible]="true"> </content-action>
+    </content-actions>
+  </adf-document-list>
+</adf-upload-drag-area>
