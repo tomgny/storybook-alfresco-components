@@ -39,7 +39,18 @@ export default {
         BrowserAnimationsModule
       ]
     })
-  ]
+  ],
+  argTypes: {
+    properties: { table: { disable: true } },
+    defaultDataSource: { table: { disable: true } },
+    logs: { table: { disable: true } },
+    onDestroy$: { table: { disable: true } },
+    ngOnDestroy: { table: { disable: true } },
+    ngOnInit: { table: { disable: true } },
+    onItemChange: { table: { disable: true } },
+    respondToCardClick: { table: { disable: true } },
+    console: { table: { disable: true } }
+  }
 } as Meta;
 
 const dataSource = [

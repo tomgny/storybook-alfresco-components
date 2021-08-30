@@ -46,7 +46,13 @@ export default {
         { provide: NodesApiService, useClass: NodesApiServiceStub }
       ]
     })
-  ]
+  ],
+  argTypes: {
+    file: { table: { disable: true } },
+    ngOnInit: { table: { disable: true } },
+    onError: { table: { disable: true } },
+    onUploadPermissionFailed: { table: { disable: true } }
+  }
 } as Meta;
 
 const fakeFile = new File(['foo'], 'foo.txt', {

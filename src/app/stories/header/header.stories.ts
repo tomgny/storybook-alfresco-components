@@ -28,7 +28,12 @@ export default {
         CommonModule
       ]
     })
-  ]
+  ],
+  argTypes: {
+    links: {table: {disable: true}},
+    ngOnDestroy: {table: {disable: true}},
+    onSidenavClick: {table: {disable: true}},
+  }
 } as Meta;
 
 const Template: Story<HeaderComponent> = (args) => ({
