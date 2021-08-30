@@ -1,37 +1,21 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Subject } from 'rxjs';
 
 @Component({
   selector: 'aca-context-menu',
   templateUrl: './context-menu.component.html'
 })
 export class ContextMenuComponent implements OnInit {
-  menuItems: any[] = [
-    {
-      model: {
-        visible: true,
-        disabled: false,
-        title: 'Action 1'
-      },
-      subject: new Subject()
-    },
-    {
-      model: {
-        visible: true,
-        disabled: true,
-        title: 'Action 2'
-      },
-      subject: new Subject()
-    },
-    {
-      model: {
-        visible: true,
-        disabled: false,
-        title: 'Action 3'
-      },
-      subject: new Subject()
-    }
-  ];
+  /**
+   * Items for the menu.
+   */
+  @Input()
+  links: any[];
+
+  /**
+   * Is the menu enabled?
+   */
+  @Input()
+  enabled: boolean;
 
   @Input()
   showIcons: boolean;
@@ -40,12 +24,12 @@ export class ContextMenuComponent implements OnInit {
 
   ngOnInit() {
     if (this.showIcons) {
-      this.menuItems[0].model.icon = 'home';
-      this.menuItems[1].model.icon = 'done';
-      this.menuItems[2].model.icon = 'delete';
+      this.links[0].model.icon = 'home';
+      this.links[1].model.icon = 'done';
+      this.links[2].model.icon = 'delete';
     }
 
-    this.menuItems.forEach((l) => l.subject.subscribe((item: { model: { title: any; }; }) => this.commandCallback(item)));
+    this.links.forEach((l) => l.subject.subscribe((item: { model: { title: any } }) => this.commandCallback(item)));
   }
 
   commandCallback(item: { model: { title: any } }) {
