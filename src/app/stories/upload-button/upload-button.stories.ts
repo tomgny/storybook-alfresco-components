@@ -89,7 +89,7 @@ DefaultStory.args = {
 export const AcceptedFilesType = Template.bind({});
 AcceptedFilesType.args = {
   ...DefaultStory.args,
-  acceptedFilesType: '.jpg,.pdf,.js'
+  acceptedFilesType: '.pdf,.js'
 };
 
 export const Comment = Template.bind({});
