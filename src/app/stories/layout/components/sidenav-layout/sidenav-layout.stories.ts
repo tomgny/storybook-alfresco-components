@@ -24,7 +24,7 @@ export default {
     })
   ],
   argTypes: {
-    position: { options: ['start', 'end'], control: 'radio' },
+    position: { table: { disable: true } },
     links: { table: { disable: true } },
     setState: { table: { disable: true } }
   }
