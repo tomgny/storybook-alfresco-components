@@ -41,7 +41,7 @@ export class InfinitePaginationComponent implements OnInit, OnDestroy {
     this.updatePagination(event);
   }
 
-  async updatePagination(event: RequestPaginationModel) {
+  updatePagination(event: RequestPaginationModel) {
     if (!this.destroyFlag) {
       mockNodePaging.list.pagination.maxItems = event.maxItems;
       mockNodePaging.list.pagination.skipCount = event.skipCount;

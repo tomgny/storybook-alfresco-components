@@ -33,10 +33,10 @@ export default {
   argTypes: {
     ngOnInit: { table: { disable: true } },
     ngOnDestroy: { table: { disable: true } },
-    updatePagination	: { table: { disable: true } },
+    updatePagination: { table: { disable: true } },
     target: { control: { type: null } },
     isLoading: { control: { type: null } },
-    destroyFlag	: { table: { disable: true } },
+    destroyFlag: { table: { disable: true } }
   }
 } as Meta;
 
