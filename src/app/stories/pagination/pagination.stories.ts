@@ -33,7 +33,7 @@ export default {
   argTypes: {
     ngOnInit: { table: { disable: true } },
     ngOnDestroy: { table: { disable: true } },
-    updatePagingation: { table: { disable: true } },
+    updatePagination: { table: { disable: true } },
     onChange: { action: 'Pagination changed' },
     target: { control: { type: null } },
     pagination: { control: { type: null } }

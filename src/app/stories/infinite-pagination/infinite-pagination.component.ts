@@ -1,18 +1,31 @@
-import { RequestPaginationModel } from '@alfresco/adf-core';
-import { Component, Input, OnInit } from '@angular/core';
+import { PaginatedComponent, RequestPaginationModel } from '@alfresco/adf-core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { mockEntries, mockNodePaging } from '../document-list/mock/fake-nodes';
 
 @Component({
   selector: 'aca-infinite-pagination',
   templateUrl: './infinite-pagination.component.html'
 })
-export class InfinitePaginationComponent implements OnInit {
+export class InfinitePaginationComponent implements OnInit, OnDestroy {
+  /**
+   * Number of items that are added with each "load more" event.
+   */
   @Input()
   pageSize: number;
 
-  private destroyFlag: boolean = false;
+  /**
+   * Component that provides custom pagination support.
+   */
+  @Input()
+  target: PaginatedComponent;
 
-  constructor() {}
+  /**
+   * Is a new page loading?
+   */
+  @Input()
+  isLoading: boolean = false;
+
+  private destroyFlag: boolean = false;
 
   ngOnInit(): void {
     this.destroyFlag = false;
@@ -21,14 +34,14 @@ export class InfinitePaginationComponent implements OnInit {
 
   ngOnDestroy(): void {
     this.destroyFlag = true;
-    this.onLoadMore({ skipCount: 0, merge: false, maxItems: 7 })
+    this.onLoadMore({ skipCount: 0, merge: false, maxItems: 7 });
   }
 
   onLoadMore(event: RequestPaginationModel) {
     this.updatePagination(event);
   }
 
-  updatePagination(event: RequestPaginationModel) {
+  async updatePagination(event: RequestPaginationModel) {
     if (!this.destroyFlag) {
       mockNodePaging.list.pagination.maxItems = event.maxItems;
       mockNodePaging.list.pagination.skipCount = event.skipCount;

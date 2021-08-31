@@ -1,13 +1,13 @@
 import { PaginatedComponent, PaginationModel } from '@alfresco/adf-core';
 import { Pagination } from '@alfresco/js-api';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { mockEntries, mockNodePaging } from '../document-list/mock/fake-nodes';
 
 @Component({
   selector: 'aca-pagination',
   templateUrl: './pagination.component.html'
 })
-export class PaginationComponent implements OnInit {
+export class PaginationComponent implements OnInit, OnDestroy {
   /**
    * An array of page sizes.
    */
@@ -26,8 +26,6 @@ export class PaginationComponent implements OnInit {
   @Input()
   target: PaginatedComponent;
 
-  constructor() {}
-
   ngOnInit(): void {
     this.onChangePageSize({ count: 5, hasMoreItems: true, maxItems: 5, skipCount: 0, totalItems: mockEntries.length });
   }
@@ -36,7 +34,7 @@ export class PaginationComponent implements OnInit {
     this.onChangePageSize({ count: 7, hasMoreItems: true, maxItems: 7, skipCount: 0, totalItems: mockEntries.length });
   }
 
-  updatePagingation(event: Pagination): void {
+  updatePagination(event: Pagination): void {
     let count: number;
     if (event.totalItems - event.skipCount > event.maxItems) {
       count = event.maxItems;
@@ -52,20 +50,20 @@ export class PaginationComponent implements OnInit {
   }
 
   onChangePageSize(event: Pagination) {
-    this.updatePagingation(event);
+    this.updatePagination(event);
   }
 
   onNextPage(event: Pagination) {
-    this.updatePagingation(event);
+    this.updatePagination(event);
   }
 
   onPreviousPage(event: Pagination) {
-    this.updatePagingation(event);
+    this.updatePagination(event);
   }
 
   onChange(_: Pagination) {}
 
   onChangePageNumber(event: Pagination) {
-    this.updatePagingation(event);
+    this.updatePagination(event);
   }
 }

@@ -22,19 +22,21 @@ export default {
         CoreModule.forRoot(),
         AppCommonModule,
         ContentModule.forRoot(),
-        BrowserAnimationsModule,
+        BrowserAnimationsModule
       ],
       providers: [
         { provide: AlfrescoApiService, useClass: AlfrescoApiServiceStub },
-        { provide: AuthenticationService, useClass: AuthenticationServiceStub },
+        { provide: AuthenticationService, useClass: AuthenticationServiceStub }
       ]
     })
   ],
   argTypes: {
     ngOnInit: { table: { disable: true } },
     ngOnDestroy: { table: { disable: true } },
-    updatePagingation: { table: { disable: true } },
+    updatePagination	: { table: { disable: true } },
     target: { control: { type: null } },
+    isLoading: { control: { type: null } },
+    destroyFlag	: { table: { disable: true } },
   }
 } as Meta;
 
@@ -49,6 +51,5 @@ export const Default = Template.bind({});
 Default.args = {
   pageSize: 5,
   target: null,
+  isLoading: false
 };
-
-
