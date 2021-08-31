@@ -20,8 +20,6 @@ export class ContextMenuComponent implements OnInit {
   @Input()
   showIcons: boolean;
 
-  constructor() {}
-
   ngOnInit() {
     if (this.showIcons) {
       this.links[0].model.icon = 'home';
