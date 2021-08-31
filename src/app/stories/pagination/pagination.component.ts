@@ -29,11 +29,11 @@ export class PaginationComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    this.onChangePageSize({ count: 5, hasMoreItems: true, maxItems: 5, skipCount: 0, totalItems: 15 });
+    this.onChangePageSize({ count: 5, hasMoreItems: true, maxItems: 5, skipCount: 0, totalItems: mockEntries.length });
   }
 
   ngOnDestroy(): void {
-    this.onChangePageSize({ count: 7, hasMoreItems: true, maxItems: 7, skipCount: 0, totalItems: 15 });
+    this.onChangePageSize({ count: 7, hasMoreItems: true, maxItems: 7, skipCount: 0, totalItems: mockEntries.length });
   }
 
   updatePagingation(event: Pagination): void {

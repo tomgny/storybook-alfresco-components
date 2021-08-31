@@ -1,0 +1,3 @@
+<adf-document-list #documentList [currentFolderId]="'-root-'" [navigate]="false"> </adf-document-list>
+
+<adf-infinite-pagination [target]="documentList" [pageSize]="pageSize" [loading]="documentList.loading" (loadMore)="onLoadMore($event)"> Load more </adf-infinite-pagination>

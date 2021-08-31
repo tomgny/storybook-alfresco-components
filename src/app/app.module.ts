@@ -117,6 +117,7 @@ import { DownloadZipDialogComponent } from './stories/core-dialogs/download-zip-
 import { SidenavLayoutComponent } from './stories/layout/components/sidenav-layout/sidenav-layout.component';
 import { SidebarActionMenuComponent } from './stories/layout/components/sidebar-action-menu/sidebar-action-menu.component';
 import { PaginationComponent } from './stories/pagination/pagination.component';
+import { InfinitePaginationComponent } from './stories/infinite-pagination/infinite-pagination.component';
 
 registerLocaleData(localeFr);
 registerLocaleData(localeDe);
@@ -214,6 +215,7 @@ registerLocaleData(localeSv);
     SidenavLayoutComponent,
     SidebarActionMenuComponent,
     PaginationComponent,
+    InfinitePaginationComponent,
   ],
   providers: [
     { provide: AppConfigService, useClass: DebugAppConfigService },
