@@ -10,6 +10,4 @@ export class MimeTypeIconComponent {
    */
   @Input()
   icon: string;
-
-  constructor() {}
 }

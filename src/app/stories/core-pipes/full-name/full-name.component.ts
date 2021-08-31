@@ -19,8 +19,6 @@ export class FullNameComponent implements OnInit {
 
   user: any;
 
-  constructor() {}
-
   ngOnInit(): void {
     this.user = {
       username: this.username,

@@ -25,8 +25,6 @@ export class UserInitialComponent implements OnInit {
 
   user: any;
 
-  constructor() {}
-
   ngOnInit(): void {
     this.user = {
       firstName: this.firstName,
