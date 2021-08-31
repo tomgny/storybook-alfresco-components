@@ -8,7 +8,7 @@ export const selectFolderField = new FormFieldModel(fakeForm, {
   "fieldType": "AttachFileFieldRepresentation",
   "id": "attachfiletest",
   "name": "attachfiletest",
-  "type": "upload",
+  "type": "select-folder",
   "required": true,
   "colspan": 2,
   "placeholder": "attachfile",
