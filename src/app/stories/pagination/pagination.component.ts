@@ -49,20 +49,40 @@ export class PaginationComponent implements OnInit, OnDestroy {
     mockNodePaging.list.entries = mockEntries.slice(event.skipCount, event.skipCount + count);
   }
 
+  /**
+   * Called when the page size changes.
+   * @param event
+   */
   onChangePageSize(event: Pagination) {
     this.updatePagination(event);
   }
 
+  /**
+   * Called when the next page is requested.
+   * @param event
+   */
   onNextPage(event: Pagination) {
     this.updatePagination(event);
   }
 
+  /**
+   * Called when the previous page is requested.
+   * @param event
+   */
   onPreviousPage(event: Pagination) {
     this.updatePagination(event);
   }
 
+  /**
+   * Called when pagination changes in any way.
+   * @param _
+   */
   onChange(_: Pagination) {}
 
+  /**
+   * Called when the page number changes.
+   * @param event
+   */
   onChangePageNumber(event: Pagination) {
     this.updatePagination(event);
   }

@@ -37,6 +37,10 @@ export class InfinitePaginationComponent implements OnInit, OnDestroy {
     this.onLoadMore({ skipCount: 0, merge: false, maxItems: 7 });
   }
 
+  /**
+   * Called when the "Load More" button is clicked.
+   * @param event
+   */
   onLoadMore(event: RequestPaginationModel) {
     this.updatePagination(event);
   }
