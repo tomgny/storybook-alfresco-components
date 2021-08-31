@@ -116,6 +116,7 @@ import { EditJsonDialogComponent } from './stories/core-dialogs/edit-json-dialog
 import { DownloadZipDialogComponent } from './stories/core-dialogs/download-zip-dialog/download-zip-dialog.component';
 import { SidenavLayoutComponent } from './stories/layout/components/sidenav-layout/sidenav-layout.component';
 import { SidebarActionMenuComponent } from './stories/layout/components/sidebar-action-menu/sidebar-action-menu.component';
+import { ContextMenuComponent } from './stories/context-menu/context-menu.component';
 
 registerLocaleData(localeFr);
 registerLocaleData(localeDe);
@@ -212,6 +213,7 @@ registerLocaleData(localeSv);
     DownloadZipDialogComponent,
     SidenavLayoutComponent,
     SidebarActionMenuComponent,
+    ContextMenuComponent,
   ],
   providers: [
     { provide: AppConfigService, useClass: DebugAppConfigService },
