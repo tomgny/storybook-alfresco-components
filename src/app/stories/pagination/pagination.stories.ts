@@ -1,11 +1,11 @@
-import { ContentModule, UploadModule } from '@alfresco/adf-content-services';
-import { AlfrescoApiService, AuthenticationService, CoreModule, MaterialModule, UploadService } from '@alfresco/adf-core';
+import { ContentModule } from '@alfresco/adf-content-services';
+import { AlfrescoApiService, AuthenticationService, CoreModule } from '@alfresco/adf-core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { APP_ROUTES } from '../../app.routes';
 import { AppCommonModule } from '../../components/common/common.module';
-import { AlfrescoApiServiceStub, AuthenticationServiceStub, UploadServiceStub } from '../document-list/mock/stub-services';
+import { AlfrescoApiServiceStub, AuthenticationServiceStub } from '../document-list/mock/stub-services';
 import { PaginationComponent } from './pagination.component';
 
 export default {
@@ -22,14 +22,11 @@ export default {
         CoreModule.forRoot(),
         AppCommonModule,
         ContentModule.forRoot(),
-        MaterialModule,
         BrowserAnimationsModule,
-        UploadModule
       ],
       providers: [
         { provide: AlfrescoApiService, useClass: AlfrescoApiServiceStub },
         { provide: AuthenticationService, useClass: AuthenticationServiceStub },
-        { provide: UploadService, useClass: UploadServiceStub }
       ]
     })
   ],
