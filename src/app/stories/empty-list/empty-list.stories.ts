@@ -1,4 +1,3 @@
-import { ContentModule } from '@alfresco/adf-content-services';
 import { CoreModule } from '@alfresco/adf-core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
@@ -20,8 +19,7 @@ export default {
         }),
         CoreModule.forRoot(),
         AppCommonModule,
-        BrowserAnimationsModule,
-        ContentModule.forRoot()
+        BrowserAnimationsModule
       ]
     })
   ],
@@ -36,4 +34,12 @@ const Template: Story<EmptyListComponent> = (args) => ({
 
 export const Default = Template.bind({});
 
-Default.args = {};
+Default.args = {
+  showHeader: true,
+  showBody: true,
+  showFooter: true,
+  showContent: true,
+  headerText: 'Header section',
+  bodyText: 'Body section - You can use this component with different ones like Document List, Datatable and more. Different styles are applied to each section in this example.',
+  footerText: 'Footer section. Below is content section.'
+};

@@ -1,7 +1,8 @@
 <adf-datatable [data]="data">
   <adf-empty-list>
-    <div adf-empty-list-header>My custom Header</div>
-    <div adf-empty-list-body>My custom body</div>
-    <div adf-empty-list-footer>My custom footer</div>
+    <div *ngIf="showHeader" adf-empty-list-header class="">{{ headerText }}</div>
+    <div *ngIf="showBody" class="" adf-empty-list-body>{{ bodyText }}</div>
+    <div *ngIf="showFooter" class="" adf-empty-list-footer>{{ footerText }}</div>
+    <img *ngIf="showContent" [src]="'./assets/images/empty_doc_lib.svg'" />
   </adf-empty-list>
 </adf-datatable>
