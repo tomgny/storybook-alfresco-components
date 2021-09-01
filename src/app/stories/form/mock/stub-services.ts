@@ -1,5 +1,5 @@
 import { AppConfigService, GroupModel, UserProcessModel, ValidateDynamicTableRowEvent } from '@alfresco/adf-core';
-import { NodeEntry, SitePaging } from '@alfresco/js-api';
+import { MinimalNode, NodeEntry, SitePaging } from '@alfresco/js-api';
 import { Injectable } from '@angular/core';
 import { from, Observable, of, ReplaySubject, Subject } from 'rxjs';
 import { GroupApiStub, ModelsApiStub, NodesApiStub, SitesApiStub } from './stub-apis';
@@ -78,7 +78,7 @@ export class FormServiceStub {
   }
 }
 
-export class NodesApiServiceStub{
+export class NodesApiServiceStub {
   nodesApi = new NodesApiStub();
 
   getNode(nodeId: string, _?: any): Observable<NodeEntry> {
@@ -86,10 +86,19 @@ export class NodesApiServiceStub{
   }
 }
 
-export class SitesServiceStub{
+export class SitesServiceStub {
   sitesApi = new SitesApiStub();
 
-  getSites(_opts: any = {}): Observable<SitePaging>{
-    return from(this.sitesApi.listSites({visibility: 'public'}));
+  getSites(_opts: any = {}): Observable<SitePaging> {
+    return from(this.sitesApi.listSites({ visibility: 'public' }));
+  }
+
+  getSiteNameFromNodePath(node: MinimalNode): string {
+    let siteName = '';
+    if (node.path && node.path.elements) {
+      const foundNode = node.path.elements.find((pathNode: MinimalNode) => pathNode.nodeType === 'st:site' && pathNode.name !== 'Sites');
+      siteName = foundNode ? foundNode.name : '';
+    }
+    return siteName.toLocaleLowerCase();
   }
 }

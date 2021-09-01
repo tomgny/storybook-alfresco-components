@@ -1,3 +1,4 @@
+import { ContentModule } from '@alfresco/adf-content-services';
 import { AlfrescoApiService, AuthenticationService, CoreModule, NodesApiService, SitesService } from '@alfresco/adf-core';
 import { SitesApi } from '@alfresco/js-api';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -8,6 +9,7 @@ import { AppCommonModule } from '../../../components/common/common.module';
 import { SitesApiStub } from '../mock/stub-apis';
 import { AlfrescoApiServiceStub, AuthenticationServiceStub, NodesApiServiceStub, SitesServiceStub } from '../mock/stub-services';
 import { FormRendererComponent } from './form-renderer.component';
+import { processServiceCloudForm, processServiceForm } from './form-renderer.models';
 
 export default {
   component: FormRendererComponent,
@@ -22,15 +24,15 @@ export default {
         }),
         CoreModule.forRoot(),
         AppCommonModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        ContentModule.forRoot()
       ],
       providers: [
         { provide: AlfrescoApiService, useClass: AlfrescoApiServiceStub },
-        // { provide: FormService },
         { provide: AuthenticationService, useClass: AuthenticationServiceStub },
-        { provide: NodesApiService, useClass: NodesApiServiceStub},
-        { provide: SitesApi, useClass: SitesApiStub},
-        { provide: SitesService, useClass: SitesServiceStub}
+        { provide: NodesApiService, useClass: NodesApiServiceStub },
+        { provide: SitesApi, useClass: SitesApiStub },
+        { provide: SitesService, useClass: SitesServiceStub }
       ]
     })
   ]
@@ -40,8 +42,14 @@ const Template: Story<FormRendererComponent> = (args) => ({
   props: args
 });
 
-export const DefaultStory = Template.bind({});
-DefaultStory.args = {
+export const ProcessServices = Template.bind({});
+ProcessServices.args = {
   showDebugButton: true,
-  formDefinition: undefined
+  formDefinition: processServiceForm.formRepresentation
+};
+
+export const ProcessServicesCloud = Template.bind({});
+ProcessServicesCloud.args = {
+  showDebugButton: true,
+  formDefinition: processServiceCloudForm.formRepresentation
 };

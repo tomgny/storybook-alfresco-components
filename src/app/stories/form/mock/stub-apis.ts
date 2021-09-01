@@ -1,26 +1,9 @@
 import { NodeChildAssociationPaging, NodeEntry, SitePaging } from '@alfresco/js-api';
-import { mockNode1, mockNode2, mockNode3 } from '../../document-list/mock/fake-nodes';
+import { fakeNodeEntry, folderNodeChildrenWithPaginationInfo } from './fake-nodes';
 
 export class ModelsApiStub {}
 
 export class GroupApiStub {}
-
-const mockPreselectedNodes: NodeEntry = {
-    entry: mockNode1
-};
-
-const folderNodeChildrenWithPaginationInfo = new NodeChildAssociationPaging ({
-  list: {
-      pagination: {
-          count: 4,
-          hasMoreItems: false,
-          totalItems: 14,
-          skipCount: 10,
-          maxItems: 10
-      },
-      entries: [mockNode1, mockNode2, mockNode3]
-  }
-});
 
 const fakeSitePaging: SitePaging = {
   'list': {
@@ -36,7 +19,7 @@ const fakeSitePaging: SitePaging = {
               'entry': {
                   'role': 'SiteManager',
                   'visibility': 'PUBLIC',
-                  'guid': 'fake-1',
+                  'guid': 'fake_node_with_create_permission',
                   'description': 'fake-test-site',
                   'id': 'fake-test-site',
                   'preset': 'site-dashboard',
@@ -47,7 +30,7 @@ const fakeSitePaging: SitePaging = {
               'entry': {
                   'role': 'SiteManager',
                   'visibility': 'PUBLIC',
-                  'guid': 'fake-2',
+                  'guid': 'mock_node_1',
                   'description': 'This is a Sample Alfresco Team site.',
                   'id': 'swsdp',
                   'preset': 'site-dashboard',
@@ -59,20 +42,25 @@ const fakeSitePaging: SitePaging = {
 };
 
 export class NodesApiStub {
-  getNode(_nodeId: string, _?: any): Promise<NodeEntry> {
-    return Promise.resolve(mockPreselectedNodes);
+  getNode(nodeId: string, _?: any): Promise<NodeEntry> {
+    //console.log(mockPreselectedNodes);
+    console.log('getNode id: ', nodeId);
+    //console.log(nodeIdToObjectTranslating[nodeId]);
+    return Promise.resolve(fakeNodeEntry);
   }
 
-  getNodeChildren(_nodeId: string, _options: any): Promise<NodeChildAssociationPaging> {
+  getNodeChildren(nodeId: string, _options: any): Promise<NodeChildAssociationPaging> {
+    console.log('(getNodeChildren)folderNodeChilren: ');
+    console.log(folderNodeChildrenWithPaginationInfo);
+    console.log('getNodeChildren id: ', nodeId);
+    //console.log(nodeIdToObjectTranslating[nodeId]);
     return Promise.resolve(folderNodeChildrenWithPaginationInfo);
   }
 }
 
 export class SitesApiStub {
-
   listSites(_opts?: any): Promise<SitePaging>{
     console.log(fakeSitePaging);
-
     return Promise.resolve(fakeSitePaging);
   }
 }

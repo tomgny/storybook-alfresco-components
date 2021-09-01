@@ -1,10 +1,6 @@
-import { FormFieldModel, FormModel, FormRenderingService, FormService } from '@alfresco/adf-core';
+import { FormModel, FormRenderingService, FormService } from '@alfresco/adf-core';
 import { AttachFolderWidgetComponent } from '@alfresco/adf-process-services';
 import { Component, Input, OnInit } from '@angular/core';
-import {  selectFolderField } from '../form-field/form-field.models';
-import { easyForm } from './form-renderer.models';
-
-
 
 @Component({
   selector: 'aca-form-renderer',
@@ -18,23 +14,24 @@ export class FormRendererComponent implements OnInit {
 
   @Input()
   formDefinition: FormModel;
+
   debugMode: boolean;
 
-  tmpFormDefinition: FormModel;
-
-  ngOnInit(){
-    this.formRendererSerivce.register({
-      'select-folder': () => AttachFolderWidgetComponent,
-    })
-    this.tmpFormDefinition = this.formService.parseForm(easyForm);
-    const booleanField = new FormFieldModel(this.tmpFormDefinition, { id: 'Label5', name: 'Checkbox', type: 'boolean' });
-    booleanField;
-
-    this.tmpFormDefinition.fields = this.formService.parseForm(easyForm).getFormFields();
-    this.tmpFormDefinition.fields = [{fieldType: 'text', id: 'test', name: 'test', type: 'text', tab: 'text', form: undefined, json: undefined, field: selectFolderField}]
-    console.log(this.tmpFormDefinition.fields);
-
+  ngOnInit() {
+    this.formRenderingService.register({
+      'select-folder': () => AttachFolderWidgetComponent
+    });
+    this.formDefinition = this.parseForm(this.formDefinition);
   }
 
-  constructor(private formService: FormService, private formRendererSerivce: FormRenderingService){}
+  parseForm(formRepresentationJSON: any): FormModel {
+    if (formRepresentationJSON) {
+      const form = new FormModel(formRepresentationJSON, undefined, false, this.formService, true);
+      return form;
+    }
+
+    return null;
+  }
+
+  constructor(private formService: FormService, private formRenderingService: FormRenderingService) {}
 }

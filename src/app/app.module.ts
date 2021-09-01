@@ -120,7 +120,7 @@ import { DownloadZipDialogComponent } from './stories/core-dialogs/download-zip-
 import { SidenavLayoutComponent } from './stories/layout/components/sidenav-layout/sidenav-layout.component';
 import { SidebarActionMenuComponent } from './stories/layout/components/sidebar-action-menu/sidebar-action-menu.component';
 import { ProcessServicesCloudModule } from '@alfresco/adf-process-services-cloud';
-import { ProcessModule } from '@alfresco/adf-process-services';
+import { ContentWidgetModule, ProcessModule } from '@alfresco/adf-process-services';
 
 registerLocaleData(localeFr);
 registerLocaleData(localeDe);
@@ -174,6 +174,7 @@ registerLocaleData(localeSv);
     HammerModule,
     ProcessServicesCloudModule.forRoot(),
     ProcessModule.forRoot(),
+    ContentWidgetModule
   ],
   declarations: [
     AppComponent,
