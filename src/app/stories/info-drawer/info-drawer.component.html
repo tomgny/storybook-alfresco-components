@@ -1,0 +1,9 @@
+<adf-info-drawer [showHeader]="showHeader" [title]="title" [selectedIndex]="selectedIndex" (currentTab)="onTabChange($event)" class="info-drawer-box">
+  <div info-drawer-buttons>
+    <mat-icon (click)="onClick()">clear</mat-icon>
+  </div>
+
+  <adf-info-drawer-tab [label]="label1" [icon]="[icon1]"><div class="info-drawer-tab-text">Lorem</div></adf-info-drawer-tab>
+
+  <adf-info-drawer-tab [label]="label2" [icon]="[icon2]"><div class="info-drawer-tab-text">ipsum</div></adf-info-drawer-tab>
+</adf-info-drawer>
