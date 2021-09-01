@@ -38,5 +38,47 @@ Default.args = {
   label1: 'Activity',
   label2: 'Details',
   icon1: null,
-  icon2: null
+  icon2: null,
+  showSecondTab: true,
+  tab1Text: '1',
+  tab2Text: '2'
+};
+
+export const HeaderHidden = Template.bind({});
+
+HeaderHidden.args = {
+  ...Default.args,
+  showHeader: false
+};
+
+export const SecondTabSelectedByDefault = Template.bind({});
+
+SecondTabSelectedByDefault.args = {
+  ...Default.args,
+  selectedIndex: 1
+};
+
+export const IconsOnTabs = Template.bind({});
+
+IconsOnTabs.args = {
+  ...Default.args,
+  label1: null,
+  label2: null,
+  icon1: 'comment',
+  icon2: 'people'
+};
+
+export const IconsAndLabelsOnTabs = Template.bind({});
+
+IconsAndLabelsOnTabs.args = {
+  ...Default.args,
+  icon1: 'comment',
+  icon2: 'people'
+};
+
+export const SecondTabHidden = Template.bind({});
+
+SecondTabHidden.args = {
+  ...Default.args,
+  showSecondTab: false
 };

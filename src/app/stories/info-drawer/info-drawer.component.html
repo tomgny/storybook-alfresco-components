@@ -3,7 +3,11 @@
     <mat-icon (click)="onClick()">clear</mat-icon>
   </div>
 
-  <adf-info-drawer-tab [label]="label1" [icon]="[icon1]"><div class="info-drawer-tab-text">Lorem</div></adf-info-drawer-tab>
+  <adf-info-drawer-tab [label]="label1" [icon]="[icon1]"
+    ><div class="info-drawer-tab-text">{{ tab1Text }}</div></adf-info-drawer-tab
+  >
 
-  <adf-info-drawer-tab [label]="label2" [icon]="[icon2]"><div class="info-drawer-tab-text">ipsum</div></adf-info-drawer-tab>
+  <adf-info-drawer-tab [label]="label2" [icon]="[icon2]" *ngIf="showSecondTab"
+    ><div class="info-drawer-tab-text">{{ tab2Text }}</div></adf-info-drawer-tab
+  >
 </adf-info-drawer>
