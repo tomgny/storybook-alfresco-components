@@ -117,6 +117,7 @@ import { DownloadZipDialogComponent } from './stories/core-dialogs/download-zip-
 import { SidenavLayoutComponent } from './stories/layout/components/sidenav-layout/sidenav-layout.component';
 import { SidebarActionMenuComponent } from './stories/layout/components/sidebar-action-menu/sidebar-action-menu.component';
 import { ContextMenuComponent } from './stories/context-menu/context-menu.component';
+import { InfoDrawerLayoutComponent } from './stories/info-drawer-layout/info-drawer-layout.component';
 
 registerLocaleData(localeFr);
 registerLocaleData(localeDe);
@@ -214,6 +215,7 @@ registerLocaleData(localeSv);
     SidenavLayoutComponent,
     SidebarActionMenuComponent,
     ContextMenuComponent,
+    InfoDrawerLayoutComponent,
   ],
   providers: [
     { provide: AppConfigService, useClass: DebugAppConfigService },
