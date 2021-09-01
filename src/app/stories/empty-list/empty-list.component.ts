@@ -1,11 +1,12 @@
 import { ObjectDataTableAdapter } from '@alfresco/adf-core';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'aca-empty-list',
-  templateUrl: './empty-list.component.html'
+  templateUrl: './empty-list.component.html',
+  styleUrls: ['./empty-list.theme.scss']
 })
-export class EmptyListComponent implements OnInit {
+export class EmptyListComponent {
   @Input()
   data: ObjectDataTableAdapter = new ObjectDataTableAdapter();
 
@@ -29,8 +30,4 @@ export class EmptyListComponent implements OnInit {
 
   @Input()
   footerText: string;
-
-  constructor() {}
-
-  ngOnInit(): void {}
 }
