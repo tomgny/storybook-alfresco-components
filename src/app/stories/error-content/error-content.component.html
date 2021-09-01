@@ -1,0 +1,5 @@
+<adf-error-content [errorCode]="errorCode">
+  <div adf-error-content-actions *ngIf="showActions">
+    <button mat-raised-button (click)="onClick()">Back to home</button>
+  </div>
+</adf-error-content>
