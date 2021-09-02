@@ -17,6 +17,12 @@ export class FormRendererComponent implements OnInit {
 
   debugMode: boolean;
 
+  @Input()
+  testDescription: string;
+
+  @Input()
+  showTestDescription: boolean = false;
+
   ngOnInit() {
     this.formRenderingService.register({
       'select-folder': () => AttachFolderWidgetComponent
