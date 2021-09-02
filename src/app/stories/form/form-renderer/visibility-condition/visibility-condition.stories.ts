@@ -9,7 +9,7 @@ import { AppCommonModule } from '../../../../components/common/common.module';
 import { SitesApiStub } from '../../mock/stub-apis';
 import { AlfrescoApiServiceStub, AuthenticationServiceStub, NodesApiServiceStub, SitesServiceStub } from '../../mock/stub-services';
 import { FormRendererComponent } from '.././form-renderer.component';
-import { fakeFormVisibility } from '.././form-renderer.models';
+import { checkboxVisibilityRefersToFieldAndAnotherField, checkboxVisibilityRefersToFieldAndFormVariable, checkboxVisibilityRefersToFormVariable, checkboxVisibilityRefersToFormVariableAndAnotherFormVariable, checkboxVisibilityRefersToFormVariableAndField, fakeFormVisibility } from './visibility-condition-cases';
 
 export default {
   component: FormRendererComponent,
@@ -60,4 +60,39 @@ visibleCheckBoxRefersToAnotherFieldValue.args = {
   ...defaultValues.args,
   testDescription: 'Should be able to see Checkbox widget when visibility condition refers to another field with specific value (showCheckbox)',
   formDefinition: fakeFormVisibility
+};
+
+export const visibleCheckboxRefersToFormVariableAndField = Template.bind({});
+visibleCheckboxRefersToFormVariableAndField.args = {
+  ...defaultValues.args,
+  testDescription: 'Should be able to see Checkbox widget when visibility condition refers to a form variable and a field (showCheckbox)',
+  formDefinition: checkboxVisibilityRefersToFormVariableAndField
+};
+
+export const visibleCheckboxRefersToFieldAndFormVariable = Template.bind({});
+visibleCheckboxRefersToFieldAndFormVariable.args = {
+  ...defaultValues.args,
+  testDescription: 'Should be able to see Checkbox widget when visibility condition refers to a field and a form variable (showCheckbox)',
+  formDefinition: checkboxVisibilityRefersToFieldAndFormVariable
+};
+
+export const visibleCheckboxRefersToFieldAndAnotherField = Template.bind({});
+visibleCheckboxRefersToFieldAndAnotherField.args = {
+  ...defaultValues.args,
+  testDescription: 'Should be able to see Checkbox widget when visibility condition refers to a field and another field (showCheckbox)',
+  formDefinition: checkboxVisibilityRefersToFieldAndAnotherField
+};
+
+export const visibleCheckboxRefersToFormVariable = Template.bind({});
+visibleCheckboxRefersToFormVariable.args = {
+  ...defaultValues.args,
+  testDescription: 'Should be able to see Checkbox widget when visibility condition refers to a variable with specific value (showCheckbox)',
+  formDefinition: checkboxVisibilityRefersToFormVariable
+};
+
+export const visibleCheckboxRefersToFormVariableAndAnotherFormVariable = Template.bind({});
+visibleCheckboxRefersToFormVariableAndAnotherFormVariable.args = {
+  ...defaultValues.args,
+  testDescription: 'Should be able to see Checkbox widget when visibility condition refers to form variable and another form variable (showCheckbox)',
+  formDefinition: checkboxVisibilityRefersToFormVariableAndAnotherFormVariable
 };
