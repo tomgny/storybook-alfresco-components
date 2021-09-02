@@ -1,0 +1,41 @@
+import { AlfrescoApiService, AuthenticationService, CoreModule } from '@alfresco/adf-core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
+import { Meta, moduleMetadata, Story } from '@storybook/angular';
+import { APP_ROUTES } from '../../app.routes';
+import { AppCommonModule } from '../../components/common/common.module';
+import { AlfrescoApiStubService } from '../login/mock/alfresco-api-stub.service';
+import { AuthenticationStubService } from '../login/mock/authentication-stub.service';
+import { LoginDialogPanelComponent } from './login-dialog-panel.component';
+
+export default {
+  component: LoginDialogPanelComponent,
+  title: 'Core/Components/Login Dialog Panel',
+  decorators: [
+    moduleMetadata({
+      declarations: [LoginDialogPanelComponent],
+      imports: [
+        RouterModule.forRoot(APP_ROUTES, {
+          useHash: true,
+          enableTracing: false
+        }),
+        CoreModule.forRoot(),
+        AppCommonModule,
+        BrowserAnimationsModule
+      ],
+      providers: [
+        { provide: AuthenticationService, useClass: AuthenticationStubService },
+        { provide: AlfrescoApiService, useClass: AlfrescoApiStubService }
+      ]
+    })
+  ],
+  argTypes: {}
+} as Meta;
+
+const Template: Story<LoginDialogPanelComponent> = (args) => ({
+  props: args
+});
+
+export const Default = Template.bind({});
+
+Default.args = {};
