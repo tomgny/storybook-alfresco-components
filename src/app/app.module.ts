@@ -119,6 +119,7 @@ import { SidebarActionMenuComponent } from './stories/layout/components/sidebar-
 import { PaginationComponent } from './stories/pagination/pagination.component';
 import { InfinitePaginationComponent } from './stories/infinite-pagination/infinite-pagination.component';
 import { ContextMenuComponent } from './stories/context-menu/context-menu.component';
+import { InfoDrawerLayoutComponent } from './stories/info-drawer-layout/info-drawer-layout.component';
 import { ErrorContentComponent } from './stories/error-content/error-content.component';
 import { EmptyContentComponent } from './stories/empty-content/empty-content.component';
 import { EmptyListComponent } from './stories/empty-list/empty-list.component';
@@ -221,6 +222,7 @@ registerLocaleData(localeSv);
     PaginationComponent,
     InfinitePaginationComponent,
     ContextMenuComponent,
+    InfoDrawerLayoutComponent,
     ErrorContentComponent,
     EmptyContentComponent,
     EmptyListComponent,

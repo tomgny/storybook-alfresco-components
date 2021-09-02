@@ -1,0 +1,13 @@
+<adf-info-drawer-layout [showHeader]="showHeader" class="info-drawer-layout-box">
+  <div info-drawer-title>{{ title }}</div>
+
+  <div info-drawer-buttons>
+    <mat-icon *ngFor="let icon of icons" (click)="onClick(icon)">{{ icon }}</mat-icon>
+  </div>
+
+  <div info-drawer-content *ngIf="showContent">
+    <mat-card class="mat-card-text">
+      {{ content }}
+    </mat-card>
+  </div>
+</adf-info-drawer-layout>
