@@ -1,0 +1,8 @@
+<adf-document-list>
+  <adf-custom-empty-content-template>
+    <adf-empty-content *ngIf="lines.length === 0" [icon]="icon" [title]="title" [subtitle]="subtitle"> </adf-empty-content>
+    <adf-empty-content *ngIf="lines.length !== 0" [icon]="icon" [title]="title">
+      <p class="adf-empty-content__text" *ngFor="let line of lines">{{ line }}</p>
+    </adf-empty-content>
+  </adf-custom-empty-content-template>
+</adf-document-list>
