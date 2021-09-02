@@ -119,6 +119,7 @@ import { SidebarActionMenuComponent } from './stories/layout/components/sidebar-
 import { PaginationComponent } from './stories/pagination/pagination.component';
 import { InfinitePaginationComponent } from './stories/infinite-pagination/infinite-pagination.component';
 import { ContextMenuComponent } from './stories/context-menu/context-menu.component';
+import { EmptyListComponent } from './stories/empty-list/empty-list.component';
 
 registerLocaleData(localeFr);
 registerLocaleData(localeDe);
@@ -218,6 +219,7 @@ registerLocaleData(localeSv);
     PaginationComponent,
     InfinitePaginationComponent,
     ContextMenuComponent,
+    EmptyListComponent,
   ],
   providers: [
     { provide: AppConfigService, useClass: DebugAppConfigService },
