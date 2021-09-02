@@ -19,10 +19,13 @@ export default {
         }),
         CoreModule.forRoot(),
         AppCommonModule,
-        BrowserAnimationsModule,
+        BrowserAnimationsModule
       ]
     })
-  ]
+  ],
+  argTypes: {
+    iconCustom: { options: ['baseline:lock', 'adf:move-file', 'alfresco:join-library'], control: { type: 'radio' } }
+  }
 } as Meta;
 
 const Template: Story<IconComponent> = (args) => ({
@@ -31,4 +34,8 @@ const Template: Story<IconComponent> = (args) => ({
 
 export const Default = Template.bind({});
 
-Default.args = {};
+Default.args = {
+  iconWithLigature: 'folder',
+  iconThumbnailService: 'adf:image/jpeg',
+  iconCustom: 'baseline:lock'
+};
