@@ -47,8 +47,6 @@ export class UserInfoComponent implements OnChanges {
   @Input()
   userLoggedInWith: 'ecm' | 'bpm' | 'both' | 'sso' | 'ssoAndEcm';
 
-  constructor() {}
-
   ngOnChanges() {
     setProvider(this.userLoggedInWith);
   }

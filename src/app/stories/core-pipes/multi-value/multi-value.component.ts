@@ -15,8 +15,6 @@ export class MultiValueComponent {
   dataSource: string[][];
   displayedColumns = ['wordsBeforeSeparation', 'wordsAfterSeparation'];
 
-  constructor() {}
-
   ngOnInit() {
     this.dataSource = [this.words];
   }
