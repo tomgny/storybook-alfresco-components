@@ -118,6 +118,7 @@ import { SidenavLayoutComponent } from './stories/layout/components/sidenav-layo
 import { SidebarActionMenuComponent } from './stories/layout/components/sidebar-action-menu/sidebar-action-menu.component';
 import { PaginationComponent } from './stories/pagination/pagination.component';
 import { InfinitePaginationComponent } from './stories/infinite-pagination/infinite-pagination.component';
+import { ContextMenuComponent } from './stories/context-menu/context-menu.component';
 
 registerLocaleData(localeFr);
 registerLocaleData(localeDe);
@@ -216,6 +217,7 @@ registerLocaleData(localeSv);
     SidebarActionMenuComponent,
     PaginationComponent,
     InfinitePaginationComponent,
+    ContextMenuComponent,
   ],
   providers: [
     { provide: AppConfigService, useClass: DebugAppConfigService },
