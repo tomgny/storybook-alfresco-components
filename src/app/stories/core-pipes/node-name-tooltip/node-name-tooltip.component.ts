@@ -16,8 +16,6 @@ export class NodeNameTooltipComponent implements OnInit {
 
   node: any;
 
-  constructor() {}
-
   ngOnInit(): void {
     this.node = {
       entry: {

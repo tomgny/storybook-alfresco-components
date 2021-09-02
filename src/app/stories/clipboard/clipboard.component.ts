@@ -21,6 +21,4 @@ export class ClipboardComponent {
   public buttonCopyingInputValueText: string = 'You can copy value of other HTMLelement. Try it';
 
   public textAreaPlaceHolder: string = 'Paste here to check if Clipboard Directive works!';
-
-  constructor() {}
 }
