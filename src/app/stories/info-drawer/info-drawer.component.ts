@@ -52,14 +52,19 @@ export class InfoDrawerComponent {
   showSecondTab: boolean;
 
   @Input()
+  showThirdTab: boolean = false;
+
+  @Input()
   tab1Text: string;
 
   @Input()
   tab2Text: string;
 
-  onTabChange(event) {
-    console.log(event);
-  }
+  /**
+   * Called when the currently active tab changes.
+   * @param _ 
+   */
+  onTabChange(_: any) {}
 
   onClick() {
     alert('You would close this window.');

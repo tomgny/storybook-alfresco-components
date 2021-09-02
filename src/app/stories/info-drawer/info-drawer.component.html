@@ -10,4 +10,6 @@
   <adf-info-drawer-tab [label]="label2" [icon]="[icon2]" *ngIf="showSecondTab"
     ><div class="info-drawer-tab-text">{{ tab2Text }}</div></adf-info-drawer-tab
   >
+
+  <adf-info-drawer-tab [label]="'Additional info'" *ngIf="showThirdTab"><div class="info-drawer-tab-text">You can add as many tabs as you want.</div></adf-info-drawer-tab>
 </adf-info-drawer>
