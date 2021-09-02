@@ -22,6 +22,4 @@ export class AppConfigComponent {
 
   displayedColumns = ['propertyName', 'propertyValue'];
   displayedColumnsChaining = ['propertyName', 'propertyValueBeforeChaining', 'propertyValueAfterChaining'];
-
-  constructor() {}
 }

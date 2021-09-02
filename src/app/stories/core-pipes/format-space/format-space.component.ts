@@ -19,6 +19,4 @@ export class FormatSpaceComponent {
   lowercase: boolean = true;
 
   displayedColumns = ['textBeforeFormatting', 'textAfterFormatting'];
-
-  constructor() {}
 }
