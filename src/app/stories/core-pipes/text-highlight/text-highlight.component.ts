@@ -16,6 +16,4 @@ export class TextHighlightComponent {
   wordsToHighlight: string;
 
   displayedColumns = ['textBeforeHighlighting', 'textAfterHighlighting'];
-
-  constructor() {}
 }
