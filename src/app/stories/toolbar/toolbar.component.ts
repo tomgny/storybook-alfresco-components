@@ -13,4 +13,10 @@ export class ToolbarComponent {
   /** Toolbar color. Can be changed to empty value (default), `primary`, `accent` or `warn`. */
   @Input()
   color: 'primary' | 'accent' | 'warn' = 'primary';
+
+  @Input()
+  showToolbarForDivider: boolean;
+
+  @Input()
+  showToolbarDivider: boolean
 }

@@ -46,3 +46,10 @@ DifferentTitleAndColor.args = {
   title: 'ADF Toolbar title',
   color: 'accent'
 };
+
+export const ToolbarDivider = Template.bind({});
+
+ToolbarDivider.args = {
+  showToolbarForDivider: true,
+  showToolbarDivider: true
+};
