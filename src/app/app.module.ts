@@ -124,6 +124,7 @@ import { InfoDrawerLayoutComponent } from './stories/info-drawer-layout/info-dra
 import { ErrorContentComponent } from './stories/error-content/error-content.component';
 import { EmptyContentComponent } from './stories/empty-content/empty-content.component';
 import { EmptyListComponent } from './stories/empty-list/empty-list.component';
+import { LoginDialogComponent } from './stories/login-dialog/login-dialog.component';
 import { LoginDialogPanelComponent } from './stories/login-dialog-panel/login-dialog-panel.component';
 import { CommentListComponent } from './stories/comment-list/comment-list.component';
 import { IconComponent } from './stories/icon/icon.component';
@@ -231,6 +232,7 @@ registerLocaleData(localeSv);
     ErrorContentComponent,
     EmptyContentComponent,
     EmptyListComponent,
+    LoginDialogComponent,
     LoginDialogPanelComponent,
     CommentListComponent,
     IconComponent,
