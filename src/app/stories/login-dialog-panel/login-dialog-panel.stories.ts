@@ -29,7 +29,18 @@ export default {
       ]
     })
   ],
-  argTypes: {}
+  parameters: {
+    docs: {
+      description: {
+        component: `The most common way of using this component is as a part of a different component that is intented to be used in a dialog. You can use its tag selector in content section and bind its performLogin() method to a button.
+          
+        Username: hruser
+          
+    Password: password
+          `
+      }
+    }
+  }
 } as Meta;
 
 const Template: Story<LoginDialogPanelComponent> = (args) => ({
