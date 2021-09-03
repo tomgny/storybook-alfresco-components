@@ -250,38 +250,85 @@ export const mockPreselectedNodes: NodeEntry[] = [
   }
 ];
 
+export const mockEntries = [
+  {
+    entry: mockNode1
+  },
+  {
+    entry: mockNode2
+  },
+  {
+    entry: mockNode3
+  },
+  {
+    entry: mockNode4
+  },
+  {
+    entry: mockNode5
+  },
+  {
+    entry: fakeNodeWithCreatePermission
+  },
+  {
+    entry: fakeNodeWithNoPermission
+  },
+  {
+    entry: mockNode1
+  },
+  {
+    entry: mockNode2
+  },
+  {
+    entry: mockNode3
+  },
+  {
+    entry: mockNode4
+  },
+  {
+    entry: mockNode5
+  },
+  {
+    entry: fakeNodeWithCreatePermission
+  },
+  {
+    entry: fakeNodeWithNoPermission
+  },
+  {
+    entry: mockNode1
+  },
+  {
+    entry: mockNode2
+  },
+  {
+    entry: mockNode3
+  },
+  {
+    entry: mockNode4
+  },
+  {
+    entry: mockNode5
+  },
+  {
+    entry: fakeNodeWithCreatePermission
+  },
+  {
+    entry: fakeNodeWithNoPermission
+  },
+  {
+    entry: mockNode1
+  }
+];
+
 export const mockNodePaging: NodePaging = {
   list: {
     pagination: {
-      count: 5,
-      hasMoreItems: false,
-      totalItems: 7,
+      count: 7,
+      hasMoreItems: true,
+      totalItems: mockEntries.length,
       skipCount: 0,
-      maxItems: 5
+      maxItems: 7
     },
-    entries: [
-      {
-        entry: mockNode1
-      },
-      {
-        entry: mockNode2
-      },
-      {
-        entry: mockNode3
-      },
-      {
-        entry: mockNode4
-      },
-      {
-        entry: mockNode5
-      },
-      {
-        entry: fakeNodeWithCreatePermission
-      },
-      {
-        entry: fakeNodeWithNoPermission
-      }
-    ]
+    entries: mockEntries.slice(0, 7),
   }
 };
 

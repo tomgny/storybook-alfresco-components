@@ -33,6 +33,4 @@ export class SortingPickerComponent {
    * Raised each time sorting key gets changed.
    */
   onValueChanged(_: any) {}
-
-  constructor() {}
 }

@@ -53,9 +53,7 @@ export class SidenavLayoutComponent {
   @Input()
   showSidenavLayoutContent: boolean;
 
-  links = links
-
-  constructor() {}
+  links = links;
 
   setState(_: any) {}
 }

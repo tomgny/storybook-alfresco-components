@@ -1,0 +1,8 @@
+<adf-datatable [data]="data">
+  <adf-empty-list class="adf-empty-list_template adf-empty-folder">
+    <div *ngIf="showHeader" adf-empty-list-header class="adf-empty-folder-drag-drop">{{ headerText }}</div>
+    <div *ngIf="showBody" adf-empty-list-body class="adf-empty-folder-any-files-here-to-add">{{ bodyText }}</div>
+    <div *ngIf="showFooter" adf-empty-list-footer class="adf-empty-list-footer">{{ footerText }}</div>
+    <img *ngIf="showContent" [src]="'./assets/images/empty_doc_lib.svg'" class="adf-empty-folder-image" />
+  </adf-empty-list>
+</adf-datatable>

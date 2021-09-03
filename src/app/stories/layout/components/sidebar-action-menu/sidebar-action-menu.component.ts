@@ -30,6 +30,4 @@ export class SidebarActionMenuComponent {
     { itemIcon: 'done', label: 'Mark as Done' },
     { itemIcon: 'delete', label: 'Delete Task' }
   ];
-
-  constructor() {}
 }
