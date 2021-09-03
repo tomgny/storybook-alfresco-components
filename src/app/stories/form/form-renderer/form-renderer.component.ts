@@ -1,4 +1,4 @@
-import { FormModel, FormRenderingService, FormService } from '@alfresco/adf-core';
+import { FormModel, FormRenderingService, FormService, FormVariableModel } from '@alfresco/adf-core';
 import { AttachFolderWidgetComponent } from '@alfresco/adf-process-services';
 import { Component, Input, OnInit } from '@angular/core';
 
@@ -8,20 +8,27 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./form-renderer.component.scss']
 })
 export class FormRendererComponent implements OnInit {
-  /** Toggle debug options. */
+  /**
+   * Toggle debug options.
+   */
   @Input()
   showDebugButton: boolean = false;
 
   @Input()
   formDefinition: FormModel;
 
-  debugMode: boolean;
-
   @Input()
   testDescription: string;
 
   @Input()
   showTestDescription: boolean = false;
+
+  @Input()
+  showFormVariables: boolean = false;
+
+  debugMode: boolean;
+
+  formVariables: FormVariableModel[];
 
   ngOnInit() {
     this.formRenderingService.register({
@@ -33,6 +40,7 @@ export class FormRendererComponent implements OnInit {
   parseForm(formRepresentationJSON: any): FormModel {
     if (formRepresentationJSON) {
       const form = new FormModel(formRepresentationJSON, undefined, false, this.formService, true);
+      this.formVariables = form.variables;
       return form;
     }
 

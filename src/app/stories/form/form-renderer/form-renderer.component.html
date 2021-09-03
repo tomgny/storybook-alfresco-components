@@ -1,2 +1,6 @@
 <p *ngIf="showTestDescription" style="text-align: center;">{{testDescription}}</p>
 <adf-form-renderer [showDebugButton]="showDebugButton" [formDefinition]="formDefinition"></adf-form-renderer>
+<ng-container *ngIf="showFormVariables && formVariables.length > 0">
+  <h3>Form variables</h3>
+  <p *ngFor="let variable of formVariables">Name: {{variable.name}}, Value: {{variable.value}}</p>
+</ng-container>
