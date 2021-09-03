@@ -1,5 +1,5 @@
 import { LoginDialogComponentData } from '@alfresco/adf-core';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Subject } from 'rxjs';
 import { LoginDialogComponent as LoginDialogComponentAdf } from '@alfresco/adf-core';
@@ -8,7 +8,7 @@ import { LoginDialogComponent as LoginDialogComponentAdf } from '@alfresco/adf-c
   selector: 'aca-login-dialog',
   templateUrl: './login-dialog.component.html'
 })
-export class LoginDialogComponent implements OnInit {
+export class LoginDialogComponent {
   @Input()
   title: string;
 
@@ -24,27 +24,18 @@ export class LoginDialogComponent implements OnInit {
       logged: new Subject<any>()
     };
 
-    this.dialog.open(LoginDialogComponentAdf, {
-      data,
-      panelClass: 'adf-login-dialog',
-      width: '630px'
-    });
+    this.dialog.open(LoginDialogComponentAdf, { data });
 
     data.logged.subscribe(
       () => {
-        // Action after being logged in...
         alert('Success!');
       },
       (error) => {
-        //your error handling
         alert(error);
       },
       () => {
-        //action called when an action or cancel is clicked on the dialog
         this.dialog.closeAll();
       }
     );
   }
-
-  ngOnInit(): void {}
 }

@@ -1,4 +1,4 @@
-import { AlfrescoApiService, AuthenticationService, CoreModule } from '@alfresco/adf-core';
+import { AlfrescoApiService, AuthenticationService, CoreModule, TRANSLATION_PROVIDER } from '@alfresco/adf-core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
@@ -25,14 +25,24 @@ export default {
       ],
       providers: [
         { provide: AuthenticationService, useClass: AuthenticationStubService },
-        { provide: AlfrescoApiService, useClass: AlfrescoApiStubService }
+        { provide: AlfrescoApiService, useClass: AlfrescoApiStubService },
+        {
+            provide: TRANSLATION_PROVIDER,
+            multi: true,
+            useValue: {
+              name: 'app',
+              source: 'assets'
+            }
+          }
       ]
     })
   ],
   parameters: {
     docs: {
       description: {
-        component: `Username: hruser
+        component: `
+        
+        Username: hruser
           
     Password: password
           `
