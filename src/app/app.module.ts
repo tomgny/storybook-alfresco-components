@@ -128,6 +128,7 @@ import { LoginDialogComponent } from './stories/login-dialog/login-dialog.compon
 import { LoginDialogPanelComponent } from './stories/login-dialog-panel/login-dialog-panel.component';
 import { CommentListComponent } from './stories/comment-list/comment-list.component';
 import { IconComponent } from './stories/icon/icon.component';
+import { AboutGithubLinkComponent } from './stories/about-github-link/about-github-link.component';
 
 registerLocaleData(localeFr);
 registerLocaleData(localeDe);
@@ -236,6 +237,7 @@ registerLocaleData(localeSv);
     LoginDialogPanelComponent,
     CommentListComponent,
     IconComponent,
+    AboutGithubLinkComponent,
   ],
   providers: [
     { provide: AppConfigService, useClass: DebugAppConfigService },
