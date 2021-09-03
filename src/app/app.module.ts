@@ -119,11 +119,13 @@ import { SidebarActionMenuComponent } from './stories/layout/components/sidebar-
 import { PaginationComponent } from './stories/pagination/pagination.component';
 import { InfinitePaginationComponent } from './stories/infinite-pagination/infinite-pagination.component';
 import { ContextMenuComponent } from './stories/context-menu/context-menu.component';
+import { InfoDrawerComponent } from './stories/info-drawer/info-drawer.component';
 import { InfoDrawerLayoutComponent } from './stories/info-drawer-layout/info-drawer-layout.component';
 import { ErrorContentComponent } from './stories/error-content/error-content.component';
 import { EmptyContentComponent } from './stories/empty-content/empty-content.component';
 import { EmptyListComponent } from './stories/empty-list/empty-list.component';
 import { CommentListComponent } from './stories/comment-list/comment-list.component';
+import { IconComponent } from './stories/icon/icon.component';
 
 registerLocaleData(localeFr);
 registerLocaleData(localeDe);
@@ -223,11 +225,13 @@ registerLocaleData(localeSv);
     PaginationComponent,
     InfinitePaginationComponent,
     ContextMenuComponent,
+    InfoDrawerComponent,
     InfoDrawerLayoutComponent,
     ErrorContentComponent,
     EmptyContentComponent,
     EmptyListComponent,
     CommentListComponent,
+    IconComponent,
   ],
   providers: [
     { provide: AppConfigService, useClass: DebugAppConfigService },
