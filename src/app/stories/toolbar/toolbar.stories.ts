@@ -41,8 +41,21 @@ DefaultStory.args = {
   color: 'primary'
 };
 
-export const DifferentTitleAndColor = Template.bind({});
-DifferentTitleAndColor.args = {
-  title: 'ADF Toolbar title',
+export const DifferentTitleAndColorProperties = Template.bind({});
+DifferentTitleAndColorProperties.args = {
+  title: 'Toolbar title property',
   color: 'accent'
+};
+
+export const ToolbarDividerComponent = Template.bind({});
+
+ToolbarDividerComponent.args = {
+  showToolbarForDivider: true,
+  showToolbarDivider: true
+};
+
+export const ToolbarTitleComponent = Template.bind({});
+
+ToolbarTitleComponent.args = {
+  showToolbarForTitle: true
 };
