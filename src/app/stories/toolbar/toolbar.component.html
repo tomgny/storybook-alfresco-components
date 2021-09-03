@@ -26,3 +26,27 @@
     </button>
   </mat-menu>
 </adf-toolbar>
+
+<br *ngIf="showToolbarForDivider" />
+<adf-toolbar *ngIf="showToolbarForDivider" [title]="'Toolbar Divider'">
+  <button mat-icon-button>
+    <mat-icon>create_new_folder</mat-icon>
+  </button>
+  <button mat-icon-button>
+    <mat-icon>delete</mat-icon>
+  </button>
+  <adf-toolbar-divider *ngIf="showToolbarDivider"></adf-toolbar-divider>
+  <button mat-icon-button>
+    <mat-icon>home</mat-icon>
+  </button>
+  <button mat-icon-button>
+    <mat-icon>settings</mat-icon>
+  </button>
+</adf-toolbar>
+
+<br *ngIf="showToolbarForTitle" />
+<adf-toolbar *ngIf="showToolbarForTitle">
+  <adf-toolbar-title>
+    <adf-breadcrumb [folderNode]="folderNode"></adf-breadcrumb>
+  </adf-toolbar-title>
+</adf-toolbar>
