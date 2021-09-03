@@ -9,11 +9,23 @@ import { LoginDialogComponent as LoginDialogComponentAdf } from '@alfresco/adf-c
   templateUrl: './login-dialog.component.html'
 })
 export class LoginDialogComponent {
+  /**
+   * Dialog title.
+   */
   @Input()
   title: string;
 
+  /**
+   * Key from translation files (i18n) whose value will appear on the dialog s main action button. Path to key: `LOGIN.DIALOG.key`. Fallback key is CHOOSE.
+   */
   @Input()
   actionName: string;
+
+  /**
+   * Event emitted when the login succeeds.
+   */
+  @Input()
+  logged: Subject<any>;
 
   constructor(private dialog: MatDialog) {}
 
@@ -21,7 +33,7 @@ export class LoginDialogComponent {
     const data: LoginDialogComponentData = {
       title: this.title,
       actionName: this.actionName,
-      logged: new Subject<any>()
+      logged: this.logged
     };
 
     this.dialog.open(LoginDialogComponentAdf, { data });
