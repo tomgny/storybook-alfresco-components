@@ -39,7 +39,10 @@ export default {
   argTypes: {
     debugMode: { table: { disable: true } },
     parseForm: { table: { disable: true } },
-    ngOnInit: { table: { disable: true } }
+    ngOnInit: { table: { disable: true } },
+    showTestDescription: { table: { disable: true } },
+    showFormVariables: { table: { disable: true } },
+    testDescription: { table: { disable: true } }
   }
 } as Meta;
 

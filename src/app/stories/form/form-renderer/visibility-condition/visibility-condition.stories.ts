@@ -9,7 +9,22 @@ import { AppCommonModule } from '../../../../components/common/common.module';
 import { SitesApiStub } from '../../mock/stub-apis';
 import { AlfrescoApiServiceStub, AuthenticationServiceStub, NodesApiServiceStub, SitesServiceStub } from '../../mock/stub-services';
 import { FormRendererComponent } from '.././form-renderer.component';
-import { checkboxVisibilityRefersToCheckbox, checkboxVisibilityRefersToFieldAndAnotherField, checkboxVisibilityRefersToFieldAndFormVariable, checkboxVisibilityRefersToFieldOrAnotherField, checkboxVisibilityRefersToFormVariable, checkboxVisibilityRefersToFormVariableAndAnotherFormVariable, checkboxVisibilityRefersToFormVariableAndField, displayTextVisibilityRefersToFieldOrAnotherField, displayTextVisibilityRefersToFormVariableAndField, dropdownVisibilityRefersToFormVariableAndAnotherFormVariable, dropdownVisibilityRefersToMultipleFields, fakeFormVisibility, formVariableValueVisibilityRefersToNoVisibilityConditions, textVisibilityRefersToFieldOrNotAnotherField } from './visibility-condition-cases';
+import {
+  checkboxVisibilityRefersToCheckbox,
+  checkboxVisibilityRefersToFieldAndAnotherField,
+  checkboxVisibilityRefersToFieldAndFormVariable,
+  checkboxVisibilityRefersToFieldOrAnotherField,
+  checkboxVisibilityRefersToFormVariable,
+  checkboxVisibilityRefersToFormVariableAndAnotherFormVariable,
+  checkboxVisibilityRefersToFormVariableAndField,
+  displayTextVisibilityRefersToFieldOrAnotherField,
+  displayTextVisibilityRefersToFormVariableAndField,
+  dropdownVisibilityRefersToFormVariableAndAnotherFormVariable,
+  dropdownVisibilityRefersToMultipleFields,
+  fakeFormVisibility,
+  formVariableValueVisibilityRefersToNoVisibilityConditions,
+  textVisibilityRefersToFieldOrNotAnotherField
+} from './visibility-condition-cases';
 
 export default {
   component: FormRendererComponent,
@@ -40,6 +55,7 @@ export default {
     debugMode: { table: { disable: true } },
     parseForm: { table: { disable: true } },
     showTestDescription: { table: { disable: true } },
+    showFormVariables: { table: { disable: true } },
     testDescription: { table: { disable: true } },
     ngOnInit: { table: { disable: true } }
   }
@@ -108,14 +124,16 @@ visibleCheckboxRefersToCheckbox.args = {
 export const visibleCheckboxRefersToFieldOrAnotherField = Template.bind({});
 visibleCheckboxRefersToFieldOrAnotherField.args = {
   ...defaultValues.args,
-  testDescription: 'Should be able to see Checkbox widget when has multiple visibility conditions and next condition operators (show [1] or checkbox [2])',
+  testDescription:
+    'Should be able to see Checkbox widget when has multiple visibility conditions and next condition operators (show [1] or checkbox [2])',
   formDefinition: checkboxVisibilityRefersToFieldOrAnotherField
 };
 
 export const visibleTextRefersToFieldOrNotAnotherField = Template.bind({});
 visibleTextRefersToFieldOrNotAnotherField.args = {
   ...defaultValues.args,
-  testDescription: 'Should be able to see text widget when has multiple visibility conditions and OR NOT next condition operators (show [1] or (NOT)checkbox [2])',
+  testDescription:
+    'Should be able to see text widget when has multiple visibility conditions and OR NOT next condition operators (show [1] or (NOT)checkbox [2])',
   formDefinition: textVisibilityRefersToFieldOrNotAnotherField
 };
 
@@ -129,21 +147,24 @@ visibleFormVariableRefersToNoVisibilityConditions.args = {
 export const visibleTextRefersToFormVariableAndField = Template.bind({});
 visibleTextRefersToFormVariableAndField.args = {
   ...defaultValues.args,
-  testDescription: 'Should be able to see Display text widget when visibility condition refers to a form variable and a field ((field)cat and (variable)dog)',
+  testDescription:
+    'Should be able to see Display text widget when visibility condition refers to a form variable and a field ((field)cat and (variable)dog)',
   formDefinition: displayTextVisibilityRefersToFormVariableAndField
 };
 
 export const visibleTextRefersToFieldOrAnotherField = Template.bind({});
 visibleTextRefersToFieldOrAnotherField.args = {
   ...defaultValues.args,
-  testDescription: 'Should be able to see Display text widget when has multiple visibility conditions and next condition operators (dog[1] or cat[2])',
+  testDescription:
+    'Should be able to see Display text widget when has multiple visibility conditions and next condition operators (dog[1] or cat[2])',
   formDefinition: displayTextVisibilityRefersToFieldOrAnotherField
 };
 
 export const visibleDropdownRefersToMultipleFields = Template.bind({});
 visibleDropdownRefersToMultipleFields.args = {
   ...defaultValues.args,
-  testDescription: 'Should be able to see dropdown widget when has multiple Visibility Conditions set on Form Fields (text[1] and 999[2] or field[3] == field[2])',
+  testDescription:
+    'Should be able to see dropdown widget when has multiple Visibility Conditions set on Form Fields (text[1] and 999[2] or field[3] == field[2])',
   formDefinition: dropdownVisibilityRefersToMultipleFields
 };
 

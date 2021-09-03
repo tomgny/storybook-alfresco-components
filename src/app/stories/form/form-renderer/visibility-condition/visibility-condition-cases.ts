@@ -99,7 +99,7 @@ export const checkboxVisibilityRefersToFormVariableAndField: any = {
                 rightType: 'value',
                 nextCondition: null,
                 nextConditionOperator: ''
-              },
+              }
             },
             isVisible: true
           }
@@ -108,12 +108,12 @@ export const checkboxVisibilityRefersToFormVariableAndField: any = {
     }
   ],
   variables: [
-      {
-          'id': 'variable-string',
-          'name': 'Show checkbox',
-          'type': 'string',
-          'value': 'showCheckbox'
-      },
+    {
+      id: 'variable-string',
+      name: 'Show checkbox',
+      type: 'string',
+      value: 'showCheckbox'
+    }
   ]
 };
 
@@ -167,7 +167,7 @@ export const checkboxVisibilityRefersToFieldAndFormVariable: any = {
                 rightType: 'value',
                 nextConditionOperator: '',
                 nextCondition: null
-              },
+              }
             },
             isVisible: true
           }
@@ -176,12 +176,12 @@ export const checkboxVisibilityRefersToFieldAndFormVariable: any = {
     }
   ],
   variables: [
-      {
-          'id': 'variable-string',
-          'name': 'Show checkbox',
-          'type': 'string',
-          'value': 'showCheckbox'
-      },
+    {
+      id: 'variable-string',
+      name: 'Show checkbox',
+      type: 'string',
+      value: 'showCheckbox'
+    }
   ]
 };
 
@@ -243,8 +243,8 @@ export const checkboxVisibilityRefersToFieldAndAnotherField: any = {
                 rightValue: 'showCheckbox',
                 rightType: 'value',
                 nextConditionOperator: '',
-                nextCondition: null,
-              },
+                nextCondition: null
+              }
             },
             isVisible: true
           }
@@ -286,7 +286,7 @@ export const checkboxVisibilityRefersToFormVariable: any = {
               rightValue: 'showCheckbox',
               rightType: 'value',
               nextConditionOperator: '',
-              nextCondition: null,
+              nextCondition: null
             },
             isVisible: true
           }
@@ -295,12 +295,12 @@ export const checkboxVisibilityRefersToFormVariable: any = {
     }
   ],
   variables: [
-      {
-          'id': 'variable-string',
-          'name': 'Show checkbox',
-          'type': 'string',
-          'value': 'showCheckbox'
-      },
+    {
+      id: 'variable-string',
+      name: 'Show checkbox',
+      type: 'string',
+      value: 'showCheckbox'
+    }
   ]
 };
 
@@ -345,7 +345,7 @@ export const checkboxVisibilityRefersToFormVariableAndAnotherFormVariable: any =
                 rightType: 'value',
                 nextConditionOperator: '',
                 nextCondition: null
-              },
+              }
             },
             isVisible: true
           }
@@ -354,69 +354,69 @@ export const checkboxVisibilityRefersToFormVariableAndAnotherFormVariable: any =
     }
   ],
   variables: [
-      {
-          'id': 'variable-string',
-          'name': 'Show checkbox',
-          'type': 'string',
-          'value': 'showCheckbox'
-      },
-      {
-        'id': 'variable-number',
-        'name': 'Some number',
-        'type': 'number',
-        'value': 100
+    {
+      id: 'variable-string',
+      name: 'Show checkbox',
+      type: 'string',
+      value: 'showCheckbox'
     },
+    {
+      id: 'variable-number',
+      name: 'Some number',
+      type: 'number',
+      value: 100
+    }
   ]
 };
 
 export const checkboxVisibilityRefersToCheckbox: any = {
-	id: '9999',
-	name: 'FORM_VISIBILITY',
-	processDefinitionId: 'PROCESS_TEST:  9:  9999',
-	processDefinitionName: 'PROCESS_TEST',
-	processDefinitionKey: 'PROCESS_TEST',
-	taskId: '999',
-	taskName: 'TEST',
-	fields: [
-	  {
-		fieldType: 'ContainerRepresentation',
-		id: '000000000000000000',
-		name: 'Label',
-		type: 'container',
-		value: null,
-		numberOfColumns: 1,
-		fields: {
-		  1: [
-			{
-				fieldType: 'FormFieldRepresentation',
-				id: 'another-checkbox',
-				name: 'Checkbox',
-				type: 'boolean',
-				value: true,
-				visibilityCondition: null
-			},
-			{
-			  fieldType: 'FormFieldRepresentation',
-			  id: 'checkbox',
-			  name: 'Checkbox',
-			  type: 'boolean',
-			  value: false,
-			  visibilityCondition: {
-          leftFormFieldId: 'another-checkbox',
-          leftType: 'field',
-          leftValue: null,
-          operator: '==',
-          rightValue: true,
-          rightType: 'value',
-          nextConditionOperator: '',
-          nextCondition: null
-			  },
-			  isVisible: true
-			}
-		  ]
-		}
-	  }
-	]
+  id: '9999',
+  name: 'FORM_VISIBILITY',
+  processDefinitionId: 'PROCESS_TEST:  9:  9999',
+  processDefinitionName: 'PROCESS_TEST',
+  processDefinitionKey: 'PROCESS_TEST',
+  taskId: '999',
+  taskName: 'TEST',
+  fields: [
+    {
+      fieldType: 'ContainerRepresentation',
+      id: '000000000000000000',
+      name: 'Label',
+      type: 'container',
+      value: null,
+      numberOfColumns: 1,
+      fields: {
+        1: [
+          {
+            fieldType: 'FormFieldRepresentation',
+            id: 'another-checkbox',
+            name: 'Checkbox',
+            type: 'boolean',
+            value: true,
+            visibilityCondition: null
+          },
+          {
+            fieldType: 'FormFieldRepresentation',
+            id: 'checkbox',
+            name: 'Checkbox',
+            type: 'boolean',
+            value: false,
+            visibilityCondition: {
+              leftFormFieldId: 'another-checkbox',
+              leftType: 'field',
+              leftValue: null,
+              operator: '==',
+              rightValue: true,
+              rightType: 'value',
+              nextConditionOperator: '',
+              nextCondition: null
+            },
+            isVisible: true
+          }
+        ]
+      }
+    }
+  ]
 };
 
 export const checkboxVisibilityRefersToFieldOrAnotherField: any = {
@@ -477,8 +477,8 @@ export const checkboxVisibilityRefersToFieldOrAnotherField: any = {
                 rightValue: 'checkbox',
                 rightType: 'value',
                 nextConditionOperator: '',
-                nextCondition: null,
-              },
+                nextCondition: null
+              }
             },
             isVisible: true
           }
@@ -529,7 +529,7 @@ export const textVisibilityRefersToFieldOrNotAnotherField: any = {
             id: 'not-text-field',
             name: 'Not text field',
             type: 'text',
-            value: '(Text field equals \'show\') or (Another text field not equals \'checkbox\')',
+            value: "(Text field equals 'show') or (Another text field not equals 'checkbox')",
             visibilityCondition: {
               leftFormFieldId: 'text-field',
               leftType: 'field',
@@ -546,8 +546,8 @@ export const textVisibilityRefersToFieldOrNotAnotherField: any = {
                 rightValue: 'checkbox',
                 rightType: 'value',
                 nextConditionOperator: '',
-                nextCondition: null,
-              },
+                nextCondition: null
+              }
             },
             isVisible: true
           }
@@ -582,9 +582,7 @@ export const formVariableValueVisibilityRefersToNoVisibilityConditions: any = {
             type: 'readonly',
             value: 'No cats',
             restIdPropert: 'variable-string',
-            visibilityCondition: {
-
-            },
+            visibilityCondition: {},
             isVisible: true
           }
         ]
@@ -592,12 +590,12 @@ export const formVariableValueVisibilityRefersToNoVisibilityConditions: any = {
     }
   ],
   variables: [
-      {
-        'id': 'variable-string',
-        'name': 'Some string',
-        'type': 'string',
-        'value': 'No cats'
-    },
+    {
+      id: 'variable-string',
+      name: 'Some string',
+      type: 'string',
+      value: 'No cats'
+    }
   ]
 };
 
@@ -633,7 +631,7 @@ export const displayTextVisibilityRefersToFormVariableAndField: any = {
             id: 'display-text',
             name: 'Text widget',
             type: 'readonly-text',
-            value: 'I\'m visible!',
+            value: "I'm visible!",
             visibilityCondition: {
               leftFormFieldId: 'text-field',
               leftType: 'field',
@@ -651,7 +649,7 @@ export const displayTextVisibilityRefersToFormVariableAndField: any = {
                 rightType: 'value',
                 nextCondition: null,
                 nextConditionOperator: ''
-              },
+              }
             },
             isVisible: true
           }
@@ -660,12 +658,12 @@ export const displayTextVisibilityRefersToFormVariableAndField: any = {
     }
   ],
   variables: [
-      {
-          'id': 'variable-string',
-          'name': 'Some string',
-          'type': 'string',
-          'value': 'dog'
-      },
+    {
+      id: 'variable-string',
+      name: 'Some string',
+      type: 'string',
+      value: 'dog'
+    }
   ]
 };
 
@@ -710,7 +708,7 @@ export const displayTextVisibilityRefersToFieldOrAnotherField: any = {
             id: 'display-text',
             name: 'Text widget',
             type: 'readonly-text',
-            value: 'I\'m visible!',
+            value: "I'm visible!",
             visibilityCondition: {
               leftFormFieldId: 'text-field',
               leftType: 'field',
@@ -727,8 +725,8 @@ export const displayTextVisibilityRefersToFieldOrAnotherField: any = {
                 rightValue: 'cat',
                 rightType: 'value',
                 nextConditionOperator: '',
-                nextCondition: null,
-              },
+                nextCondition: null
+              }
             },
             isVisible: true
           }
@@ -819,8 +817,8 @@ export const dropdownVisibilityRefersToMultipleFields: any = {
                   rightType: 'field',
                   nextConditionOperator: '',
                   nextCondition: null
-                },
-              },
+                }
+              }
             },
             isVisible: true
           }
@@ -876,7 +874,7 @@ export const dropdownVisibilityRefersToFormVariableAndAnotherFormVariable: any =
                 rightType: 'value',
                 nextConditionOperator: '',
                 nextCondition: null
-              },
+              }
             },
             isVisible: true
           }
@@ -885,17 +883,17 @@ export const dropdownVisibilityRefersToFormVariableAndAnotherFormVariable: any =
     }
   ],
   variables: [
-      {
-          'id': 'variable-string',
-          'name': 'Show dropdown',
-          'type': 'string',
-          'value': 'showDropdown'
-      },
-      {
-        'id': 'variable-number',
-        'name': 'Some number',
-        'type': 'number',
-        'value': 100
+    {
+      id: 'variable-string',
+      name: 'Show dropdown',
+      type: 'string',
+      value: 'showDropdown'
     },
+    {
+      id: 'variable-number',
+      name: 'Some number',
+      type: 'number',
+      value: 100
+    }
   ]
 };
