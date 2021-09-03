@@ -124,6 +124,7 @@ import { InfoDrawerLayoutComponent } from './stories/info-drawer-layout/info-dra
 import { ErrorContentComponent } from './stories/error-content/error-content.component';
 import { EmptyContentComponent } from './stories/empty-content/empty-content.component';
 import { EmptyListComponent } from './stories/empty-list/empty-list.component';
+import { IconComponent } from './stories/icon/icon.component';
 
 registerLocaleData(localeFr);
 registerLocaleData(localeDe);
@@ -228,6 +229,7 @@ registerLocaleData(localeSv);
     ErrorContentComponent,
     EmptyContentComponent,
     EmptyListComponent,
+    IconComponent,
   ],
   providers: [
     { provide: AppConfigService, useClass: DebugAppConfigService },
