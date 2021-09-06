@@ -7,7 +7,7 @@ import { setProvider } from '../user-info/mock/stub-authentication-service';
 })
 export class AboutProductVersionComponent implements OnInit {
   @Input()
-  provider: 'ecm' | 'bpm';
+  provider: 'ecm' | 'bpm' | 'both';
 
   ngOnInit(): void {
     setProvider(this.provider);
