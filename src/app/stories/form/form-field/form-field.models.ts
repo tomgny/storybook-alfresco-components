@@ -137,3 +137,9 @@ export const groupField = new FormFieldModel(fakeForm, {
     1: [textField, amountField, integerField]
   }
 });
+
+export const SelectFolder = new FormFieldModel(fakeForm, {
+  id: 'selectFolder',
+  name: 'Select Folder',
+  type: 'select-folder'
+})

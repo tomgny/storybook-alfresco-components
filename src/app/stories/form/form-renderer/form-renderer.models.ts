@@ -1177,7 +1177,10 @@ export const processServiceCloudForm = {
           }
         }
       ],
-      outcomes: [],
+      outcomes: [
+        { id: 'action1', name: 'Action 1' },
+        { id: 'action2', name: 'Action 2' }
+      ],
       metadata: {
         property1: 'value1',
         property2: 'value2'

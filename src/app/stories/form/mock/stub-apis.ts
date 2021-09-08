@@ -1,4 +1,6 @@
-import { NodeChildAssociationPaging, NodeEntry, SitePaging } from '@alfresco/js-api';
+import { FormDefinitionRepresentation, NodeChildAssociationPaging, NodeEntry, SitePaging, TaskRepresentation } from '@alfresco/js-api';
+import { taskDetailsArray } from '../form-renderer/visibility-condition-task/task-form/task-detail.models';
+import { taskFormModelsArray } from '../form-renderer/visibility-condition-task/task-form/task-form.models';
 import { fakeNodeEntry, folderNodeChildrenWithPaginationInfo } from './fake-nodes';
 
 export class ModelsApiStub {}
@@ -62,5 +64,21 @@ export class SitesApiStub {
   listSites(_opts?: any): Promise<SitePaging>{
     console.log(fakeSitePaging);
     return Promise.resolve(fakeSitePaging);
+  }
+}
+
+export class TaskApiStub {
+  getTask(taskId: string): Promise<TaskRepresentation>{
+    return Promise.resolve(taskDetailsArray[taskId]);
+  }
+
+  getTaskForm(taskId: string): Promise<FormDefinitionRepresentation>{
+    return Promise.resolve(new FormDefinitionRepresentation(taskFormModelsArray[taskId]))
+  }
+}
+
+export class TaskFormsApiStub {
+  getTaskFormVariables(_taskId: string): Promise<any>{
+    return Promise.resolve({});
   }
 }

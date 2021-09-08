@@ -107,11 +107,19 @@ export const folderNodeChildrenWithPaginationInfo = new NodeChildAssociationPagi
   }
 });
 
-export const fakeNodeList = new NodePaging({ list: { entries: [{ entry: { id: 'fake-node-id', name: 'fake-node-name', isFolder: true } }] } });
+
 
 export const fakeNodeEntry: NodeEntry = {
   entry: fakeNodeWithCreatePermission
 };
+
+export const fakeNodeEntry2: NodeEntry = {
+  entry: fakeNodeWithCreatePermission
+};
+
+export const fakeNodeList = new NodePaging({ list: { entries: [fakeNodeEntry, fakeNodeEntry2]
+}
+});
 
 export const nodeIdToObjectTranslating = {
   '-my-': fakeNodeWithCreatePermission,

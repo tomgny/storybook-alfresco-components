@@ -1,8 +1,32 @@
-import { AppConfigService, GroupModel, UserProcessModel, ValidateDynamicTableRowEvent } from '@alfresco/adf-core';
-import { MinimalNode, NodeEntry, SitePaging } from '@alfresco/js-api';
+import { AppConfigService, BpmUserModel, ContentLinkModel, GroupModel, UserProcessModel, ValidateDynamicTableRowEvent } from '@alfresco/adf-core';
+import { TaskDetailsModel } from '@alfresco/adf-process-services';
+import { MinimalNode, NodeEntry, SitePaging, UserRepresentation } from '@alfresco/js-api';
 import { Injectable } from '@angular/core';
 import { from, Observable, of, ReplaySubject, Subject } from 'rxjs';
-import { GroupApiStub, ModelsApiStub, NodesApiStub, SitesApiStub } from './stub-apis';
+import { standaloneTaskWithForm } from '../form-renderer/visibility-condition-task/task-form/task-detail.models';
+import { GroupApiStub, ModelsApiStub, NodesApiStub, SitesApiStub, TaskApiStub, TaskFormsApiStub } from './stub-apis';
+
+const fakeBpmUser = new BpmUserModel({
+  apps: [],
+  capabilities: null,
+  company: 'fake-company',
+  created: 'fake-create-date',
+  email: 'fakeBpm@fake.com',
+  externalId: 'fake-external-id',
+  firstName: 'fake-bpm-first-name',
+  lastName: 'fake-bpm-last-name',
+  groups: [],
+  id: 'fake-id',
+  lastUpdate: 'fake-update-date',
+  latestSyncTimeStamp: 'fake-timestamp',
+  password: 'fake-password',
+  pictureId: 12,
+  status: 'fake-status',
+  tenantId: 'fake-tenant-id',
+  tenantName: 'fake-tenant-name',
+  tenantPictureId: 'fake-tenant-picture-id',
+  type: 'fake-type'
+});
 
 export class AuthenticationServiceStub {
   onLogin: ReplaySubject<any> = new ReplaySubject<any>(1);
@@ -12,6 +36,10 @@ export class AuthenticationServiceStub {
   isOauth = () => true;
 
   isEcmLoggedIn = () => true;
+
+  getBpmLoggedUser(): Observable<UserRepresentation>{
+    return of(fakeBpmUser);
+  }
 }
 
 @Injectable({
@@ -21,6 +49,11 @@ export class AlfrescoApiServiceStub {
   nodesApi = new NodesApiStub();
 
   nodes = this.nodesApi;
+
+  taskApi = new TaskApiStub();
+
+  activiti = {taskApi: new TaskApiStub(),
+              taskFormsApi: new TaskFormsApiStub()}
 
   nodeUpdated = new Subject<Node>();
 
@@ -46,9 +79,20 @@ export class FormServiceStub {
 
   validateDynamicTableRow = new Subject<ValidateDynamicTableRowEvent>();
 
+  formContentClicked = new Subject<ContentLinkModel>();
+
   getForms(): Observable<any> {
     return of([]);
   }
+
+  // getTask(_taskId: string): Observable<any> {
+  //   return of(standaloneTaskWithForm)
+  // }
+
+  // getTaskForm(_taskId: string): Observable<any> {
+  //   return of(easyForm)
+  // }
+
 
   getWorkflowGroups(filter: string, _groupId?: string): Observable<GroupModel[]> {
     return of(
@@ -100,5 +144,11 @@ export class SitesServiceStub {
       siteName = foundNode ? foundNode.name : '';
     }
     return siteName.toLocaleLowerCase();
+  }
+}
+
+export class TaskListServiceStub{
+  getTaskDetails(_taskId: string): Observable<TaskDetailsModel>{
+    return of(standaloneTaskWithForm);
   }
 }

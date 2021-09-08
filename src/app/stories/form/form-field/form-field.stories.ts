@@ -1,10 +1,13 @@
-import { AlfrescoApiService, AuthenticationService, CoreModule, FormService } from '@alfresco/adf-core';
+import { ContentModule, ContentNodeSelectorModule, DocumentListModule } from '@alfresco/adf-content-services';
+import { AlfrescoApiService, AuthenticationService, CoreModule, FormService, MaterialModule, NodesApiService, SitesService } from '@alfresco/adf-core';
+import { SitesApi } from '@alfresco/js-api';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { APP_ROUTES } from '../../../app.routes';
 import { AppCommonModule } from '../../../components/common/common.module';
-import { AlfrescoApiServiceStub, AuthenticationServiceStub, FormServiceStub } from '../mock/stub-services';
+import { SitesApiStub } from '../mock/stub-apis';
+import { AlfrescoApiServiceStub, AuthenticationServiceStub, FormServiceStub, NodesApiServiceStub, SitesServiceStub } from '../mock/stub-services';
 import { FormFieldComponent } from './form-field.component';
 import {
   amountField,
@@ -23,7 +26,8 @@ import {
   readOnlyTextField,
   textField,
   unknownType,
-  uploadField
+  uploadField,
+  SelectFolder,
 } from './form-field.models';
 
 export default {
@@ -39,12 +43,19 @@ export default {
         }),
         CoreModule.forRoot(),
         AppCommonModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        ContentModule.forRoot(),
+        MaterialModule,
+        ContentNodeSelectorModule,
+        DocumentListModule
       ],
       providers: [
         { provide: AlfrescoApiService, useClass: AlfrescoApiServiceStub },
         { provide: FormService, useClass: FormServiceStub },
-        { provide: AuthenticationService, useClass: AuthenticationServiceStub }
+        { provide: AuthenticationService, useClass: AuthenticationServiceStub },
+        { provide: NodesApiService, useClass: NodesApiServiceStub },
+        { provide: SitesApi, useClass: SitesApiStub },
+        { provide: SitesService, useClass: SitesServiceStub }
       ]
     })
   ]
@@ -132,6 +143,11 @@ RadioButtonsField.args = {
 export const TextField = Template.bind({});
 TextField.args = {
   field: textField
+};
+
+export const SelectFolderField = Template.bind({});
+SelectFolderField.args = {
+  field: SelectFolder
 };
 
 export const UnknownType = Template.bind({});

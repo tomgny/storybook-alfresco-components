@@ -119,8 +119,9 @@ import { EditJsonDialogComponent } from './stories/core-dialogs/edit-json-dialog
 import { DownloadZipDialogComponent } from './stories/core-dialogs/download-zip-dialog/download-zip-dialog.component';
 import { SidenavLayoutComponent } from './stories/layout/components/sidenav-layout/sidenav-layout.component';
 import { SidebarActionMenuComponent } from './stories/layout/components/sidebar-action-menu/sidebar-action-menu.component';
-import { ProcessServicesCloudModule } from '@alfresco/adf-process-services-cloud';
-import { ContentWidgetModule, ProcessModule } from '@alfresco/adf-process-services';
+import { ProcessServicesCloudModule, TaskCloudModule, TaskFormModule, TaskListCloudModule } from '@alfresco/adf-process-services-cloud';
+import { ContentWidgetModule, ProcessModule, TaskListModule } from '@alfresco/adf-process-services';
+import { TaskFormComponent } from './stories/form/form-renderer/visibility-condition-task/task-form/task-form.component';
 
 registerLocaleData(localeFr);
 registerLocaleData(localeDe);
@@ -174,7 +175,11 @@ registerLocaleData(localeSv);
     HammerModule,
     ProcessServicesCloudModule.forRoot(),
     ProcessModule.forRoot(),
-    ContentWidgetModule
+    ContentWidgetModule,
+    TaskFormModule,
+    TaskListModule,
+    TaskCloudModule,
+    TaskListCloudModule
   ],
   declarations: [
     AppComponent,
@@ -223,6 +228,7 @@ registerLocaleData(localeSv);
     DownloadZipDialogComponent,
     SidenavLayoutComponent,
     SidebarActionMenuComponent,
+    TaskFormComponent,
   ],
   providers: [
     { provide: AppConfigService, useClass: DebugAppConfigService },
