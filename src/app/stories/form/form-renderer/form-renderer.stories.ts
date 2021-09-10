@@ -9,7 +9,7 @@ import { AppCommonModule } from '../../../components/common/common.module';
 import { SitesApiStub } from '../mock/stub-apis';
 import { AlfrescoApiServiceStub, AuthenticationServiceStub, NodesApiServiceStub, SitesServiceStub } from '../mock/stub-services';
 import { FormRendererComponent } from './form-renderer.component';
-import { processServiceCloudForm, processServiceForm } from './form-renderer.models';
+import { cloudFormMock, processServiceForm } from './form-renderer.models';
 
 export default {
   component: FormRendererComponent,
@@ -59,5 +59,5 @@ ProcessServices.args = {
 export const ProcessServicesCloud = Template.bind({});
 ProcessServicesCloud.args = {
   showDebugButton: true,
-  formDefinition: processServiceCloudForm.formRepresentation
+  formDefinition: cloudFormMock
 };

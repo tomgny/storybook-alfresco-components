@@ -141,5 +141,13 @@ export const groupField = new FormFieldModel(fakeForm, {
 export const SelectFolder = new FormFieldModel(fakeForm, {
   id: 'selectFolder',
   name: 'Select Folder',
-  type: 'select-folder'
+  type: 'select-folder',
+  value: null,
+  params: {
+    folderSource: {
+      selectedFolder: {
+        pathId: '-my-'
+      }
+    }
+  }
 })

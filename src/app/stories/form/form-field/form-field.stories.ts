@@ -55,7 +55,8 @@ export default {
         { provide: AuthenticationService, useClass: AuthenticationServiceStub },
         { provide: NodesApiService, useClass: NodesApiServiceStub },
         { provide: SitesApi, useClass: SitesApiStub },
-        { provide: SitesService, useClass: SitesServiceStub }
+        { provide: SitesService, useClass: SitesServiceStub },
+        // { provide: CustomResourcesService, useValue: CustomResourcesServiceStub },
       ]
     })
   ]

@@ -37,7 +37,7 @@ export class AuthenticationServiceStub {
 
   isEcmLoggedIn = () => true;
 
-  getBpmLoggedUser(): Observable<UserRepresentation>{
+  getBpmLoggedUser(): Observable<UserRepresentation> {
     return of(fakeBpmUser);
   }
 }
@@ -52,8 +52,7 @@ export class AlfrescoApiServiceStub {
 
   taskApi = new TaskApiStub();
 
-  activiti = {taskApi: new TaskApiStub(),
-              taskFormsApi: new TaskFormsApiStub()}
+  activiti = { taskApi: new TaskApiStub(), taskFormsApi: new TaskFormsApiStub() };
 
   nodeUpdated = new Subject<Node>();
 
@@ -84,15 +83,6 @@ export class FormServiceStub {
   getForms(): Observable<any> {
     return of([]);
   }
-
-  // getTask(_taskId: string): Observable<any> {
-  //   return of(standaloneTaskWithForm)
-  // }
-
-  // getTaskForm(_taskId: string): Observable<any> {
-  //   return of(easyForm)
-  // }
-
 
   getWorkflowGroups(filter: string, _groupId?: string): Observable<GroupModel[]> {
     return of(
@@ -137,18 +127,21 @@ export class SitesServiceStub {
     return from(this.sitesApi.listSites({ visibility: 'public' }));
   }
 
-  getSiteNameFromNodePath(node: MinimalNode): string {
-    let siteName = '';
-    if (node.path && node.path.elements) {
-      const foundNode = node.path.elements.find((pathNode: MinimalNode) => pathNode.nodeType === 'st:site' && pathNode.name !== 'Sites');
-      siteName = foundNode ? foundNode.name : '';
-    }
-    return siteName.toLocaleLowerCase();
+  getSiteNameFromNodePath(_node: MinimalNode): string {
+    return '';
   }
 }
 
-export class TaskListServiceStub{
-  getTaskDetails(_taskId: string): Observable<TaskDetailsModel>{
+export class TaskListServiceStub {
+  getTaskDetails(_taskId: string): Observable<TaskDetailsModel> {
     return of(standaloneTaskWithForm);
+  }
+}
+
+export class CustomResourcesServiceStub {
+  nodesApi = new NodesApiStub();
+
+  isCustomSource(){
+    return true;
   }
 }

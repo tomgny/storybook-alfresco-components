@@ -1,73 +1,7 @@
-import { Node, NodeChildAssociation, NodeChildAssociationPaging, NodeEntry, NodePaging } from '@alfresco/js-api';
+import { Node, NodeEntry, SitePaging } from '@alfresco/js-api';
+import { mockNode1, mockNode3, mockNode5 } from '../../document-list/mock/fake-nodes';
 
-export const mockNode1 = new NodeChildAssociation({
-  isFile: true,
-  createdByUser: { id: 'admin1', displayName: 'Administrator 1' },
-  modifiedAt: '2017-05-25T16:08:55.640Z',
-  nodeType: 'cm:content',
-  content: {
-    mimeType: 'application/rtf',
-    mimeTypeName: 'Rich Text Format',
-    sizeInBytes: 222214530,
-    encoding: 'UTF-8'
-  },
-  parentId: 'd124de26-6ba0-4f40-8d98-4907da2d337a',
-  createdAt: '2017-02-24T15:07:55.640Z',
-  path: {
-    name: '/Company Home/Guest Home',
-    isComplete: true,
-    elements: [
-      {
-        id: '94acfc73-7014-4475-9bd9-93a2162f0f8c',
-        name: 'Company Home'
-      },
-      { id: 'd124de26-6ba0-4f40-8d98-4907da2d337a', name: 'Guest Home' }
-    ]
-  },
-  isFolder: false,
-  modifiedByUser: { id: 'admin1', displayName: 'Administrator 1' },
-  name: 'a_txt_file.rtf',
-  id: 'mock_node_1',
-  properties: { 'cm:versionLabel': '1.0', 'cm:versionType': 'MAJOR' },
-  allowableOperations: ['delete', 'update', 'create'],
-  association: { assocType: 'assoc-1', isPrimary: true }
-});
-
-export const mockNode2 = new NodeChildAssociation({
-  isFile: true,
-  createdByUser: { id: 'admin2', displayName: 'Administrator 2' },
-  modifiedAt: '2017-07-28T5:38:55.640Z',
-  nodeType: 'cm:content',
-  content: {
-    mimeType: 'application/rtf',
-    mimeTypeName: 'Rich Text Format',
-    sizeInBytes: 33333312530,
-    encoding: 'UTF-8'
-  },
-  parentId: 'd124de26-6ba0-4f40-8d98-4907da2d337a',
-  createdAt: '2017-05-24T15:08:55.640Z',
-  path: {
-    name: '/Company Home/Guest Home',
-    isComplete: true,
-    elements: [
-      {
-        id: '94acfc73-7014-4475-9bd9-93a2162f0f8c',
-        name: 'Company Home'
-      },
-      { id: 'd124de26-6ba0-4f40-8d98-4907da2d337a', name: 'Guest Home' }
-    ]
-  },
-  isFolder: false,
-  modifiedByUser: { id: 'admin2', displayName: 'Administrator 2' },
-  name: 'b_txt_file.rtf',
-  id: 'mock_node_2',
-  icon: '../../../../assets/images/fake_image_2_24x24.png',
-  properties: { 'cm:versionLabel': '1.0', 'cm:versionType': 'MAJOR' },
-  allowableOperations: ['delete', 'update'],
-  association: { assocType: 'assoc-1', isPrimary: false }
-});
-
-export const fakeNodeWithCreatePermission = new Node({
+export const fakeNodeMy = new Node({
   isFile: false,
   createdByUser: { id: 'admin', displayName: 'Administrator' },
   modifiedAt: '2017-06-08T13:53:46.495Z',
@@ -79,50 +13,181 @@ export const fakeNodeWithCreatePermission = new Node({
     isComplete: true,
     elements: [
       {
-        id: 'fake_node_with_create_permission',
-        name: 'fakeNodeWithCreatePermission'
+        id: '-my-',
+        name: 'My nodes'
       },
-      { id: 'mock_node_2', name: 'fakeNode2' }
+      { id: '-root-', name: 'Fake root' }
     ]
   },
   isFolder: true,
   modifiedByUser: { id: 'Test', displayName: 'Test' },
-  name: 'fakeNodeWithCreatePermission',
-  id: 'fake_node_with_create_permission',
+  name: 'Fake my folder',
+  id: '-my-',
   properties: {},
   allowableOperations: ['delete', 'update', 'create']
 });
 
-export const folderNodeChildrenWithPaginationInfo = new NodeChildAssociationPaging({
+export const fakeNodeRoot = new Node({
+  isFile: false,
+  createdByUser: { id: 'admin', displayName: 'Administrator' },
+  modifiedAt: '2017-06-08T13:53:46.495Z',
+  nodeType: 'cm:folder',
+  parentId: 'fake_node_child_with_pagiation_info',
+  createdAt: '2017-05-22T11:36:11.270Z',
+  path: {
+    name: '/Company Home/User Homes',
+    isComplete: true,
+    elements: [
+      {
+        id: '-my-',
+        name: 'My nodes'
+      },
+      { id: '-root-', name: 'Fake root' }
+    ]
+  },
+  isFolder: true,
+  modifiedByUser: { id: 'Test', displayName: 'Test' },
+  name: 'Fake root folder',
+  id: '-root-',
+  properties: {},
+  allowableOperations: ['delete', 'update', 'create']
+});
+
+export const fakeFolder = {
+  list: {
+    pagination: { count: 1, hasMoreItems: false, totalItems: 1, skipCount: 0, maxItems: 20 },
+    entries: [
+      {
+        entry: {
+          role: 'SiteManager',
+          createdAt: '2016-12-06T13:03:14.880+0000',
+          path: {
+            name: '/Company Home/Sites/swsdp/documentLibrary/empty',
+            isComplete: true,
+            elements: [
+              {
+                id: 'ed7ab80e-b398-4bed-b38d-139ae4cc592a',
+                name: 'Company Home'
+              },
+              { id: '99e1368f-e816-47fc-a8bf-3b358feaf31e', name: 'Sites' },
+              {
+                id: 'b4cff62a-664d-4d45-9302-98723eac1319',
+                name: 'swsdp'
+              },
+              {
+                id: '8f2105b4-daaf-4874-9e8a-2152569d109b',
+                name: 'documentLibrary'
+              },
+              { id: '17fa78d2-4d6b-4a46-876b-4b0ea07f7f32', name: 'empty' }
+            ]
+          },
+          isFolder: true,
+          isFile: false,
+          createdByUser: { id: 'admin', displayName: 'Administrator' },
+          modifiedAt: '2016-12-06T13:03:14.880+0000',
+          modifiedByUser: { id: 'admin', displayName: 'Administrator' },
+          name: 'Fake my folder',
+          id: '-root-',
+          nodeType: 'cm:folder',
+          parentId: '17fa78d2-4d6b-4a46-876b-4b0ea07f7f32'
+        }
+      },
+      {
+        entry: mockNode1
+      },
+      {
+        entry: mockNode3
+      },
+      {
+        entry: mockNode5
+      }
+    ]
+  }
+};
+
+export const fakeGetFolders = {
   list: {
     pagination: {
-      count: 4,
+      count: 3,
       hasMoreItems: false,
-      totalItems: 14,
-      skipCount: 10,
-      maxItems: 10
+      totalItems: 3,
+      skipCount: 0,
+      maxItems: 20
     },
-    entries: [mockNode1, mockNode2],
-    source: mockNode1
+    entries: [
+      {
+        entry: {
+          role: 'SiteManager',
+          visibility: 'PRIVATE',
+          guid: '-my-',
+          id: '-my-',
+          preset: 'site-dashboard',
+          title: 'Admin Site',
+          name: 'Fake folder 1'
+        }
+      },
+      {
+        entry: {
+          role: 'SiteManager',
+          visibility: 'PUBLIC',
+          guid: '-my-',
+          description: 'This is a Sample Alfresco Team site.',
+          id: '-my-',
+          preset: 'site-dashboard',
+          title: 'Sample: Web Site Design Project',
+          name: 'Fake folder 2'
+        }
+      },
+      {
+        entry: {
+          visibility: 'PUBLIC',
+          guid: '-my-',
+          id: '-my-',
+          preset: 'site-dashboard',
+          title: 'Test Site',
+          name: 'Fake folder 3'
+        }
+      }
+    ]
   }
-});
-
-
+};
 
 export const fakeNodeEntry: NodeEntry = {
-  entry: fakeNodeWithCreatePermission
+  entry: fakeNodeMy
 };
 
-export const fakeNodeEntry2: NodeEntry = {
-  entry: fakeNodeWithCreatePermission
+export const fakeNodeEntryRoot: NodeEntry = {
+  entry: fakeNodeRoot
 };
 
-export const fakeNodeList = new NodePaging({ list: { entries: [fakeNodeEntry, fakeNodeEntry2]
-}
-});
+export const fakeSitePaging: SitePaging = {
+  list: {
+    pagination: {
+      count: 2,
+      hasMoreItems: true,
+      totalItems: 2,
+      skipCount: 0,
+      maxItems: 100
+    },
+    entries: [
+      {
+        entry: {
+          role: 'SiteManager',
+          visibility: 'PUBLIC',
+          guid: '-root-',
+          description: 'Fake root folder',
+          id: '-root-',
+          preset: 'site-dashboard',
+          title: 'Fake root folder'
+        }
+      }
+    ]
+  }
+};
 
 export const nodeIdToObjectTranslating = {
-  '-my-': fakeNodeWithCreatePermission,
-  fake_node_with_create_permission: fakeNodeWithCreatePermission,
-  fake_node_child_with_pagiation_info: folderNodeChildrenWithPaginationInfo
+  '-my-': fakeNodeEntry,
+  '-my-_child': fakeFolder,
+  '-root-': fakeNodeEntryRoot,
+  '-root-_child': fakeGetFolders
 };
