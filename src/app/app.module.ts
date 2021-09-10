@@ -130,6 +130,7 @@ import { CommentListComponent } from './stories/comment-list/comment-list.compon
 import { IconComponent } from './stories/icon/icon.component';
 import { AboutGithubLinkComponent } from './stories/about-github-link/about-github-link.component';
 import { AboutProductVersionComponent } from './stories/about-product-version/about-product-version.component';
+import { AboutApplicationModulesComponent } from './stories/about-application-modules/about-application-modules.component';
 
 registerLocaleData(localeFr);
 registerLocaleData(localeDe);
@@ -240,6 +241,7 @@ registerLocaleData(localeSv);
     IconComponent,
     AboutGithubLinkComponent,
     AboutProductVersionComponent,
+    AboutApplicationModulesComponent,
   ],
   providers: [
     { provide: AppConfigService, useClass: DebugAppConfigService },
