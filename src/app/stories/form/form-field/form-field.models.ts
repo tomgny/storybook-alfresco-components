@@ -5,24 +5,24 @@ export const fakeForm = new FormModel();
 export const uploadField = new FormFieldModel(fakeForm, { id: 'uploadField', type: 'upload' });
 
 export const selectFolderField = new FormFieldModel(fakeForm, {
-  "fieldType": "AttachFileFieldRepresentation",
-  "id": "attachfiletest",
-  "name": "attachfiletest",
-  "type": "select-folder",
-  "required": true,
-  "colspan": 2,
-  "placeholder": "attachfile",
-  "params": {
-      "existingColspan": 2,
-      "maxColspan": 2,
-      "fileSource": {
-          "serviceId": "local-file",
-          "name": "Local File"
-      },
-      "multiple": true,
-      "link": false
+  fieldType: 'AttachFileFieldRepresentation',
+  id: 'attachfiletest',
+  name: 'attachfiletest',
+  type: 'select-folder',
+  required: true,
+  colspan: 2,
+  placeholder: 'attachfile',
+  params: {
+    existingColspan: 2,
+    maxColspan: 2,
+    fileSource: {
+      serviceId: 'local-file',
+      name: 'Local File'
+    },
+    multiple: true,
+    link: false
   },
-  "visibilityCondition": {}
+  visibilityCondition: {}
 });
 
 export const booleanField = new FormFieldModel(fakeForm, { id: 'booleanField', name: 'Checkbox', type: 'boolean' });
@@ -150,4 +150,16 @@ export const SelectFolder = new FormFieldModel(fakeForm, {
       }
     }
   }
-})
+});
+
+export const fileViewer = new FormFieldModel(fakeForm, {
+  id: 'fileViewer',
+  name: 'File viewer',
+  type: 'file-viewer',
+  readOnly: false,
+  required: false,
+  colspan: 1,
+  value: 'loremIpsumPdfNode',
+  visibilityCondition: null,
+
+});

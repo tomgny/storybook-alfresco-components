@@ -1949,3 +1949,368 @@ export const cloudFormMock = {
       }
   ]
 };
+
+
+export let fakeMetadataForm = {
+  'id': 'form-de8895be-d0d7-4434-beef-559b15305d72',
+  'name': 'StartEventForm',
+  'description': '',
+  'version': 0,
+  'formDefinition': {
+      'tabs': [],
+      'fields': [
+          {
+              'type': 'container',
+              'id': '5a6b24c1-db2b-45e9-9aff-142395433d23',
+              'name': 'Label',
+              'tab': null,
+              'fields': {
+                  '1': [
+                      {
+                          'type': 'text',
+                          'id': 'pfx_property_one',
+                          'name': 'pfx_property_one',
+                          'colspan': 1,
+                          'params': {
+                              'existingColspan': 1,
+                              'maxColspan': 2
+                          },
+                          'visibilityCondition': null,
+                          'placeholder': null,
+                          'value': null,
+                          'required': false,
+                          'minLength': 0,
+                          'maxLength': 0,
+                          'regexPattern': null
+                      }
+                  ],
+                  '2': [
+                      {
+                          'type': 'boolean',
+                          'id': 'pfx_property_two',
+                          'name': 'pfx_property_two',
+                          'colspan': 1,
+                          'params': {
+                              'existingColspan': 1,
+                              'maxColspan': 2
+                          },
+                          'visibilityCondition': null,
+                          'placeholder': null,
+                          'value': null,
+                          'required': false,
+                          'minLength': 0,
+                          'maxLength': 0,
+                          'regexPattern': null
+                      }
+                  ],
+                  '3': [
+                      {
+                          'id': 'content_form_nodes',
+                          'name': 'Nodes',
+                          'type': 'upload',
+                          'readOnly': false,
+                          'required': true,
+                          'colspan': 1,
+                          'visibilityCondition': null,
+                          'params': {
+                              'existingColspan': 1,
+                              'maxColspan': 2,
+                              'fileSource': {
+                                  'serviceId': 'alfresco-content',
+                                  'name': 'Alfresco Content',
+                                  'metadataAllowed': true
+                              },
+                              'multiple': true,
+                              'menuOptions': {
+                                  'show': true,
+                                  'download': true,
+                                  'retrieveMetadata': true,
+                                  'remove': true
+                              },
+                              'link': false
+                          }
+                      }
+                  ],
+                  '4': [
+                      {
+                          'id': 'pfx_property_three',
+                          'name': 'pfx_property_three',
+                          'required': false,
+                          'readOnly': false,
+                          'colspan': 1,
+                          'params': {
+                              'existingColspan': 1,
+                              'maxColspan': 2
+                          },
+                          'visibilityCondition': null,
+                          'type': 'dropdown',
+                          'optionType': 'manual',
+                          'options': [
+                              {
+                                  'id': 'empty',
+                                  'name': 'Choose one...'
+                              },
+                              {
+                                  'id': 'opt_1',
+                                  'name': 'Option 1'
+                              },
+                              {
+                                  'id': 'opt_2',
+                                  'name': 'Option 2'
+                              }
+                          ],
+                          'value': 'empty',
+                          'restUrl': null,
+                          'restResponsePath': null,
+                          'restIdProperty': null,
+                          'restLabelProperty': null
+                      }
+                  ],
+                  '5': [
+                      {
+                          'id': 'pfx_property_four',
+                          'name': 'pfx_property_four',
+                          'required': false,
+                          'readOnly': false,
+                          'colspan': 1,
+                          'params': {
+                              'existingColspan': 1,
+                              'maxColspan': 2
+                          },
+                          'visibilityCondition': null,
+                          'type': 'dropdown',
+                          'optionType': 'manual',
+                          'options': [
+                              {
+                                  'id': 'empty',
+                                  'name': 'Choose one...'
+                              },
+                              {
+                                  'id': 'option_1',
+                                  'name': 'Option: 1'
+                              },
+                              {
+                                  'id': 'option_2',
+                                  'name': 'Option: 2'
+                              }
+                          ],
+                          'value': 'empty',
+                          'restUrl': null,
+                          'restResponsePath': null,
+                          'restIdProperty': null,
+                          'restLabelProperty': null
+                      }
+                  ],
+                  '6': [
+                      {
+                          'id': 'pfx_property_five',
+                          'name': 'pfx_property_five',
+                          'required': false,
+                          'readOnly': false,
+                          'colspan': 1,
+                          'params': {
+                              'existingColspan': 1,
+                              'maxColspan': 2
+                          },
+                          'visibilityCondition': null,
+                          'type': 'dropdown',
+                          'optionType': 'manual',
+                          'options': [
+                              {
+                                  'id': 'empty',
+                                  'name': 'Choose one...'
+                              },
+                              {
+                                  'id': 'green',
+                                  'name': 'Colour green'
+                              },
+                              {
+                                  'id': 'orange',
+                                  'name': 'Colour orange'
+                              }
+                          ],
+                          'value': 'empty',
+                          'restUrl': null,
+                          'restResponsePath': null,
+                          'restIdProperty': null,
+                          'restLabelProperty': null
+                      }
+                  ],
+                  '7': [
+                      {
+                          'id': 'cmfb85b2a7295ba41209750bca176ccaf9a',
+                          'name': 'File viewer',
+                          'type': 'file-viewer',
+                          'readOnly': false,
+                          'required': false,
+                          'colspan': 1,
+                          'visibilityCondition': null,
+                          'params': {
+                              'existingColspan': 1,
+                              'maxColspan': 2,
+                              'uploadWidget': 'content_form_nodes'
+                          }
+                      }
+                  ],
+                  '8': [
+                      {
+                          'type': 'text',
+                          'id': 'pfx_property_six',
+                          'name': 'pfx_property_six',
+                          'colspan': 1,
+                          'params': {
+                              'existingColspan': 1,
+                              'maxColspan': 2
+                          },
+                          'visibilityCondition': null,
+                          'placeholder': null,
+                          'value': null,
+                          'required': false,
+                          'minLength': 0,
+                          'maxLength': 0,
+                          'regexPattern': null
+                      }
+                  ],
+                  '9': [
+                      {
+                          'type': 'text',
+                          'id': 'pfx_property_seven',
+                          'name': 'pfx_property_seven',
+                          'colspan': 1,
+                          'params': {
+                              'existingColspan': 1,
+                              'maxColspan': 2
+                          },
+                          'visibilityCondition': null,
+                          'placeholder': null,
+                          'value': null,
+                          'required': false,
+                          'minLength': 0,
+                          'maxLength': 0,
+                          'regexPattern': null
+                      }
+                  ],
+                  '10': [
+                      {
+                          'type': 'text',
+                          'id': 'pfx_property_eight',
+                          'name': 'pfx_property_eight',
+                          'colspan': 1,
+                          'params': {
+                              'existingColspan': 1,
+                              'maxColspan': 2
+                          },
+                          'visibilityCondition': null,
+                          'placeholder': null,
+                          'value': null,
+                          'required': false,
+                          'minLength': 0,
+                          'maxLength': 0,
+                          'regexPattern': null
+                      }
+                  ]
+              },
+              'numberOfColumns': 2
+          }
+      ],
+      'outcomes': [],
+      'metadata': {},
+      'variables': []
+  }
+};
+
+export let fakeViewerForm = {
+  'id': 'form-de8895be-d0d7-4434-beef-559b15305d72',
+  'name': 'StartEventForm',
+  'description': '',
+  'version': 0,
+  'formDefinition': {
+      'tabs': [],
+      'fields': [
+          {
+              'type': 'container',
+              'id': '5a6b24c1-db2b-45e9-9aff-142395433d23',
+              'name': 'Label',
+              'tab': null,
+              'fields': {
+                  '1': [
+                      {
+                          'id': 'content_form_nodes',
+                          'name': 'Nodes',
+                          'type': 'upload',
+                          'readOnly': false,
+                          'required': true,
+                          'colspan': 1,
+                          'visibilityCondition': null,
+                          'params': {
+                              'existingColspan': 1,
+                              'maxColspan': 2,
+                              'fileSource': {
+                                  'serviceId': 'alfresco-content',
+                                  'name': 'Alfresco Content',
+                                  'metadataAllowed': true
+                              },
+                              'multiple': true,
+                              'menuOptions': {
+                                  'show': true,
+                                  'download': true,
+                                  'retrieveMetadata': true,
+                                  'remove': true
+                              },
+                              'link': false
+                          }
+                      }
+                  ],
+                  '2': [
+                      {
+                          'id': 'upload_widget',
+                          'name': 'Nodes',
+                          'type': 'upload',
+                          'readOnly': false,
+                          'required': true,
+                          'colspan': 1,
+                          'visibilityCondition': null,
+                          'params': {
+                              'existingColspan': 1,
+                              'maxColspan': 2,
+                              'fileSource': {
+                                  'serviceId': 'alfresco-content',
+                                  'name': 'Alfresco Content',
+                                  'metadataAllowed': true
+                              },
+                              'multiple': true,
+                              'menuOptions': {
+                                  'show': true,
+                                  'download': true,
+                                  'retrieveMetadata': true,
+                                  'remove': true
+                              },
+                              'link': false
+                          }
+                      }
+                  ],
+                  '3': [
+                      {
+                          'id': 'cmfb85b2a7295ba41209750bca176ccaf9a',
+                          'name': 'File viewer',
+                          'type': 'file-viewer',
+                          'readOnly': false,
+                          'required': false,
+                          'colspan': 1,
+                          'visibilityCondition': null,
+                          'params': {
+                              'existingColspan': 1,
+                              'maxColspan': 2,
+                              'uploadWidget': 'content_form_nodes'
+                          }
+                      }
+                  ]
+              },
+              'numberOfColumns': 2
+          }
+      ],
+      'outcomes': [],
+      'metadata': {},
+      'variables': []
+  }
+};

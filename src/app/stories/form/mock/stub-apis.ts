@@ -18,6 +18,14 @@ export class NodesApiStub {
   }
 }
 
+export class ContentApiStub {
+  getContentUrl(nodeId: string, _?: boolean, _2?: string): string {
+      console.log(nodeId);
+
+      return nodeIdToObjectTranslating[nodeId].entry.contentUrl;
+  };
+}
+
 export class SitesApiStub {
   listSites(_opts?: any): Promise<SitePaging>{
     return Promise.resolve(fakeSitePaging);

@@ -4,7 +4,7 @@ import { MinimalNode, NodeEntry, SitePaging, UserRepresentation } from '@alfresc
 import { Injectable } from '@angular/core';
 import { from, Observable, of, ReplaySubject, Subject } from 'rxjs';
 import { standaloneTaskWithForm } from '../form-renderer/visibility-condition-task/task-form/task-detail.models';
-import { GroupApiStub, ModelsApiStub, NodesApiStub, SitesApiStub, TaskApiStub, TaskFormsApiStub } from './stub-apis';
+import { ContentApiStub, GroupApiStub, ModelsApiStub, NodesApiStub, SitesApiStub, TaskApiStub, TaskFormsApiStub } from './stub-apis';
 
 const fakeBpmUser = new BpmUserModel({
   apps: [],
@@ -57,6 +57,10 @@ export class AlfrescoApiServiceStub {
   nodeUpdated = new Subject<Node>();
 
   modelsApi = new ModelsApiStub();
+
+  contentApi = new ContentApiStub();
+
+  content = new ContentApiStub();
 
   alfrescoApiInitialized: ReplaySubject<boolean> = new ReplaySubject(1);
 

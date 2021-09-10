@@ -28,6 +28,7 @@ import {
   unknownType,
   uploadField,
   SelectFolder,
+  fileViewer,
 } from './form-field.models';
 
 export default {
@@ -55,7 +56,7 @@ export default {
         { provide: AuthenticationService, useClass: AuthenticationServiceStub },
         { provide: NodesApiService, useClass: NodesApiServiceStub },
         { provide: SitesApi, useClass: SitesApiStub },
-        { provide: SitesService, useClass: SitesServiceStub },
+        { provide: SitesService, useClass: SitesServiceStub }
         // { provide: CustomResourcesService, useValue: CustomResourcesServiceStub },
       ]
     })
@@ -94,6 +95,11 @@ ReadOnlyTextField.args = {
 export const ReadOnlyField = Template.bind({});
 ReadOnlyField.args = {
   field: readOnlyField
+};
+
+export const FileViewerField = Template.bind({});
+FileViewerField.args = {
+  field: fileViewer
 };
 
 export const DropdownField = Template.bind({});
