@@ -27,8 +27,12 @@ import {
   textField,
   unknownType,
   uploadField,
-  SelectFolder,
-  fileViewer,
+  fileViewerField,
+  documentField,
+  jsonField,
+  typeaheadField,
+  dateTimeField,
+  containerField,
 } from './form-field.models';
 
 export default {
@@ -56,8 +60,7 @@ export default {
         { provide: AuthenticationService, useClass: AuthenticationServiceStub },
         { provide: NodesApiService, useClass: NodesApiServiceStub },
         { provide: SitesApi, useClass: SitesApiStub },
-        { provide: SitesService, useClass: SitesServiceStub }
-        // { provide: CustomResourcesService, useValue: CustomResourcesServiceStub },
+        { provide: SitesService, useClass: SitesServiceStub },
       ]
     })
   ]
@@ -67,98 +70,119 @@ const Template: Story<FormFieldComponent> = (args) => ({
   props: args
 });
 
-export const AmountField = Template.bind({});
-AmountField.args = {
+export const Amount = Template.bind({});
+Amount.args = {
   field: amountField
 };
 
-export const UploadField = Template.bind({});
-UploadField.args = {
+export const Upload = Template.bind({});
+Upload.args = {
   field: uploadField
 };
 
-export const BooleanField = Template.bind({});
-BooleanField.args = {
+export const Boolean = Template.bind({});
+Boolean.args = {
   field: booleanField
 };
 
-export const DateField = Template.bind({});
-DateField.args = {
+export const Date = Template.bind({});
+Date.args = {
   field: dateField
 };
 
-export const ReadOnlyTextField = Template.bind({});
-ReadOnlyTextField.args = {
+export const DateTime = Template.bind({});
+DateTime.args = {
+  field: dateTimeField
+};
+
+export const ReadOnlyText = Template.bind({});
+ReadOnlyText.args = {
   field: readOnlyTextField
 };
 
-export const ReadOnlyField = Template.bind({});
-ReadOnlyField.args = {
+export const ReadOnly = Template.bind({});
+ReadOnly.args = {
   field: readOnlyField
 };
 
-export const FileViewerField = Template.bind({});
-FileViewerField.args = {
-  field: fileViewer
+export const FileViewer = Template.bind({});
+FileViewer.args = {
+  field: fileViewerField
 };
 
-export const DropdownField = Template.bind({});
-DropdownField.args = {
+export const Dropdown = Template.bind({});
+Dropdown.args = {
   field: dropdownField
 };
 
-export const DynamicTableField = Template.bind({});
-DynamicTableField.args = {
+export const DynamicTable = Template.bind({});
+DynamicTable.args = {
   field: dynamicTableField
 };
 
-export const FunctionalGroupField = Template.bind({});
-FunctionalGroupField.args = {
+export const FunctionalGroup = Template.bind({});
+FunctionalGroup.args = {
   field: functionalGroupField
 };
 
-export const GroupField = Template.bind({});
-GroupField.args = {
+export const Group = Template.bind({});
+Group.args = {
   field: groupField
 };
 
-export const HyperlinkField = Template.bind({});
-HyperlinkField.args = {
+export const Hyperlink = Template.bind({});
+Hyperlink.args = {
   field: hyperlinkField
 };
 
-export const MultiLineTextField = Template.bind({});
-MultiLineTextField.args = {
+export const MultiLineText = Template.bind({});
+MultiLineText.args = {
   field: multiLineTextField
 };
 
-export const IntegerField = Template.bind({});
-IntegerField.args = {
+export const Integer = Template.bind({});
+Integer.args = {
   field: integerField
 };
 
-export const PeopleField = Template.bind({});
-PeopleField.args = {
+export const People = Template.bind({});
+People.args = {
   field: peopleField
 };
 
-export const RadioButtonsField = Template.bind({});
-RadioButtonsField.args = {
+export const RadioButtons = Template.bind({});
+RadioButtons.args = {
   field: radioButtonsField
 };
 
-export const TextField = Template.bind({});
-TextField.args = {
+export const Text = Template.bind({});
+Text.args = {
   field: textField
 };
 
-export const SelectFolderField = Template.bind({});
-SelectFolderField.args = {
-  field: SelectFolder
+export const Document = Template.bind({});
+Document.args = {
+  field: documentField,
+  limitWidth: true
 };
 
-export const UnknownType = Template.bind({});
-UnknownType.args = {
+export const JSON = Template.bind({});
+JSON.args = {
+  field: jsonField
+};
+
+export const Typeahead = Template.bind({});
+Typeahead.args = {
+  field: typeaheadField
+};
+
+export const Container = Template.bind({});
+Container.args = {
+  field: containerField
+};
+
+export const Unknown = Template.bind({});
+Unknown.args = {
   field: unknownType
 };
 

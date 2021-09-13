@@ -4,30 +4,34 @@ export const fakeForm = new FormModel();
 
 export const uploadField = new FormFieldModel(fakeForm, { id: 'uploadField', type: 'upload' });
 
-export const selectFolderField = new FormFieldModel(fakeForm, {
-  fieldType: 'AttachFileFieldRepresentation',
-  id: 'attachfiletest',
-  name: 'attachfiletest',
-  type: 'select-folder',
-  required: true,
-  colspan: 2,
-  placeholder: 'attachfile',
-  params: {
-    existingColspan: 2,
-    maxColspan: 2,
-    fileSource: {
-      serviceId: 'local-file',
-      name: 'Local File'
-    },
-    multiple: true,
-    link: false
+export const processUploadField = new FormFieldModel(fakeForm, { id: 'processUploadField', type: 'process-upload' });
+
+export const processCloudUploadField = new FormFieldModel(fakeForm, { id: 'processCloudUploadField', type: 'process-cloud-upload',
+params: {
+  existingColspan: 1,
+  maxColspan: 2,
+  fileSource: {
+    serviceId: 'alfresco-content',
+    name: 'Alfresco Content',
+    metadataAllowed: false
   },
-  visibilityCondition: {}
-});
+  multiple: true,
+  menuOptions: {
+    show: false,
+    download: false,
+    retrieveMetadata: false,
+    remove: true
+  },
+  link: false
+} });
 
 export const booleanField = new FormFieldModel(fakeForm, { id: 'booleanField', name: 'Checkbox', type: 'boolean' });
 
 export const dateField = new FormFieldModel(fakeForm, { id: 'dateField', value: Date.now(), type: 'date' });
+
+export const processCloudDateField = new FormFieldModel(fakeForm, { id: 'processCloudDateField', value: Date.now(), type: 'process-cloud-date' });
+
+export const dateTimeField = new FormFieldModel(fakeForm, { id: 'dateField', value: Date.now(), type: 'datetime' });
 
 export const readOnlyTextField = new FormFieldModel(fakeForm, { id: 'readOnlyTextField', value: 'Read only text field', type: 'readonly-text' });
 
@@ -36,6 +40,13 @@ export const readOnlyField = new FormFieldModel(fakeForm, { id: 'readOnlyField',
 export const integerField = new FormFieldModel(fakeForm, { id: 'integerField', value: 21, name: 'Type only integer', type: 'integer' });
 
 export const peopleField = new FormFieldModel(fakeForm, { id: 'peopleField', value: 'Users', name: 'Users', type: 'people' });
+
+export const processCloudPeopleField = new FormFieldModel(fakeForm, {
+  id: 'processCloudPeopleField',
+  value: null,
+  name: 'Users',
+  type: 'process-cloud-people'
+});
 
 export const textField = new FormFieldModel(fakeForm, { id: 'textField', name: 'Text Field', value: 'Text field', type: 'text' });
 
@@ -61,6 +72,17 @@ export const dropdownField = new FormFieldModel(fakeForm, {
   type: 'dropdown'
 });
 
+export const processCloudDropdownField = new FormFieldModel(fakeForm, {
+  id: 'processCloudDropdownField',
+  value: '1',
+  options: [
+    { id: '1', name: 'Cloud Item #1' },
+    { id: '2', name: 'Cloud Item #2' },
+    { id: '3', name: 'Cloud Item #3' }
+  ],
+  type: 'process-cloud-dropdown'
+});
+
 export const multiLineTextField = new FormFieldModel(fakeForm, {
   id: 'multiLineTextField',
   value: 'Multi\nLine\nText\nField',
@@ -71,6 +93,12 @@ export const functionalGroupField = new FormFieldModel(fakeForm, {
   id: 'functionalGroupField',
   placeholder: 'Group name (Admins, Users)',
   type: 'functional-group'
+});
+
+export const processCloudFunctionalGroupField = new FormFieldModel(fakeForm, {
+  id: 'processCloudFunctionalGroupField',
+  placeholder: 'Group name',
+  type: 'process-cloud-functional-group'
 });
 
 export const hyperlinkField = new FormFieldModel(fakeForm, {
@@ -130,7 +158,7 @@ export const dynamicTableField = new FormFieldModel(fakeForm, {
 
 export const groupField = new FormFieldModel(fakeForm, {
   id: 'groupField',
-  name: 'Group section field',
+  name: 'Group (Header) section field',
   value: 'users',
   type: 'group',
   fields: {
@@ -138,7 +166,7 @@ export const groupField = new FormFieldModel(fakeForm, {
   }
 });
 
-export const SelectFolder = new FormFieldModel(fakeForm, {
+export const selectFolderField = new FormFieldModel(fakeForm, {
   id: 'selectFolder',
   name: 'Select Folder',
   type: 'select-folder',
@@ -152,7 +180,7 @@ export const SelectFolder = new FormFieldModel(fakeForm, {
   }
 });
 
-export const fileViewer = new FormFieldModel(fakeForm, {
+export const fileViewerField = new FormFieldModel(fakeForm, {
   id: 'fileViewer',
   name: 'File viewer',
   type: 'file-viewer',
@@ -160,6 +188,92 @@ export const fileViewer = new FormFieldModel(fakeForm, {
   required: false,
   colspan: 1,
   value: 'loremIpsumPdfNode',
-  visibilityCondition: null,
+  visibilityCondition: null
+});
 
+export const documentField = new FormFieldModel(fakeForm, {
+  id: 'document',
+  name: 'Document',
+  type: 'document',
+  readOnly: false,
+  required: false,
+  colspan: 1,
+  value: {
+    id: 'test'
+  }
+});
+
+export const jsonField = new FormFieldModel(fakeForm, {
+  id: 'json',
+  name: 'json',
+  type: 'json',
+  readOnly: false,
+  required: false,
+  colspan: 1,
+  value: {
+    widget: {
+      debug: 'on',
+      window: {
+        title: 'Sample JSON Widget',
+        name: 'main_window',
+        width: 500,
+        height: 500
+      },
+      image: {
+        src: 'Images/Sun.png',
+        name: 'sun1',
+        hOffset: 250,
+        vOffset: 250,
+        alignment: 'center'
+      },
+      text: {
+        data: 'Click Here',
+        size: 36,
+        style: 'bold',
+        name: 'text1',
+        hOffset: 250,
+        vOffset: 100,
+        alignment: 'center',
+        onMouseUp: 'sun1.opacity = (sun1.opacity / 100) * 90;'
+      }
+    }
+  }
+});
+
+export const typeaheadField = new FormFieldModel(
+  new FormModel({ processVariables: [{ name: 'typeahead-id_LABEL', value: 'FakeProcessValue' }], taskId: 999 }),
+  {
+    id: 'typeahead-id',
+    name: 'Typeahead',
+    type: 'typeahead',
+    params: { field: { id: 'typeahead-id', name: 'typeahead-name', type: 'typeahead' } },
+    restUrl: 'https://jsonplaceholder.typicode.com/users',
+    restResponsePath: null,
+    restIdProperty: 'typeahead-id',
+    restLabelProperty: 'typeahead-name'
+  }
+);
+
+export const containerField = new FormFieldModel(fakeForm, {
+  id: 'test',
+  name: 'test',
+  type: 'container',
+  tab: null,
+  fields: {
+    '1': [
+      { id: 'textField', name: 'Text field 1', value: 'Fields', type: 'text' },
+      { id: 'textField', value: 'inside', type: 'text' },
+      { id: 'textField', name: 'Text field 3', value: 'container field', type: 'text' }
+    ],
+    '2': [
+      { id: 'integerField', value: 123, name: 'Integer field 1', type: 'integer' },
+      { id: 'integerField', value: 321, type: 'integer' },
+      { id: 'integerField', value: 999, name: 'Integer field 3', type: 'integer' }
+    ],
+    '3': [
+      { id: 'readOnlyField', name: 'Readonly field 1', value: 'Fields', type: 'readonly' },
+      { id: 'readOnlyField', value: 'inside', type: 'readonly' },
+      { id: 'readOnlyField', name: 'Readonly field 3', value: 'field', type: 'readonly' }
+    ]
+  }
 });
