@@ -1,40 +1,17 @@
 export const taskFormWithRequiredNumberWidgets: any = {
   formRepresentation: {
     id: 1001,
-    name: 'Default Test form',
+    name: 'Should be able to complete a task with a form with required number widgets',
     tabs: [],
     fields: [
       {
         fieldType: 'ContainerRepresentation',
-        id: '1498212398417',
+        id: '000000000000000000',
         name: 'Label',
         type: 'container',
         value: null,
-        required: false,
-        readOnly: false,
-        overrideId: false,
-        colspan: 1,
-        placeholder: null,
-        minLength: 0,
-        maxLength: 0,
-        minValue: null,
-        maxValue: null,
-        regexPattern: null,
-        optionType: null,
-        hasEmptyValue: false,
-        options: null,
-        restUrl: null,
-        restResponsePath: null,
-        restIdProperty: null,
-        restLabelProperty: null,
-        tab: null,
-        className: null,
-        dateDisplayFormat: null,
-        sizeX: 2,
-        sizeY: 1,
-        row: -1,
-        col: -1,
         numberOfColumns: 2,
+        required: true,
         fields: {
           '1': [
             {
@@ -63,25 +40,7 @@ export const taskFormWithRequiredNumberWidgets: any = {
     style: '',
     customFieldTemplates: {},
     metadata: {},
-    variables: [
-      {
-        id: 'bfca9766-7bc1-45cc-8ecf-cdad551e36e2',
-        name: 'name1',
-        type: 'string',
-        value: ''
-      },
-      {
-        id: '3ed9f28a-dbae-463f-b991-47ef06658bb6',
-        name: 'name2',
-        type: 'string',
-        value: ''
-      },
-      {
-        id: 'a7710978-1e9c-4b54-a19c-c6267d2b19a2',
-        name: 'input02',
-        type: 'integer'
-      }
-    ],
+    variables: [],
     customFieldsValueInfo: {},
     gridsterForm: false,
     globalDateFormat: 'D-M-YYYY'
@@ -91,40 +50,17 @@ export const taskFormWithRequiredNumberWidgets: any = {
 export const taskFormWithRequiredCheckboxAndVisibilityConditions: any = {
   formRepresentation: {
     id: 1001,
-    name: 'Default Test form',
+    name: 'Should be able to complete a task with Checkbox widgets',
     tabs: [],
     fields: [
       {
         fieldType: 'ContainerRepresentation',
-        id: '1498212398417',
+        id: '000000000000000000',
         name: 'Label',
         type: 'container',
         value: null,
-        required: false,
-        readOnly: false,
-        overrideId: false,
-        colspan: 1,
-        placeholder: null,
-        minLength: 0,
-        maxLength: 0,
-        minValue: null,
-        maxValue: null,
-        regexPattern: null,
-        optionType: null,
-        hasEmptyValue: false,
-        options: null,
-        restUrl: null,
-        restResponsePath: null,
-        restIdProperty: null,
-        restLabelProperty: null,
-        tab: null,
-        className: null,
-        dateDisplayFormat: null,
-        sizeX: 2,
-        sizeY: 1,
-        row: -1,
-        col: -1,
         numberOfColumns: 2,
+        required: true,
         fields: {
           1: [
             {
@@ -143,7 +79,7 @@ export const taskFormWithRequiredCheckboxAndVisibilityConditions: any = {
               type: 'boolean',
               value: false,
               required: true,
-              visibilityCondition: null,
+              visibilityCondition: null
             }
           ]
         }
@@ -155,32 +91,192 @@ export const taskFormWithRequiredCheckboxAndVisibilityConditions: any = {
     style: '',
     customFieldTemplates: {},
     metadata: {},
-    variables: [
-      {
-        id: 'bfca9766-7bc1-45cc-8ecf-cdad551e36e2',
-        name: 'name1',
-        type: 'string',
-        value: ''
-      },
-      {
-        id: '3ed9f28a-dbae-463f-b991-47ef06658bb6',
-        name: 'name2',
-        type: 'string',
-        value: ''
-      },
-      {
-        id: 'a7710978-1e9c-4b54-a19c-c6267d2b19a2',
-        name: 'input02',
-        type: 'integer'
-      }
-    ],
+    variables: [],
     customFieldsValueInfo: {},
     gridsterForm: false,
     globalDateFormat: 'D-M-YYYY'
   }
 };
 
+export const processWithRequiredSpecificNumbers = {
+  id: 4,
+  name: 'Should be able to start a process with visibility condition for number widgets',
+  processDefinitionId: 'ClaimReviewProcess:2: 93',
+  processDefinitionName: 'ClaimReviewProcess',
+  processDefinitionKey: 'ClaimReviewProcess',
+  tabs: [],
+  fields: [
+      {
+        fieldType: 'ContainerRepresentation',
+        id: '000000000000000000',
+        name: 'Label',
+        type: 'container',
+        value: null,
+        numberOfColumns: 1,
+        required: true,
+        fields: {
+              1: [
+                {
+                  fieldType: 'FormFieldRepresentation',
+                  id: 'integer-field',
+                  name: 'Number 1',
+                  type: 'integer',
+                  value: null,
+                  minValue: 999,
+                  maxValue: 999,
+                  visibilityCondition: null,
+                  placeholder: 'Type 999',
+                  isVisible: true,
+                  required: true
+                },
+              ],
+              2: [
+                {
+                  fieldType: 'FormFieldRepresentation',
+                  id: 'integer-second-field',
+                  name: 'Number 2',
+                  type: 'integer',
+                  placeholder: 'Type 123',
+                  value: 321,
+                  minValue: 123,
+                  maxValue: 123,
+                  visibilityCondition: {
+                    leftFormFieldId: 'integer-field',
+                    leftType: 'field',
+                    leftValue: null,
+                    operator: '==',
+                    rightValue: 999,
+                    rightType: 'value',
+                    nextConditionOperator: null,
+                    nextCondition: null
+                  },
+                  isVisible: true,
+                  required: true
+                }
+              ]
+          }
+      },
+  ],
+  outcomes: [
+      {
+          id: 'complete',
+          name: 'Complete'
+      },
+      {
+          id: 'start_process',
+          name: 'Start Process'
+      }
+  ],
+  javascriptEvents: [],
+  className: '',
+  style: '',
+  metadata: {},
+  variables: [],
+  customFieldsValueInfo: {},
+  gridsterForm: false,
+  globalDateFormat: 'D - M - YYYY'
+};
+
+export const processWithRequiredCheckboxes = {
+  id: 4,
+  name: 'Should be able to complete a process with visibility condition for boolean widgets',
+  processDefinitionId: 'ClaimReviewProcess:2: 93',
+  processDefinitionName: 'ClaimReviewProcess',
+  processDefinitionKey: 'ClaimReviewProcess',
+  tabs: [],
+  fields: [
+    {
+      fieldType: 'ContainerRepresentation',
+      id: '000000000000000000',
+      name: 'Label',
+      type: 'container',
+      value: null,
+      numberOfColumns: 1,
+      fields: {
+        1: [
+          {
+            fieldType: 'FormFieldRepresentation',
+            id: 'checkbox1',
+            name: 'Checkbox 1',
+            type: 'boolean',
+            value: false,
+            visibilityCondition: null,
+            required: true
+          },
+          {
+            fieldType: 'FormFieldRepresentation',
+            id: 'checkbox2',
+            name: 'Checkbox 2',
+            type: 'boolean',
+            value: false,
+            required: true,
+            visibilityCondition: {
+              leftFormFieldId: 'checkbox1',
+              leftType: 'field',
+              leftValue: null,
+              operator: '==',
+              rightValue: true,
+              rightType: 'value',
+              nextConditionOperator: '',
+              nextCondition: null
+            },
+            isVisible: true
+          },
+          {
+            fieldType: 'FormFieldRepresentation',
+            id: 'checkbox3',
+            name: 'Checkbox 3',
+            type: 'boolean',
+            value: false,
+            required: true,
+            visibilityCondition: {
+              leftFormFieldId: 'checkbox2',
+              leftType: 'field',
+              leftValue: null,
+              operator: '==',
+              rightValue: true,
+              rightType: 'value',
+              nextConditionOperator: 'and',
+              nextCondition: {
+                leftFormFieldId: 'checkbox1',
+                leftType: 'field',
+                leftValue: null,
+                operator: '==',
+                rightValue: true,
+                rightType: 'value',
+                nextConditionOperator: '',
+                nextCondition: null
+              }
+            },
+            isVisible: true
+          }
+        ]
+      }
+    }
+  ],
+  outcomes: [
+      {
+          id: 'complete',
+          name: 'Complete'
+      },
+      {
+          id: 'start_process',
+          name: 'Start Process'
+      }
+  ],
+  javascriptEvents: [],
+  className: '',
+  style: '',
+  metadata: {},
+  variables: [],
+  customFieldsValueInfo: {},
+  gridsterForm: false,
+  globalDateFormat: 'D - M - YYYY'
+};
+
 export const taskFormModelsArray = {
-  'taskFormWithRequiredNumberWidgets': taskFormWithRequiredNumberWidgets.formRepresentation,
-  'taskFormWithRequiredCheckboxAndVisibilityConditions': taskFormWithRequiredCheckboxAndVisibilityConditions.formRepresentation
-}
+  taskFormWithRequiredNumberWidgets: taskFormWithRequiredNumberWidgets.formRepresentation,
+  taskFormWithRequiredCheckboxAndVisibilityConditions: taskFormWithRequiredCheckboxAndVisibilityConditions.formRepresentation,
+  processWithRequiredSpecificNumbers: processWithRequiredSpecificNumbers,
+  processWithRequiredCheckboxes: processWithRequiredCheckboxes
+};

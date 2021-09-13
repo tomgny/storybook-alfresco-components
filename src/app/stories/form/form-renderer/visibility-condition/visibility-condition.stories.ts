@@ -72,104 +72,104 @@ defaultValues.args = {
   showFormVariables: true
 };
 
-export const visibleCheckBoxRefersToAnotherFieldValue = Template.bind({});
-visibleCheckBoxRefersToAnotherFieldValue.args = {
+export const VisibleCheckBoxRefersToAnotherFieldValue = Template.bind({});
+VisibleCheckBoxRefersToAnotherFieldValue.args = {
   ...defaultValues.args,
   testDescription: 'Should be able to see Checkbox widget when visibility condition refers to another field with specific value (showCheckbox)',
   formDefinition: fakeFormVisibility
 };
 
-export const visibleCheckboxRefersToFormVariableAndField = Template.bind({});
-visibleCheckboxRefersToFormVariableAndField.args = {
+export const VisibleCheckboxRefersToFormVariableAndField = Template.bind({});
+VisibleCheckboxRefersToFormVariableAndField.args = {
   ...defaultValues.args,
   testDescription: 'Should be able to see Checkbox widget when visibility condition refers to a form variable and a field (showCheckbox)',
   formDefinition: checkboxVisibilityRefersToFormVariableAndField
 };
 
-export const visibleCheckboxRefersToFieldAndFormVariable = Template.bind({});
-visibleCheckboxRefersToFieldAndFormVariable.args = {
+export const VisibleCheckboxRefersToFieldAndFormVariable = Template.bind({});
+VisibleCheckboxRefersToFieldAndFormVariable.args = {
   ...defaultValues.args,
   testDescription: 'Should be able to see Checkbox widget when visibility condition refers to a field and a form variable (showCheckbox)',
   formDefinition: checkboxVisibilityRefersToFieldAndFormVariable
 };
 
-export const visibleCheckboxRefersToFieldAndAnotherField = Template.bind({});
-visibleCheckboxRefersToFieldAndAnotherField.args = {
+export const VisibleCheckboxRefersToFieldAndAnotherField = Template.bind({});
+VisibleCheckboxRefersToFieldAndAnotherField.args = {
   ...defaultValues.args,
   testDescription: 'Should be able to see Checkbox widget when visibility condition refers to a field and another field (showCheckbox)',
   formDefinition: checkboxVisibilityRefersToFieldAndAnotherField
 };
 
-export const visibleCheckboxRefersToFormVariable = Template.bind({});
-visibleCheckboxRefersToFormVariable.args = {
+export const VisibleCheckboxRefersToFormVariable = Template.bind({});
+VisibleCheckboxRefersToFormVariable.args = {
   ...defaultValues.args,
   testDescription: 'Should be able to see Checkbox widget when visibility condition refers to a variable with specific value (showCheckbox)',
   formDefinition: checkboxVisibilityRefersToFormVariable
 };
 
-export const visibleCheckboxRefersToFormVariableAndAnotherFormVariable = Template.bind({});
-visibleCheckboxRefersToFormVariableAndAnotherFormVariable.args = {
+export const VisibleCheckboxRefersToFormVariableAndAnotherFormVariable = Template.bind({});
+VisibleCheckboxRefersToFormVariableAndAnotherFormVariable.args = {
   ...defaultValues.args,
   testDescription: 'Should be able to see Checkbox widget when visibility condition refers to form variable and another form variable (showCheckbox)',
   formDefinition: checkboxVisibilityRefersToFormVariableAndAnotherFormVariable
 };
 
-export const visibleCheckboxRefersToCheckbox = Template.bind({});
-visibleCheckboxRefersToCheckbox.args = {
+export const VisibleCheckboxRefersToCheckbox = Template.bind({});
+VisibleCheckboxRefersToCheckbox.args = {
   ...defaultValues.args,
   testDescription: 'Should be able to see Checkbox widget when visibility condition refers to form variable and another form variable (showCheckbox)',
   formDefinition: checkboxVisibilityRefersToCheckbox
 };
 
-export const visibleCheckboxRefersToFieldOrAnotherField = Template.bind({});
-visibleCheckboxRefersToFieldOrAnotherField.args = {
+export const VisibleCheckboxRefersToFieldOrAnotherField = Template.bind({});
+VisibleCheckboxRefersToFieldOrAnotherField.args = {
   ...defaultValues.args,
   testDescription:
     'Should be able to see Checkbox widget when has multiple visibility conditions and next condition operators (show [1] or checkbox [2])',
   formDefinition: checkboxVisibilityRefersToFieldOrAnotherField
 };
 
-export const visibleTextRefersToFieldOrNotAnotherField = Template.bind({});
-visibleTextRefersToFieldOrNotAnotherField.args = {
+export const VisibleTextRefersToFieldOrNotAnotherField = Template.bind({});
+VisibleTextRefersToFieldOrNotAnotherField.args = {
   ...defaultValues.args,
   testDescription:
     'Should be able to see text widget when has multiple visibility conditions and OR NOT next condition operators (show [1] or (NOT)checkbox [2])',
   formDefinition: textVisibilityRefersToFieldOrNotAnotherField
 };
 
-export const visibleFormVariableRefersToNoVisibilityConditions = Template.bind({}); //NOT WORK
-visibleFormVariableRefersToNoVisibilityConditions.args = {
+export const VisibleFormVariableRefersToNoVisibilityConditions = Template.bind({}); //NOT WORK
+VisibleFormVariableRefersToNoVisibilityConditions.args = {
   ...defaultValues.args,
   testDescription: 'Should be able to see the value of a form variable in the Display Value Widget when no visibility conditions are added',
   formDefinition: formVariableValueVisibilityRefersToNoVisibilityConditions
 };
 
-export const visibleTextRefersToFormVariableAndField = Template.bind({});
-visibleTextRefersToFormVariableAndField.args = {
+export const VisibleTextRefersToFormVariableAndField = Template.bind({});
+VisibleTextRefersToFormVariableAndField.args = {
   ...defaultValues.args,
   testDescription:
     'Should be able to see Display text widget when visibility condition refers to a form variable and a field ((field)cat and (variable)dog)',
   formDefinition: displayTextVisibilityRefersToFormVariableAndField
 };
 
-export const visibleTextRefersToFieldOrAnotherField = Template.bind({});
-visibleTextRefersToFieldOrAnotherField.args = {
+export const VisibleTextRefersToFieldOrAnotherField = Template.bind({});
+VisibleTextRefersToFieldOrAnotherField.args = {
   ...defaultValues.args,
   testDescription:
     'Should be able to see Display text widget when has multiple visibility conditions and next condition operators (dog[1] or cat[2])',
   formDefinition: displayTextVisibilityRefersToFieldOrAnotherField
 };
 
-export const visibleDropdownRefersToMultipleFields = Template.bind({});
-visibleDropdownRefersToMultipleFields.args = {
+export const VisibleDropdownRefersToMultipleFields = Template.bind({});
+VisibleDropdownRefersToMultipleFields.args = {
   ...defaultValues.args,
   testDescription:
     'Should be able to see dropdown widget when has multiple Visibility Conditions set on Form Fields (text[1] and 999[2] or field[3] == field[2])',
   formDefinition: dropdownVisibilityRefersToMultipleFields
 };
 
-export const visibleDropdownRefersToFormVariableAndAnotherFormVariable = Template.bind({}); //NOT WORK
-visibleDropdownRefersToFormVariableAndAnotherFormVariable.args = {
+export const VisibleDropdownRefersToFormVariableAndAnotherFormVariable = Template.bind({}); //NOT WORK
+VisibleDropdownRefersToFormVariableAndAnotherFormVariable.args = {
   ...defaultValues.args,
   testDescription: 'Should be able to see dropdown widget when has multiple Visibility Conditions set on Form Variables',
   formDefinition: dropdownVisibilityRefersToFormVariableAndAnotherFormVariable

@@ -65,53 +65,53 @@ defaultValues.args = {
   showFormVariables: true
 };
 
-export const visibleTabRefersToSpecificFieldValue = Template.bind({});
-visibleTabRefersToSpecificFieldValue.args = {
+export const VisibleTabRefersToSpecificFieldValue = Template.bind({});
+VisibleTabRefersToSpecificFieldValue.args = {
   ...defaultValues.args,
   testDescription: "Should be able to see 'Second tab' when visibility condition refers to a field with specific value (showTab)",
   formDefinition: tabVisibilityRefersToSpecificFieldValue
 };
 
-export const visibleTabRefersToSpecificFormVariable = Template.bind({});
-visibleTabRefersToSpecificFormVariable.args = {
+export const VisibleTabRefersToSpecificFormVariable = Template.bind({});
+VisibleTabRefersToSpecificFormVariable.args = {
   ...defaultValues.args,
   testDescription: "Should be able to see 'Second tab' when visibility condition refers to a variable with specific value (showTab)",
   formDefinition: tabVisibilityRefersToSpecificFormVariable
 };
 
-export const visibleTabRefersToSpecificFormVariableAndFieldValue = Template.bind({});
-visibleTabRefersToSpecificFormVariableAndFieldValue.args = {
+export const VisibleTabRefersToSpecificFormVariableAndFieldValue = Template.bind({});
+VisibleTabRefersToSpecificFormVariableAndFieldValue.args = {
   ...defaultValues.args,
   testDescription:
     "Should be able to see 'Second tab' when visibility condition refers to a form variable and a field ((variable)showTab and (field)showTab)",
   formDefinition: tabVisibilityRefersToSpecificFormVariableAndFieldValue
 };
 
-export const visibleTabRefersToSpecificFieldValueAndAnotherFieldValue = Template.bind({});
-visibleTabRefersToSpecificFieldValueAndAnotherFieldValue.args = {
+export const VisibleTabRefersToSpecificFieldValueAndAnotherFieldValue = Template.bind({});
+VisibleTabRefersToSpecificFieldValueAndAnotherFieldValue.args = {
   ...defaultValues.args,
   testDescription: "Should be able to see 'Second tab' when visibility condition refers to a field and another field (showTab and showTab)",
   formDefinition: tabVisibilityRefersToSpecificFieldValueAndAnotherFieldValue
 };
 
-export const visibleTabRefersToSpecificFieldValueAndFormVariable = Template.bind({});
-visibleTabRefersToSpecificFieldValueAndFormVariable.args = {
+export const VisibleTabRefersToSpecificFieldValueAndFormVariable = Template.bind({});
+VisibleTabRefersToSpecificFieldValueAndFormVariable.args = {
   ...defaultValues.args,
   testDescription:
     "Should be able to see 'Second tab' when visibility condition refers to a field and form variable ((field)showTab and (variable)showTab)",
   formDefinition: tabVisibilityRefersToSpecificFieldValueAndFormVariable
 };
 
-export const visibleTabRefersToSpecificFormVariableAndAnotherFormVariable = Template.bind({});
-visibleTabRefersToSpecificFormVariableAndAnotherFormVariable.args = {
+export const VisibleTabRefersToSpecificFormVariableAndAnotherFormVariable = Template.bind({});
+VisibleTabRefersToSpecificFormVariableAndAnotherFormVariable.args = {
   ...defaultValues.args,
   testDescription:
     "Should be able to see 'Second tab' when visibility condition refers to form variable and another form variable (showTab and showTab2)",
   formDefinition: tabVisibilityRefersToSpecificFormVariableAndAnotherFormVariable
 };
 
-export const visibleTabRefersToMultipleFieldValues = Template.bind({});
-visibleTabRefersToMultipleFieldValues.args = {
+export const VisibleTabRefersToMultipleFieldValues = Template.bind({});
+VisibleTabRefersToMultipleFieldValues.args = {
   ...defaultValues.args,
   testDescription:
     "Should be able to see 'Second tab' when has multiple visibility conditions and next condition operators (showTab[1] and showTab2[2] and showTab3[3])",
