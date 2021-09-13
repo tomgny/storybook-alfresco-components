@@ -1,10 +1,10 @@
-import { AppConfigService, BpmUserModel, ContentLinkModel, GroupModel, IdentityGroupModel, IdentityGroupSearchParam, IdentityUserModel, UserProcessModel, ValidateDynamicTableRowEvent } from '@alfresco/adf-core';
+import { AppConfigService, BpmUserModel, ContentLinkModel, FormEvent, GroupModel, IdentityGroupModel, IdentityGroupSearchParam, IdentityUserModel, UserProcessModel, ValidateDynamicTableRowEvent } from '@alfresco/adf-core';
 import { TaskDetailsModel } from '@alfresco/adf-process-services';
 import { MinimalNode, NodeEntry, SitePaging, UserRepresentation } from '@alfresco/js-api';
 import { Injectable } from '@angular/core';
 import { from, Observable, of, ReplaySubject, Subject } from 'rxjs';
 import { standaloneTaskWithForm } from '../form-renderer/visibility-condition-task/task-form/task-detail.models';
-import { AuthenticationApiStub, ContentApiStub, GroupApiStub, ModelsApiStub, NodesApiStub, SitesApiStub, TaskApiStub, TaskFormsApiStub } from './stub-apis';
+import { AlfrescoApiActivitiStub, AuthenticationApiStub, ContentApiStub, GroupApiStub, ModelsApiStub, NodesApiStub, SitesApiStub, TaskApiStub, TaskFormsApiStub } from './stub-apis';
 
 const fakeBpmUser = new BpmUserModel({
   apps: [],
@@ -75,12 +75,36 @@ export class AlfrescoApiServiceStub {
   constructor(private appConfig: AppConfigService) {}
 }
 
+@Injectable({
+  providedIn: 'root'
+})
+export class AlfrescoApiCompatibilityServiceStub {///test
+
+  alfrescoApiInitialized: ReplaySubject<boolean> = new ReplaySubject(1);
+
+  alfrescoApi = {
+    activiti: {
+      alfrescoApi: new AlfrescoApiActivitiStub()
+    }
+  }
+
+  async load() {
+    await this.appConfig.load();
+  }
+
+  getInstance = () => this.alfrescoApi
+
+  constructor(private appConfig: AppConfigService) {}
+}
+
 export class FormServiceStub {
   modelsApi = new ModelsApiStub();
 
   groupsApi = new GroupApiStub();
 
   formEvents = new Subject<Event>();
+
+  taskSaved = new Subject<FormEvent>();
 
   validateDynamicTableRow = new Subject<ValidateDynamicTableRowEvent>();
 

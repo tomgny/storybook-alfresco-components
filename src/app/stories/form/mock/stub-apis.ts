@@ -1,4 +1,12 @@
-import { FormDefinitionRepresentation, NodeEntry, RelatedContentRepresentation, SitePaging, TaskRepresentation, TicketEntry } from '@alfresco/js-api';
+import {
+  FormDefinitionRepresentation,
+  NodeEntry,
+  RelatedContentRepresentation,
+  ResultListDataRepresentationAlfrescoEndpointRepresentation,
+  SitePaging,
+  TaskRepresentation,
+  TicketEntry
+} from '@alfresco/js-api';
 import { taskDetailsArray } from '../form-renderer/visibility-condition-task/task-form/task-detail.models';
 import { taskFormModelsArray } from '../form-renderer/visibility-condition-task/task-form/task-form.models';
 import { fakeSitePaging, nodeIdToObjectTranslating } from './fake-nodes';
@@ -48,7 +56,11 @@ export class ContentApiStub {
   }
 
   async getRawContent(_contentId: number): Promise<any> {
-    return Promise.resolve(await fetch('./assets/favicon-96x96.png').then(r => r.blob()).then(blobFile => new File([blobFile], "favicon-96x96.png", { type: "image/png" })));
+    return Promise.resolve(
+      await fetch('./assets/favicon-96x96.png')
+        .then((r) => r.blob())
+        .then((blobFile) => new File([blobFile], 'favicon-96x96.png', { type: 'image/png' }))
+    );
   }
 
   //   getRawContentUrl(_contentId: number): string {
@@ -85,12 +97,23 @@ export class TaskFormsApiStub {
 export class AuthenticationApiStub {
   private ticket: {
     entry: {
-      id: 'fakeId',
-      userId: 'fakeUser'
-    }
-  }
+      id: 'fakeId';
+      userId: 'fakeUser';
+    };
+  };
 
-  getTicket(): Promise<TicketEntry>{
-    return Promise.resolve(this.ticket)
+  getTicket(): Promise<TicketEntry> {
+    return Promise.resolve(this.ticket);
+  }
+}
+
+export class AlfrescoApiActivitiStub {
+  getRepositories(_opts?: any): Promise<ResultListDataRepresentationAlfrescoEndpointRepresentation> {
+    return Promise.resolve({
+      'size': 0,
+      'total': 0,
+      'start': 0,
+      'data': []
+  });
   }
 }
