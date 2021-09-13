@@ -122,6 +122,7 @@ import { SidebarActionMenuComponent } from './stories/layout/components/sidebar-
 import { ProcessServicesCloudModule, TaskCloudModule, TaskFormModule, TaskListCloudModule } from '@alfresco/adf-process-services-cloud';
 import { ContentWidgetModule, ProcessModule, TaskListModule } from '@alfresco/adf-process-services';
 import { TaskFormComponent } from './stories/form/form-renderer/visibility-condition-task/task-form/task-form.component';
+import { StartFormComponent } from './stories/form/start-form/start-form.component';
 
 registerLocaleData(localeFr);
 registerLocaleData(localeDe);
@@ -229,6 +230,7 @@ registerLocaleData(localeSv);
     SidenavLayoutComponent,
     SidebarActionMenuComponent,
     TaskFormComponent,
+    StartFormComponent,
   ],
   providers: [
     { provide: AppConfigService, useClass: DebugAppConfigService },

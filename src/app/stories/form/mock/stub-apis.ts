@@ -9,6 +9,7 @@ import {
 } from '@alfresco/js-api';
 import { taskDetailsArray } from '../form-renderer/visibility-condition-task/task-form/task-detail.models';
 import { taskFormModelsArray } from '../form-renderer/visibility-condition-task/task-form/task-form.models';
+import { startMockForm } from '../start-form/start-form.mock';
 import { fakeSitePaging, nodeIdToObjectTranslating } from './fake-nodes';
 
 export const fakePngAnswer = new RelatedContentRepresentation({
@@ -110,10 +111,16 @@ export class AuthenticationApiStub {
 export class AlfrescoApiActivitiStub {
   getRepositories(_opts?: any): Promise<ResultListDataRepresentationAlfrescoEndpointRepresentation> {
     return Promise.resolve({
-      'size': 0,
-      'total': 0,
-      'start': 0,
-      'data': []
-  });
+      size: 0,
+      total: 0,
+      start: 0,
+      data: []
+    });
+  }
+}
+
+export class ProcessApiStub {
+  getProcessDefinitionStartForm(_processDefinitionId: string): Promise<FormDefinitionRepresentation>{
+    return Promise.resolve(new FormDefinitionRepresentation(startMockForm))
   }
 }
