@@ -61,7 +61,27 @@ export default {
     ngOnInit: { table: { disable: true } },
     showTestDescription: { table: { disable: true } },
     showFormVariables: { table: { disable: true } },
-    testDescription: { table: { disable: true } }
+    testDescription: { table: { disable: true } },
+    showDebugButton: { table: { disable: true } },
+    disableSaveButton: { table: { disable: true } },
+    disableStartProcessButton: { table: { disable: true } },
+    disableCompleteButton: { table: { disable: true } },
+    showCompleteButton: { table: { disable: true } },
+    showSaveButton: { table: { disable: true } },
+    readOnly: { table: { disable: true } },
+    hasForm: { table: { disable: true } },
+    onRefreshClicked: { table: { disable: true } },
+    getColorForOutcome: { table: { disable: true } },
+    isOutcomeButtonEnabled: { table: { disable: true } },
+    onOutcomeClicked: { table: { disable: true } },
+    saveTaskForm: { table: { disable: true } },
+    completeTaskForm: { table: { disable: true } },
+    storeFormAsMetadata: { table: { disable: true } },
+    onTaskSaved: { table: { disable: true } },
+    onExecuteOutcome: { table: { disable: true } },
+    isOutcomeButtonVisible: { table: { disable: true } },
+    initForm: { table: { disable: true } },
+    formVariables: { table: { disable: true } },
   }
 } as Meta;
 

@@ -54,10 +54,30 @@ export default {
   argTypes: {
     debugMode: { table: { disable: true } },
     parseForm: { table: { disable: true } },
+    ngOnInit: { table: { disable: true } },
     showTestDescription: { table: { disable: true } },
     showFormVariables: { table: { disable: true } },
     testDescription: { table: { disable: true } },
-    ngOnInit: { table: { disable: true } }
+    showDebugButton: { table: { disable: true } },
+    disableSaveButton: { table: { disable: true } },
+    disableStartProcessButton: { table: { disable: true } },
+    disableCompleteButton: { table: { disable: true } },
+    showCompleteButton: { table: { disable: true } },
+    showSaveButton: { table: { disable: true } },
+    readOnly: { table: { disable: true } },
+    hasForm: { table: { disable: true } },
+    onRefreshClicked: { table: { disable: true } },
+    getColorForOutcome: { table: { disable: true } },
+    isOutcomeButtonEnabled: { table: { disable: true } },
+    onOutcomeClicked: { table: { disable: true } },
+    saveTaskForm: { table: { disable: true } },
+    completeTaskForm: { table: { disable: true } },
+    storeFormAsMetadata: { table: { disable: true } },
+    onTaskSaved: { table: { disable: true } },
+    onExecuteOutcome: { table: { disable: true } },
+    isOutcomeButtonVisible: { table: { disable: true } },
+    initForm: { table: { disable: true } },
+    formVariables: { table: { disable: true } },
   }
 } as Meta;
 
@@ -137,7 +157,7 @@ VisibleTextRefersToFieldOrNotAnotherField.args = {
   formDefinition: textVisibilityRefersToFieldOrNotAnotherField
 };
 
-export const VisibleFormVariableRefersToNoVisibilityConditions = Template.bind({}); //NOT WORK
+export const VisibleFormVariableRefersToNoVisibilityConditions = Template.bind({});
 VisibleFormVariableRefersToNoVisibilityConditions.args = {
   ...defaultValues.args,
   testDescription: 'Should be able to see the value of a form variable in the Display Value Widget when no visibility conditions are added',
@@ -168,7 +188,7 @@ VisibleDropdownRefersToMultipleFields.args = {
   formDefinition: dropdownVisibilityRefersToMultipleFields
 };
 
-export const VisibleDropdownRefersToFormVariableAndAnotherFormVariable = Template.bind({}); //NOT WORK
+export const VisibleDropdownRefersToFormVariableAndAnotherFormVariable = Template.bind({});
 VisibleDropdownRefersToFormVariableAndAnotherFormVariable.args = {
   ...defaultValues.args,
   testDescription: 'Should be able to see dropdown widget when has multiple Visibility Conditions set on Form Variables',

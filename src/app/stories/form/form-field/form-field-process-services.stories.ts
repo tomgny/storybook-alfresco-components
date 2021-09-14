@@ -47,7 +47,8 @@ export default {
         { provide: SitesService, useClass: SitesServiceStub }
       ]
     })
-  ]
+  ],
+  argTypes: { limitWidth: { table: { disable: true } } }
 } as Meta;
 
 const Template: Story<FormFieldComponent> = (args) => ({

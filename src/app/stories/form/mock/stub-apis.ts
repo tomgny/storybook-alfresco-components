@@ -12,22 +12,6 @@ import { taskFormModelsArray } from '../form-renderer/visibility-condition-task/
 import { startMockForm } from '../start-form/start-form.mock';
 import { fakeSitePaging, nodeIdToObjectTranslating } from './fake-nodes';
 
-export const fakePngAnswer = new RelatedContentRepresentation({
-  id: 1155,
-  name: 'alfresco_logo.png',
-  created: '2017-07-25T17:17:37.099Z',
-  createdBy: { id: 1001, firstName: 'Admin', lastName: 'admin', email: 'admin' },
-  relatedContent: false,
-  contentAvailable: true,
-  link: true,
-  linkUrl: './assets/favicon-96x96.png',
-  mimeType: 'image/png',
-  simpleType: 'image',
-  previewStatus: 'queued',
-  thumbnailStatus: 'queued',
-  source: './assets/favicon-96x96.png'
-});
-
 export class ModelsApiStub {}
 
 export class GroupApiStub {}
@@ -44,12 +28,28 @@ export class NodesApiStub {
 }
 
 export class ContentApiStub {
+  private fakePngAnswer = new RelatedContentRepresentation({
+    id: 1155,
+    name: 'alfresco_logo.png',
+    created: '2017-07-25T17:17:37.099Z',
+    createdBy: { id: 1001, firstName: 'Admin', lastName: 'admin', email: 'admin' },
+    relatedContent: false,
+    contentAvailable: true,
+    link: true,
+    linkUrl: './assets/favicon-96x96.png',
+    mimeType: 'image/png',
+    simpleType: 'image',
+    previewStatus: 'queued',
+    thumbnailStatus: 'queued',
+    source: './assets/favicon-96x96.png'
+  });
+
   getContentUrl(nodeId: string, _?: boolean, _2?: string): string {
     return nodeIdToObjectTranslating[nodeId].entry.contentUrl;
   }
 
   getContent(_contentId: number): Promise<RelatedContentRepresentation> {
-    return Promise.resolve(fakePngAnswer);
+    return Promise.resolve(this.fakePngAnswer);
   }
 
   async getRawContent(_contentId: number): Promise<any> {
@@ -59,14 +59,6 @@ export class ContentApiStub {
         .then((blobFile) => new File([blobFile], 'favicon-96x96.png', { type: 'image/png' }))
     );
   }
-
-  //   getRawContentUrl(_contentId: number): string {
-  //     return './assets/favicon-96x96.png';
-  // }
-
-  // async getContentPreview(_contentId: number): Promise<any>{
-  //   return Promise.resolve(await fetch('./assets/images/bpm-user-avatar.png').then(r => r.blob()).then(blobFile => new File([blobFile], "bpm-user-avatar.png", { type: "image/png" })));
-  // }
 }
 
 export class SitesApiStub {

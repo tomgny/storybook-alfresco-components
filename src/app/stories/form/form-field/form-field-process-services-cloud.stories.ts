@@ -65,10 +65,10 @@ export default {
         { provide: SitesService, useClass: SitesServiceStub },
         { provide: IdentityUserService, useClass: IdentityUserServiceStub },
         { provide: IdentityGroupService, useClass: IdentityGroupServiceStub }
-        // { provide: AuthenticationApi, useClass: AuthenticationApiStub}
       ]
     })
-  ]
+  ],
+  argTypes: { limitWidth: { table: { disable: true } } }
 } as Meta;
 
 const Template: Story<FormFieldComponent> = (args) => ({
