@@ -154,17 +154,14 @@ export const fakeGetFolders = {
 
 const loremIpsumPdfNode = new NodeEntry({
   entry: {
-      isFile: true,
-      createdByUser: { id: 'admin', displayName: 'Administrator' },
-      modifiedByUser: { id: 'admin', displayName: 'Administrator' },
-      name: 'lorem_ipsum.pdf',
-      content: {  'mimeType': 'application/pdf',
-                  'mimeTypeName': 'Adobe Portable Document Format',
-                  'sizeInBytes': 21301,
-                  'encoding': 'UTF-8'},
-      contentUrl: './assets/fake_folder/lorem_ipsum.pdf',
-      id: 'loremIpsumPdfNode',
-      modifiedAt: '2020-12-24T15:05:59.640Z',
+    isFile: true,
+    createdByUser: { id: 'admin', displayName: 'Administrator' },
+    modifiedByUser: { id: 'admin', displayName: 'Administrator' },
+    name: 'lorem_ipsum.pdf',
+    content: { mimeType: 'application/pdf', mimeTypeName: 'Adobe Portable Document Format', sizeInBytes: 21301, encoding: 'UTF-8' },
+    contentUrl: './assets/fake_folder/lorem_ipsum.pdf',
+    id: 'loremIpsumPdfNode',
+    modifiedAt: '2020-12-24T15:05:59.640Z'
   }
 });
 
@@ -206,5 +203,5 @@ export const nodeIdToObjectTranslating = {
   '-my-_child': fakeFolder,
   '-root-': fakeNodeEntryRoot,
   '-root-_child': fakeGetFolders,
-  'loremIpsumPdfNode': loremIpsumPdfNode
+  loremIpsumPdfNode: loremIpsumPdfNode
 };

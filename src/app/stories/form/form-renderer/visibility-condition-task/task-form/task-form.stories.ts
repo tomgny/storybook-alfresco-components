@@ -30,11 +30,11 @@ export default {
         TranslateModule,
         TaskFormModule,
         TaskListModule,
-        ProcessModule,
+        ProcessModule
       ],
       providers: [
         { provide: AlfrescoApiService, useClass: AlfrescoApiServiceStub },
-        { provide: AuthenticationService, useClass: AuthenticationServiceStub },
+        { provide: AuthenticationService, useClass: AuthenticationServiceStub }
       ]
     })
   ],
@@ -54,20 +54,20 @@ const Template: Story<FormRendererComponent> = (args) => ({
 
 export const RequiredNumberWidgets = Template.bind({});
 RequiredNumberWidgets.args = {
-  taskId: 'taskWithNumbers',
+  taskId: 'taskWithNumbers'
 };
 
 export const RequiredCheckboxAndVisibilityConditions = Template.bind({});
 RequiredCheckboxAndVisibilityConditions.args = {
-  taskId: 'taskWithCheckboxes',
+  taskId: 'taskWithCheckboxes'
 };
 
 export const RequiredProcessWithSpecificNumbers = Template.bind({});
 RequiredProcessWithSpecificNumbers.args = {
-  taskId: 'processWithNumbers',
+  taskId: 'processWithNumbers'
 };
 
 export const RequiredProcessWithCheckboxes = Template.bind({});
 RequiredProcessWithCheckboxes.args = {
-  taskId: 'processWithCheckboxes',
+  taskId: 'processWithCheckboxes'
 };

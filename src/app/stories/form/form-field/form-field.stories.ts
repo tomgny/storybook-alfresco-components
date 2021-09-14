@@ -1,5 +1,13 @@
 import { ContentModule, ContentNodeSelectorModule, DocumentListModule } from '@alfresco/adf-content-services';
-import { AlfrescoApiService, AuthenticationService, CoreModule, FormService, MaterialModule, NodesApiService, SitesService } from '@alfresco/adf-core';
+import {
+  AlfrescoApiService,
+  AuthenticationService,
+  CoreModule,
+  FormService,
+  MaterialModule,
+  NodesApiService,
+  SitesService
+} from '@alfresco/adf-core';
 import { SitesApi } from '@alfresco/js-api';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
@@ -32,7 +40,7 @@ import {
   jsonField,
   typeaheadField,
   dateTimeField,
-  containerField,
+  containerField
 } from './form-field.models';
 
 export default {
@@ -60,7 +68,7 @@ export default {
         { provide: AuthenticationService, useClass: AuthenticationServiceStub },
         { provide: NodesApiService, useClass: NodesApiServiceStub },
         { provide: SitesApi, useClass: SitesApiStub },
-        { provide: SitesService, useClass: SitesServiceStub },
+        { provide: SitesService, useClass: SitesServiceStub }
       ]
     })
   ]

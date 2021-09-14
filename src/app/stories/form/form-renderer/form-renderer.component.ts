@@ -1,12 +1,26 @@
-import { FormBaseComponent, FormModel, FormOutcomeEvent, FormOutcomeModel, FormRenderingService, FormService, FormVariableModel } from '@alfresco/adf-core';
+import {
+  FormBaseComponent,
+  FormModel,
+  FormOutcomeEvent,
+  FormOutcomeModel,
+  FormRenderingService,
+  FormService,
+  FormVariableModel
+} from '@alfresco/adf-core';
 import { AttachFolderWidgetComponent } from '@alfresco/adf-process-services';
+import {
+  AttachFileCloudWidgetComponent,
+  DateCloudWidgetComponent,
+  DropdownCloudWidgetComponent,
+  GroupCloudWidgetComponent,
+  PeopleCloudWidgetComponent
+} from '@alfresco/adf-process-services-cloud';
 import { Component, Input, OnInit } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
 
 @Component({
   selector: 'aca-form-renderer',
-  templateUrl: './form-renderer.component.html',
-  styleUrls: ['./form-renderer.component.scss']
+  templateUrl: './form-renderer.component.html'
 })
 export class FormRendererComponent implements OnInit {
   /**
@@ -46,9 +60,6 @@ export class FormRendererComponent implements OnInit {
   readOnly: boolean = false;
 
   ngOnInit() {
-    this.formRenderingService.register({
-      'select-folder': () => AttachFolderWidgetComponent
-    });
     this.formDefinition = this.parseForm(this.formDefinition);
 
     this.initForm = this.formDefinition;
@@ -66,94 +77,93 @@ export class FormRendererComponent implements OnInit {
 
   hasForm(): boolean {
     return !!this.formDefinition;
-}
-
-onRefreshClicked() {
-  this.formDefinition = this.initForm;
-}
-
-getColorForOutcome(outcomeName: string): ThemePalette {
-  return outcomeName === FormBaseComponent.COMPLETE_OUTCOME_NAME ? FormBaseComponent.COMPLETE_BUTTON_COLOR : null;
-}
-
-isOutcomeButtonEnabled(outcome: FormOutcomeModel): boolean {
-  if (this.formDefinition.readOnly) {
-      return false;
   }
 
-  if (outcome) {
+  onRefreshClicked() {
+    this.formDefinition = this.initForm;
+  }
+
+  getColorForOutcome(outcomeName: string): ThemePalette {
+    return outcomeName === FormBaseComponent.COMPLETE_OUTCOME_NAME ? FormBaseComponent.COMPLETE_BUTTON_COLOR : null;
+  }
+
+  isOutcomeButtonEnabled(outcome: FormOutcomeModel): boolean {
+    if (this.formDefinition.readOnly) {
+      return false;
+    }
+
+    if (outcome) {
       if (outcome.name === FormOutcomeModel.SAVE_ACTION) {
-          return !this.disableSaveButton;
+        return !this.disableSaveButton;
       }
 
       if (outcome.name === FormOutcomeModel.COMPLETE_ACTION) {
-          return this.disableCompleteButton ? false : this.formDefinition.isValid;
+        return this.disableCompleteButton ? false : this.formDefinition.isValid;
       }
 
       if (outcome.name === FormOutcomeModel.START_PROCESS_ACTION) {
-          return this.disableStartProcessButton ? false : this.formDefinition.isValid;
+        return this.disableStartProcessButton ? false : this.formDefinition.isValid;
       }
 
       return this.formDefinition.isValid;
+    }
+    return false;
   }
-  return false;
-}
 
-onOutcomeClicked(outcome: FormOutcomeModel): boolean {
-  if (!this.readOnly && outcome && this.formDefinition) {
-
+  onOutcomeClicked(outcome: FormOutcomeModel): boolean {
+    if (!this.readOnly && outcome && this.formDefinition) {
       if (!this.onExecuteOutcome(outcome)) {
-          return false;
+        return false;
       }
 
       if (outcome.isSystem) {
-          if (outcome.id === FormBaseComponent.SAVE_OUTCOME_ID) {
-              this.saveTaskForm();
-              return true;
-          }
+        if (outcome.id === FormBaseComponent.SAVE_OUTCOME_ID) {
+          this.saveTaskForm();
+          return true;
+        }
 
-          if (outcome.id === FormBaseComponent.COMPLETE_OUTCOME_ID) {
-              this.completeTaskForm();
-              return true;
-          }
+        if (outcome.id === FormBaseComponent.COMPLETE_OUTCOME_ID) {
+          this.completeTaskForm();
+          return true;
+        }
 
-          if (outcome.id === FormBaseComponent.START_PROCESS_OUTCOME_ID) {
-              this.completeTaskForm();
-              return true;
-          }
+        if (outcome.id === FormBaseComponent.START_PROCESS_OUTCOME_ID) {
+          this.completeTaskForm();
+          return true;
+        }
 
-          if (outcome.id === FormBaseComponent.CUSTOM_OUTCOME_ID) {
-              this.onTaskSaved(this.formDefinition);
-              this.storeFormAsMetadata();
-              return true;
-          }
+        if (outcome.id === FormBaseComponent.CUSTOM_OUTCOME_ID) {
+          this.onTaskSaved(this.formDefinition);
+          this.storeFormAsMetadata();
+          return true;
+        }
       } else {
-          // Note: Activiti is using NAME field rather than ID for outcomes
-          if (outcome.name) {
-              this.onTaskSaved(this.formDefinition);
-              this.completeTaskForm(outcome.name);
-              return true;
-          }
+        // Note: Activiti is using NAME field rather than ID for outcomes
+        if (outcome.name) {
+          this.onTaskSaved(this.formDefinition);
+          this.completeTaskForm(outcome.name);
+          return true;
+        }
       }
-  }
+    }
 
-  return false;
-}
+    return false;
+  }
 
   saveTaskForm() {
-    window.alert('Fake save task form!')
+    window.alert('Fake save task form!');
   }
 
-  completeTaskForm(outcome?: string) {
-    window.alert(`Fake complete form ${outcome}!`)
+  completeTaskForm(_outcome?: string) {
+    window.alert(`Fake complete form!`);
   }
 
   onTaskSaved(_form: any) {
-    window.alert('Fake task saved!')
+    window.alert('Fake task saved!');
   }
 
   storeFormAsMetadata() {
-    window.alert('Fake store form as metadata!')
+    window.alert('Fake store form as metadata!');
   }
 
   onExecuteOutcome(outcome: FormOutcomeModel): boolean {
@@ -161,34 +171,43 @@ onOutcomeClicked(outcome: FormOutcomeModel): boolean {
 
     this.formService.executeOutcome.next(args);
     if (args.defaultPrevented) {
-        return false;
+      return false;
     }
 
     return !args.defaultPrevented;
-}
+  }
 
-isOutcomeButtonVisible(outcome: FormOutcomeModel, isFormReadOnly: boolean): boolean {
-  if (outcome && outcome.name) {
+  isOutcomeButtonVisible(outcome: FormOutcomeModel, isFormReadOnly: boolean): boolean {
+    if (outcome && outcome.name) {
       if (outcome.name === FormOutcomeModel.COMPLETE_ACTION) {
-          return this.showCompleteButton;
+        return this.showCompleteButton;
       }
 
       if (isFormReadOnly) {
-          return outcome.isSelected;
+        return outcome.isSelected;
       }
 
       if (outcome.name === FormOutcomeModel.SAVE_ACTION) {
-          return this.showSaveButton;
+        return this.showSaveButton;
       }
 
       if (outcome.name === FormOutcomeModel.START_PROCESS_ACTION) {
-          return false;
+        return false;
       }
 
       return true;
+    }
+    return false;
   }
-  return false;
-}
 
-  constructor(private formService: FormService, private formRenderingService: FormRenderingService) {}
+  constructor(private formService: FormService, private formRenderingService: FormRenderingService) {
+    this.formRenderingService.register({
+      'select-folder': () => AttachFolderWidgetComponent,
+      'process-cloud-upload': () => AttachFileCloudWidgetComponent,
+      'process-cloud-dropdown': () => DropdownCloudWidgetComponent,
+      'process-cloud-date': () => DateCloudWidgetComponent,
+      'process-cloud-people': () => PeopleCloudWidgetComponent,
+      'process-cloud-functional-group': () => GroupCloudWidgetComponent
+    });
+  }
 }

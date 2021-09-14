@@ -45,14 +45,10 @@ export class NodesApiStub {
 
 export class ContentApiStub {
   getContentUrl(nodeId: string, _?: boolean, _2?: string): string {
-    console.log(nodeId);
-
     return nodeIdToObjectTranslating[nodeId].entry.contentUrl;
   }
 
-  getContent(contentId: number): Promise<RelatedContentRepresentation> {
-    console.log(contentId);
-
+  getContent(_contentId: number): Promise<RelatedContentRepresentation> {
     return Promise.resolve(fakePngAnswer);
   }
 
@@ -120,7 +116,7 @@ export class AlfrescoApiActivitiStub {
 }
 
 export class ProcessApiStub {
-  getProcessDefinitionStartForm(_processDefinitionId: string): Promise<FormDefinitionRepresentation>{
-    return Promise.resolve(new FormDefinitionRepresentation(startMockForm))
+  getProcessDefinitionStartForm(_processDefinitionId: string): Promise<FormDefinitionRepresentation> {
+    return Promise.resolve(new FormDefinitionRepresentation(startMockForm));
   }
 }

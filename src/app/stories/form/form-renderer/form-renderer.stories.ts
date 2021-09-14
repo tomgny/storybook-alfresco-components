@@ -1,5 +1,14 @@
 import { ContentModule } from '@alfresco/adf-content-services';
-import { AlfrescoApiService, AuthenticationService, CoreModule, NodesApiService, SitesService } from '@alfresco/adf-core';
+import {
+  AlfrescoApiService,
+  AuthenticationService,
+  CoreModule,
+  IdentityGroupService,
+  IdentityUserService,
+  NodesApiService,
+  SitesService
+} from '@alfresco/adf-core';
+import { ProcessServicesCloudModule } from '@alfresco/adf-process-services-cloud';
 import { SitesApi } from '@alfresco/js-api';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
@@ -7,7 +16,14 @@ import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { APP_ROUTES } from '../../../app.routes';
 import { AppCommonModule } from '../../../components/common/common.module';
 import { SitesApiStub } from '../mock/stub-apis';
-import { AlfrescoApiServiceStub, AuthenticationServiceStub, NodesApiServiceStub, SitesServiceStub } from '../mock/stub-services';
+import {
+  AlfrescoApiServiceStub,
+  AuthenticationServiceStub,
+  IdentityGroupServiceStub,
+  IdentityUserServiceStub,
+  NodesApiServiceStub,
+  SitesServiceStub
+} from '../mock/stub-services';
 import { FormRendererComponent } from './form-renderer.component';
 import { cloudFormMock, processServiceForm } from './form-renderer.models';
 
@@ -25,14 +41,17 @@ export default {
         CoreModule.forRoot(),
         AppCommonModule,
         BrowserAnimationsModule,
-        ContentModule.forRoot()
+        ContentModule.forRoot(),
+        ProcessServicesCloudModule
       ],
       providers: [
         { provide: AlfrescoApiService, useClass: AlfrescoApiServiceStub },
         { provide: AuthenticationService, useClass: AuthenticationServiceStub },
         { provide: NodesApiService, useClass: NodesApiServiceStub },
         { provide: SitesApi, useClass: SitesApiStub },
-        { provide: SitesService, useClass: SitesServiceStub }
+        { provide: SitesService, useClass: SitesServiceStub },
+        { provide: IdentityUserService, useClass: IdentityUserServiceStub },
+        { provide: IdentityGroupService, useClass: IdentityGroupServiceStub }
       ]
     })
   ],

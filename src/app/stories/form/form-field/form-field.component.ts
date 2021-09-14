@@ -1,7 +1,12 @@
-
 import { FormFieldModel, FormRenderingService } from '@alfresco/adf-core';
 import { AttachFileWidgetComponent, AttachFolderWidgetComponent } from '@alfresco/adf-process-services';
-import { AttachFileCloudWidgetComponent, DateCloudWidgetComponent, DropdownCloudWidgetComponent, GroupCloudWidgetComponent, PeopleCloudWidgetComponent } from '@alfresco/adf-process-services-cloud';
+import {
+  AttachFileCloudWidgetComponent,
+  DateCloudWidgetComponent,
+  DropdownCloudWidgetComponent,
+  GroupCloudWidgetComponent,
+  PeopleCloudWidgetComponent
+} from '@alfresco/adf-process-services-cloud';
 import { Component, Input } from '@angular/core';
 
 @Component({
@@ -18,15 +23,19 @@ export class FormFieldComponent {
 
   @Input()
   limitWidth: boolean = false;
-  constructor(private formRenderingService: FormRenderingService){
-    this.formRenderingService.register({
-      'select-folder': () => AttachFolderWidgetComponent,
-      'process-upload': () => AttachFileWidgetComponent,
-      'process-cloud-upload': () => AttachFileCloudWidgetComponent,
-      'process-cloud-dropdown': () => DropdownCloudWidgetComponent,
-      'process-cloud-date': () => DateCloudWidgetComponent,
-      'process-cloud-people': () => PeopleCloudWidgetComponent,
-      'process-cloud-functional-group': () => GroupCloudWidgetComponent
-    }, true)
+
+  constructor(private formRenderingService: FormRenderingService) {
+    this.formRenderingService.register(
+      {
+        'select-folder': () => AttachFolderWidgetComponent,
+        'process-upload': () => AttachFileWidgetComponent,
+        'process-cloud-upload': () => AttachFileCloudWidgetComponent,
+        'process-cloud-dropdown': () => DropdownCloudWidgetComponent,
+        'process-cloud-date': () => DateCloudWidgetComponent,
+        'process-cloud-people': () => PeopleCloudWidgetComponent,
+        'process-cloud-functional-group': () => GroupCloudWidgetComponent
+      },
+      true
+    );
   }
 }

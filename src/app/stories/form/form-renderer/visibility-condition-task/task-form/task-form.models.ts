@@ -106,66 +106,66 @@ export const processWithRequiredSpecificNumbers = {
   processDefinitionKey: 'ClaimReviewProcess',
   tabs: [],
   fields: [
-      {
-        fieldType: 'ContainerRepresentation',
-        id: '000000000000000000',
-        name: 'Label',
-        type: 'container',
-        value: null,
-        numberOfColumns: 1,
-        required: true,
-        fields: {
-              1: [
-                {
-                  fieldType: 'FormFieldRepresentation',
-                  id: 'integer-field',
-                  name: 'Number 1',
-                  type: 'integer',
-                  value: null,
-                  minValue: 999,
-                  maxValue: 999,
-                  visibilityCondition: null,
-                  placeholder: 'Type 999',
-                  isVisible: true,
-                  required: true
-                },
-              ],
-              2: [
-                {
-                  fieldType: 'FormFieldRepresentation',
-                  id: 'integer-second-field',
-                  name: 'Number 2',
-                  type: 'integer',
-                  placeholder: 'Type 123',
-                  value: 321,
-                  minValue: 123,
-                  maxValue: 123,
-                  visibilityCondition: {
-                    leftFormFieldId: 'integer-field',
-                    leftType: 'field',
-                    leftValue: null,
-                    operator: '==',
-                    rightValue: 999,
-                    rightType: 'value',
-                    nextConditionOperator: null,
-                    nextCondition: null
-                  },
-                  isVisible: true,
-                  required: true
-                }
-              ]
+    {
+      fieldType: 'ContainerRepresentation',
+      id: '000000000000000000',
+      name: 'Label',
+      type: 'container',
+      value: null,
+      numberOfColumns: 1,
+      required: true,
+      fields: {
+        1: [
+          {
+            fieldType: 'FormFieldRepresentation',
+            id: 'integer-field',
+            name: 'Number 1',
+            type: 'integer',
+            value: null,
+            minValue: 999,
+            maxValue: 999,
+            visibilityCondition: null,
+            placeholder: 'Type 999',
+            isVisible: true,
+            required: true
           }
-      },
+        ],
+        2: [
+          {
+            fieldType: 'FormFieldRepresentation',
+            id: 'integer-second-field',
+            name: 'Number 2',
+            type: 'integer',
+            placeholder: 'Type 123',
+            value: 321,
+            minValue: 123,
+            maxValue: 123,
+            visibilityCondition: {
+              leftFormFieldId: 'integer-field',
+              leftType: 'field',
+              leftValue: null,
+              operator: '==',
+              rightValue: 999,
+              rightType: 'value',
+              nextConditionOperator: null,
+              nextCondition: null
+            },
+            isVisible: true,
+            required: true
+          }
+        ]
+      }
+    }
   ],
   outcomes: [
-      {
-          id: 'complete',
-          name: 'Complete'
-      },
-      {
-          id: 'start_process',
-          name: 'Start Process'
-      }
+    {
+      id: 'complete',
+      name: 'Complete'
+    },
+    {
+      id: 'start_process',
+      name: 'Start Process'
+    }
   ],
   javascriptEvents: [],
   className: '',
@@ -255,14 +255,14 @@ export const processWithRequiredCheckboxes = {
     }
   ],
   outcomes: [
-      {
-          id: 'complete',
-          name: 'Complete'
-      },
-      {
-          id: 'start_process',
-          name: 'Start Process'
-      }
+    {
+      id: 'complete',
+      name: 'Complete'
+    },
+    {
+      id: 'start_process',
+      name: 'Start Process'
+    }
   ],
   javascriptEvents: [],
   className: '',

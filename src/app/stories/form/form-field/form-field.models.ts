@@ -6,24 +6,27 @@ export const uploadField = new FormFieldModel(fakeForm, { id: 'uploadField', typ
 
 export const processUploadField = new FormFieldModel(fakeForm, { id: 'processUploadField', type: 'process-upload' });
 
-export const processCloudUploadField = new FormFieldModel(fakeForm, { id: 'processCloudUploadField', type: 'process-cloud-upload',
-params: {
-  existingColspan: 1,
-  maxColspan: 2,
-  fileSource: {
-    serviceId: 'alfresco-content',
-    name: 'Alfresco Content',
-    metadataAllowed: false
-  },
-  multiple: true,
-  menuOptions: {
-    show: false,
-    download: false,
-    retrieveMetadata: false,
-    remove: true
-  },
-  link: false
-} });
+export const processCloudUploadField = new FormFieldModel(fakeForm, {
+  id: 'processCloudUploadField',
+  type: 'process-cloud-upload',
+  params: {
+    existingColspan: 1,
+    maxColspan: 2,
+    fileSource: {
+      serviceId: 'alfresco-content',
+      name: 'Alfresco Content',
+      metadataAllowed: false
+    },
+    multiple: true,
+    menuOptions: {
+      show: false,
+      download: false,
+      retrieveMetadata: false,
+      remove: true
+    },
+    link: false
+  }
+});
 
 export const booleanField = new FormFieldModel(fakeForm, { id: 'booleanField', name: 'Checkbox', type: 'boolean' });
 

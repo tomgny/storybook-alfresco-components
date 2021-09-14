@@ -38,13 +38,10 @@ export default {
     })
   ],
   argTypes: {
-    debugMode: { table: { disable: true } },
-    parseForm: { table: { disable: true } },
-    ngOnInit: { table: { disable: true } },
-    showTestDescription: { table: { disable: true } },
-    showFormVariables: { table: { disable: true } },
-    testDescription: { table: { disable: true } },
-    readOnlyForm: {table: {disable: true}}
+    onFormCompleted: { table: { disable: true } },
+    processDefinitionId: { table: { disable: true } },
+    processId: { table: { disable: true } },
+    readOnlyForm: { table: { disable: true } }
   }
 } as Meta;
 
@@ -57,7 +54,7 @@ StartForm.args = {
   processDefinitionId: '999',
   processId: '999',
   showOutcomeButtons: true,
-  showRefreshButton: true,
+  showRefreshButton: true
 };
 
 export const ReadOnly = Template.bind({});
@@ -69,11 +66,11 @@ ReadOnly.args = {
 export const OutcomeButtonsHidden = Template.bind({});
 OutcomeButtonsHidden.args = {
   ...StartForm.args,
- showOutcomeButtons: false
+  showOutcomeButtons: false
 };
 
 export const RefreshButtonHidden = Template.bind({});
 RefreshButtonHidden.args = {
   ...StartForm.args,
- showRefreshButton: false
+  showRefreshButton: false
 };

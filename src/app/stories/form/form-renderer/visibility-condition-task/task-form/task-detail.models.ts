@@ -6,10 +6,10 @@ export let standaloneTaskWithForm = new TaskDetailsModel({
   description: null,
   category: null,
   assignee: {
-      id: 1001,
-      firstName: 'Wilbur',
-      lastName: 'Adams',
-      email: 'wilbur@app.activiti.com'
+    id: 1001,
+    firstName: 'Wilbur',
+    lastName: 'Adams',
+    email: 'wilbur@app.activiti.com'
   },
   created: '2016-11-03T15:25:42.749+0000',
   dueDate: null,
@@ -46,10 +46,10 @@ export let standaloneTaskWithoutForm = new TaskDetailsModel({
   description: null,
   category: null,
   assignee: {
-      id: 1001,
-      firstName: 'Wilbur',
-      lastName: 'Adams',
-      email: 'wilbur@app.activiti.com'
+    id: 1001,
+    firstName: 'Wilbur',
+    lastName: 'Adams',
+    email: 'wilbur@app.activiti.com'
   },
   created: '2016-11-03T15:25:42.749+0000',
   dueDate: null,
@@ -86,10 +86,10 @@ export const taskWithNumbers = new TaskDetailsModel({
   description: null,
   category: null,
   assignee: {
-      id: 'fake-id',
-      firstName: 'fake-bpm-first-name',
-      lastName: 'fake-bpm-last-name',
-      email: 'fakeBpm@fake.com'
+    id: 'fake-id',
+    firstName: 'fake-bpm-first-name',
+    lastName: 'fake-bpm-last-name',
+    email: 'fakeBpm@fake.com'
   },
   created: '2016-11-03T15:25:42.749+0000',
   dueDate: null,
@@ -126,10 +126,10 @@ export const taskWithCheckboxes = new TaskDetailsModel({
   description: null,
   category: null,
   assignee: {
-      id: 'fake-id',
-      firstName: 'fake-bpm-first-name',
-      lastName: 'fake-bpm-last-name',
-      email: 'fakeBpm@fake.com'
+    id: 'fake-id',
+    firstName: 'fake-bpm-first-name',
+    lastName: 'fake-bpm-last-name',
+    email: 'fakeBpm@fake.com'
   },
   created: '2016-11-03T15:25:42.749+0000',
   dueDate: null,
@@ -170,7 +170,7 @@ export const processWithNumbers = new TaskDetailsModel({
     firstName: 'fake-bpm-first-name',
     lastName: 'fake-bpm-last-name',
     email: 'fakeBpm@fake.com'
-},
+  },
   created: '2016-11-03T15:25:42.749+0000',
   dueDate: null,
   endDate: null,
@@ -210,7 +210,7 @@ export const processWithCheckboxes = new TaskDetailsModel({
     firstName: 'fake-bpm-first-name',
     lastName: 'fake-bpm-last-name',
     email: 'fakeBpm@fake.com'
-},
+  },
   created: '2016-11-03T15:25:42.749+0000',
   dueDate: null,
   endDate: null,
@@ -241,8 +241,8 @@ export const processWithCheckboxes = new TaskDetailsModel({
 });
 
 export const taskDetailsArray = {
-  'taskWithNumbers': taskWithNumbers,
-  'taskWithCheckboxes': taskWithCheckboxes,
-  'processWithNumbers': processWithNumbers,
-  'processWithCheckboxes': processWithCheckboxes
-}
+  taskWithNumbers: taskWithNumbers,
+  taskWithCheckboxes: taskWithCheckboxes,
+  processWithNumbers: processWithNumbers,
+  processWithCheckboxes: processWithCheckboxes
+};
