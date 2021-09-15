@@ -6,6 +6,7 @@ import {
   IdentityGroupModel,
   IdentityGroupSearchParam,
   IdentityUserModel,
+  PaginationModel,
   UserProcessModel,
   ValidateDynamicTableRowEvent
 } from '@alfresco/adf-core';
@@ -163,8 +164,20 @@ export class TaskListServiceStub {
 export class CustomResourcesServiceStub {
   nodesApi = new NodesApiStub();
 
-  isCustomSource() {
+  getCorrespondingNodeIds(nodeId: string, _pagination: PaginationModel = {}): Observable<string[]> {
+    if (!nodeId) {
+      nodeId = '-my-';
+    }
+
+    return from(this.nodesApi.getNode(nodeId).then((node) => [node.entry.id]));
+  }
+
+  hasCorrespondingNodeIds(_nodeId: string): boolean {
     return true;
+  }
+
+  isCustomSource() {
+    return false;
   }
 }
 

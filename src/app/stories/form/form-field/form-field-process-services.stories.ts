@@ -1,4 +1,4 @@
-import { ContentModule, ContentNodeSelectorModule, DocumentListModule } from '@alfresco/adf-content-services';
+import { ContentModule, ContentNodeSelectorModule, CustomResourcesService, DocumentListModule } from '@alfresco/adf-content-services';
 import {
   AlfrescoApiService,
   AuthenticationService,
@@ -8,14 +8,22 @@ import {
   NodesApiService,
   SitesService
 } from '@alfresco/adf-core';
-import { SitesApi } from '@alfresco/js-api';
+import { NodesApi, SitesApi } from '@alfresco/js-api';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { APP_ROUTES } from '../../../app.routes';
 import { AppCommonModule } from '../../../components/common/common.module';
+import { NodesApiServiceStub } from '../../content-metadata-card/mock/stub-services-and-api';
+import { NodesApiStub } from '../../document-list/mock/stub-apis';
 import { SitesApiStub } from '../mock/stub-apis';
-import { AlfrescoApiServiceStub, AuthenticationServiceStub, FormServiceStub, NodesApiServiceStub, SitesServiceStub } from '../mock/stub-services';
+import {
+  AlfrescoApiServiceStub,
+  AuthenticationServiceStub,
+  CustomResourcesServiceStub,
+  FormServiceStub,
+  SitesServiceStub
+} from '../mock/stub-services';
 import { FormFieldComponent } from './form-field.component';
 import { processUploadField, selectFolderField } from './form-field.models';
 
@@ -44,7 +52,9 @@ export default {
         { provide: AuthenticationService, useClass: AuthenticationServiceStub },
         { provide: NodesApiService, useClass: NodesApiServiceStub },
         { provide: SitesApi, useClass: SitesApiStub },
-        { provide: SitesService, useClass: SitesServiceStub }
+        { provide: SitesService, useClass: SitesServiceStub },
+        { provide: NodesApi, useClass: NodesApiStub },
+        { provide: CustomResourcesService, useClass: CustomResourcesServiceStub }
       ]
     })
   ],
