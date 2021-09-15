@@ -182,7 +182,7 @@ registerLocaleData(localeSv);
     AppSearchResultsModule,
     AppHeaderModule,
     AppNodeVersionModule,
-    HammerModule,
+    HammerModule
   ],
   declarations: [
     AppComponent,
