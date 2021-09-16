@@ -99,10 +99,18 @@ export class AuthenticationApiStub {
 export class AlfrescoApiActivitiStub {
   getRepositories(_opts?: any): Promise<ResultListDataRepresentationAlfrescoEndpointRepresentation> {
     return Promise.resolve({
-      size: 0,
-      total: 0,
+      size: 1,
+      total: 1,
       start: 0,
-      data: []
+      data: [
+        {
+          accountUsername: 'fake-user',
+          alfrescoTenantId: 'fake-id',
+          authenticationType: 'basic',
+          name: 'repo',
+          repositoryUrl: 'fake-repo-url'
+        }
+      ]
     });
   }
 }

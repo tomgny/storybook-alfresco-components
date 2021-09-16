@@ -17,6 +17,7 @@ import { from, Observable, of, ReplaySubject, Subject } from 'rxjs';
 import { standaloneTaskWithForm } from '../form-renderer/visibility-condition-task/task-form/task-detail.models';
 import { fakeBpmUser, mockIdentityGroups, mockIdentityUsers } from './fake-users-groups';
 import {
+  AlfrescoApiActivitiStub,
   AuthenticationApiStub,
   ContentApiStub,
   GroupApiStub,
@@ -52,7 +53,13 @@ export class AlfrescoApiServiceStub {
 
   taskApi = new TaskApiStub();
 
-  activiti = { taskApi: new TaskApiStub(), taskFormsApi: new TaskFormsApiStub(), contentApi: new ContentApiStub(), processApi: new ProcessApiStub() };
+  activiti = {
+    taskApi: new TaskApiStub(),
+    taskFormsApi: new TaskFormsApiStub(),
+    contentApi: new ContentApiStub(),
+    processApi: new ProcessApiStub(),
+    alfrescoApi: new AlfrescoApiActivitiStub()
+  };
 
   nodeUpdated = new Subject<Node>();
 

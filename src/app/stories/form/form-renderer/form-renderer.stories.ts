@@ -81,7 +81,7 @@ export default {
     onExecuteOutcome: { table: { disable: true } },
     isOutcomeButtonVisible: { table: { disable: true } },
     initForm: { table: { disable: true } },
-    formVariables: { table: { disable: true } },
+    formVariables: { table: { disable: true } }
   }
 } as Meta;
 

@@ -580,9 +580,19 @@ export const formVariableValueVisibilityRefersToNoVisibilityConditions: any = {
             id: 'display-variable',
             name: 'Display variable',
             type: 'readonly',
-            value: 'No cats',
+            value: null,
             restIdPropert: 'variable-string',
-            visibilityCondition: {},
+            visibilityCondition: null,
+            params: {
+              existingColspan: 1,
+              maxColspan: 2,
+              field: {
+                id: 'no-cats-variable',
+                name: 'No cats variable',
+                type: 'string'
+              },
+              responseVariable: true
+            },
             isVisible: true
           }
         ]
@@ -591,8 +601,8 @@ export const formVariableValueVisibilityRefersToNoVisibilityConditions: any = {
   ],
   variables: [
     {
-      id: 'variable-string',
-      name: 'Some string',
+      id: 'no-cats-variable',
+      name: 'No cats variable',
       type: 'string',
       value: 'No cats'
     }
