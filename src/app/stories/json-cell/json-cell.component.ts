@@ -1,12 +1,11 @@
 import { DataColumn, DataRow, DataTableAdapter } from '@alfresco/adf-core';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'aca-json-cell',
-  templateUrl: './json-cell.component.html',
-  styleUrls: ['./json-cell.component.scss']
+  templateUrl: './json-cell.component.html'
 })
-export class JsonCellComponent implements OnInit {
+export class JsonCellComponent {
   /**
    * Editable JSON.
    */
@@ -48,6 +47,4 @@ export class JsonCellComponent implements OnInit {
    */
   @Input()
   resolverFn: (row: DataRow, col: DataColumn) => any = null;
-
-  ngOnInit(): void {}
 }
