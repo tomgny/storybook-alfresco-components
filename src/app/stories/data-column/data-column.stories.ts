@@ -34,15 +34,15 @@ export default {
     })
   ],
   argTypes: {
-    ngOnChanges: { table: { diable: true } },
-    showDate: { table: { diable: true } },
-    columns: { table: { diable: true } },
-    rows: { table: { diable: true } },
-    data: { table: { diable: true } },
-    key: { table: { diable: true } },
-    sortingKey: { table: { diable: true } },
-    type: { table: { diable: true } },
-    formatTooltip: { table: { diable: true } }
+    showDate: { table: { disable: true } },
+    columns: { table: { disable: true } },
+    rows: { table: { disable: true } },
+    data: { table: { disable: true } },
+    key: { table: { disable: true } },
+    sortingKey: { table: { disable: true } },
+    type: { table: { disable: true } },
+    formatTooltip: { table: { disable: true } },
+    ngOnChanges: { table: { disable: true } }
   }
 } as Meta;
 
@@ -70,7 +70,6 @@ Default.args = {
   format: undefined,
   formatTooltip: undefined,
   sortable: true,
-  sortingKey: undefined,
   columns: undefined,
   rows: undefined,
   type: 'text'
@@ -162,10 +161,4 @@ export const Focus = Template.bind({});
 Focus.args = {
   ...Default.args,
   focus: false
-};
-
-export const SortingKey = Template.bind({});
-SortingKey.args = {
-  ...Default.args,
-  sortingKey: 'id'
 };
