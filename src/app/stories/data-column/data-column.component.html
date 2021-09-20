@@ -1,6 +1,7 @@
-<adf-datatable [data]="data">
+<adf-datatable [data]="data" [columns]="columns" [rows]="rows">
   <data-columns>
     <data-column
+      *ngIf="!columns && !rows"
       [key]="key"
       [copyContent]="copyContent"
       [class]="cssClass"
