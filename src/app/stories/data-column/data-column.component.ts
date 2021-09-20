@@ -21,7 +21,7 @@ export class DataColumnComponent {
 
     /** Value format (if supported by the parent component), for example format of the date. */
     @Input()
-    format: string;
+    format: 'medium' | 'short' | 'long' | 'full' | 'shortDate' | 'mediumDate' | 'longDate' | 'fullDate' | 'shortTime' | 'mediumTime' | 'longTime' | 'fullTime' = 'short';
 
     /** Toggles ability to sort by this column, for example by clicking the column header. */
     @Input()
