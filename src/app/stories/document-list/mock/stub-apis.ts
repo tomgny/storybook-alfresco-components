@@ -1,9 +1,9 @@
 import { NodeChildAssociationPaging, NodeEntry } from '@alfresco/js-api';
+import _ from 'lodash';
 import { nodeIdToObjectTranslating } from './fake-nodes';
 import { mimeTypeIcons } from './mock-icons';
 
-export class ContentApiStub{
-
+export class ContentApiStub {
   getContentUrl(nodeId: string, _?: boolean, _2?: string): string {
     return nodeIdToObjectTranslating[nodeId].entry.contentUrl;
   }
@@ -23,9 +23,11 @@ export class NodesApiStub {
     if (options.where) {
       const where: string = options.where;
       const whereCondition: string[] = where.split('=');
-      nodeIdToObjectTranslating[nodeId].list.entries = nodeIdToObjectTranslating[nodeId].list.entries.filter(
+      let filteredNodeObject = _.cloneDeep(nodeIdToObjectTranslating[nodeId]);
+      filteredNodeObject.list.entries = nodeIdToObjectTranslating[nodeId].list.entries.filter(
         (node) => node.entry[whereCondition[0]].toString() == [whereCondition[1]]
       );
+      return Promise.resolve(filteredNodeObject);
     }
 
     return Promise.resolve(nodeIdToObjectTranslating[nodeId]);
