@@ -46,6 +46,8 @@
     "@ngx-translate/core": "^13.0.0",
     "apollo-angular": "^2.6.0",
     "graphql": "^15.5.1",
+    "@types/lodash": "^4.14.173",
+    "lodash": "^4.17.21",
     "minimatch-browser": "^1.0.0",
     "moment": "^2.27.0",
     "moment-es6": "1.0.0",
