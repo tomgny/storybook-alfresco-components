@@ -138,6 +138,7 @@ import { IconComponent } from './stories/icon/icon.component';
 import { AboutGithubLinkComponent } from './stories/about-github-link/about-github-link.component';
 import { AboutProductVersionComponent } from './stories/about-product-version/about-product-version.component';
 import { AboutApplicationModulesComponent } from './stories/about-application-modules/about-application-modules.component';
+import { JsonCellComponent } from './stories/json-cell/json-cell.component';
 import { TextMaskComponent } from './stories/text-mask/text-mask.component';
 
 registerLocaleData(localeFr);
@@ -262,6 +263,7 @@ registerLocaleData(localeSv);
     AboutGithubLinkComponent,
     AboutProductVersionComponent,
     AboutApplicationModulesComponent,
+    JsonCellComponent,
     TextMaskComponent,
   ],
   providers: [
