@@ -1,0 +1,387 @@
+{
+  "ADF_CLOUD_PROCESS_LIST": {
+    "MESSAGES": {
+      "TITLE": "Der blev ikke fundet nogen processer",
+      "SUBTITLE": "Opret en ny proces, som skal være nem at finde senere",
+      "NONE": "Der er ikke valgt et filter for procesforekomster."
+    },
+    "PROPERTIES": {
+      "NAME": "Navn",
+      "CREATED": "Oprettet",
+      "STATUS": "Status",
+      "START_DATE": "Startdato",
+      "COMPLETED_DATE": "Fuldførelsesdato",
+      "COMPLETED_BY": "Fuldført af",
+      "ID": "Id",
+      "INITIATOR": "Initiativtager",
+      "STARTED_BY": "Startet af",
+      "APP_NAME": "Appnavn",
+      "BUSINESS_KEY": "Forretningsnøgle",
+      "DESCRIPTION": "Beskrivelse",
+      "LAST_MODIFIED": "Senest ændret",
+      "PROCESS_NAME": "Procesnavn",
+      "PROCESS_DEFINITION_NAME": "Processens difinitionsnavn",
+      "PARENT_TASK_ID": "Id for overordnet opgave",
+      "PROCESS_DEF_ID": "Id for procesdefinition",
+      "PROCESS_DEF_KEY": "Procesdefinitionsnøgle",
+      "APP_VERSION": "Version af appen"
+    },
+    "ADF_CLOUD_START_PROCESS": {
+      "BUTTON": "Start proces",
+      "NO_PROCESS_DEFINITIONS": "Du kan ikke starte en proces, da der ikke er nogen tilgængelige procesdefinitioner",
+      "FORM": {
+        "TITLE": "Start proces",
+        "LABEL": {
+          "TYPE": "Vælg proces",
+          "NAME": "Procesnavn"
+        },
+        "TYPE_PLACEHOLDER": "Vælg en...",
+        "ACTION": {
+          "START": "Start proces",
+          "CANCEL": "Annuller"
+        }
+      },
+      "ERROR": {
+        "LOAD_PROCESS_DEFS": "Der kunne ikke indlæses nogen procesdefinitioner. Kontrollér, om du har adgang til dem.",
+        "START": "Der kunne ikke startes en ny procesforekomst. Kontrollér, om du har adgang.",
+        "PROCESS_NAME_REQUIRED": "Procesnavn er påkrævet",
+        "PROCESS_DEFINITION_REQUIRED": "Procesdefinition er påkrævet",
+        "MAXIMUM_LENGTH": "Længden er overskredet, maks. {{characters}} tegn.",
+        "SPACE_VALIDATOR": "Må ikke starte eller slutte med et mellemrum."
+      }
+    }
+  },
+  "ADF_CLOUD_TASK_LIST": {
+    "APPS": {
+      "NO_APPS": {
+        "TITLE": "Der blev ikke fundet nogen programmer",
+        "SUBTITLE": "Opret et nyt program, som skal være nemt at finde senere"
+      },
+      "ERROR": {
+        "TITLE": "Der opstod en fejl",
+        "SUBTITLE": "Kontrollér, at du har adgangstilladelse til disse apps"
+      }
+    },
+    "START_TASK": {
+      "FORM": {
+        "TITLE": "Start opgave",
+        "LABEL": {
+          "NAME": "Navn",
+          "DESCRIPTION": "Beskrivelse",
+          "ATTACHFORM": "Vedhæft formular",
+          "ASSIGNEE": "Modtager",
+          "CANDIDATE_GROUP": "Kandidatgruppe",
+          "FORM": "Formular",
+          "DATE": "Vælg dato",
+          "NONE": "Ingen",
+          "PRIORITY": "Prioritet"
+        },
+        "ACTION": {
+          "START": "Start",
+          "CANCEL": "Annuller"
+        }
+      }
+    },
+    "PROPERTIES": {
+      "NAME": "Navn",
+      "ASSIGNEE": "Modtager",
+      "ID": "Id",
+      "STATUS": "Status",
+      "PRIORITY": "Prioritet",
+      "CREATED_DATE": "Oprettelsesdato",
+      "LAST_MODIFIED": "Senest ændret",
+      "DUE_DATE": "Forfaldsdato",
+      "CREATED": "Oprettet",
+      "JSON_CELL": "Json",
+      "COMPLETED_BY": "Fuldført af",
+      "PRIORITY_VALUES": {
+        "NONE": "Ingen",
+        "LOW": "Lav",
+        "NORMAL": "Medium",
+        "HIGH": "Høj"
+      }
+    },
+    "LIST": {
+      "MESSAGES": {
+        "TITLE": "Der blev ikke fundet nogen opgaver",
+        "SUBTITLE": "Opret en ny opgave, som skal være nem at finde senere",
+        "NONE": "Der blev ikke fundet nogen opgavelister"
+      }
+    }
+  },
+  "ADF_CLOUD_SERVICE_TASK_LIST": {
+    "PROPERTIES": {
+      "ACTIVITY_NAME": "Aktivitetsnavn",
+      "ACTIVITY_TYPE": "Status",
+      "ID": "Id",
+      "COMPLETED_DATE": "Fuldførelsesdato",
+      "STARTED_DATE": "Startdato",
+      "STATUS": "Status"
+    }
+  },
+  "ADF_CLOUD_TASK_FILTERS": {
+    "MY_TASKS": "Mine opgaver",
+    "QUEUED_TASKS": "Køstillede opgaver",
+    "COMPLETED_TASKS": "Fuldførte opgaver",
+    "STATUS": {
+      "ALL": "Alle",
+      "CREATED": "Oprettet",
+      "ASSIGNED": "Tildelt",
+      "SUSPENDED": "Afbrudt",
+      "CANCELLED": "Annulleret",
+      "COMPLETED": "Fuldført"
+    },
+    "DIRECTION": {
+      "ASCENDING": "Stigende",
+      "DESCENDING": "Faldende"
+    }
+  },
+  "ADF_CLOUD_SERVICE_TASK_FILTERS": {
+    "ALL_SERVICE_TASKS": "Alle tjenesteopgaver",
+    "ERRORED_TASKS": "Opgaver med fejl",
+    "COMPLETED_TASKS": "Fuldførte opgaver",
+    "STATUS": {
+      "ALL": "Alle",
+      "STARTED": "Startet",
+      "COMPLETED": "Fuldført",
+      "CANCELLED": "Annulleret",
+      "ERROR": "Fejl"
+    }
+  },
+  "ADF_CLOUD_PROCESS_FILTERS": {
+    "ALL_PROCESSES": "Alle",
+    "RUNNING_PROCESSES": "Kører",
+    "COMPLETED_PROCESSES": "Fuldført",
+    "STATUS": {
+      "ALL": "Alle",
+      "RUNNING": "Kører",
+      "SUSPENDED": "Afbrudt",
+      "CANCELLED": "Annulleret",
+      "COMPLETED": "Fuldført"
+    },
+    "DIRECTION": {
+      "ASCENDING": "Stigende",
+      "DESCENDING": "Faldende"
+    }
+  },
+  "ADF_CLOUD_START_TASK": {
+    "ERROR": {
+      "MESSAGE": "Angiv en anden værdi",
+      "REQUIRED": "Obligatorisk felt",
+      "DATE": "Datoformat DD/MM/ÅÅÅÅ",
+      "MAXIMUM_LENGTH": "Længden er overskredet, maks. {{characters}} tegn."
+    }
+  },
+  "ADF_CLOUD_EDIT_TASK_FILTER": {
+    "TITLE": "Tilpas dit filter",
+    "FILTER_NAME": "Filternavn",
+    "TOOL_TIP": {
+      "SAVE": "Gem filter",
+      "SAVE_AS": "Gem filter som",
+      "DELETE": "Slet filter"
+    },
+    "LABEL": {
+      "APP_NAME": "Programnavn",
+      "TASK_ID": "Opgave-id",
+      "PROCESS_DEF_NAME": "ProcessDefinitionName",
+      "PROCESS_DEF_ID": "Procesdefinitions-id",
+      "STATUS": "Status",
+      "ASSIGNMENT": "Modtager",
+      "DIRECTION": "Retning",
+      "PROCESS_INSTANCE_ID": "Procesforekomst-id",
+      "TASK_NAME": "Opgavenavn",
+      "PARENT_TASK_ID": "OverordnetOpgave-id",
+      "PRIORITY": "Prioritet",
+      "STAND_ALONE": "Separat",
+      "LAST_MODIFIED_FROM": "Sidst redigeret fra",
+      "LAST_MODIFIED_TO": "Sidst redigeret til",
+      "OWNER": "Ejer",
+      "DUE_DATE": "Forfaldsdato",
+      "SORT": "Sortér",
+      "START_DATE": "Startdato",
+      "COMPLETED_BY": "Fuldført af",
+      "COMPLETED_DATE": "Gennemførelsesdato",
+      "CREATED_DATE": "Oprettelsesdato",
+      "CANDIDATE_GROUPS": "Kadidatgrupper"
+    },
+    "DIALOG": {
+      "TITLE": "Gem filter som",
+      "SAVE": "Gem",
+      "CANCEL": "Annuller"
+    }
+  },
+  "ADF_CLOUD_EDIT_SERVICE_TASK_FILTER": {
+    "LABEL": {
+      "APP_NAME": "Programnavn",
+      "SERVICE_TASK_ID": "Tjenesteopgave-id",
+      "SERVICE_NAME": "Tjenestenavn",
+      "ELEMENT_ID": "Element-id",
+      "PROCESS_DEF_NAME": "ProcessDefinitionName",
+      "PROCESS_DEF_ID": "Procesdefinitions-id",
+      "PROCESS_INSTANCE_ID": "Procesforekomst-id",
+      "STATUS": "Status",
+      "DIRECTION": "Retning",
+      "ACTIVITY_NAME": "Aktivitetsnavn",
+      "ACTIVITY_TYPE": "Aktivitetstype",
+      "SORT": "Sortér",
+      "STARTED_DATE": "Startdato",
+      "COMPLETED_DATE": "Gennemførelsesdato"
+    }
+  },
+  "ADF_CLOUD_EDIT_PROCESS_FILTER": {
+    "TITLE": "Tilpas dit filter",
+    "FILTER_NAME": "Filternavn",
+    "LABEL": {
+      "APP_NAME": "Programnavn",
+      "PROCESS_INS_ID": "Procesforekomst-id",
+      "STATUS": "Status",
+      "INITIATOR": "Initiativtager",
+      "ASSIGNMENT": "Modtager",
+      "SORT": "Sortér",
+      "DIRECTION": "Retning",
+      "PROCESS_DEF_ID": "Procesdefinitions-id",
+      "PROCESS_DEF_NAME": "ProcessDefinitionName",
+      "PROCESS_DEF_KEY": "Procesdefinitionsnøgle",
+      "LAST_MODIFIED": "Sidst ændret",
+      "LAST_MODIFIED_DATE_FORM": "Sidst redigeret fra",
+      "LAST_MODIFIED_TO": "Sidst redigeret til",
+      "PROCESS_NAME": "Procesnavn",
+      "APP_VERSION": "Version af appen",
+      "STARTED_DATE": "Startdato",
+      "SUSPENDED_DATE": "Suspensionsdato",
+      "STARTED_BY": "Startet af",
+      "COMPLETED_DATE": "Fuldførelsesdato",
+      "DATE_RANGE": {
+        "NO_DATE": "Ingen dato",
+        "TODAY": "I dag",
+        "TOMORROW": "I morgen",
+        "NEXT_7_DAYS": "Næste 7 dage",
+        "WEEK": "I denne uge",
+        "MONTH": "I denne måned",
+        "QUARTER": "Dette kvartal",
+        "YEAR": "I år",
+        "RANGE": "Dato indenfor"
+      },
+      "DATE_RANGE_TITLE": "Startdato - slutdato",
+      "START_DATE": "Startdato",
+      "END_DATE": "Slutdato",
+      "ID": "Id",
+      "BUSINESS_KEY": "Forretningsnøgle"
+    },
+    "ERROR": {
+      "DATE": "Datoformat DD/MM/ÅÅÅÅ",
+      "INDALID_START_DATE": "Ugyldig  startdato",
+      "INDALID_END_DATE": "Ugyldig slutdato",
+      "INVALID_DATE_FILTER": "Datofilterindstilling understøttes ikke"
+    },
+    "TOOL_TIP": {
+      "SAVE": "Gem filter",
+      "SAVE_AS": "Gem filter som",
+      "DELETE": "Slet filter"
+    },
+    "DIALOG": {
+      "TITLE": "Gem filter som",
+      "SAVE": "Gem",
+      "CANCEL": "Annuller"
+    }
+  },
+  "ADF_CLOUD_GROUPS": {
+    "SEARCH-GROUP": "Grupper",
+    "MANDATORY": "Obligatorisk",
+    "ERROR": {
+      "NOT_FOUND": "Der blev ikke fundet en gruppe med navnet {{groupName}}"
+    }
+  },
+  "ADF_CLOUD_USERS": {
+    "ERROR": {
+      "NOT_FOUND": "Der er ikke fundet en bruger med brugernavnet {{userName}}"
+    }
+  },
+  "ADF_CLOUD_PEOPLE_GROUPS": {
+    "ERROR": {
+      "INVALID_PATTERN": "Du skal matche mønstret {{pattern}}",
+      "INVALID_MIN_LENGTH": "Der skal mindst være {{requiredLength}} tegn",
+      "INVALID_MAX_LENGTH": "Længde blev overskredet. Maks. antal tegn er {{requiredLength}}",
+      "REQUIRED": "Obligatorisk felt"
+    }
+  },
+  "ADF_CLOUD_TASK_HEADER": {
+    "BUTTON": {
+      "CLAIM": "Gør krav på",
+      "RELEASE": "Frigiv"
+    },
+    "PROPERTIES": {
+      "TASK_NAME": "Opgave",
+      "THUMBNAIL": "Miniaturevisning",
+      "DURATION": "Varighed",
+      "PARENT_TASK_ID": "Id for overordnet opgave",
+      "NAME": "Navn",
+      "ASSIGNEE": "Modtager",
+      "ASSIGNEE_DEFAULT": "Ingen modtager",
+      "PRIORITY": "Prioritet",
+      "DUE_DATE": "Forfaldsdato",
+      "DUE_DATE_DEFAULT": "Ingen dato",
+      "STATUS": "Status",
+      "CATEGORY": "Kategori",
+      "CATEGORY_DEFAULT": "Ingen kategori",
+      "PARENT_NAME": "Overordnet navn",
+      "PARENT_NAME_DEFAULT": "Ingen overordnet",
+      "CREATED_BY": "Oprettet af",
+      "CREATED": "Oprettet",
+      "END_DATE": "Slutdato",
+      "ID": "Id",
+      "DESCRIPTION": "Beskrivelse",
+      "DESCRIPTION_DEFAULT": "Ingen beskrivelse",
+      "FORM_NAME": "Formularnavn",
+      "FORM_NAME_DEFAULT": "Ingen formular",
+      "CANDIDATE_USERS": "Kandidatbrugere",
+      "CANDIDATE_USERS_DEFAULT": "Ingen kandidatbrugere",
+      "CANDIDATE_GROUPS": "Kandidatgrupper",
+      "CANDIDATE_GROUPS_DEFAULT": "Ingen kandidatgrupper"
+    },
+    "FORM_VALIDATION": {
+      "INVALID_FIELD": "Angiv en anden værdi"
+    }
+  },
+  "ADF_CLOUD_PROCESS_HEADER": {
+    "PROPERTIES": {
+      "ID": "Id",
+      "NAME": "Procesnavn",
+      "NAME_DEFAULT": "Intet navn",
+      "DESCRIPTION": "Beskrivelse",
+      "DESCRIPTION_DEFAULT": "Ingen beskrivelse",
+      "STATUS": "Status",
+      "BUSINESS_KEY": "Forretningsnøgle",
+      "INITIATOR": "Initiativtager",
+      "START_DATE": "Startet",
+      "LAST_MODIFIED": "Opdateret",
+      "PARENT_ID": "Overordnet-id",
+      "NONE": "Ingen"
+    }
+  },
+  "ADF_CLOUD_TASK_FORM": {
+    "EMPTY_FORM": {
+      "TITLE": "Der er ingen tilgængelig formular",
+      "SUBTITLE": "Vedhæft en formular, der kan blive vist senere",
+      "BUTTONS": {
+        "COMPLETE": "Fuldført",
+        "CANCEL": "Annuller",
+        "CLAIM": "Gør krav på",
+        "UNCLAIM": "Frigiv"
+      }
+    },
+    "ERROR": {
+      "INVALID_DESTINATION_FOLDER_PATH": "Ugyldig destinationsfolder"
+    }
+  },
+  "ADF_CLOUD_FORM_COMPONENT": {
+    "RETRIEVE_METADATA": "Autofyld formular"
+  },
+  "ADF_CLOUD_TASK_ASSIGNEMNT_FILTER": {
+    "ASSIGNED_TO_ME": "Tildelt mig",
+    "UNASSIGNED": "Ikke tildelt",
+    "LIST_OF_CANDIDATE_GROUPS": "Liste over kandidatgrupper",
+    "ASSIGNEE": "Modtager",
+    "ASSIGNMENT_TYPE": "Tildelingstype"
+  }
+}

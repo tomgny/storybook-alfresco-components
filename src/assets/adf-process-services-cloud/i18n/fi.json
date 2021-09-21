@@ -1,0 +1,387 @@
+{
+  "ADF_CLOUD_PROCESS_LIST": {
+    "MESSAGES": {
+      "TITLE": "Yhtään prosessia ei löydy",
+      "SUBTITLE": "Luo uusi prosessi, jonka löydät helposti myöhemmin",
+      "NONE": "Prosessiesiintymäsuodatinta ei ole valittu."
+    },
+    "PROPERTIES": {
+      "NAME": "Nimi",
+      "CREATED": "Luotu",
+      "STATUS": "Tila",
+      "START_DATE": "Alkamispäivä",
+      "COMPLETED_DATE": "Suorituspäivä",
+      "COMPLETED_BY": "Suorittaja",
+      "ID": "Tunnus",
+      "INITIATOR": "Käynnistäjä",
+      "STARTED_BY": "Aloittaja:",
+      "APP_NAME": "Sovelluksen nimi",
+      "BUSINESS_KEY": "Liiketoiminta-avain",
+      "DESCRIPTION": "Kuvaus",
+      "LAST_MODIFIED": "Muokattu viimeksi",
+      "PROCESS_NAME": "Prosessin nimi",
+      "PROCESS_DEFINITION_NAME": "Prosessimääritelmän nimi",
+      "PARENT_TASK_ID": "Ylätason tehtävän tunnus",
+      "PROCESS_DEF_ID": "Prosessimääritelmätunnus",
+      "PROCESS_DEF_KEY": "Prosessimääritelmäavain",
+      "APP_VERSION": "Sovelluksen versio"
+    },
+    "ADF_CLOUD_START_PROCESS": {
+      "BUTTON": "Käynnistä prosessi",
+      "NO_PROCESS_DEFINITIONS": "Et voi käynnistää prosessia, koska prosessimääritelmiä ei ole saatavilla",
+      "FORM": {
+        "TITLE": "Käynnistä prosessi",
+        "LABEL": {
+          "TYPE": "Valitse prosessi",
+          "NAME": "Prosessin nimi"
+        },
+        "TYPE_PLACEHOLDER": "Valitse yksi...",
+        "ACTION": {
+          "START": "Käynnistä prosessi",
+          "CANCEL": "Peruuta"
+        }
+      },
+      "ERROR": {
+        "LOAD_PROCESS_DEFS": "Prosessimääritelmien lataaminen ei onnistu. Tarkista, että sinulla on tarvittavat oikeudet.",
+        "START": "Uuden prosessiesiintymän käynnistäminen ei onnistu. Tarkista, että sinulla on tarvittavat oikeudet.",
+        "PROCESS_NAME_REQUIRED": "Prosessin nimi on pakollinen",
+        "PROCESS_DEFINITION_REQUIRED": "Prosessimääritelmä on pakollinen",
+        "MAXIMUM_LENGTH": "Liian pitkä: voit käyttää enintään {{characters}} merkkiä.",
+        "SPACE_VALIDATOR": "Ei voi alkaa välilyönnillä tai päättyä siihen."
+      }
+    }
+  },
+  "ADF_CLOUD_TASK_LIST": {
+    "APPS": {
+      "NO_APPS": {
+        "TITLE": "Yhtään sovellusta ei löydy",
+        "SUBTITLE": "Luo uusi sovellus, jonka löydät helposti myöhemmin"
+      },
+      "ERROR": {
+        "TITLE": "Tapahtui virhe",
+        "SUBTITLE": "Tarkista, että sinulla on oikeus käyttää sovelluksia"
+      }
+    },
+    "START_TASK": {
+      "FORM": {
+        "TITLE": "Aloita tehtävä",
+        "LABEL": {
+          "NAME": "Nimi",
+          "DESCRIPTION": "Kuvaus",
+          "ATTACHFORM": "Liitä lomake",
+          "ASSIGNEE": "Vastuuhenkilö",
+          "CANDIDATE_GROUP": "Kandidaattiryhmä",
+          "FORM": "Lomake",
+          "DATE": "Valitse päivämäärä",
+          "NONE": "Ei mitään",
+          "PRIORITY": "Prioriteetti"
+        },
+        "ACTION": {
+          "START": "Aloita",
+          "CANCEL": "Peruuta"
+        }
+      }
+    },
+    "PROPERTIES": {
+      "NAME": "Nimi",
+      "ASSIGNEE": "Vastuuhenkilö",
+      "ID": "Tunnus",
+      "STATUS": "Tila",
+      "PRIORITY": "Prioriteetti",
+      "CREATED_DATE": "Luontipäivämäärä",
+      "LAST_MODIFIED": "Muokattu viimeksi",
+      "DUE_DATE": "Määräpäivä",
+      "CREATED": "Luotu",
+      "JSON_CELL": "Json",
+      "COMPLETED_BY": "Suorittaja",
+      "PRIORITY_VALUES": {
+        "NONE": "Ei yhtään",
+        "LOW": "Matala",
+        "NORMAL": "Normaali",
+        "HIGH": "Korkea"
+      }
+    },
+    "LIST": {
+      "MESSAGES": {
+        "TITLE": "Yhtään tehtävää ei löydy",
+        "SUBTITLE": "Luo uusi tehtävä, jonka löydät helposti myöhemmin",
+        "NONE": "Yhtään tehtäväluetteloa ei löydy"
+      }
+    }
+  },
+  "ADF_CLOUD_SERVICE_TASK_LIST": {
+    "PROPERTIES": {
+      "ACTIVITY_NAME": "Toiminnon nimi",
+      "ACTIVITY_TYPE": "Tila",
+      "ID": "Tunnus",
+      "COMPLETED_DATE": "Suorituspäivä",
+      "STARTED_DATE": "Alkamispäivä",
+      "STATUS": "Tila"
+    }
+  },
+  "ADF_CLOUD_TASK_FILTERS": {
+    "MY_TASKS": "Omat tehtävät",
+    "QUEUED_TASKS": "Jonossa olevat tehtävät",
+    "COMPLETED_TASKS": "Suoritetut tehtävät",
+    "STATUS": {
+      "ALL": "Kaikki",
+      "CREATED": "Luotu",
+      "ASSIGNED": "Määritetyt",
+      "SUSPENDED": "Keskeytetty",
+      "CANCELLED": "Peruutettu",
+      "COMPLETED": "Suoritetut"
+    },
+    "DIRECTION": {
+      "ASCENDING": "Nouseva",
+      "DESCENDING": "Laskeva"
+    }
+  },
+  "ADF_CLOUD_SERVICE_TASK_FILTERS": {
+    "ALL_SERVICE_TASKS": "Kaikki palvelutehtävät",
+    "ERRORED_TASKS": "Virheelliset tehtävät",
+    "COMPLETED_TASKS": "Suoritetut tehtävät",
+    "STATUS": {
+      "ALL": "Kaikki",
+      "STARTED": "Aloitettu",
+      "COMPLETED": "Suoritetut",
+      "CANCELLED": "Peruutettu",
+      "ERROR": "Virhe"
+    }
+  },
+  "ADF_CLOUD_PROCESS_FILTERS": {
+    "ALL_PROCESSES": "Kaikki",
+    "RUNNING_PROCESSES": "Käynnissä",
+    "COMPLETED_PROCESSES": "Suoritetut",
+    "STATUS": {
+      "ALL": "Kaikki",
+      "RUNNING": "Käynnissä",
+      "SUSPENDED": "Keskeytetty",
+      "CANCELLED": "Peruutettu",
+      "COMPLETED": "Suoritetut"
+    },
+    "DIRECTION": {
+      "ASCENDING": "Nouseva",
+      "DESCENDING": "Laskeva"
+    }
+  },
+  "ADF_CLOUD_START_TASK": {
+    "ERROR": {
+      "MESSAGE": "Anna toinen arvo",
+      "REQUIRED": "Pakollinen kenttä",
+      "DATE": "Päivämäärämuoto: PP/KK/VVVV",
+      "MAXIMUM_LENGTH": "Liian pitkä: voit käyttää enintään {{characters}} merkkiä."
+    }
+  },
+  "ADF_CLOUD_EDIT_TASK_FILTER": {
+    "TITLE": "Muokkaa suodatinta",
+    "FILTER_NAME": "Suodattimen nimi",
+    "TOOL_TIP": {
+      "SAVE": "Tallenna suodatin",
+      "SAVE_AS": "Tallenna suodatin nimellä",
+      "DELETE": "Poista suodatin"
+    },
+    "LABEL": {
+      "APP_NAME": "Sovelluksen nimi",
+      "TASK_ID": "Tehtävätunnus",
+      "PROCESS_DEF_NAME": "Prosessimääritelmän nimi",
+      "PROCESS_DEF_ID": "Prosessimääritelmätunnus",
+      "STATUS": "Tila",
+      "ASSIGNMENT": "Vastuuhenkilö",
+      "DIRECTION": "Suunta",
+      "PROCESS_INSTANCE_ID": "Prosessiesiintymätunnus",
+      "TASK_NAME": "Tehtävän nimi",
+      "PARENT_TASK_ID": "Ylätason tehtävän tunnus",
+      "PRIORITY": "Prioriteetti",
+      "STAND_ALONE": "Erillinen",
+      "LAST_MODIFIED_FROM": "Muokattu viimeksi kohteesta",
+      "LAST_MODIFIED_TO": "Muokattu viimeksi kohteeseen",
+      "OWNER": "Omistaja",
+      "DUE_DATE": "Määräpäivä",
+      "SORT": "Lajittele",
+      "START_DATE": "Alkamispäivä",
+      "COMPLETED_BY": "Suorittaja",
+      "COMPLETED_DATE": "Suorituspäivä",
+      "CREATED_DATE": "Luontipäivämäärä",
+      "CANDIDATE_GROUPS": "Kandidaattiryhmät"
+    },
+    "DIALOG": {
+      "TITLE": "Tallenna suodatin nimellä",
+      "SAVE": "Tallenna",
+      "CANCEL": "Peruuta"
+    }
+  },
+  "ADF_CLOUD_EDIT_SERVICE_TASK_FILTER": {
+    "LABEL": {
+      "APP_NAME": "Sovelluksen nimi",
+      "SERVICE_TASK_ID": "Palvelutehtävän tunnus",
+      "SERVICE_NAME": "Palvelun nimi",
+      "ELEMENT_ID": "Elementin tunnus",
+      "PROCESS_DEF_NAME": "Prosessimääritelmän nimi",
+      "PROCESS_DEF_ID": "Prosessimääritelmätunnus",
+      "PROCESS_INSTANCE_ID": "Prosessiesiintymätunnus",
+      "STATUS": "Tila",
+      "DIRECTION": "Suunta",
+      "ACTIVITY_NAME": "Toiminnon nimi",
+      "ACTIVITY_TYPE": "Toiminnon tyyppi",
+      "SORT": "Lajittele",
+      "STARTED_DATE": "Alkamispäivä",
+      "COMPLETED_DATE": "Suorituspäivä"
+    }
+  },
+  "ADF_CLOUD_EDIT_PROCESS_FILTER": {
+    "TITLE": "Muokkaa suodatinta",
+    "FILTER_NAME": "Suodattimen nimi",
+    "LABEL": {
+      "APP_NAME": "Sovelluksen nimi",
+      "PROCESS_INS_ID": "Prosessiesiintymätunnus",
+      "STATUS": "Tila",
+      "INITIATOR": "Käynnistäjä",
+      "ASSIGNMENT": "Vastuuhenkilö",
+      "SORT": "Lajittele",
+      "DIRECTION": "Suunta",
+      "PROCESS_DEF_ID": "Prosessimääritelmätunnus",
+      "PROCESS_DEF_NAME": "Prosessimääritelmän nimi",
+      "PROCESS_DEF_KEY": "Prosessimääritelmäavain",
+      "LAST_MODIFIED": "Muokattu viimeksi",
+      "LAST_MODIFIED_DATE_FORM": "Muokattu viimeksi kohteesta",
+      "LAST_MODIFIED_TO": "Muokattu viimeksi kohteeseen",
+      "PROCESS_NAME": "Prosessin nimi",
+      "APP_VERSION": "Sovellusversio",
+      "STARTED_DATE": "Alkamispäivä",
+      "SUSPENDED_DATE": "Keskeytyspäivä",
+      "STARTED_BY": "Aloittaja:",
+      "COMPLETED_DATE": "Suorituspäivä",
+      "DATE_RANGE": {
+        "NO_DATE": "Ei päivämäärää",
+        "TODAY": "Tänään",
+        "TOMORROW": "Huomenna",
+        "NEXT_7_DAYS": "Seuraavat 7 päivää",
+        "WEEK": "Tällä viikolla",
+        "MONTH": "Tässä kuussa",
+        "QUARTER": "Tämä neljännesvuosi",
+        "YEAR": "Tänä vuonna",
+        "RANGE": "Aseta aikaväli"
+      },
+      "DATE_RANGE_TITLE": "Alkamispäivä - Päättymispäivä",
+      "START_DATE": "Alkamispäivä",
+      "END_DATE": "Päättymispäivä",
+      "ID": "Tunnus",
+      "BUSINESS_KEY": "Liiketoiminta-avain"
+    },
+    "ERROR": {
+      "DATE": "Päivämäärämuoto: PP/KK/VVVV",
+      "INDALID_START_DATE": "Virheellinen alkamispäivä",
+      "INDALID_END_DATE": "Virheellinen päättymispäivä",
+      "INVALID_DATE_FILTER": "Päivämäärasuodatin ei ole tuettu"
+    },
+    "TOOL_TIP": {
+      "SAVE": "Tallenna suodatin",
+      "SAVE_AS": "Tallenna suodatin nimellä",
+      "DELETE": "Poista suodatin"
+    },
+    "DIALOG": {
+      "TITLE": "Tallenna suodatin nimellä",
+      "SAVE": "Tallenna",
+      "CANCEL": "Peruuta"
+    }
+  },
+  "ADF_CLOUD_GROUPS": {
+    "SEARCH-GROUP": "Ryhmät",
+    "MANDATORY": "Pakollinen",
+    "ERROR": {
+      "NOT_FOUND": "Nimellä {{groupName}} ei löydy ryhmää"
+    }
+  },
+  "ADF_CLOUD_USERS": {
+    "ERROR": {
+      "NOT_FOUND": "Käyttäjänimellä {{userName}} ei löytynyt käyttäjää"
+    }
+  },
+  "ADF_CLOUD_PEOPLE_GROUPS": {
+    "ERROR": {
+      "INVALID_PATTERN": "Tulee vastata kaavaa {{pattern}}",
+      "INVALID_MIN_LENGTH": "Vähimmäispituus {{requiredLength}} merkkiä",
+      "INVALID_MAX_LENGTH": "Liian pitkä, enimmäispituus {{requiredLength}} merkkiä",
+      "REQUIRED": "Pakollinen kenttä"
+    }
+  },
+  "ADF_CLOUD_TASK_HEADER": {
+    "BUTTON": {
+      "CLAIM": "Varaa",
+      "RELEASE": "Vapauta"
+    },
+    "PROPERTIES": {
+      "TASK_NAME": "Tehtävä",
+      "THUMBNAIL": "Pikkukuva",
+      "DURATION": "Kesto",
+      "PARENT_TASK_ID": "Ylätason tehtävän tunnus",
+      "NAME": "Nimi",
+      "ASSIGNEE": "Vastuuhenkilö",
+      "ASSIGNEE_DEFAULT": "Ei vastuuhenkilöä",
+      "PRIORITY": "Prioriteetti",
+      "DUE_DATE": "Määräpäivä",
+      "DUE_DATE_DEFAULT": "Ei päivämäärää",
+      "STATUS": "Tila",
+      "CATEGORY": "Luokka",
+      "CATEGORY_DEFAULT": "Ei luokkaa",
+      "PARENT_NAME": "Ylätason nimi",
+      "PARENT_NAME_DEFAULT": "Ei ylätasoa",
+      "CREATED_BY": "Tekijä:",
+      "CREATED": "Luotu",
+      "END_DATE": "Päättymispäivä",
+      "ID": "Tunnus",
+      "DESCRIPTION": "Kuvaus",
+      "DESCRIPTION_DEFAULT": "Ei kuvausta",
+      "FORM_NAME": "Lomakkeen nimi",
+      "FORM_NAME_DEFAULT": "Ei lomaketta",
+      "CANDIDATE_USERS": "Potentiaaliset käyttäjät",
+      "CANDIDATE_USERS_DEFAULT": "Ei potentiaalisia käyttäjiä",
+      "CANDIDATE_GROUPS": "Potentiaaliset ryhmät",
+      "CANDIDATE_GROUPS_DEFAULT": "Ei potentiaalisia ryhmiä"
+    },
+    "FORM_VALIDATION": {
+      "INVALID_FIELD": "Anna toinen arvo"
+    }
+  },
+  "ADF_CLOUD_PROCESS_HEADER": {
+    "PROPERTIES": {
+      "ID": "Tunnus",
+      "NAME": "Prosessin nimi",
+      "NAME_DEFAULT": "Ei nimeä",
+      "DESCRIPTION": "Kuvaus",
+      "DESCRIPTION_DEFAULT": "Ei kuvausta",
+      "STATUS": "Tila",
+      "BUSINESS_KEY": "Liiketoiminta-avain",
+      "INITIATOR": "Käynnistäjä",
+      "START_DATE": "Aloitettu",
+      "LAST_MODIFIED": "Päivitetty",
+      "PARENT_ID": "Ylätason tunnus",
+      "NONE": "Ei mitään"
+    }
+  },
+  "ADF_CLOUD_TASK_FORM": {
+    "EMPTY_FORM": {
+      "TITLE": "Ei lomaketta käytettävissä",
+      "SUBTITLE": "Liitä lomake, jota voi tarkastella myöhemmin",
+      "BUTTONS": {
+        "COMPLETE": "Merkitse valmiiksi",
+        "CANCEL": "Peruuta",
+        "CLAIM": "Varaa",
+        "UNCLAIM": "Vapauta"
+      }
+    },
+    "ERROR": {
+      "INVALID_DESTINATION_FOLDER_PATH": "Virheellinen kohdekansion polku"
+    }
+  },
+  "ADF_CLOUD_FORM_COMPONENT": {
+    "RETRIEVE_METADATA": "Lomakkeen automaattinen täyttö"
+  },
+  "ADF_CLOUD_TASK_ASSIGNEMNT_FILTER": {
+    "ASSIGNED_TO_ME": "Määritetty minulle",
+    "UNASSIGNED": "Määrittämätön",
+    "LIST_OF_CANDIDATE_GROUPS": "Kandidaattiryhmien lista",
+    "ASSIGNEE": "Vastuuhenkilö",
+    "ASSIGNMENT_TYPE": "Määrityksen tyyppi"
+  }
+}
