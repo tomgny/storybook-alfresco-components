@@ -27,6 +27,4 @@ export let locationColumn = [{ format: '/somewhere', type: 'location', key: 'pat
 
 export const dataIcon = new ObjectDataTableAdapter([{ icon: 'alarm' }, { icon: 'folder_open' }, { icon: 'accessibility' }], []);
 
-export const dataLocation = new ObjectDataTableAdapter([{ path: '/2' }, { path: ':id' }, { path: 'tesst/fake' }], []);
-
 export const dataSizeInBytes = new ObjectDataTableAdapter([{ size: 12313 }, { size: 23 }, { size: 42421412421 }], []);
