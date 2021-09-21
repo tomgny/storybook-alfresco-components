@@ -110,12 +110,19 @@ import { CommentsComponent } from './stories/comments/comments.component';
 import { LanguageMenuComponent } from './stories/language-menu/language-menu.component';
 import { NotificationHistoryComponent } from './stories/notification-history/notification-history.component';
 import { ClipboardComponent } from './stories/clipboard/clipboard.component';
+import { FormListComponent } from './stories/form/form-list/form-list.component';
+import { FormFieldComponent } from './stories/form/form-field/form-field.component';
+import { FormRendererComponent } from './stories/form/form-renderer/form-renderer.component';
 import { SortingPickerComponent } from './stories/sorting-picker/sorting-picker.component';
 import { LoginComponent } from './stories/login/login.component';
 import { EditJsonDialogComponent } from './stories/core-dialogs/edit-json-dialog/edit-json-dialog.component';
 import { DownloadZipDialogComponent } from './stories/core-dialogs/download-zip-dialog/download-zip-dialog.component';
 import { SidenavLayoutComponent } from './stories/layout/components/sidenav-layout/sidenav-layout.component';
 import { SidebarActionMenuComponent } from './stories/layout/components/sidebar-action-menu/sidebar-action-menu.component';
+import { ProcessServicesCloudModule, TaskCloudModule, TaskFormModule, TaskListCloudModule } from '@alfresco/adf-process-services-cloud';
+import { ContentWidgetModule, ProcessModule, TaskListModule } from '@alfresco/adf-process-services';
+import { TaskFormComponent } from './stories/form/form-renderer/visibility-condition-task/task-form/task-form.component';
+import { StartFormComponent } from './stories/form/start-form/start-form.component';
 import { PaginationComponent } from './stories/pagination/pagination.component';
 import { InfinitePaginationComponent } from './stories/infinite-pagination/infinite-pagination.component';
 import { ContextMenuComponent } from './stories/context-menu/context-menu.component';
@@ -182,7 +189,14 @@ registerLocaleData(localeSv);
     AppSearchResultsModule,
     AppHeaderModule,
     AppNodeVersionModule,
-    HammerModule
+    HammerModule,
+    ProcessServicesCloudModule.forRoot(),
+    ProcessModule.forRoot(),
+    ContentWidgetModule,
+    TaskFormModule,
+    TaskListModule,
+    TaskCloudModule,
+    TaskListCloudModule
   ],
   declarations: [
     AppComponent,
@@ -221,13 +235,18 @@ registerLocaleData(localeSv);
     CommentsComponent,
     LanguageMenuComponent,
     NotificationHistoryComponent,
+    FormListComponent,
     ClipboardComponent,
+    FormFieldComponent,
+    FormRendererComponent,
     SortingPickerComponent,
     LoginComponent,
     EditJsonDialogComponent,
     DownloadZipDialogComponent,
     SidenavLayoutComponent,
     SidebarActionMenuComponent,
+    TaskFormComponent,
+    StartFormComponent,
     PaginationComponent,
     InfinitePaginationComponent,
     ContextMenuComponent,
