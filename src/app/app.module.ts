@@ -139,6 +139,7 @@ import { AboutGithubLinkComponent } from './stories/about-github-link/about-gith
 import { AboutProductVersionComponent } from './stories/about-product-version/about-product-version.component';
 import { AboutApplicationModulesComponent } from './stories/about-application-modules/about-application-modules.component';
 import { JsonCellComponent } from './stories/json-cell/json-cell.component';
+import { TextMaskComponent } from './stories/text-mask/text-mask.component';
 
 registerLocaleData(localeFr);
 registerLocaleData(localeDe);
@@ -263,6 +264,7 @@ registerLocaleData(localeSv);
     AboutProductVersionComponent,
     AboutApplicationModulesComponent,
     JsonCellComponent,
+    TextMaskComponent,
   ],
   providers: [
     { provide: AppConfigService, useClass: DebugAppConfigService },
