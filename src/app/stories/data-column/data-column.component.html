@@ -1,0 +1,19 @@
+<adf-datatable [data]="data" [columns]="columns" [rows]="rows">
+  <data-columns>
+    <data-column
+      *ngIf="!columns && !rows"
+      [key]="key"
+      [copyContent]="copyContent"
+      [class]="cssClass"
+      [editable]="editable"
+      [focus]="focus"
+      [formatTooltip]="formatTooltip"
+      [format]="format"
+      [sortable]="sortable"
+      [sortingKey]="sortingKey"
+      [sr-title]="srTitle"
+      [title]="title"
+      [type]="type"
+    ></data-column>
+  </data-columns>
+</adf-datatable>
