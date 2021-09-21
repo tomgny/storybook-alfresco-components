@@ -36,6 +36,12 @@
     "YES_LABEL": "Yes",
     "NO_LABEL": "No"
   },
+  "LOGIN": {
+    "DIALOG": {
+      "ACCESS": "Access page",
+      "CHOOSE": "Sign in"
+    }
+  },
   "ADF-DOCUMENT-LIST": {
     "EMPTY": {
       "HEADER": "This folder is empty"

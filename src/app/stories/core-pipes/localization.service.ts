@@ -22,9 +22,6 @@ import localeSv from '@angular/common/locales/sv';
   providedIn: 'root'
 })
 export class LocalizationService {
-
-  constructor() { }
-
   registerLocales() {
     registerLocaleData(localeFr);
     registerLocaleData(localeDe);
