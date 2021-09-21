@@ -138,6 +138,6 @@ export class DatatableComponent {
 @NgModule({
   declarations: [DatatableComponent],
   imports: [CoreModule.forChild()],
-  exports: [DatatableComponent],
+  exports: [DatatableComponent]
 })
 export class DatatableModule {}

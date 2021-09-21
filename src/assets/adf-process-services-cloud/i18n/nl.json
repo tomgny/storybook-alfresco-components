@@ -1,0 +1,387 @@
+{
+  "ADF_CLOUD_PROCESS_LIST": {
+    "MESSAGES": {
+      "TITLE": "Geen processen gevonden",
+      "SUBTITLE": "Maak een nieuw proces dat u later gemakkelijk wilt kunnen vinden",
+      "NONE": "Geen procesinstancefilter geselecteerd."
+    },
+    "PROPERTIES": {
+      "NAME": "Naam",
+      "CREATED": "Gemaakt",
+      "STATUS": "Status",
+      "START_DATE": "Begindatum",
+      "COMPLETED_DATE": "Voltooiingsdatum",
+      "COMPLETED_BY": "Voltooid door",
+      "ID": "Id",
+      "INITIATOR": "Initiator",
+      "STARTED_BY": "Gestart door",
+      "APP_NAME": "Toepassingsnaam",
+      "BUSINESS_KEY": "Business key",
+      "DESCRIPTION": "Beschrijving",
+      "LAST_MODIFIED": "Laatst gewijzigd",
+      "PROCESS_NAME": "Procesnaam",
+      "PROCESS_DEFINITION_NAME": "Naam procesdefinitie",
+      "PARENT_TASK_ID": "Id bovenliggende taak",
+      "PROCESS_DEF_ID": "Procesdefinitie-id",
+      "PROCESS_DEF_KEY": "Procesdefinitiesleutel",
+      "APP_VERSION": "App-versie"
+    },
+    "ADF_CLOUD_START_PROCESS": {
+      "BUTTON": "Proces starten",
+      "NO_PROCESS_DEFINITIONS": "U kunt geen proces starten omdat er geen procesdefinities beschikbaar zijn",
+      "FORM": {
+        "TITLE": "Proces starten",
+        "LABEL": {
+          "TYPE": "Proces selecteren",
+          "NAME": "Procesnaam"
+        },
+        "TYPE_PLACEHOLDER": "Maak een keuze...",
+        "ACTION": {
+          "START": "Proces starten",
+          "CANCEL": "Annuleren"
+        }
+      },
+      "ERROR": {
+        "LOAD_PROCESS_DEFS": "Kan procesdefinities niet laden, controleer of u over toegang beschikt.",
+        "START": "Kan geen nieuwe procesinstance starten, controleer of u over toegang beschikt.",
+        "PROCESS_NAME_REQUIRED": "Procesnaam is vereist",
+        "PROCESS_DEFINITION_REQUIRED": "Procesdefinitie is vereist",
+        "MAXIMUM_LENGTH": "Lengte overschreden, max. {{characters}} tekens.",
+        "SPACE_VALIDATOR": "Mag niet beginnen of eindigen met een spatie."
+      }
+    }
+  },
+  "ADF_CLOUD_TASK_LIST": {
+    "APPS": {
+      "NO_APPS": {
+        "TITLE": "Geen toepassingen gevonden",
+        "SUBTITLE": "Maak een nieuwe toepassing die u later gemakkelijk wilt kunnen vinden"
+      },
+      "ERROR": {
+        "TITLE": "Er is een fout opgetreden",
+        "SUBTITLE": "Controleer of u rechten hebt voor toegang tot de apps"
+      }
+    },
+    "START_TASK": {
+      "FORM": {
+        "TITLE": "Taak starten",
+        "LABEL": {
+          "NAME": "Naam",
+          "DESCRIPTION": "Beschrijving",
+          "ATTACHFORM": "Formulier bijvoegen",
+          "ASSIGNEE": "Toegewezen persoon",
+          "CANDIDATE_GROUP": "Kandidaatgroep",
+          "FORM": "Formulier",
+          "DATE": "Datum kiezen",
+          "NONE": "Geen",
+          "PRIORITY": "Prioriteit"
+        },
+        "ACTION": {
+          "START": "Start",
+          "CANCEL": "Annuleren"
+        }
+      }
+    },
+    "PROPERTIES": {
+      "NAME": "Naam",
+      "ASSIGNEE": "Toegewezen persoon",
+      "ID": "Id",
+      "STATUS": "Status",
+      "PRIORITY": "Prioriteit",
+      "CREATED_DATE": "Datum gemaakt",
+      "LAST_MODIFIED": "Laatst gewijzigd",
+      "DUE_DATE": "Vervaldatum",
+      "CREATED": "Gemaakt",
+      "JSON_CELL": "Json",
+      "COMPLETED_BY": "Voltooid door",
+      "PRIORITY_VALUES": {
+        "NONE": "Geen",
+        "LOW": "Laag",
+        "NORMAL": "Normaal",
+        "HIGH": "Hoog"
+      }
+    },
+    "LIST": {
+      "MESSAGES": {
+        "TITLE": "Geen taken gevonden",
+        "SUBTITLE": "Maak een nieuwe taak die u later gemakkelijk wilt kunnen vinden",
+        "NONE": "Geen lijsten met taken gevonden"
+      }
+    }
+  },
+  "ADF_CLOUD_SERVICE_TASK_LIST": {
+    "PROPERTIES": {
+      "ACTIVITY_NAME": "Activiteitsnaam",
+      "ACTIVITY_TYPE": "Status",
+      "ID": "Id",
+      "COMPLETED_DATE": "Voltooiingsdatum",
+      "STARTED_DATE": "Begindatum",
+      "STATUS": "Status"
+    }
+  },
+  "ADF_CLOUD_TASK_FILTERS": {
+    "MY_TASKS": "Mijn taken",
+    "QUEUED_TASKS": "Taken in wachtrij",
+    "COMPLETED_TASKS": "Voltooide taken",
+    "STATUS": {
+      "ALL": "Alle",
+      "CREATED": "Gemaakt",
+      "ASSIGNED": "Toegewezen",
+      "SUSPENDED": "Uitgesteld",
+      "CANCELLED": "Geannuleerd",
+      "COMPLETED": "Voltooid"
+    },
+    "DIRECTION": {
+      "ASCENDING": "Oplopend",
+      "DESCENDING": "Aflopend"
+    }
+  },
+  "ADF_CLOUD_SERVICE_TASK_FILTERS": {
+    "ALL_SERVICE_TASKS": "Alle servicetaken",
+    "ERRORED_TASKS": "Taken met fouten",
+    "COMPLETED_TASKS": "Voltooide taken",
+    "STATUS": {
+      "ALL": "Alle",
+      "STARTED": "Gestart",
+      "COMPLETED": "Voltooid",
+      "CANCELLED": "Geannuleerd",
+      "ERROR": "Fout"
+    }
+  },
+  "ADF_CLOUD_PROCESS_FILTERS": {
+    "ALL_PROCESSES": "Alle",
+    "RUNNING_PROCESSES": "Wordt uitgevoerd",
+    "COMPLETED_PROCESSES": "Voltooid",
+    "STATUS": {
+      "ALL": "Alle",
+      "RUNNING": "Wordt uitgevoerd",
+      "SUSPENDED": "Uitgesteld",
+      "CANCELLED": "Geannuleerd",
+      "COMPLETED": "Voltooid"
+    },
+    "DIRECTION": {
+      "ASCENDING": "Oplopend",
+      "DESCENDING": "Aflopend"
+    }
+  },
+  "ADF_CLOUD_START_TASK": {
+    "ERROR": {
+      "MESSAGE": "Voer een andere waarde in",
+      "REQUIRED": "Veld vereist",
+      "DATE": "Datumnotatie dd-mm-jjjj",
+      "MAXIMUM_LENGTH": "Lengte overschreden, max. {{characters}} tekens."
+    }
+  },
+  "ADF_CLOUD_EDIT_TASK_FILTER": {
+    "TITLE": "Uw filter aanpassen",
+    "FILTER_NAME": "Filternaam",
+    "TOOL_TIP": {
+      "SAVE": "Filter opslaan",
+      "SAVE_AS": "Filter opslaan als",
+      "DELETE": "Filter verwijderen"
+    },
+    "LABEL": {
+      "APP_NAME": "Toepassingsnaam",
+      "TASK_ID": "Taak-id",
+      "PROCESS_DEF_NAME": "Naam procesdefinitie",
+      "PROCESS_DEF_ID": "Procesdefinitie-id",
+      "STATUS": "Status",
+      "ASSIGNMENT": "Toegewezen persoon",
+      "DIRECTION": "Richting",
+      "PROCESS_INSTANCE_ID": "Procesinstance-id",
+      "TASK_NAME": "Taaknaam",
+      "PARENT_TASK_ID": "Id bovenliggende taak",
+      "PRIORITY": "Prioriteit",
+      "STAND_ALONE": "Zelfstandig",
+      "LAST_MODIFIED_FROM": "Laatst veranderd van",
+      "LAST_MODIFIED_TO": "Laatst veranderd in",
+      "OWNER": "Eigenaar",
+      "DUE_DATE": "Einddatum",
+      "SORT": "Sorteren",
+      "START_DATE": "Begindatum",
+      "COMPLETED_BY": "Voltooid door",
+      "COMPLETED_DATE": "Voltooiingsdatum",
+      "CREATED_DATE": "Datum gemaakt",
+      "CANDIDATE_GROUPS": "Kandidaatgroepen"
+    },
+    "DIALOG": {
+      "TITLE": "Filter opslaan als",
+      "SAVE": "Opslaan",
+      "CANCEL": "Annuleren"
+    }
+  },
+  "ADF_CLOUD_EDIT_SERVICE_TASK_FILTER": {
+    "LABEL": {
+      "APP_NAME": "Toepassingsnaam",
+      "SERVICE_TASK_ID": "Servicetaak-id",
+      "SERVICE_NAME": "Servicenaam",
+      "ELEMENT_ID": "Element-id",
+      "PROCESS_DEF_NAME": "Naam procesdefinitie",
+      "PROCESS_DEF_ID": "Procesdefinitie-id",
+      "PROCESS_INSTANCE_ID": "Procesinstance-id",
+      "STATUS": "Status",
+      "DIRECTION": "Richting",
+      "ACTIVITY_NAME": "Activiteitsnaam",
+      "ACTIVITY_TYPE": "Activiteitstype",
+      "SORT": "Sorteren",
+      "STARTED_DATE": "Begindatum",
+      "COMPLETED_DATE": "Voltooiingsdatum"
+    }
+  },
+  "ADF_CLOUD_EDIT_PROCESS_FILTER": {
+    "TITLE": "Uw filter aanpassen",
+    "FILTER_NAME": "Filternaam",
+    "LABEL": {
+      "APP_NAME": "Toepassingsnaam",
+      "PROCESS_INS_ID": "Procesinstance-id",
+      "STATUS": "Status",
+      "INITIATOR": "Initiator",
+      "ASSIGNMENT": "Toegewezen persoon",
+      "SORT": "Sorteren",
+      "DIRECTION": "Richting",
+      "PROCESS_DEF_ID": "Procesdefinitie-id",
+      "PROCESS_DEF_NAME": "Naam procesdefinitie",
+      "PROCESS_DEF_KEY": "Procesdefinitiesleutel",
+      "LAST_MODIFIED": "Laatst gewijzigd",
+      "LAST_MODIFIED_DATE_FORM": "Laatst veranderd van",
+      "LAST_MODIFIED_TO": "Laatst veranderd in",
+      "PROCESS_NAME": "Procesnaam",
+      "APP_VERSION": "App-versie",
+      "STARTED_DATE": "Begindatum",
+      "SUSPENDED_DATE": "Uitstellingsdatum",
+      "STARTED_BY": "Gestart door",
+      "COMPLETED_DATE": "Voltooiingsdatum",
+      "DATE_RANGE": {
+        "NO_DATE": "Geen datum",
+        "TODAY": "Vandaag",
+        "TOMORROW": "Morgen",
+        "NEXT_7_DAYS": "Volgende 7 dagen",
+        "WEEK": "Deze week",
+        "MONTH": "Deze maand",
+        "QUARTER": "Dit kwartaal",
+        "YEAR": "Dit jaar",
+        "RANGE": "Datum binnen"
+      },
+      "DATE_RANGE_TITLE": "Begindatum - Einddatum",
+      "START_DATE": "Begindatum",
+      "END_DATE": "Einddatum",
+      "ID": "Id",
+      "BUSINESS_KEY": "Business key"
+    },
+    "ERROR": {
+      "DATE": "Datumnotatie dd-mm-jjjj",
+      "INDALID_START_DATE": "Ongeldige begindatum",
+      "INDALID_END_DATE": "Ongeldige einddatum",
+      "INVALID_DATE_FILTER": "Filteroptie voor datum wordt niet ondersteund"
+    },
+    "TOOL_TIP": {
+      "SAVE": "Filter opslaan",
+      "SAVE_AS": "Filter opslaan als",
+      "DELETE": "Filter verwijderen"
+    },
+    "DIALOG": {
+      "TITLE": "Filter opslaan als",
+      "SAVE": "Opslaan",
+      "CANCEL": "Annuleren"
+    }
+  },
+  "ADF_CLOUD_GROUPS": {
+    "SEARCH-GROUP": "Groepen",
+    "MANDATORY": "Verplicht",
+    "ERROR": {
+      "NOT_FOUND": "Geen groep gevonden met de naam {{groupName}}"
+    }
+  },
+  "ADF_CLOUD_USERS": {
+    "ERROR": {
+      "NOT_FOUND": "Geen gebruiker gevonden met de gebruikersnaam {{userName}}"
+    }
+  },
+  "ADF_CLOUD_PEOPLE_GROUPS": {
+    "ERROR": {
+      "INVALID_PATTERN": "Moet overeenkomen met het patroon {{pattern}}",
+      "INVALID_MIN_LENGTH": "Moet minimaal {{requiredLength}} tekens bevatten",
+      "INVALID_MAX_LENGTH": "Lengte overschreden, maximaal {{requiredLength}} tekens",
+      "REQUIRED": "Veld vereist"
+    }
+  },
+  "ADF_CLOUD_TASK_HEADER": {
+    "BUTTON": {
+      "CLAIM": "Claimen",
+      "RELEASE": "Vrijgeven"
+    },
+    "PROPERTIES": {
+      "TASK_NAME": "Taak",
+      "THUMBNAIL": "Miniatuur",
+      "DURATION": "Duur",
+      "PARENT_TASK_ID": "Id bovenliggende taak",
+      "NAME": "Naam",
+      "ASSIGNEE": "Toegewezen persoon",
+      "ASSIGNEE_DEFAULT": "Geen toegewezen persoon",
+      "PRIORITY": "Prioriteit",
+      "DUE_DATE": "Vervaldatum",
+      "DUE_DATE_DEFAULT": "Geen vervaldatum",
+      "STATUS": "Status",
+      "CATEGORY": "Categorie",
+      "CATEGORY_DEFAULT": "Geen categorie",
+      "PARENT_NAME": "Naam bovenliggend element",
+      "PARENT_NAME_DEFAULT": "Geen bovenliggend element",
+      "CREATED_BY": "Gemaakt door",
+      "CREATED": "Gemaakt",
+      "END_DATE": "Einddatum",
+      "ID": "Id",
+      "DESCRIPTION": "Beschrijving",
+      "DESCRIPTION_DEFAULT": "Geen beschrijving",
+      "FORM_NAME": "Formuliernaam",
+      "FORM_NAME_DEFAULT": "Geen formulier",
+      "CANDIDATE_USERS": "Kandidaatgebruikers",
+      "CANDIDATE_USERS_DEFAULT": "Geen kandidaatgebruikers",
+      "CANDIDATE_GROUPS": "Kandidaatgroepen",
+      "CANDIDATE_GROUPS_DEFAULT": "Geen kandidaatgroepen"
+    },
+    "FORM_VALIDATION": {
+      "INVALID_FIELD": "Voer een andere waarde in"
+    }
+  },
+  "ADF_CLOUD_PROCESS_HEADER": {
+    "PROPERTIES": {
+      "ID": "Id",
+      "NAME": "Procesnaam",
+      "NAME_DEFAULT": "Geen naam",
+      "DESCRIPTION": "Beschrijving",
+      "DESCRIPTION_DEFAULT": "Geen beschrijving",
+      "STATUS": "Status",
+      "BUSINESS_KEY": "Business key",
+      "INITIATOR": "Initiator",
+      "START_DATE": "Gestart",
+      "LAST_MODIFIED": "Bijgewerkt",
+      "PARENT_ID": "Bovenliggende id",
+      "NONE": "Geen"
+    }
+  },
+  "ADF_CLOUD_TASK_FORM": {
+    "EMPTY_FORM": {
+      "TITLE": "Geen formulier beschikbaar",
+      "SUBTITLE": "Voeg een formulier bij dat later kan worden weergegeven",
+      "BUTTONS": {
+        "COMPLETE": "Voltooid",
+        "CANCEL": "Annuleren",
+        "CLAIM": "Claimen",
+        "UNCLAIM": "Vrijgeven"
+      }
+    },
+    "ERROR": {
+      "INVALID_DESTINATION_FOLDER_PATH": "Ongeldig pad doelmap"
+    }
+  },
+  "ADF_CLOUD_FORM_COMPONENT": {
+    "RETRIEVE_METADATA": "Formulier automatisch invullen"
+  },
+  "ADF_CLOUD_TASK_ASSIGNEMNT_FILTER": {
+    "ASSIGNED_TO_ME": "Toegewezen aan mij",
+    "UNASSIGNED": "Niet toegewezen",
+    "LIST_OF_CANDIDATE_GROUPS": "Lijst met kandidaatgroepen",
+    "ASSIGNEE": "Toegewezen persoon",
+    "ASSIGNMENT_TYPE": "Toewijzingstype"
+  }
+}
