@@ -157,8 +157,8 @@ ScreenReaderTitle.args = {
   'sr-title': 'Title for screen reader'
 };
 
-export const Focus = Template.bind({});
-Focus.args = {
+export const NotFocus = Template.bind({});
+NotFocus.args = {
   ...Default.args,
   focus: false
 };
