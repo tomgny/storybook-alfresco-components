@@ -292,12 +292,12 @@ FilterHeader.args = {
   headerFilters: true
 };
 
-export const PermissionsStyle = Template.bind({}); //doesn't work - BUG
+export const PermissionsStyle = Template.bind({}); //it's work only with css classes availalbe in Alfresco Application Development Framework (ADF)
 PermissionsStyle.args = {
   ...DefaultStory.args,
-  rowStyle: null,
-  rowStyleClass: null,
-  permissionsStyle: [new PermissionStyleModel('document-list__create', AllowableOperationsEnum.CREATE, true, true)]
+  rowStyle: undefined,
+  rowStyleClass: undefined,
+  permissionsStyle: [new PermissionStyleModel('adf-datatable-card', AllowableOperationsEnum.CREATE, true, true)]
 };
 
 export const MaxItems = Template.bind({}); //doesn't work
