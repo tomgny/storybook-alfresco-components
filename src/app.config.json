@@ -366,5 +366,32 @@
                  "cm:taggable", "app:inlineeditable", "cm:geographic", "exif:exif",
                  "audio:audio", "cm:indexControl", "dp:restrictable", "smf:customConfigSmartFolder", "smf:systemConfigSmartFolder"],
     "ai": ["ai:products", "ai:dates", "ai:places", "ai:events", "ai:organizations", "ai:people", "ai:things", "ai:quantities", "ai:creativeWorks", "ai:labels", "ai:textLines"]
-  }
+  },
+  "adf-cloud-task-header": {
+    "presets": {
+        "properties" : [ "assignee", "status", "priority", "dueDate", "category", "createdDate", "id", "description", "candidateUsers", "candidateGroups"]
+      }
+  },
+  "adf-cloud-priority-values": [
+    {
+      "key": "0",
+      "value": "0",
+      "label": "ADF_CLOUD_TASK_LIST.PROPERTIES.PRIORITY_VALUES.NONE"
+    },
+    {
+      "key": "1",
+      "value": "1",
+      "label": "ADF_CLOUD_TASK_LIST.PROPERTIES.PRIORITY_VALUES.LOW"
+    },
+    {
+      "key": "2",
+      "value": "2",
+      "label": "ADF_CLOUD_TASK_LIST.PROPERTIES.PRIORITY_VALUES.NORMAL"
+    },
+    {
+      "key": "3",
+      "value": "3",
+      "label": "ADF_CLOUD_TASK_LIST.PROPERTIES.PRIORITY_VALUES.HIGH"
+    }
+  ]
 }

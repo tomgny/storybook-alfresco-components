@@ -141,6 +141,7 @@ import { AboutApplicationModulesComponent } from './stories/about-application-mo
 import { DataColumnComponent } from './stories/data-column/data-column.component';
 import { JsonCellComponent } from './stories/json-cell/json-cell.component';
 import { TextMaskComponent } from './stories/text-mask/text-mask.component';
+import { TaskHeaderCloudComponent } from './stories/process-services-cloud/task-header-cloud/task-header-cloud.component';
 
 registerLocaleData(localeFr);
 registerLocaleData(localeDe);
@@ -267,6 +268,7 @@ registerLocaleData(localeSv);
     DataColumnComponent,
     JsonCellComponent,
     TextMaskComponent,
+    TaskHeaderCloudComponent,
   ],
   providers: [
     { provide: AppConfigService, useClass: DebugAppConfigService },
