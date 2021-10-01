@@ -142,6 +142,7 @@ import { DataColumnComponent } from './stories/data-column/data-column.component
 import { JsonCellComponent } from './stories/json-cell/json-cell.component';
 import { TextMaskComponent } from './stories/text-mask/text-mask.component';
 import { TaskHeaderCloudComponent } from './stories/process-services-cloud/task-header-cloud/task-header-cloud.component';
+import { TaskFormCloudComponent } from './stories/process-services-cloud/task-form-cloud/task-form-cloud.component';
 
 registerLocaleData(localeFr);
 registerLocaleData(localeDe);
@@ -269,6 +270,7 @@ registerLocaleData(localeSv);
     JsonCellComponent,
     TextMaskComponent,
     TaskHeaderCloudComponent,
+    TaskFormCloudComponent,
   ],
   providers: [
     { provide: AppConfigService, useClass: DebugAppConfigService },
