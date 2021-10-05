@@ -1,0 +1,14 @@
+<adf-cloud-task-form
+  [appName]="appName"
+  [readOnly]="readOnly"
+  [showCancelButton]="showCancelButton"
+  [showCompleteButton]="showCompleteButton"
+  [showRefreshButton]="showRefreshButton"
+  [showTitle]="showTitle"
+  [showValidationIcon]="showValidationIcon"
+  [taskId]="taskId"
+  (formCompleted)="onFormCompleted($event)"
+  (formSaved)="onFormSaved($event)"
+  (cancelClick)="onCancel()"
+>
+</adf-cloud-task-form>
